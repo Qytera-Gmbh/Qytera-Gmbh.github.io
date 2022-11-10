@@ -113,3 +113,79 @@ Tests run: 2, Failures: 1, Errors: 0, Skipped: 0
 The second option is to run tests using the IntelliJ IDE. To do this, click on the green triangles next to the test methods in the TestOne class to run individual tests or on the green triangle next to the TestRunner class to run all tests and then click on Run test in the menu that opens. 
 
 In the logs directory you can now also observe that a JSON file is created for each test run, which contains information about the test run.
+
+# Create a Selenium test case
+
+QTAF has been developed with a particular focus on web application testing and therefore offers special support for Selenium test cases. The Selenium library has already been installed by including QTAF as a dependency in your Maven project. To create a new Selenium test case, we proceed as in the example shown earlier. First we create a test class called `SeleniumTest` and let this class inherit from `QtafTestNGContext`. Now we again create a method within this class and provide it again with the annotation `@Test`from TestNG.
+
+The class `QtafTestNGContext` provides us with the `driver` object, with which we can control our browser. The `driver`object is an ordinary Selenium web driver object, which we can work with as usual from other Selenium projects. The documentation of the Selenium driver for Java including a small example can be found on the following website: <a href="https://www.selenium.dev/documentation/" target="_blank">Selenium Documentation</a>
+
+We would now like to look at how we would write the test case described in the Selenium documentation using QTAF. The Selenium test case without QTAF looks like this:
+
+
+```java
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class HelloSeleniumTest {
+    String headlineSelector = "div.td-content h1";
+
+    @Test(
+      testName = "Open browser and visit selenium documentation",
+      description = "Open the browser and go to the selenium documentation website"
+    )   
+    public testBrowser() {
+        // Instatiate WebDriver object
+        WebDriver driver = new ChromeDriver();
+
+        // Visit Selenium documentation
+        driver.get("https://selenium.dev");
+        
+        // Extract headline text from website
+        String headlineText = driver.findElement(By.cssSelector(headlineSelector)),getText();
+        Assert.assertEquals(headlineText, "The Selenium Browser Automation Project");
+
+        // Close the driver
+        driver.quit();
+    }
+}
+```
+
+If we now use QTAF, our test case looks like this:
+
+```java
+import de.qytera.qtaf.core.config.annotations.TestFeature;
+import de.qytera.qtaf.testng.context.QtafTestNGContext;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+@TestFeature(
+        name = "SeleniumTest",
+        description = "Our first Selenium test"
+)
+public class HelloSeleniumTest extends QtafTestNGContext {
+    String headlineSelector = "div.td-content h1";
+
+    @Test(
+      testName = "Open browser and visit selenium documentation",
+      description = "Open the browser and go to the selenium documentation website"
+    )   
+    public testBrowser() {
+        // Visit Selenium documentation
+        driver.get("https://selenium.dev");
+        
+        // Extract headline text from website
+        String headlineText = driver.findElement(By.cssSelector(headlineSelector)),getText();
+        Assert.assertEquals(headlineText, "The Selenium Browser Automation Project");
+    }
+}
+```
+
+We only need to do two things to convert an ordinary TestNG test case into a QTAF test case:
+
+1. The class must be annotated with the `TestFeature` annotation, which is provided by the QTAF library.
+2. Our class must inherit from `QtafTestNGContext`.
+
+If we look at the code inside the method we notice two more things: The statements for instantiating and closing the webdriver have been removed. QTAF takes over these tasks for us and already provides us with the initialised driver object via the class attribute `driver`.
+
+A QTAF test case is thus an ordinary TestNG test case that we have merely extended with an annotation and an inherited class. Thus, every TestNG test case can also be converted into a QTAF test case.
