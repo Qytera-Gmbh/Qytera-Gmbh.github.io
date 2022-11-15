@@ -121,7 +121,7 @@ In the logs directory you can now also observe that a JSON file is created for e
       "name":""
     },
     "package":""
-  },
+  }
 ```
 
 Now enter for the value "package" the name of the package in which we will define our test cases. In our example, this will be the package `org.acme.tests`. The block shown should then look like this:
@@ -132,7 +132,7 @@ Now enter for the value "package" the name of the package in which we will defin
       "name":""
     },
     "package":"org.acme.tests"
-  },
+  }
 ```
 
 The `configuration.json` file contains many more values, but these are covered in a separate article.
@@ -365,3 +365,27 @@ Furthermore, in the same directory you will find the file `Report.json`, which c
 You can find an example of an HTML report here: <a href="https://qytera-gmbh.github.io/html_report/suite_crm/Report.html" target="_blank">QTAF HTML Report</a>
 
 You can also find an example JSON report here: <a href="https://qytera-gmbh.github.io/json_report/suite_crm/Report.json" target="_blank">QTAF JSON Report</a>
+
+# Run test cases on different browsers
+
+QTAF offers you the possibility to run test cases on different browsers. You can tell QTAF in three different ways which browser it should use to run the test cases. The only requirement is that the browsers themselves have already been installed by you on your computer. QTAF will automatically download the appropriate Selenium drivers for the desired browsers. You therefore do not need to worry about setting up the appropriate drivers.
+
+**Option 1: Use the configuration file**
+
+Change the value of the `driver.name` attribute in the `configuration.json` file. Possible values include `chrome`, `firefox`, `edge`, `opera` and `ie`.
+
+```json
+  "driver":{
+    "name": "chrome"
+  }
+```
+
+Then run your test cases as usual. For example, if you have selected `firefox` as the value, the test cases will now be executed in the Firefox browser.
+
+**Option 2: Use the command line**
+
+QTAF test cases can also be executed via the command line. This is advantageous if you want to run test cases in a pipeline on different browsers, as in this case you do not have to make any changes to the code base. To run test cases from the command line you have to execute the command `mvn exec:java -Dexec.mainClass="org.acme.TestRunner"`. Please note that the package name `org.acme` may differ from project to project. You can also pass the desired browser using the argument `-Ddriver.name`. For the Firefox browser, the command would look like this: `mvn exec:java -Dexec.mainClass="org.acme.TestRunner" -Ddriver.name="firefox"`. Command line arguments always overwrite the values in the configuration file, i.e. if you have set the value `chrome` for `driver.name` in the configuration file, but pass the value `firefox` via the command line, your test cases will ultimately be executed in the Firefox browser.
+
+**Option 3: Use environment variables**
+
+As a third option, QTAF offers to set configuration parameters via environment variables. For example, if you want to test on the Edge browser, set the environment variable `DRIVER_NAME` to the value `edge`. In a Bash shell, you can also set environment variables directly before the actual command. This would look like this: `DRIVER_NAME=edge mvn exec:java -Dexec.mainClass="org.acme.TestRunner"`. Environment variables also always overwrite the values in the `configuration.json` file.
