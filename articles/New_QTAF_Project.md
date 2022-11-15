@@ -355,7 +355,7 @@ First we have to activate the creation of the HTML report in the configuration f
 ```json
   "htmlReport":{
     "enabled":true
-  },
+  }
 ```
 
 Then run the test cases again by executing the main method of the `TestRunner` class. You will then find the file `Report.html` in the logs directory, which contains the HTML report. You can open and display this in any browser.
