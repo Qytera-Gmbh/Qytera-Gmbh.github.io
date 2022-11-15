@@ -1,7 +1,3 @@
-layout: page
-title: "How to create a new QTAF project"
-permalink: /first-steps
-
 # How to create a new QTAF project
 
 This article shows how a new project can be set up using the QTAF framework. First, we will show you how to install QTAF using Maven. Then we will create our first test case using QTAF.
