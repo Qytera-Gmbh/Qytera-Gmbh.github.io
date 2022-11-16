@@ -63,11 +63,13 @@ When executing the class, QTAF checks for the existence of various files and fol
 
 ### Create first test case
 
-Now the project should be initialised. We can now turn our attention to creating the first test case. 
+Now the project should be initialised. We can now devote ourselves to creating the first test case. 
 
-Create a class `TestOne` in this directory with the following content:
+First we create the package `org.acme.tests`, where we will store our test case classes in the future. Create a class `TestOne` in this package with the following content:
 
 ```java
+package org.acme.tests;
+
 import de.qytera.qtaf.core.config.annotations.TestFeature;
 import de.qytera.qtaf.testng.context.QtafTestNGContext;
 import org.testng.Assert;
@@ -98,6 +100,48 @@ You can run the tests in two ways. In the first case, you can run the tests via 
 ```
 Results :
 
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.570 s
+[INFO] Finished at: 2020-11-05T11:04:36+01:00
+[INFO] ------------------------------------------------------------------------
+```
+
+The second option is to run tests using the IntelliJ IDE. To do this, click on the green triangles next to the test methods in the TestOne class to run individual tests or on the green triangle next to the TestRunner class to run all tests and then click on Run test in the menu that opens. 
+
+You will now see two things: Firstly, the test cases seem not to have been found, and secondly, new directories and files have been created in your project. In the subdirectory de/qytera/qtaf/core/config of the resource folder of your Maven project a new file named configuration.json. has been created. Within this file parameters for the test execution can be defined. Within this file we now have to edit the following block:
+
+
+```json
+  "tests":{
+    "suite":{
+      "name":""
+    },
+    "package":""
+  }
+```
+
+Now enter the name of the package in which we will define our test cases for the value "package". This tells QTAF which packages to search for test cases. In our example, this will be the package `org.acme.tests`. Thus, the block shown should look like this:
+
+```json
+  "tests":{
+    "suite":{
+      "name":""
+    },
+    "package":"org.acme.tests"
+  }
+```
+
+The `configuration.json` file contains many more values, but these are covered in a separate article.
+
+Now we run the test cases again. Now they have been found by QTAF. You should now see something like the following output:
+
+```
+Results :
+
 Failed tests:   testFailure(TestOne): expected [3] but found [4]
 
 Tests run: 2, Failures: 1, Errors: 0, Skipped: 0
@@ -110,32 +154,7 @@ Tests run: 2, Failures: 1, Errors: 0, Skipped: 0
 [INFO] ------------------------------------------------------------------------
 ```
 
-The second option is to run tests using the IntelliJ IDE. To do this, click on the green triangles next to the test methods in the TestOne class to run individual tests or on the green triangle next to the TestRunner class to run all tests and then click on Run test in the menu that opens. 
-
-In the logs directory you can now also observe that a JSON file is created for each test run, which contains information about the test run. Furthermore, you will see a new file called `configuration.json` in the subdirectory `de/qytera/qtaf/core/config` of the resource folder of your Maven project. Within this file you can define parameters for the test execution. Within this file we now need to edit the following block:
-
-
-```json
-  "tests":{
-    "suite":{
-      "name":""
-    },
-    "package":""
-  }
-```
-
-Now enter for the value "package" the name of the package in which we will define our test cases. In our example, this will be the package `org.acme.tests`. The block shown should then look like this:
-
-```json
-  "tests":{
-    "suite":{
-      "name":""
-    },
-    "package":"org.acme.tests"
-  }
-```
-
-The `configuration.json` file contains many more values, but these are covered in a separate article.
+In the logs directory you can now also observe that a subfolder is created for each test run, which contains information about the test run.
 
 # Create a Selenium test case
 
@@ -151,13 +170,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class HelloSeleniumTest {
-    String headlineSelector = "div.td-content h1";
+    String headlineSelector = "h1.display-1";
 
     @Test(
       testName = "Open browser and visit selenium documentation",
       description = "Open the browser and go to the selenium documentation website"
     )   
-    public testBrowser() {
+    public void testBrowser() {
         // Instatiate WebDriver object
         WebDriver driver = new ChromeDriver();
 
@@ -165,8 +184,8 @@ public class HelloSeleniumTest {
         driver.get("https://selenium.dev");
         
         // Extract headline text from website
-        String headlineText = driver.findElement(By.cssSelector(headlineSelector)),getText();
-        Assert.assertEquals(headlineText, "The Selenium Browser Automation Project");
+        String headlineText = driver.findElement(By.cssSelector(headlineSelector)).getText();
+        Assert.assertEquals(headlineText, "Selenium automates browsers. That's it!");
 
         // Close the driver
         driver.quit();
@@ -187,19 +206,19 @@ import org.testng.annotations.Test;
         description = "Our first Selenium test"
 )
 public class HelloSeleniumTest extends QtafTestNGContext {
-    String headlineSelector = "div.td-content h1";
+    String headlineSelector = "h1.display-1";
 
     @Test(
       testName = "Open browser and visit selenium documentation",
       description = "Open the browser and go to the selenium documentation website"
     )   
-    public testBrowser() {
+    public void testBrowser() {
         // Visit Selenium documentation
         driver.get("https://selenium.dev");
         
         // Extract headline text from website
-        String headlineText = driver.findElement(By.cssSelector(headlineSelector)),getText();
-        Assert.assertEquals(headlineText, "The Selenium Browser Automation Project");
+        String headlineText = driver.findElement(By.cssSelector(headlineSelector)).getText();
+        Assert.assertEquals(headlineText, "Selenium automates browsers. That's it!");
     }
 }
 ```
@@ -230,15 +249,15 @@ import org.testng.annotations.Test;
         description = "Our first Selenium test"
 )
 public class HelloSeleniumTest extends QtafTestNGContext {
-    String headlineSelector = "div.td-content h1";
+    String headlineSelector = "h1.display-1";
 
     @Test(
       testName = "Open browser and visit selenium documentation",
       description = "Open the browser and go to the selenium documentation website"
     )   
-    public testBrowser() {
+    public void testBrowser() {
         openSite("https://selenium.dev");
-        checkHeadline("The Selenium Browser Automation Project");
+        checkHeadline("Selenium automates browsers. That's it!");
     }
     
     public void openSite(String url) {
@@ -248,8 +267,8 @@ public class HelloSeleniumTest extends QtafTestNGContext {
     
     public void checkHeadline(String expectedText) {
         // Extract headline text from website
-        String headlineText = driver.findElement(By.cssSelector(headlineSelector)),getText();
-        Assert.assertEquals(headlineText, "The Selenium Browser Automation Project");
+        String headlineText = driver.findElement(By.cssSelector(headlineSelector)).getText();
+        Assert.assertEquals(headlineText, expectedText);
     }
 }
 ```
@@ -272,7 +291,7 @@ import javax.inject.Singleton;
 
 @Singleton
 public class MainSitePO extends QtafTestNGContext {
-    String headlineSelector = "div.td-content h1";
+    String headlineSelector = "h1.display-1";
     
     @Step(
         name = "Open Site",
@@ -289,8 +308,8 @@ public class MainSitePO extends QtafTestNGContext {
     )
     public void checkHeadline(String expectedText) {
         // Extract headline text from website
-        String headlineText = driver.findElement(By.cssSelector(headlineSelector)),getText();
-        Assert.assertEquals(headlineText, "The Selenium Browser Automation Project");
+        String headlineText = driver.findElement(By.cssSelector(headlineSelector)).getText();
+        Assert.assertEquals(headlineText, expectedText);
     }
 }
 ```
@@ -331,15 +350,15 @@ import org.acme.TestContext;
         description = "Our first Selenium test"
 )
 public class HelloSeleniumTest extends TestContext {
-    String headlineSelector = "div.td-content h1";
+    String headlineSelector = "h1.display-1";
 
     @Test(
       testName = "Open browser and visit selenium documentation",
       description = "Open the browser and go to the selenium documentation website"
     )   
-    public testBrowser() {
+    public void testBrowser() {
         mainSitePO.openSite("https://selenium.dev");
-        mainSitePO.checkHeadline("The Selenium Browser Automation Project");
+        mainSitePO.checkHeadline("Selenium automates browsers. That's it!");
     }
 }
 ```
