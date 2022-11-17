@@ -2,12 +2,12 @@
   "uuid": "4ff4b882-e92f-4a93-bb7c-03e7b3e99596",
   "suiteInfo": {
     "name": "Command line suite",
-    "outputDir": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\test-output\\Command line suite"
+    "outputDir": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\test-output\\Command line suite"
   },
   "systemInfo": {
     "osName": "Windows 11",
     "javaVersion": "17.0.2",
-    "userDir": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests"
+    "userDir": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests"
   },
   "processInfo": {
     "pid": 10092
@@ -22,7 +22,7 @@
   "start": "Nov 15, 2022, 9:42:40 AM",
   "end": "Nov 15, 2022, 9:44:44 AM",
   "duration": 133281,
-  "logDirectory": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596",
+  "logDirectory": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596",
   "testFeatureLogCollections": [
     {
       "featureId": 1266602046,
@@ -58,8 +58,8 @@
               "end": "Nov 15, 2022, 9:42:43 AM",
               "duration": 1733,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\goToRootPage_before_c799654d-ae32-41ad-83f2-1b8c57253725.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\goToRootPage_after_c799654d-ae32-41ad-83f2-1b8c57253725.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\goToRootPage_before_c799654d-ae32-41ad-83f2-1b8c57253725.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\goToRootPage_after_c799654d-ae32-41ad-83f2-1b8c57253725.png",
               "level": "INFO",
               "message": "Step Go to SuiteCRM main pageexecuted"
             },
@@ -82,8 +82,8 @@
                   "value": "user"
                 }
               ],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillUsernameField_before_ebcd1b7f-35bb-4b35-89ee-230d827ca781.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillUsernameField_after_ebcd1b7f-35bb-4b35-89ee-230d827ca781.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillUsernameField_before_ebcd1b7f-35bb-4b35-89ee-230d827ca781.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillUsernameField_after_ebcd1b7f-35bb-4b35-89ee-230d827ca781.png",
               "level": "INFO",
               "message": "Step Fill username fieldexecuted"
             },
@@ -106,8 +106,8 @@
                   "value": "bitnami"
                 }
               ],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillPasswordField_before_5de20878-c841-4034-a4da-ed42bb91120b.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillPasswordField_after_5de20878-c841-4034-a4da-ed42bb91120b.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillPasswordField_before_5de20878-c841-4034-a4da-ed42bb91120b.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillPasswordField_after_5de20878-c841-4034-a4da-ed42bb91120b.png",
               "level": "INFO",
               "message": "Step Fill password fieldexecuted"
             },
@@ -124,18 +124,18 @@
               "end": "Nov 15, 2022, 9:42:49 AM",
               "duration": 4399,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickSubmitButton_before_6026ef32-9ba3-4f58-8ec8-60e7118d7214.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickSubmitButton_after_6026ef32-9ba3-4f58-8ec8-60e7118d7214.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickSubmitButton_before_6026ef32-9ba3-4f58-8ec8-60e7118d7214.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickSubmitButton_after_6026ef32-9ba3-4f58-8ec8-60e7118d7214.png",
               "level": "INFO",
               "message": "Step Submit Formexecuted"
             }
           ],
           "screenshotPaths": [
-            "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.LoginTest.testLogin_before.png",
-            "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.LoginTest.testLogin_after.png"
+            "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.LoginTest.testLogin_before.png",
+            "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.LoginTest.testLogin_after.png"
           ],
-          "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.LoginTest.testLogin_before.png",
-          "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.LoginTest.testLogin_after.png",
+          "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.LoginTest.testLogin_before.png",
+          "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.LoginTest.testLogin_after.png",
           "tags": {}
         }
       ]
@@ -176,8 +176,8 @@
               "end": "Nov 15, 2022, 9:42:50 AM",
               "duration": 733,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_before_b03b0889-9765-4a6a-a542-d45d5349fdec.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_after_b03b0889-9765-4a6a-a542-d45d5349fdec.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_before_b03b0889-9765-4a6a-a542-d45d5349fdec.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_after_b03b0889-9765-4a6a-a542-d45d5349fdec.png",
               "level": "INFO",
               "message": "Step Open mobile menuexecuted"
             },
@@ -194,8 +194,8 @@
               "end": "Nov 15, 2022, 9:42:53 AM",
               "duration": 1953,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMobileCallsMenu_before_02ff5188-c167-4a9a-adc8-856ab9bb05d4.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMobileCallsMenu_after_02ff5188-c167-4a9a-adc8-856ab9bb05d4.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMobileCallsMenu_before_02ff5188-c167-4a9a-adc8-856ab9bb05d4.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMobileCallsMenu_after_02ff5188-c167-4a9a-adc8-856ab9bb05d4.png",
               "level": "INFO",
               "message": "Step Click calls menu itemexecuted"
             },
@@ -212,8 +212,8 @@
               "end": "Nov 15, 2022, 9:42:55 AM",
               "duration": 1283,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickCallsModuleButton_before_cf6219e7-a275-477b-9ad2-a59f80c5fbf9.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickCallsModuleButton_after_cf6219e7-a275-477b-9ad2-a59f80c5fbf9.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickCallsModuleButton_before_cf6219e7-a275-477b-9ad2-a59f80c5fbf9.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickCallsModuleButton_after_cf6219e7-a275-477b-9ad2-a59f80c5fbf9.png",
               "level": "INFO",
               "message": "Step Click calls module buttonexecuted"
             },
@@ -230,8 +230,8 @@
               "end": "Nov 15, 2022, 9:42:55 AM",
               "duration": 406,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickLogCallLink_before_b1265e7e-d9c5-4c79-8023-dee0eaa920f2.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickLogCallLink_after_b1265e7e-d9c5-4c79-8023-dee0eaa920f2.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickLogCallLink_before_b1265e7e-d9c5-4c79-8023-dee0eaa920f2.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickLogCallLink_after_b1265e7e-d9c5-4c79-8023-dee0eaa920f2.png",
               "level": "INFO",
               "message": "Step Click log call menu itemexecuted"
             },
@@ -254,8 +254,8 @@
                   "value": "Neuer Anruf"
                 }
               ],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillSubjectField_before_3b08946a-9f8b-4ae3-9417-a2b2a74c656e.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillSubjectField_after_3b08946a-9f8b-4ae3-9417-a2b2a74c656e.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillSubjectField_before_3b08946a-9f8b-4ae3-9417-a2b2a74c656e.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillSubjectField_after_3b08946a-9f8b-4ae3-9417-a2b2a74c656e.png",
               "level": "INFO",
               "message": "Step Fill subject fieldexecuted"
             },
@@ -272,8 +272,8 @@
               "end": "Nov 15, 2022, 9:42:57 AM",
               "duration": 548,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillDurationField_before_435ac77a-d910-456a-9c48-ea8e3e416845.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillDurationField_after_435ac77a-d910-456a-9c48-ea8e3e416845.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillDurationField_before_435ac77a-d910-456a-9c48-ea8e3e416845.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillDurationField_after_435ac77a-d910-456a-9c48-ea8e3e416845.png",
               "level": "INFO",
               "message": "Step Fill duration fieldexecuted"
             },
@@ -296,8 +296,8 @@
                   "value": "Anruf von John Doe"
                 }
               ],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillDescriptionField_before_86c85c71-22d0-48a7-a5f3-eaeacc7f7521.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillDescriptionField_after_86c85c71-22d0-48a7-a5f3-eaeacc7f7521.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillDescriptionField_before_86c85c71-22d0-48a7-a5f3-eaeacc7f7521.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillDescriptionField_after_86c85c71-22d0-48a7-a5f3-eaeacc7f7521.png",
               "level": "INFO",
               "message": "Step Fill description fieldexecuted"
             },
@@ -314,8 +314,8 @@
               "end": "Nov 15, 2022, 9:43:09 AM",
               "duration": 10588,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickSaveButton_before_9e92dfc8-05e2-4460-a7bb-f76e4409210a.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickSaveButton_after_9e92dfc8-05e2-4460-a7bb-f76e4409210a.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickSaveButton_before_9e92dfc8-05e2-4460-a7bb-f76e4409210a.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickSaveButton_after_9e92dfc8-05e2-4460-a7bb-f76e4409210a.png",
               "level": "INFO",
               "message": "Step Click save buttonexecuted"
             },
@@ -332,8 +332,8 @@
               "end": "Nov 15, 2022, 9:43:10 AM",
               "duration": 328,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_before_ed2a014f-5a3c-4f92-b27a-eeb96464451a.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_after_ed2a014f-5a3c-4f92-b27a-eeb96464451a.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_before_ed2a014f-5a3c-4f92-b27a-eeb96464451a.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_after_ed2a014f-5a3c-4f92-b27a-eeb96464451a.png",
               "level": "INFO",
               "message": "Step Open mobile menuexecuted"
             },
@@ -350,18 +350,18 @@
               "end": "Nov 15, 2022, 9:43:12 AM",
               "duration": 1838,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickHomeMenuFromNotHomePage_before_e39fffbc-5291-43ee-94fe-981a7caa3e12.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickHomeMenuFromNotHomePage_after_e39fffbc-5291-43ee-94fe-981a7caa3e12.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickHomeMenuFromNotHomePage_before_e39fffbc-5291-43ee-94fe-981a7caa3e12.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickHomeMenuFromNotHomePage_after_e39fffbc-5291-43ee-94fe-981a7caa3e12.png",
               "level": "INFO",
               "message": "Step Click contact menu itemexecuted"
             }
           ],
           "screenshotPaths": [
-            "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.CallsTest.testCalls_before.png",
-            "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.CallsTest.testCalls_after.png"
+            "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.CallsTest.testCalls_before.png",
+            "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.CallsTest.testCalls_after.png"
           ],
-          "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.CallsTest.testCalls_before.png",
-          "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.CallsTest.testCalls_after.png",
+          "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.CallsTest.testCalls_before.png",
+          "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.CallsTest.testCalls_after.png",
           "tags": {}
         }
       ]
@@ -402,8 +402,8 @@
               "end": "Nov 15, 2022, 9:43:14 AM",
               "duration": 651,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_before_2835c754-7bff-46c0-b5bb-a8728379a83c.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_after_2835c754-7bff-46c0-b5bb-a8728379a83c.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_before_2835c754-7bff-46c0-b5bb-a8728379a83c.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_after_2835c754-7bff-46c0-b5bb-a8728379a83c.png",
               "level": "INFO",
               "message": "Step Open mobile menuexecuted"
             },
@@ -420,8 +420,8 @@
               "end": "Nov 15, 2022, 9:43:14 AM",
               "duration": 495,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMobileContactsMenu_before_17bfbbe4-e3a4-447d-818b-8ce94e563bfe.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMobileContactsMenu_after_17bfbbe4-e3a4-447d-818b-8ce94e563bfe.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMobileContactsMenu_before_17bfbbe4-e3a4-447d-818b-8ce94e563bfe.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMobileContactsMenu_after_17bfbbe4-e3a4-447d-818b-8ce94e563bfe.png",
               "level": "INFO",
               "message": "Step Click contact menu itemexecuted"
             },
@@ -438,8 +438,8 @@
               "end": "Nov 15, 2022, 9:43:18 AM",
               "duration": 3117,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickContactModuleButton_before_5c550c71-910e-4ce8-b4ea-0a3270b86b4f.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickContactModuleButton_after_5c550c71-910e-4ce8-b4ea-0a3270b86b4f.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickContactModuleButton_before_5c550c71-910e-4ce8-b4ea-0a3270b86b4f.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickContactModuleButton_after_5c550c71-910e-4ce8-b4ea-0a3270b86b4f.png",
               "level": "INFO",
               "message": "Step Click contact module buttonexecuted"
             },
@@ -456,8 +456,8 @@
               "end": "Nov 15, 2022, 9:43:19 AM",
               "duration": 810,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickCreateLink_before_ffe4a1e5-c804-45fc-97dd-c8dddd985dc0.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickCreateLink_after_ffe4a1e5-c804-45fc-97dd-c8dddd985dc0.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickCreateLink_before_ffe4a1e5-c804-45fc-97dd-c8dddd985dc0.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickCreateLink_after_ffe4a1e5-c804-45fc-97dd-c8dddd985dc0.png",
               "level": "INFO",
               "message": "Step Click create contact menu itemexecuted"
             },
@@ -480,8 +480,8 @@
                   "value": "Jacquline"
                 }
               ],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillFirstNameField_before_d4934a1a-57f5-4cce-9619-7bdcc9da1b62.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillFirstNameField_after_d4934a1a-57f5-4cce-9619-7bdcc9da1b62.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillFirstNameField_before_d4934a1a-57f5-4cce-9619-7bdcc9da1b62.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillFirstNameField_after_d4934a1a-57f5-4cce-9619-7bdcc9da1b62.png",
               "level": "INFO",
               "message": "Step Fill first name fieldexecuted"
             },
@@ -504,8 +504,8 @@
                   "value": "Jacobs"
                 }
               ],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillLastNameField_before_c27e9355-adb2-458b-9e10-5cb485d438ba.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillLastNameField_after_c27e9355-adb2-458b-9e10-5cb485d438ba.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillLastNameField_before_c27e9355-adb2-458b-9e10-5cb485d438ba.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillLastNameField_after_c27e9355-adb2-458b-9e10-5cb485d438ba.png",
               "level": "INFO",
               "message": "Step Fill last name fieldexecuted"
             },
@@ -528,8 +528,8 @@
                   "value": "1-777-878-6166 x7542"
                 }
               ],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillOfficePhoneField_before_e01c7bc2-27c0-43cf-a679-af81c7669726.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillOfficePhoneField_after_e01c7bc2-27c0-43cf-a679-af81c7669726.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillOfficePhoneField_before_e01c7bc2-27c0-43cf-a679-af81c7669726.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillOfficePhoneField_after_e01c7bc2-27c0-43cf-a679-af81c7669726.png",
               "level": "INFO",
               "message": "Step Fill office phone fieldexecuted"
             },
@@ -552,8 +552,8 @@
                   "value": "993.287.7357 x49197"
                 }
               ],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillMobilePhoneField_before_4b684dfe-ecb5-460f-97af-2a2540194302.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillMobilePhoneField_after_4b684dfe-ecb5-460f-97af-2a2540194302.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillMobilePhoneField_before_4b684dfe-ecb5-460f-97af-2a2540194302.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillMobilePhoneField_after_4b684dfe-ecb5-460f-97af-2a2540194302.png",
               "level": "INFO",
               "message": "Step Fill mobile phone fieldexecuted"
             },
@@ -576,8 +576,8 @@
                   "value": "949-806-5985"
                 }
               ],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillFaxPhoneField_before_f5bc6a45-0f7c-46d2-a5e2-2911a49c7308.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillFaxPhoneField_after_f5bc6a45-0f7c-46d2-a5e2-2911a49c7308.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillFaxPhoneField_before_f5bc6a45-0f7c-46d2-a5e2-2911a49c7308.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillFaxPhoneField_after_f5bc6a45-0f7c-46d2-a5e2-2911a49c7308.png",
               "level": "INFO",
               "message": "Step Fill fax phone fieldexecuted"
             },
@@ -600,8 +600,8 @@
                   "value": "Manager"
                 }
               ],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillJobTitleField_before_44d1052c-2f07-4fcf-bbe8-33a8b30872dd.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillJobTitleField_after_44d1052c-2f07-4fcf-bbe8-33a8b30872dd.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillJobTitleField_before_44d1052c-2f07-4fcf-bbe8-33a8b30872dd.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillJobTitleField_after_44d1052c-2f07-4fcf-bbe8-33a8b30872dd.png",
               "level": "INFO",
               "message": "Step Fill job title fieldexecuted"
             },
@@ -624,8 +624,8 @@
                   "value": "Janiece-Botsford"
                 }
               ],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillAccountNameField_before_e52bf696-41c4-41f4-8e99-8ac4679f5f5f.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillAccountNameField_after_e52bf696-41c4-41f4-8e99-8ac4679f5f5f.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillAccountNameField_before_e52bf696-41c4-41f4-8e99-8ac4679f5f5f.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillAccountNameField_after_e52bf696-41c4-41f4-8e99-8ac4679f5f5f.png",
               "level": "INFO",
               "message": "Step Fill account name fieldexecuted"
             },
@@ -648,8 +648,8 @@
                   "value": "Rashad-Bogisich@inet.com"
                 }
               ],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillEmailField_before_425f8cac-cbe9-4788-8398-d5dcc0ee86c1.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillEmailField_after_425f8cac-cbe9-4788-8398-d5dcc0ee86c1.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillEmailField_before_425f8cac-cbe9-4788-8398-d5dcc0ee86c1.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\fillEmailField_after_425f8cac-cbe9-4788-8398-d5dcc0ee86c1.png",
               "level": "INFO",
               "message": "Step Fill email fieldexecuted"
             },
@@ -666,8 +666,8 @@
               "end": "Nov 15, 2022, 9:43:34 AM",
               "duration": 5790,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickSaveButton_before_6d7b997a-f43e-4d36-8379-c92364b82dde.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickSaveButton_after_6d7b997a-f43e-4d36-8379-c92364b82dde.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickSaveButton_before_6d7b997a-f43e-4d36-8379-c92364b82dde.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickSaveButton_after_6d7b997a-f43e-4d36-8379-c92364b82dde.png",
               "level": "INFO",
               "message": "Step Click save buttonexecuted"
             },
@@ -684,8 +684,8 @@
               "end": "Nov 15, 2022, 9:43:36 AM",
               "duration": 950,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_before_6948d29c-ac09-44b6-a799-68df7b3ac440.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_after_6948d29c-ac09-44b6-a799-68df7b3ac440.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_before_6948d29c-ac09-44b6-a799-68df7b3ac440.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_after_6948d29c-ac09-44b6-a799-68df7b3ac440.png",
               "level": "INFO",
               "message": "Step Open mobile menuexecuted"
             },
@@ -702,18 +702,18 @@
               "end": "Nov 15, 2022, 9:43:37 AM",
               "duration": 1277,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickHomeMenuFromNotHomePage_before_deba5c8c-0e48-4dd5-9855-fcc8114860f2.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickHomeMenuFromNotHomePage_after_deba5c8c-0e48-4dd5-9855-fcc8114860f2.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickHomeMenuFromNotHomePage_before_deba5c8c-0e48-4dd5-9855-fcc8114860f2.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickHomeMenuFromNotHomePage_after_deba5c8c-0e48-4dd5-9855-fcc8114860f2.png",
               "level": "INFO",
               "message": "Step Click contact menu itemexecuted"
             }
           ],
           "screenshotPaths": [
-            "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.ContactsTest.testContacts_before.png",
-            "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.ContactsTest.testContacts_after.png"
+            "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.ContactsTest.testContacts_before.png",
+            "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.ContactsTest.testContacts_after.png"
           ],
-          "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.ContactsTest.testContacts_before.png",
-          "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.ContactsTest.testContacts_after.png",
+          "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.ContactsTest.testContacts_before.png",
+          "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.ContactsTest.testContacts_after.png",
           "tags": {}
         }
       ]
@@ -754,8 +754,8 @@
               "end": "Nov 15, 2022, 9:43:39 AM",
               "duration": 605,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_before_12ba0ad6-8b72-43e6-a327-266c5af8a29e.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_after_12ba0ad6-8b72-43e6-a327-266c5af8a29e.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_before_12ba0ad6-8b72-43e6-a327-266c5af8a29e.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_after_12ba0ad6-8b72-43e6-a327-266c5af8a29e.png",
               "level": "INFO",
               "message": "Step Open mobile menuexecuted"
             },
@@ -772,8 +772,8 @@
               "end": "Nov 15, 2022, 9:43:42 AM",
               "duration": 3423,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMobileCalendarMenu_before_27e1630d-f7e0-4ac7-bb73-0f3814950670.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMobileCalendarMenu_after_27e1630d-f7e0-4ac7-bb73-0f3814950670.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMobileCalendarMenu_before_27e1630d-f7e0-4ac7-bb73-0f3814950670.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMobileCalendarMenu_after_27e1630d-f7e0-4ac7-bb73-0f3814950670.png",
               "level": "INFO",
               "message": "Step Click calendar menu itemexecuted"
             },
@@ -790,19 +790,19 @@
               "end": "Nov 15, 2022, 9:44:13 AM",
               "duration": 30311,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMeetingsModuleButton_before_6d68e796-e12f-440a-847e-112a000adc5f.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMeetingsModuleButton_after_6d68e796-e12f-440a-847e-112a000adc5f.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMeetingsModuleButton_before_6d68e796-e12f-440a-847e-112a000adc5f.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\clickMeetingsModuleButton_after_6d68e796-e12f-440a-847e-112a000adc5f.png",
               "error": {},
               "level": "INFO",
               "message": "Step Click contact module buttonexecuted"
             }
           ],
           "screenshotPaths": [
-            "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.MeetingsTest.testMeetings_before.png",
-            "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.MeetingsTest.testMeetings_after.png"
+            "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.MeetingsTest.testMeetings_before.png",
+            "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.MeetingsTest.testMeetings_after.png"
           ],
-          "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.MeetingsTest.testMeetings_before.png",
-          "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.MeetingsTest.testMeetings_after.png",
+          "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.MeetingsTest.testMeetings_before.png",
+          "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.MeetingsTest.testMeetings_after.png",
           "tags": {}
         }
       ]
@@ -843,19 +843,19 @@
               "end": "Nov 15, 2022, 9:44:44 AM",
               "duration": 30286,
               "stepParameters": [],
-              "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_before_2250a3b9-4ec8-42f0-8621-65818a2a1916.png",
-              "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_after_2250a3b9-4ec8-42f0-8621-65818a2a1916.png",
+              "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_before_2250a3b9-4ec8-42f0-8621-65818a2a1916.png",
+              "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\openMobileMenu_after_2250a3b9-4ec8-42f0-8621-65818a2a1916.png",
               "error": {},
               "level": "INFO",
               "message": "Step Open mobile menuexecuted"
             }
           ],
           "screenshotPaths": [
-            "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.TasksTest.testTasks_before.png",
-            "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.TasksTest.testTasks_after.png"
+            "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.TasksTest.testTasks_before.png",
+            "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596\\de.qytera.suite_crm.tests.TasksTest.testTasks_after.png"
           ],
-          "screenshotBefore": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.TasksTest.testTasks_before.png",
-          "screenshotAfter": "C:\\Users\\tflasche\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.TasksTest.testTasks_after.png",
+          "screenshotBefore": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.TasksTest.testTasks_before.png",
+          "screenshotAfter": "C:\\Users\\username\\IdeaProjects\\qtaf-suitecrm-tests\\logs\\2022-11-15\\09-42-39-chrome-4ff4b882-e92f-4a93-bb7c-03e7b3e99596/de.qytera.suite_crm.tests.TasksTest.testTasks_after.png",
           "tags": {}
         }
       ]
