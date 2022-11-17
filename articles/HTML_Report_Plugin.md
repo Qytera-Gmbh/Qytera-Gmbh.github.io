@@ -4,6 +4,8 @@ The QTAF HTML report plugin offers the possibility to create an HTML report from
 
 The HTML report plugin is included in the Qtaf framework by default. You do not need to add any dependencies other than the Qtaf framework itself in your `pom.xml` file.
 
+You can view an example of an HTML report from QTAF here: <a href="https://qytera-gmbh.github.io/html_report/suite_crm/Report.html" target="_blank">HTML Report</a>
+
 ### Activating the HTML Report Plugin
 
 To activate the HTML-Report-Plugin you have to set the value `htmlReport.enabled` in the configuration file to true. Then run your test cases.
