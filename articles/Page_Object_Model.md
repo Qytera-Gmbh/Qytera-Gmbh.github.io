@@ -12,7 +12,7 @@ The following HTML code is an example of a page object for a website. The page o
 
 This is the corresponding HTML source code of the shown UI element:
 
-```java
+```html
 <div>
 	<img
 	src="https://www.qytera.de/sites/default/files/startseite-2020/qytera-testmanagement-300-169.jpg" alt="" class="startseite-saeulen-logo" />
