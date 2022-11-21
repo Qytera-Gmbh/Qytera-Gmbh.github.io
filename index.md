@@ -1,7 +1,8 @@
-# Qytera GMBH
+# Qytera Software Testing Solutions GmbH
+On this page we would like to provide documentation and help for the products we primarily develop.
 
-## Das QTAF Framework
-
+## QTAF - Qytera Test Automation Framework
+On the following pages you can find instructions for the product QTAF.
 
 ### Content
 
