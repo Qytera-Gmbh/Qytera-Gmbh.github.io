@@ -17,6 +17,7 @@ On the following pages you can find instructions for the product QTAF.
 
 **QTAF Plugins**
 - <a href="/articles/XRAY_Plugin.html">Xray Plugin</a>
+- <a href="/articles/Allure_Plugin.html">Allure Plugin</a>
 
 **Dive deeper into QTAF**
 - <a href="/articles/testing/Overview_Logging.html">How the QTAF logging system works</a>
