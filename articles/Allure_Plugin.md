@@ -9,7 +9,7 @@ First we need to take care of the installation of Allure. Go to the Central Repo
 Scoop is a command line installation programme for Windows. With Scoop you can install programs and plugins for your terminal.
 
 1. Open PowerShell. You can do this by searching for PowerShell in the Start menu.
-2. Type the following in PowerShell: iwr -useb get.scoop.sh | iex
+2. Type the following in PowerShell: `iwr -useb get.scoop.sh | iex`
 3. Press the Enter key. PowerShell will now install Scoop.
 
 If you get an error message regarding ExecutionPolicy after entering the command line, enter the following command in PowerShell:
@@ -62,14 +62,14 @@ Now execute the command `allure serve` in the root directory of your project. Af
 
 ### Some Allure Screenshots
 
-##### Allure Dashboard
+#### Allure Dashboard
 
 <img src="https://qytera-gmbh.github.io/img/allure/allure_dashboard.jpg" />
 
-##### Test Steps with Screenshots
+#### Test Steps with Screenshots
 
 <img src="https://qytera-gmbh.github.io/img/allure/allure_test_steps.jpg" />
 
-##### Historic Test Executions
+#### Historic Test Executions
 
 <img src="https://qytera-gmbh.github.io/img/allure/allure_history.jpg" />
