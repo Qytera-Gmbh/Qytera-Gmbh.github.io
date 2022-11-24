@@ -8,6 +8,7 @@ On the following pages you can find instructions for the product QTAF.
 
 **Basics of Test Automation**
 - <a href="/articles/Page_Object_Model.html">The Page Object Model</a>
+- <a href="/articles/setup/IntelliJ_Project_Setup.html">How to create a new project with IntelliJ</a>
 
 
 **First steps with QTAF**
