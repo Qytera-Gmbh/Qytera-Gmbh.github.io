@@ -15,6 +15,9 @@ On the following pages you can find instructions for the product QTAF.
 - <a href="/articles/New_QTAF_Project.html">How to create your first QTAF project</a>
 - <a href="/articles/HTML_Report_Plugin.html">Exploring the HTML report</a>
 - <a href="/articles/drivers/Drivers.html">How to run your tests against different browsers using QTAF</a>
+  - <a href="/articles/drivers/Drivers.html#running-test-cases-on-a-remote-browser">Running test cases on a remote browser</a>
+  - <a href="/articles/drivers/Drivers.html#running-test-cases-on-the-saucelabs-platform">Running test cases on the Saucelabs platform</a>
+  - <a href="/articles/drivers/Drivers.html#writing-your-own-drivers">Writing your own drivers</a>
 
 **QTAF Plugins**
 - <a href="/articles/XRAY_Plugin.html">Xray Plugin</a>
