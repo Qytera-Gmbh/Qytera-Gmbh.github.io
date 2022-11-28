@@ -19,6 +19,9 @@ On the following pages you can find instructions for the product QTAF.
 - <a href="/articles/XRAY_Plugin.html">Xray Plugin</a>
 - <a href="/articles/Allure_Plugin.html">Allure Plugin</a>
 
+**QTAF and Cucumber**
+- <a href="/articles/New_Cucumber_Project">Create a QTAF Cucumber project</a>
+
 **Dive deeper into QTAF**
 - <a href="/articles/testing/Overview_Logging.html">How the QTAF logging system works</a>
 - <a href="/articles/Setup_QTAF_Locally.html">Setup QTAF Locally</a>
