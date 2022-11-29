@@ -44,6 +44,42 @@ The Selenium driver and QTAF do not have to be on the same computer. It is also 
 | driver.name             | “chrome-remote” \| “firefox-remote” \| “opera-remote” | Name des zu verwendenden Browsers / Treibers                                 |
 | driver.remoteUrl        | `<remote url>`                                          | URL under which the Selenium driver can be reached, e.g. 10.0.0.1:5555/wd/hub |
 
+For Docker, there are already pre-configured images that you can use out of the box. For example, you can create the following Docker Compose file and then connect to the Selenium containers.
+
+```yaml
+version: '3'
+services:
+  # Selenium chrome
+  selenium-chrome:
+    image: selenium/standalone-chrome-debug
+    ports:
+      - '4444:4444'
+    restart: always
+
+  # Selenium firefox
+  selenium-firefox:
+    image: selenium/standalone-firefox-debug
+    ports:
+      - '4445:4444'
+    restart: always
+
+  # Selenium opera
+  selenium-opera:
+    image: selenium/standalone-opera-debug
+    ports:
+      - '4446:4444'
+    restart: always
+```
+
+Assuming that the containers are running on your local machine, you need to set the following values for your configuration parameters:
+
+| Treiber | driver.name |    driver.RemoteUrl   |
+|:-------:|:-----------:|:---------------------:|
+| Chrome  | chrome      | 127.0.0.1:4444/wd/hub |
+| Firefox | firefox     | 127.0.0.1:4445/wd/hub |
+| Opera   | opera       | 127.0.0.1:4446/wd/hub |
+
+
 ## Running test cases on the Saucelabs platform
 
 QTAF can also run test cases on virtual machines provided by the Saucelabs platform. In order for QTAF to connect to Saucelabs virtual machines, the following configuration values must be set.
