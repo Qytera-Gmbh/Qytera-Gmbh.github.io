@@ -34,5 +34,5 @@ On the following pages you can find instructions for the product QTAF.
 - <a href="/articles/testing/Overview_Annotations.html">Which Annotations does QTAF provide?</a>
 
 <hr>
-<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a>
+<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
 <a href="https://www.qytera.de" target="_blank">Qytera Homepage</a>
