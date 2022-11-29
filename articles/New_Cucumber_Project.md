@@ -186,3 +186,7 @@ Now the project is set up so that we can run it for the first time. To do this, 
 A browser will open for a short time. However, since we have not yet created any test cases, it will close again after a short time. Furthermore, a configuration file called `configuration.json` is created in the resource directory, as well as the folder `logs`, in which you can already see log files for the test run we have just carried out.
 
 The project is now ready for the creation of test cases.
+
+<hr>
+<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+<a href="https://www.qytera.de" target="_blank">Qytera Homepage</a>

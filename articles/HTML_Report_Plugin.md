@@ -93,3 +93,7 @@ In the HTML report, you can see that the individual steps contain information ab
 Furthermore, you can also see that the passed parameters of the test steps are documented. For example, a parameter of the type string with the value `"user"` was passed to the method `fillUsernameField`.
 
 <img src="https://qytera-gmbh.github.io/img/qtaf/html_report/html_report_steps_info.jpg" />
+
+<hr>
+<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+<a href="https://www.qytera.de" target="_blank">Qytera Homepage</a>

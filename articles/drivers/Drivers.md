@@ -146,3 +146,7 @@ Now you have to enter the name of your driver in the configuration file.
 ```
 
 Now you can run your tests with the new driver.
+
+<hr>
+<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+<a href="https://www.qytera.de" target="_blank">Qytera Homepage</a>

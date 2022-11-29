@@ -31,3 +31,7 @@ After installing the necessary extensions, a view "JAVA PROJECTS" with the proje
 <img src="https://qytera-gmbh.github.io/img/vscode/vscode_test_cases.png" />
 
 To run tests, the Java Pack Extension adds the button "Run/Debug" next to the test classes, as in classic Java IDEs (Eclips or Intellij)
+
+<hr>
+<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+<a href="https://www.qytera.de" target="_blank">Qytera Homepage</a>

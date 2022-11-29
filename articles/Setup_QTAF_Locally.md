@@ -27,3 +27,7 @@ If you would like to try out your changes locally first, you can proceed as foll
 ```
 
 For example, use demo projects such as the SuiteCRM demo project to test the changes to the QTAF framework and their effects.
+
+<hr>
+<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+<a href="https://www.qytera.de" target="_blank">Qytera Homepage</a>

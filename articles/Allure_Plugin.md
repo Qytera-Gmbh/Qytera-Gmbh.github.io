@@ -73,3 +73,7 @@ Now execute the command `allure serve` in the root directory of your project. Af
 #### Historic Test Executions
 
 <img src="https://qytera-gmbh.github.io/img/allure/allure_history.jpg" />
+
+<hr>
+<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+<a href="https://www.qytera.de" target="_blank">Qytera Homepage</a>

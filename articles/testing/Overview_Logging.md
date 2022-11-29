@@ -149,3 +149,7 @@ After QTAF has translated the events of the test framework used into its own dat
 The following diagram shows the process from the creation to the processing of the event.
 
 <img src="https://qytera-gmbh.github.io/img/qtaf/architecture/qtaf_architecture.png" />
+
+<hr>
+<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+<a href="https://www.qytera.de" target="_blank">Qytera Homepage</a>

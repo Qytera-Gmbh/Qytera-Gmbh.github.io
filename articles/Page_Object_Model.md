@@ -67,3 +67,7 @@ page objects and to pass parameters to this class that can be used to react to d
 the individual page objects.
 
 <img src="https://qytera-gmbh.github.io/img/qtaf/page_objects/ui_page_objects.jpg" />
+
+<hr>
+<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+<a href="https://www.qytera.de" target="_blank">Qytera Homepage</a>
