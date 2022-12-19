@@ -70,4 +70,4 @@ the individual page objects.
 
 <hr>
 <a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
-<a href="https://www.qytera.de" target="_blank">Qytera Homepage</a>
+<a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>

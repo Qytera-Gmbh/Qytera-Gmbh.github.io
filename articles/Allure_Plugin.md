@@ -76,4 +76,4 @@ Now execute the command `allure serve` in the root directory of your project. Af
 
 <hr>
 <a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
-<a href="https://www.qytera.de" target="_blank">Qytera Homepage</a>
+<a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>

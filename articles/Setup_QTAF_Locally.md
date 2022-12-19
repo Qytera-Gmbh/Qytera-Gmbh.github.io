@@ -30,4 +30,4 @@ For example, use demo projects such as the SuiteCRM demo project to test the cha
 
 <hr>
 <a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
-<a href="https://www.qytera.de" target="_blank">Qytera Homepage</a>
+<a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>
