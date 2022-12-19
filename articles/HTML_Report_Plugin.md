@@ -95,5 +95,12 @@ Furthermore, you can also see that the passed parameters of the test steps are d
 <img src="https://qytera-gmbh.github.io/img/qtaf/html_report/html_report_steps_info.jpg" />
 
 <hr>
-<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
-<a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>
+<div style="display: flex; flex-direction: row; justify-content: space-between">
+  <a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>
+  <span>|</span>
+  <a href="https://www.qytera.de/testautomatisierung-workshop" target="_blank">Support & Service</a>
+  <span>|</span>
+  <a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+  <span>|</span>
+  <a href="https://www.qytera.de/kontakt" target="_blank">Contact</a><br>
+</div>

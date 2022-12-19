@@ -33,5 +33,12 @@ After installing the necessary extensions, a view "JAVA PROJECTS" with the proje
 To run tests, the Java Pack Extension adds the button "Run/Debug" next to the test classes, as in classic Java IDEs (Eclips or Intellij)
 
 <hr>
-<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
-<a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>
+<div style="display: flex; flex-direction: row; justify-content: space-between">
+  <a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>
+  <span>|</span>
+  <a href="https://www.qytera.de/testautomatisierung-workshop" target="_blank">Support & Service</a>
+  <span>|</span>
+  <a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+  <span>|</span>
+  <a href="https://www.qytera.de/kontakt" target="_blank">Contact</a><br>
+</div>

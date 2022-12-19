@@ -42,5 +42,4 @@ On the following pages you can find instructions for the product QTAF.
   <a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
   <span>|</span>
   <a href="https://www.qytera.de/kontakt" target="_blank">Contact</a><br>
-  <span>|</span>
 </div>

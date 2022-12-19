@@ -410,5 +410,12 @@ QTAF test cases can also be executed via the command line. This is advantageous 
 As a third option, QTAF offers to set configuration parameters via environment variables. For example, if you want to test on the Edge browser, set the environment variable `DRIVER_NAME` to the value `edge`. In a Bash shell, you can also set environment variables directly before the actual command. This would look like this: `DRIVER_NAME=edge mvn exec:java -Dexec.mainClass="org.acme.TestRunner"`. Environment variables also always overwrite the values in the `configuration.json` file.
 
 <hr>
-<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
-<a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>
+<div style="display: flex; flex-direction: row; justify-content: space-between">
+  <a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>
+  <span>|</span>
+  <a href="https://www.qytera.de/testautomatisierung-workshop" target="_blank">Support & Service</a>
+  <span>|</span>
+  <a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+  <span>|</span>
+  <a href="https://www.qytera.de/kontakt" target="_blank">Contact</a><br>
+</div>

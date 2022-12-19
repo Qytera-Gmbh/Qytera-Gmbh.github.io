@@ -188,5 +188,12 @@ A browser will open for a short time. However, since we have not yet created any
 The project is now ready for the creation of test cases.
 
 <hr>
-<a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
-<a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>
+<div style="display: flex; flex-direction: row; justify-content: space-between">
+  <a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>
+  <span>|</span>
+  <a href="https://www.qytera.de/testautomatisierung-workshop" target="_blank">Support & Service</a>
+  <span>|</span>
+  <a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+  <span>|</span>
+  <a href="https://www.qytera.de/kontakt" target="_blank">Contact</a><br>
+</div>
