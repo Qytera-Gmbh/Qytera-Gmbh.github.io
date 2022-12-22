@@ -12,14 +12,14 @@ Now check if the installation was sucecssful with the following command:
 $ java --version
 ```
 
-Now open VSCode and installthe extension "Extension Pack for Java".
+Now open VSCode and install the extension "Extension Pack for Java".
 
 <video width="320" height="240" controls>
   <source src="https://qytera-gmbh.github.io/video/vscode/extension_pack_for_java_installation.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
-Furthermore you need to install teh extension "Maven for Java".
+Furthermore you need to install the extension "Maven for Java".
 
 <video width="320" height="240" controls>
   <source src="https://qytera-gmbh.github.io/video/vscode/maven_for_java_installation.mp4" type="video/mp4">
@@ -30,7 +30,7 @@ After installing the necessary extensions, a view "JAVA PROJECTS" with the proje
 
 <img src="https://qytera-gmbh.github.io/img/vscode/vscode_test_cases.png" />
 
-To run tests, the Java Pack Extension adds the button "Run/Debug" next to the test classes, as in classic Java IDEs (Eclips or Intellij)
+To run tests, the Java Pack Extension adds the button "Run/Debug" next to the test classes, as in classic Java IDEs (Eclips or Intellij).
 
 <hr>
 <div style="display: flex; flex-direction: row; justify-content: space-between">
