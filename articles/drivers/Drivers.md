@@ -8,16 +8,16 @@ A driver provides an interface between the test framework and the browser or the
 
 QTAF relieves the tester of the initialisation of a driver object. The tester only has to specify via the configuration file which browser he wants to use for testing.  To do this, he enters the name of the driver in the attribute `driver.name` of the configuration file. Alternatively, the environment variable `DRIVER_NAME` can be set or the parameter `-Ddriver.name` can be passed via the command line when executing the test cases.
 
-## List of Selenium driver configurations provided by QTAF.
+## List of Selenium driver configurations provided by QTAF
 
-The following is a list of Selenium drivers provided by the QTAF framework and the names you have to set for the parameter `driver.name`to use these.
+The following is a list of Selenium drivers provided by the QTAF framework and the names you have to set for the parameter `driver.name` to use these.
 
-|         Driver        |   `driver.name`  |                                     Description                                     |
+|         Driver         |   driver.name  |                                     Description                                      |
 |:----------------------:|:--------------:|:------------------------------------------------------------------------------------:|
 | ChromeDriver           | chrome         | Driver for testing on a Chrome browser.                                              |
 | ChromeRemoteDriver     | chrome-remote  | Driver for testing on a Chrome browser that is accessible via a network connection.  |
 | EdgeDriver             | edge           | Driver for testing on an Edge browser.                                               |
-| EdgeRemoteDriver             | edge-remote           | Driver for testing on an Edge browser that is accessible via a network connection.                                               |
+| EdgeRemoteDriver       | edge-remote    | Driver for testing on an Edge browser that is accessible via a network connection.   |
 | FirefoxDriver          | firefox        | Driver for testing on a Firefox browser.                                             |
 | FirefoxRemoteDriver    | firefox-remote | Driver for testing on a Firefox browser that is accessible via a network connection. |
 | OperaDriver            | opera          | Driver for testing on an Opera browser.                                              |
@@ -29,9 +29,9 @@ The following is a list of Selenium drivers provided by the QTAF framework and t
 
 QTAF uses the <a href="https://github.com/bonigarcia/webdrivermanager" target="_blank">Webdrivermanager</a>, so there is no need to install a Selenium driver on your PC. However, you must ensure that the desired browsers are installed on your PC. To test on a local browser, set the following configuration parameters:
 
-| Configuration parameter |                        Value                        |                 Description                 |
+| Configuration parameter |                        Value                       |                 Description                  |
 |:-----------------------:|:--------------------------------------------------:|:--------------------------------------------:|
-| driver.name             | “chrome” \| “firefox” \| “edge” \| “opera” \| “ie” | Name of the drivers |
+| driver.name             | “chrome” \| “firefox” \| “edge” \| “opera” \| “ie” | Name of the drivers                          |
 
 This is already sufficient for QTAF to be able to execute the test cases on the desired browser. When executing the test cases, QTAF automatically starts the browser and executes the test cases in it.
 
@@ -39,10 +39,10 @@ This is already sufficient for QTAF to be able to execute the test cases on the 
 
 The Selenium driver and QTAF do not have to be on the same computer. It is also possible to connect QTAF to remote drivers via a network connection. Use cases for this include Docker environments or virtual machines running a Selenium driver. To do this, set the following configuration parameters:
 
-| Configuration parameter |                          Value                         |                                 Description                                 |
-|:-----------------------:|:-----------------------------------------------------:|:----------------------------------------------------------------------------:|
-| driver.name             | “chrome-remote” \| “firefox-remote” \| “opera-remote” | Name des zu verwendenden Browsers / Treibers                                 |
-| driver.remoteUrl        | `<remote url>`                                          | URL under which the Selenium driver can be reached, e.g. 10.0.0.1:5555/wd/hub |
+| Configuration parameter |                          Value                        |                                  Description                                  |
+|:-----------------------:|:-----------------------------------------------------:|:-----------------------------------------------------------------------------:|
+| driver.name             | “chrome-remote” \| “firefox-remote” \| “opera-remote” | Name of the browser / driver to be used                                       |
+| driver.remoteUrl        | `<remote url>`                                        | URL under which the Selenium driver can be reached, e.g. 10.0.0.1:5555/wd/hub |
 
 For Docker, there are already pre-configured images that you can use out of the box. For example, you can create the following Docker Compose file and then connect to the Selenium containers.
 
@@ -85,20 +85,20 @@ Assuming that the containers are running on your local machine, you need to set 
 QTAF can also run test cases on virtual machines provided by the Saucelabs platform. In order for QTAF to connect to Saucelabs virtual machines, the following configuration values must be set.
 
 | Configuration parameter |                        Value                        |                                            Description                                            |
-|:-----------------------:|:--------------------------------------------------:|:--------------------------------------------------------------------------------------------------:|
-| driver.remoteUrl        | https://ondemand.eu-central-1.saucelabs.com/wd/hub | URL under which the Selenium driver from Saucelabs can be reached. See also the following <a href="https://docs.saucelabs.com/basics/data-center-endpoints/" target="_blank">link</a>. |
-| driver.name             | sauce                                              |                                                                                                    |
-| driver.version          | `<driver_version>`                                   | version of the driver / browsers                                                                    |
-| sauce.browserName       | `<browser_name>`                                      | Name of the browser (Chrome, Firefox, …), see <a href="https://saucelabs.com/platform/supported-browsers-devices" target="_blank">link                                                 |</a>
-| driver.platform         | `<platform_name>`                                     | Name of the platform (Windows 10, Windows 11, …), siehe <a href="https://saucelabs.com/platform/supported-browsers-devices" target="_blank">link</a>                                         |
-| sauce.username          | `<username>`                                         | Saucelabs username (use environment variables for this configuration parameter for security reasons)                      |
-| sauce.accessKey         | `<access_key>`                                       | Saucelabs access key (use environment variables for this configuration parameter for security reasons)                    |
+|:-----------------------:|:---------------------------------------------------:|:--------------------------------------------------------------------------------------------------:|
+| driver.remoteUrl        | https://ondemand.eu-central-1.saucelabs.com/wd/hub  | URL under which the Selenium driver from Saucelabs can be reached. See also the following <a href="https://docs.saucelabs.com/basics/data-center-endpoints/" target="_blank">link</a>. |
+| driver.name             | sauce                                               |                                                                                                                                                                                              |
+| driver.version          | `<driver_version>`                                  | version of the driver / browsers                                                                                                                                                            |
+| sauce.browserName       | `<browser_name>`                                    | Name of the browser (Chrome, Firefox, …), see <a href="https://saucelabs.com/platform/supported-browsers-devices" target="_blank">link</a>              |
+| driver.platform         | `<platform_name>`                                   | Name of the platform (Windows 10, Windows 11, …), see <a href="https://saucelabs.com/platform/platform-configurator" target="_blank">link</a>                   |
+| sauce.username          | `<username>`                                        | Saucelabs username (use environment variables for this configuration parameter for security reasons)                                                                                      |
+| sauce.accessKey         | `<access_key>`                                      | Saucelabs access key (use environment variables for this configuration parameter for security reasons)                                                                                      |
 
 ## Writing your own drivers
 
 In some scenarios, QTAF's pre-configured drivers may not meet the tester's needs. In this case, QTAF offers the possibility to write your own driver class and use it during testing. 
 
-Let us assume for the following scenario that you want to test on a browser for which Qtaf does not provide a corresponding driver. However, you have found a library that provides such a Selenium-compatible driver and now want to use this driver with Qtaf. Proceed as follows:
+Let us assume for the following scenario that you want to test on a browser for which QTAF does not provide a corresponding driver. However, you have found a library that provides such a Selenium-compatible driver and now want to use this driver with QTAF. Proceed as follows:
 
 Create a package in your Java project in which you want to write the driver class. In this example, this is the package `org.acme.driver`.
 
@@ -123,7 +123,7 @@ public class MyDriver extends AbstractDriver {
 }
 ```
 
-In order for QTAF to be able to find your implementation of the driver, you must also enter the name of the package in which the driver is to be found in the configuration file. You can also enter several packages here. Qtaf will scan this package for all classes that implement the `AbstractDriver` interface.
+In order for QTAF to be able to find your implementation of the driver, you must also enter the name of the package in which the driver is to be found in the configuration file. You can also enter several packages here. QTAF will scan this package for all classes that implement the `AbstractDriver` interface.
 
 ```json
 {
@@ -153,7 +153,7 @@ Now you can run your tests with the new driver.
   <span>|</span>
   <a href="https://www.qytera.de/testautomatisierung-workshop" target="_blank">Support & Service</a>
   <span>|</span>
-  <a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+  <a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a>
   <span>|</span>
   <a href="https://www.qytera.de/kontakt" target="_blank">Contact</a><br>
 </div>
