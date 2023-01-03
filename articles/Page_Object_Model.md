@@ -74,7 +74,7 @@ the individual page objects.
   <span>|</span>
   <a href="https://www.qytera.de/testautomatisierung-workshop" target="_blank">Support & Service</a>
   <span>|</span>
-  <a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a><br>
+  <a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a>
   <span>|</span>
   <a href="https://www.qytera.de/kontakt" target="_blank">Contact</a><br>
 </div>
