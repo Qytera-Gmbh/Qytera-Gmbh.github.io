@@ -41,13 +41,13 @@ public class CucumberRunner extends QtafTestNGCucumberContext {
 
 To create test cases using Qtaf with Cucumber, we first need to create a so-called test runner. This test runner is a class that provides information about the location of the Cucumber feature files and the step definitions by means of an annotation.
 
-In the following example we assume that our source code is organised in the package `org.acme`. We create a new class in this package called `Testrunner`. This class must have the following properties:
+In the following example we assume that our source code is organised in the package `org.acme`. We create a new class in this package called `TestRunner`. This class must have the following properties:
 
 1. The class will have the annotation `@CucumberOptions`. This annotation provides information on where to find the feature files `(features = {"..."})`, where to find the corresponding step definitions `(glue = {"..."})`, which tag (not) to run `(tags = "...")` and which Cucumber plugin to use to create the reports `(plugin = {"..."})`.
 2. The `TestRunner` class must inherit from the CucumberQtafTestContext class.
-3. The `Testrunner` class must contain a method that is annotated with the `@DataProvider` annotation of the TestNG framework and returns a list of scenarios, which is done by calling `super.scenarios()`.
+3. The `TestRunner` class must contain a method that is annotated with the `@DataProvider` annotation of the TestNG framework and returns a list of scenarios, which is done by calling `super.scenarios()`.
 
-The following code shows a sample implementation of this class.
+The following code shows a sample implementation of this class:
 
 ```java
 package org.acme;
@@ -113,11 +113,11 @@ public class TestListener extends QtafCucumberHooks {
 }
 ```
 
-Cucumber will automatically recognise this class as a listener class through the annotations `@Before`, `@BeforeStep`, `@After` andd `@AfterStep`. Within this methods, we let the QTAF framework perform the further steps for logging by calling these methods.
+Cucumber will automatically recognise this class as a listener class through the annotations `@Before`, `@BeforeStep`, `@After` and `@AfterStep`. Within this methods, we let the QTAF framework perform the further steps for logging by calling these methods.
 
 ## Creating feature files
 
-In the `Testrunner` class we have specified that the feature files are to be found in the `src/test/resources/features` directory relative to the root directory of our project. In this folder we now place our first feature file with the name `GoogleSearch`.feature. The name of the file can be freely chosen. As long as the file ends with `.feature` and is located in the directory that we specified with the annotation `@CucumberOptions`, Cucumber is able to find this file and interpret it as a test case.
+In the `TestRunner` class we have specified that the feature files are to be found in the `src/test/resources/features` directory relative to the root directory of our project. In this folder we now place our first feature file with the name `GoogleSearch`.feature. The name of the file can be freely chosen. As long as the file ends with `.feature` and is located in the directory that we specified with the annotation `@CucumberOptions`, Cucumber is able to find this file and interpret it as a test case.
 
 Now we write the following content into our feature file:
 
@@ -153,7 +153,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class FirstStepDef extends QtafTestContext {
+public class StepDef extends QtafTestContext {
 
     @Given("Launch the browser")
     public void launchTheBrowser() {
@@ -179,7 +179,7 @@ public class FirstStepDef extends QtafTestContext {
 
 ## Run program
 
-Now the project is set up so that we can run it for the first time. To do this, we click on an icon with a green file to the left of the name of the main class in IntelliJ. A dialogue then opens where we click on Run `CucumberRunner`. This first run allows QTAF to create further required directories and files on its own.
+Now the project is ready so that we can run it for the first time. To do this, we click on an icon with a green file to the left of the name of the main class in IntelliJ. A dialogue then opens where we click on Run `CucumberRunner`. This first run allows QTAF to create further required directories and files on its own.
 
 <img src="https://qytera-gmbh.github.io/img/cucumber/cucumber_testrunner_exec.png" />
 
