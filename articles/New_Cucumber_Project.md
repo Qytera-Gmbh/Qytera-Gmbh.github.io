@@ -8,35 +8,6 @@ The Java code of the Maven project is stored in the subfolder `src/main/java`, t
 
 Within the Java directory we create the package `org.acme`, because in this example we are creating a project for the fictitious company Acme GmbH. Furthermore, we create the folder `features` in the `resources` directory, which will later contain our feature files.
 
-## Creating a main class
-
-The next step in setting up a Cucumber project using QTAF is to create a main class that will call and execute our Cucumber feature files. In this example, we create the main class in the Java package `org.acme`. Note here that this class inherits from `QtafTestNGCucumberContext` and not from `QtafTestNGContext`.
-
-```java
-package org.acme;
-
-import de.qytera.qtaf.cucumber.context.QtafTestNGCucumberContext;
-import io.cucumber.testng.CucumberOptions;
-import org.testng.annotations.DataProvider;
-
-/**
- * Main class to execute Cucumber Tests
- */
-@CucumberOptions(
-        features = {"src/main/resources/features"},
-        glue = {"tests.stepdefs"},
-        tags = "",
-        plugin = {"pretty"}
-)
-public class CucumberRunner extends QtafTestNGCucumberContext {
-    @Override
-    @DataProvider(parallel = true)
-    public Object[][] scenarios() {
-        return super.scenarios();
-    }
-}
-```
-
 ## Creating test cases
 
 To create test cases using Qtaf with Cucumber, we first need to create a so-called test runner. This test runner is a class that provides information about the location of the Cucumber feature files and the step definitions by means of an annotation.
@@ -52,22 +23,20 @@ The following code shows a sample implementation of this class:
 ```java
 package org.acme;
 
-import de.qytera.qtaf.core.context.CucumberQtafTestContext;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.BeforeStep;
-import io.cucumber.java.Scenario;
+import de.qytera.qtaf.cucumber.context.QtafTestNGCucumberContext;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
-
+/**
+ * Main class to execute Cucumber Tests
+ */
 @CucumberOptions(
-        features = {"src/test/resources/features"},
+        features = {"src/main/resources/features"},
         glue = {"org.acme.stepdefs"},
         tags = "",
         plugin = {"pretty"}
 )
-public class TestRunner extends CucumberQtafTestContext {
-
+public class TestRunner extends QtafTestNGCucumberContext {
     @Override
     @DataProvider(parallel = true)
     public Object[][] scenarios() {
@@ -83,9 +52,10 @@ In order for QTAF to be able to create log files for the executed test cases, yo
 In this folder, create a class called `TestListener` that inherits from the QTAF framework class `QtafCucumberHooks` and add the following methods to it:
 
 ```java
-import de.qytera.qtaf.core.cucumber.listener.QtafCucumberHooks;
-import io.cucumber.java.After;
-import io.cucumber.java.Scenario;
+package org.acme.stefdefs;
+
+import de.qytera.qtaf.cucumber.listener.QtafCucumberHooks;
+import io.cucumber.java.*;
 
 /**
  * This class listens to cucumber hooks and produces logs
@@ -117,13 +87,13 @@ Cucumber will automatically recognise this class as a listener class through the
 
 ## Creating feature files
 
-In the `TestRunner` class we have specified that the feature files are to be found in the `src/test/resources/features` directory relative to the root directory of our project. In this folder we now place our first feature file with the name `GoogleSearch`.feature. The name of the file can be freely chosen. As long as the file ends with `.feature` and is located in the directory that we specified with the annotation `@CucumberOptions`, Cucumber is able to find this file and interpret it as a test case.
+In the `TestRunner` class we have specified that the feature files are to be found in the `src/main/resources/features` directory relative to the root directory of our project. In this folder we now place our first feature file with the name `GoogleSearch`.feature. The name of the file can be freely chosen. As long as the file ends with `.feature` and is located in the directory that we specified with the annotation `@CucumberOptions`, Cucumber is able to find this file and interpret it as a test case.
 
 Now we write the following content into our feature file:
 
 ```gherkin
-# Test the Google search function
-Feature: Google Search
+# Test the Qytera search function
+Feature: Qytera Search
   
   # This step will run before each scenario
   Background: The browser will be launched
@@ -131,8 +101,7 @@ Feature: Google Search
 
   # Test case 1
   @TestName:QTAF-1
-  Scenario: Search for Cucumber in Google
-    When Hit Qytera on your browser
+  Scenario: Search for Cucumber in Qytera
     Then Enter "Cucumber" in the search text box
     And Select the first result
 ```
@@ -181,7 +150,7 @@ public class StepDef extends QtafTestContext {
 
 Now the project is ready so that we can run it for the first time. To do this, we click on an icon with a green file to the left of the name of the main class in IntelliJ. A dialogue then opens where we click on Run `CucumberRunner`. This first run allows QTAF to create further required directories and files on its own.
 
-<img src="https://qytera-gmbh.github.io/img/cucumber/cucumber_testrunner_exec.png" />
+<img src="https://qytera-gmbh.github.io/img/cucumber/cucumber_testrunner_exec.jpg" />
 
 A browser will open for a short time. However, since we have not yet created any test cases, it will close again after a short time. Furthermore, a configuration file called `configuration.json` is created in the resource directory, as well as the folder `logs`, in which you can already see log files for the test run we have just carried out.
 
