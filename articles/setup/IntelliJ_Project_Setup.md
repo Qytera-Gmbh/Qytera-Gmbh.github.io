@@ -1,5 +1,7 @@
 # Setup new QTAF Project with IntelliJ and Maven
 
+Before you read this article you should be familiar with the QTAF framework. You can read <a href="https://qytera-gmbh.github.io/articles/New_QTAF_Project.html" target="_blank">this</a> article if you want to understand the Java code which is shown here.
+
 To create a new project, we use the IntelliJ IDE from Jetbrains. Here we navigate in the menu to `File > New > Project` and then select `Maven` in the left selection menu and click on Next.
 
 <img src="https://qytera-gmbh.github.io/img/intellij/intellij_new_maven_project.png" />
