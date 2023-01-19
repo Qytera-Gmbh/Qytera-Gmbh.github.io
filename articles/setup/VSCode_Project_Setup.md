@@ -1,5 +1,7 @@
 # Setup QTAF in VSCode
 
+Before you read this article you should be familiar with the QTAF framework. You can read <a href="https://qytera-gmbh.github.io/articles/New_QTAF_Project.html" target="_blank">this</a> article if you want to understand the Java code which is shown here.
+
 Front-end developers mostly use VSCode IDE for developing front-end applications, so it is of great importance that they can also start back-end projects with VSCode.
 
 To test the QTAF implementation under VSCode, Java 17 should first be installed on the system, there are several tutorials on this. The following instructions show how to install Java 17 on different operating systems:
