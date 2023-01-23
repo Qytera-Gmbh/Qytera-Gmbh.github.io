@@ -1,24 +1,24 @@
 # QTAF Xray Plugin
 
-One possibility to export and document test results is the tool "Xray" of Jira. In this article we show you how to create test cases in Xray, how to link your test cases written in Java with the test cases defined in Xray and how QTAf can automatically save the test results of your test runs in Xray.
+One possibility to export and document test results is *Xray for Jira*. In this article we show you how to create test cases in Xray, how to link your test cases written in Java with the test cases defined in Xray and how QTAf can automatically save the test results of your test runs in Xray.
 
 ## Create test cases in Xray
 
-The first step is to create the definitions of our test cases in Xray. In our example, we will create three test case definitions called "QTAF-1", "QTAF-2" and "QTAF-3".
+The first step is to create the definitions of our test cases in Xray. In our example, we will create three test case definitions called `QTAF-1`, `QTAF-2` and `QTAF-3`.
 
 First you have to click on "Testing Board" in the left menu of Jira to get to the user interface of Xray. The following screenshot shows the testing board of our example project. Create the three test case definitions for our test cases here.
 
 <img src="https://qytera-gmbh.github.io/img/qtaf/xray_plugin/xray_testing_board.png" />
 
-Test steps must still be defined for each of the three tests. In the Xray user interface, these can be found in the "Test Details" section. In our example, we assume that the tests "QTAF-1", "QTAF-2" and "QTAF-3" have two, three and two steps respectively. The following picture shows the test case "QTAF-1" in Xray:
+Test steps must still be defined for each of the three tests. In the Xray user interface, these can be found in the "Test Details" section. In our example, we assume that the tests `QTAF-1`, `QTAF-2` and `QTAF-3` have two, three and two steps respectively. The following picture shows the test case `QTAF-1` in Xray:
 
 <img src="https://qytera-gmbh.github.io/img/qtaf/xray_plugin/xray_test_steps.png" />
 
-## Qtaf and Xray
+## QTAF and Xray
 
-This section shows how the recorded information about the executed test cases and test steps can be sent automatically to Xray.
+This section shows how the recorded information about the executed test cases and test steps can be automatically sent to Xray.
 
-First we have to store the credentials for Xray in the configuration.json file. To do this, add the following section to this file:
+First we have to store the credentials for Xray in the `configuration.json` file. To do this, add the following section to this file:
 
 ```json
 {
@@ -34,7 +34,7 @@ First we have to store the credentials for Xray in the configuration.json file. 
 }
 ```
 
-Tehn create three test cases and annotate each with all required annotations. To assign a test class to a test case in Xray, the attribute `name` of the annotation `@Test` must correspond to the name of the test case in Xray. The following example shows a test whose results are to be stored in Xray under the key "QTAF-1".
+Then create three test cases and annotate each with all required annotations. To assign a test class to a test case in Xray, the attribute `name` of the annotation `@Test` must correspond to the name of the test case in Xray. The following example shows a test whose results are to be stored in Xray under issua `QTAF-1`.
 
 ```java
 @TestFeature(
