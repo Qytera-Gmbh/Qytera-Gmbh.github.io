@@ -1,7 +1,7 @@
 # Create a Cucumber Project with QTAF
 
 This article describes how to set up a QTAF Cucumber project. It is assumed that you have already set up a Maven project using IntelliJ and have included QTAF as a dependency. How this can be done is described in the following article: <a href="/articles/New_QTAF_Project.html" target="_blank">QTAF - Project Creation</a>.<br />
-Also you can use our <a href="/articles/QTAFCucumberProject" target="_blank">QTAF with Cucumber</a> example project to try out.
+Also you can use our <a href="/articles/QTAFCucumberProject" target="_blank">QTAF with Cucumber</a> example project to try it out.
 
 ## Create folder and package structure
 
