@@ -34,7 +34,7 @@ This file can be used to manage plug-ins and extensions of the project. Now we o
 </dependency>
 ```
 
-Replace the version number with the latest version of QTAF. You can find this in the Central Maven Repository under the following link: <a href="https://mvnrepository.com/artifact/de.qytera/qtaf" target="_blank">QTAF Central Repository</a>
+Replace the version number with the latest version of QTAF. You can find this in the Central Maven Repository under the following link: <a href="https://mvnrepository.com/artifact/de.qytera/qtaf-core" target="_blank">QTAF Central Repository</a>
 
 # Overview of the project structure
 
