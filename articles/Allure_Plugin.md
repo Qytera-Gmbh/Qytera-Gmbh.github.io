@@ -30,14 +30,23 @@ You can verify that Allure is installed correctly by opening a terminal and typi
 
 ## The QTAF Allure Plugin
 
-To install the QTAF Allure plugin, add the following dependency to your Maven project:
+In addition to `qtaf-core`, first integrate the dependency `qtaf-allure-plugin` into your project: Make sure that you use the current version numbers of these modules. You can find them at the <a href="https://mvnrepository.com/artifact/de.qytera" target="_blank">Maven Repository</a>
 
 ```xml
-<dependency>
-    <groupId>de.qytera</groupId>
-    <artifactId>qtaf-allure-plugin</artifactId>
-    <version>0.0.1</version>
-</dependency>
+<dependencies>
+    <dependency>
+        <groupId>de.qytera</groupId>
+        <artifactId>qtaf-core</artifactId>
+        <version>0.0.3</version>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>de.qytera</groupId>
+        <artifactId>qtaf-allure-plugin</artifactId>
+        <version>0.0.3</version>
+        <scope>compile</scope>
+    </dependency>
+</dependencies>
 ```
 
 Check the <a href="https://mvnrepository.com/artifact/de.qytera/qtaf-allure-plugin" target="_blank">Maven Central repository</a> for the current version of the plugin.

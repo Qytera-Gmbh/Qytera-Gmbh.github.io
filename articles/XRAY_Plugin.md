@@ -34,14 +34,14 @@ First we have to store the credentials for Xray in the `configuration.json` file
 }
 ```
 
-Then create three test cases and annotate each with all required annotations. To assign a test class to a test case in Xray, the attribute `name` of the annotation `@Test` must correspond to the name of the test case in Xray. The following example shows a test whose results are to be stored in Xray under issua `QTAF-1`.
+Then create three test cases and annotate each with all required annotations. To assign a test class to a test case in Xray, the attribute `testName` of the annotation `@Test` must correspond to the ID of the test case in Xray. The following example shows a test whose results are to be stored in Xray under issua `QTAF-1`.
 
 ```java
 @TestFeature(
         name = "DoGoogleSearch",
         description = "Perform a search for text 'Hello World'"
 )
-public class DoGoogleSearch extends GoogleTestContext {
+public class DoGoogleSearch extends TestContext {
 
     @Test(
             testName = "QTAF-1",
@@ -86,7 +86,7 @@ We then call these methods in the test case.
         name = "DoGoogleSearch",
         description = "Perform a search for text 'Hello World'"
 )
-public class DoGoogleSearch extends GoogleTestContext {
+public class DoGoogleSearch extends TestContext {
 
     @Test(
             testName = "QTAF-1",

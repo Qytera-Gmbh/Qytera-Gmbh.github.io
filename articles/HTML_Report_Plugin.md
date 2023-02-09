@@ -8,6 +8,25 @@ You can view an example of an HTML report from QTAF here: <a href="https://qyter
 
 ### Activating the HTML Report Plugin
 
+In addition to `qtaf-core`, first integrate the dependency `qtaf-html-report-plugin` into your project: Make sure that you use the current version numbers of these modules. You can find them at the <a href="https://mvnrepository.com/artifact/de.qytera" target="_blank">Maven Repository</a>
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>de.qytera</groupId>
+        <artifactId>qtaf-core</artifactId>
+        <version>0.0.3</version>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>de.qytera</groupId>
+        <artifactId>qtaf-html-report-plugin</artifactId>
+        <version>0.0.3</version>
+        <scope>compile</scope>
+    </dependency>
+</dependencies>
+```
+
 To activate the HTML-Report-Plugin you have to set the value `htmlReport.enabled` in the configuration file to true. Then run your test cases.
 
 ```json
