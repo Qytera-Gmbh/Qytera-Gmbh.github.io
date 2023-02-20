@@ -18,7 +18,26 @@ Test steps must still be defined for each of the three tests. In the Xray user i
 
 This section shows how the recorded information about the executed test cases and test steps can be automatically sent to Xray.
 
-First we have to store the credentials for Xray in the `configuration.json` file. To do this, add the following section to this file:
+In addition to `qtaf-core`, first integrate the dependency `qtaf-xray-plugin` into your project: Make sure that you use the current version numbers of these modules. You can find them at the <a href="https://mvnrepository.com/artifact/de.qytera" target="_blank">Maven Repository</a>
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>de.qytera</groupId>
+        <artifactId>qtaf-core</artifactId>
+        <version>0.0.3</version>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>de.qytera</groupId>
+        <artifactId>qtaf-xray-plugin</artifactId>
+        <version>0.0.3</version>
+        <scope>compile</scope>
+    </dependency>
+</dependencies>
+```
+
+Next we have to store the credentials for Xray in the `configuration.json` file. To do this, add the following section to this file:
 
 ```json
 {
