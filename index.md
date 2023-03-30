@@ -15,6 +15,7 @@ On the following pages you can find instructions for the product QTAF.
 
 **First steps with QTAF**
 - <a href="/articles/New_QTAF_Project.html">How to create your first QTAF project</a>
+- <a href="/articles/Data_Providers.html">Use Data Providers in your test scenarios</a>
 - <a href="/articles/HTML_Report_Plugin.html">Exploring the HTML report</a>
 - <a href="/articles/drivers/Drivers.html">How to run your tests against different browsers using QTAF</a>
   - <a href="/articles/drivers/Drivers.html#running-test-cases-on-a-remote-browser">Connect QTAF to a remote driver</a>
