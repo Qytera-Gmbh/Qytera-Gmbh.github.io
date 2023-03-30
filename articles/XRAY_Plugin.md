@@ -25,13 +25,13 @@ In addition to `qtaf-core`, first integrate the dependency `qtaf-xray-plugin` in
     <dependency>
         <groupId>de.qytera</groupId>
         <artifactId>qtaf-core</artifactId>
-        <version>0.0.3</version>
+        <version>${qtafVersion}</version>
         <scope>compile</scope>
     </dependency>
     <dependency>
         <groupId>de.qytera</groupId>
         <artifactId>qtaf-xray-plugin</artifactId>
-        <version>0.0.3</version>
+        <version>${qtafVersion}</version>
         <scope>compile</scope>
     </dependency>
 </dependencies>
@@ -53,20 +53,22 @@ Next we have to store the credentials for Xray in the `configuration.json` file.
 }
 ```
 
-Then create three test cases and annotate each with all required annotations. To assign a test class to a test case in Xray, the attribute `testName` of the annotation `@Test` must correspond to the ID of the test case in Xray. The following example shows a test whose results are to be stored in Xray under issua `QTAF-1`.
+Then create three test cases and annotate each with all required annotations. To assign a test class to a test in Xray the annotation `@XrayTest` must be set for the respective Java method and the attribute `key` of the annotation must correspond to the key of the test in Xray. The following example shows a test whose results are to be stored in Xray under issua `QTAF-1`.
 
 ```java
+import de.qytera.qtaf.xray.annotation.XrayTest;
+
 @TestFeature(
         name = "DoGoogleSearch",
         description = "Perform a search for text 'Hello World'"
 )
 public class DoGoogleSearch extends TestContext {
-
     @Test(
-            testName = "QTAF-1",
+            testName = "TestGoogleSearch",
             description = "Type 'Hello World' and click search button",
             groups = {"Group 1", "Group 2"}
     )
+    @XrayTest(key = "QTAF-1")
     public void TestCaseGoogleSearch()
     {
         // test logic here
@@ -105,12 +107,14 @@ We then call these methods in the test case.
         name = "DoGoogleSearch",
         description = "Perform a search for text 'Hello World'"
 )
-public class DoGoogleSearch extends TestContext {
-
+public class DoGoogleSearch extends TestContext
+{
     @Test(
-            testName = "QTAF-1",
-            description = "Type 'Hello World' and click search button"
+            testName = "TestGoogleSearch",
+            description = "Type 'Hello World' and click search button",
+            groups = {"Group 1", "Group 2"}
     )
+    @XrayTest(key = "QTAF-1")
     public void TestCaseGoogleSearch()
     {
          // 1. Open Google
