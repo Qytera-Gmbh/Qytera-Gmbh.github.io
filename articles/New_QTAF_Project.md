@@ -29,35 +29,15 @@ This file can be used to manage plug-ins and extensions of the project. Now we o
 <dependency>
     <groupId>de.qytera</groupId>
     <artifactId>qtaf-core</artifactId>
-    <version>0.0.1</version>
-    <scope>test</scope>
+    <version>${qtafVersion}</version>
 </dependency>
 ```
 
-Replace the version number with the latest version of QTAF. You can find this in the Central Maven Repository under the following link: <a href="https://mvnrepository.com/artifact/de.qytera/qtaf-core" target="_blank">QTAF Central Repository</a>
+Replace `${qtafVersion}` by the version number with the latest version of QTAF. You can find this in the Central Maven Repository under the following link: <a href="https://mvnrepository.com/artifact/de.qytera/qtaf-core" target="_blank">QTAF Central Repository</a>
 
 # Overview of the project structure
 
 After creating the project, a file called `pom.xml` should have been created in the root directory of the project with the following content.
-
-## Create TestRunner class
-A TestRunner is a Java class that controls the execution of tests. At the same time, it takes over the initialisation of the QTAF project the first time a test execution is carried out.
-
-Go to the Java package you specified in the `pom.xml` file for the attribute groupId. In the example from this article, this would be the package `org.acme`. Create a new class called `TestRunner` in this package and let this class inherit from the class `QtafTestNGRunner`.
-
-```java
-package org.acme;
-
-import de.qytera.qtaf.testng.QtafTestNGRunner;
-
-public class TestRunner extends QtafTestNGRunner {
-
-}
-```
-
-The class `QtafTestNGRunner` has a main method so that it is executable. The class `TestRunner` just created inherits this method from its parent class and is therefore also executable. In IntelliJ, you can click on the small green tick to the left of the class name to execute the main method of the class (see image).
-
-When executing the class, QTAF checks for the existence of various files and folders that are needed by QTAF. If these have not yet been created, they will be created automatically. Among other things, a configuration file is created in the folder `./src/main/resources/en/qytera/qtaf/core/config` when the TestRunner class is executed. You can use this configuration file to control and parameterise the test execution of QTAF. Furthermore, the folder `./logs` is created in which you can find the reports of the individual test executions. After the first run of TestRunner, QTAF is already set up and you can start creating test cases.
 
 ## Create test cases
 
@@ -65,7 +45,7 @@ When executing the class, QTAF checks for the existence of various files and fol
 
 Now the project should be initialised. We can now devote ourselves to creating the first test case. 
 
-First we create the package `org.acme.tests`, where we will store our test case classes in the future. Create a class `TestOne` in this package with the following content:
+First we create the package `org.acme.tests` in the directrory `src/test/java`, where we will store our test case classes in the future. Create a class `TestOne` in this package with the following content:
 
 ```java
 package org.acme.tests;
@@ -95,54 +75,12 @@ public class TestOne extends QtafTestNGContext {
 
 ### Run tests
 
-You can run the tests in two ways. In the first case, you can run the tests via the command line with the command mvn exec:java -Dexec.mainClass="org.acme.TestRunner". In our example, one test should succeed and the second test should fail. The output on the command line should end with the following text:
+You can run the tests in two ways. In the first case, you can run the tests via the command line with the command `mvn clean test`. In our example, one test should succeed and the second test should fail. The output on the command line should end with the following text:
 
 ```
 Results :
 
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
-
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  15.570 s
-[INFO] Finished at: 2020-11-05T11:04:36+01:00
-[INFO] ------------------------------------------------------------------------
-```
-
-The second option is to run tests using the IntelliJ IDE. To do this, click on the green triangles next to the test methods in the TestOne class to run individual tests or on the green triangle next to the TestRunner class to run all tests and then click on Run test in the menu that opens. 
-
-You will now see two things: Firstly, the test cases seem not to have been found, and secondly, new directories and files have been created in your project. In the subdirectory de/qytera/qtaf/core/config of the resource folder of your Maven project a new file named configuration.json. has been created. Within this file parameters for the test execution can be defined. Within this file we now have to edit the following block:
-
-
-```json
-  "tests":{
-    "suite":{
-      "name":""
-    },
-    "package":""
-  }
-```
-
-Now enter the name of the package in which we will define our test cases for the value "package". This tells QTAF which packages to search for test cases. In our example, this will be the package `org.acme.tests`. Thus, the block shown should look like this:
-
-```json
-  "tests":{
-    "suite":{
-      "name":""
-    },
-    "package":"org.acme.tests"
-  }
-```
-
-The `configuration.json` file contains many more values, but these are covered in a separate article.
-
-Now we run the test cases again. Now they have been found by QTAF. You should now see something like the following output:
-
-```
-Results :
-
-Failed tests:   testFailure(TestOne): expected [3] but found [4]
+Failed tests:   testFailure(org.acme.tests.TestOne): expected [3] but found [4]
 
 Tests run: 2, Failures: 1, Errors: 0, Skipped: 0
 
@@ -150,11 +88,15 @@ Tests run: 2, Failures: 1, Errors: 0, Skipped: 0
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
 [INFO] Total time:  15.570 s
-[INFO] Finished at: 2020-11-05T11:04:36+01:00
+[INFO] Finished at: 2023-01-01T11:04:36+01:00
 [INFO] ------------------------------------------------------------------------
 ```
 
-In the logs directory you can now also observe that a subfolder is created for each test run, which contains information about the test run.
+The second option is to run tests using the IntelliJ IDE. To do this, click on the green triangles next to the test methods in the `TestOne` class to run individual tests or on the green triangle next to the `TestOne` class itself and then click on Run test in the menu that opens to run all tests. 
+
+You will now see the following things: New directories and files have been created in your project. A new file named `qtaf.json` has been created in the resource directory. Within this file you can define parameters for the test execution.
+
+A new directory called `logs` has also been created. In this directory, you can now observe that for each test run, a subdirectory is created that contains information about the test run.
 
 # Create a Selenium test case
 
@@ -369,7 +311,17 @@ Now we have divided our project into page objects and the test steps defined in 
 
 QTAF offers you the possibility to automatically create reports from your test runs. In this example we show you two reporting formats integrated into the QTAF framework, one documenting the test execution by means of a JSON document and the other one creating an HTML report. The JSON document is interesting for the machine processing of the test results, the HTML report for the testers as a graphical presentation of the test results.
 
-First we have to activate the creation of the HTML report in the configuration file. Make sure that the value `htmlReport.enabled` in the configuration file is set to `true`:
+First, we need to add the QTAF HTML Report plugin as a dependency to our project. To do this, add the following dependency to the pom.xml file.
+
+```xml
+<dependency>
+    <groupId>de.qytera</groupId>
+    <artifactId>qtaf-html-report-plugin</artifactId>
+    <version>${qtafVersion}</version>
+</dependency>
+```
+
+Furthermore we have to activate the creation of the HTML report in the `qtaf.json` file. Make sure that the value `htmlReport.enabled` in the configuration file is set to `true`:
 
 ```json
   "htmlReport":{
@@ -403,11 +355,11 @@ Then run your test cases as usual. For example, if you have selected `firefox` a
 
 **Option 2: Use the command line**
 
-QTAF test cases can also be executed via the command line. This is advantageous if you want to run test cases in a pipeline on different browsers, as in this case you do not have to make any changes to the code base. To run test cases from the command line you have to execute the command `mvn exec:java -Dexec.mainClass="org.acme.TestRunner"`. Please note that the package name `org.acme` may differ from project to project. You can also pass the desired browser using the argument `-Ddriver.name`. For the Firefox browser, the command would look like this: `mvn exec:java -Dexec.mainClass="org.acme.TestRunner" -Ddriver.name="firefox"`. Command line arguments always overwrite the values in the configuration file, i.e. if you have set the value `chrome` for `driver.name` in the configuration file, but pass the value `firefox` via the command line, your test cases will ultimately be executed in the Firefox browser.
+QTAF test cases can also be executed via the command line. This is advantageous if you want to run test cases in a pipeline on different browsers, as in this case you do not have to make any changes to the code base. To run test cases from the command line you have to execute the command `mvn clean test`. Please note that the package name `org.acme` may differ from project to project. You can also pass the desired browser using the argument `-Ddriver.name`. For the Firefox browser, the command would look like this: `mvn clean test -Ddriver.name="firefox"`. Command line arguments always overwrite the values in the configuration file, i.e. if you have set the value `chrome` for `driver.name` in the configuration file, but pass the value `firefox` via the command line, your test cases will ultimately be executed in the Firefox browser.
 
 **Option 3: Use environment variables**
 
-As a third option, QTAF offers to set configuration parameters via environment variables. For example, if you want to test on the Edge browser, set the environment variable `DRIVER_NAME` to the value `edge`. In a Bash shell, you can also set environment variables directly before the actual command. This would look like this: `DRIVER_NAME=edge mvn exec:java -Dexec.mainClass="org.acme.TestRunner"`. Environment variables also always overwrite the values in the `configuration.json` file.
+As a third option, QTAF offers to set configuration parameters via environment variables. For example, if you want to test on the Edge browser, set the environment variable `DRIVER_NAME` to the value `edge`. In a Bash shell, you can also set environment variables directly before the actual command. This would look like this: `DRIVER_NAME=edge mvn clean test`. Environment variables also always overwrite the values in the `configuration.json` file.
 
 <hr>
 <div style="display: flex; flex-direction: row; justify-content: space-between">

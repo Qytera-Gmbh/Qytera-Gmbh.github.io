@@ -31,7 +31,6 @@ The following additions should be entered in the file:
 
     <!-- Everything is configured here for the build process -->
     <build>
-        
         <!-- Path under which Java should search for files (resources) -->
         <resources>
             <resource>
@@ -39,27 +38,6 @@ The following additions should be entered in the file:
                 <filtering>true</filtering>
             </resource>
         </resources>
-
-        <!-- Maven plugins that extend the basic functionality of Maven -->
-        <plugins>
-            <!-- Plugin for creating JAR files -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>/</classpathPrefix>
-                            <!-- Test runner class that runs all tests -->
-                            <mainClass>de.qytera.suite_crm.TestRunner</mainClass>
-                        </manifest>
-                    </archive>
-                    <finalName>app</finalName>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 
 </project>
