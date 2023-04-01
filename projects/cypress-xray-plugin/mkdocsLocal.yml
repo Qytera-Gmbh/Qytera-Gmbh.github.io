@@ -1,0 +1,33 @@
+# ============================================ #
+# PROJECT CONFIGURATION, FEEL FREE TO MODIFY   #
+# Then update mkdocs.yml using:                #
+# python docs.py update-project <project-dir>  #
+# ============================================ #
+
+site_name: Cypress Xray Plugin
+
+repo_name: Cypress Xray Plugin
+repo_url: https://github.com/Qytera-Gmbh/cypress-xray-plugin
+
+nav:
+  - index.md
+  - Setup:
+      - Requirements: section/setup/requirements.md
+      - Installation: section/setup/installation.md
+  - Configuration:
+      - Introduction: section/configuration/introduction.md
+      - Authentication: section/configuration/authentication.md
+      - "Options: Jira": section/configuration/jira.md
+      - "Options: Xray": section/configuration/xray.md
+      - "Options: Cucumber": section/configuration/cucumber.md
+      - "Options: Plugin": section/configuration/plugin.md
+      - "Options: OpenSSL": section/configuration/openSSL.md
+      - Option types: section/configuration/types.md
+  - Usage:
+      - Upload test results: section/usage/uploadTestResults.md
+      - Targeting existing issues: section/usage/targetingExistingIssues.md
+      - Feature file synchronization: section/usage/featureFileSynchronization.md
+      - OpenSSL: section/usage/openSSL.md
+
+extra_css:
+  - stylesheets/styles.css

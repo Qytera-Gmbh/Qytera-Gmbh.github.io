@@ -1,0 +1,25 @@
+name: Deploy Cypress Xray Plugin Documentation
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      [
+        "template/**",
+        "projects/cypress-xray-plugin/docs/**",
+        "projects/cypress-xray-plugin/mkdocsLocal.yml",
+      ]
+  workflow_dispatch:
+    # manually triggered
+
+# required for pushing content to a branch
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/DeployDocumentation.yml
+    with:
+      directory-project: projects/cypress-xray-plugin
+      directory-template: template
+      directory-destination: projects/cypress-xray-plugin

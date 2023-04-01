@@ -1,0 +1,21 @@
+name: Deploy QTAF Documentation
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      ["template/**", "projects/qtaf/docs/**", "projects/qtaf/mkdocsLocal.yml"]
+  workflow_dispatch:
+    # manually triggered
+
+# required for pushing content to a branch
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/DeployDocumentation.yml
+    with:
+      directory-project: projects/qtaf
+      directory-template: template
+      directory-destination: projects/qtaf

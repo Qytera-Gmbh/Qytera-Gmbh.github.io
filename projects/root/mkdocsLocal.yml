@@ -1,0 +1,16 @@
+# ============================================ #
+# PROJECT CONFIGURATION, FEEL FREE TO MODIFY   #
+# Then update mkdocs.yml using:                #
+# python docs.py update-project <project-dir>  #
+# ============================================ #
+
+site_name: Qytera Software Testing Solutions GmbH
+
+repo_name: Qytera Gmbh
+repo_url: https://github.com/Qytera-Gmbh/
+
+extra_css:
+  - stylesheets/styles.css
+
+nav:
+  - index.md

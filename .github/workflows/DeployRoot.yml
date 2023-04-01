@@ -1,0 +1,22 @@
+name: Deploy Root Documentation
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      ["template/**", "projects/root/docs/**", "projects/root/mkdocsLocal.yml"]
+  workflow_dispatch:
+    # manually triggered
+
+# required for pushing content to a branch
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/DeployDocumentation.yml
+    with:
+      directory-project: projects/root
+      directory-template: template
+      directory-destination: .
+      clean-exclude: projects/

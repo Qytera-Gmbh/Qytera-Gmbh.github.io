@@ -1,0 +1,160 @@
+/* hide the search bar */
+div[data-md-component="search"] {
+  display: none;
+}
+
+.background-video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -255;
+}
+
+[data-md-color-scheme="slate"] .background-video[src$="#only-light"] {
+  display: none;
+}
+
+[data-md-color-scheme="qytera"] .background-video[src$="#only-dark"] {
+  display: none;
+}
+
+:root {
+  /*
+   * The smallest acceptable screen width.
+   * Used for wrapping grids when the grid content exceeds this width.
+   * https://mui.com/material-ui/customization/breakpoints/#default-breakpoints
+   */
+  --SMALL-SCREEN-WIDTH: 600px;
+}
+
+.hr-line {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  color: var(--md-default-fg-color--light);
+  font-weight: lighter;
+  font-size: x-large;
+  font-variant: small-caps;
+}
+
+.hr-line:before,
+.hr-line:after {
+  content: "";
+  flex-grow: 1;
+  background: var(--md-default-fg-color--lighter);
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+  margin: 0px 1rem;
+}
+
+.container-products {
+  /*
+   * User input values.
+   */
+  --grid-layout-gap: 1rem;
+  --grid-column-count: 2;
+  /*
+   * Calculated values.
+   */
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--min-width: calc(
+    var(--SMALL-SCREEN-WIDTH) / var(--grid-column-count)
+  );
+  --grid-item--max-width: calc(
+    (100% - var(--total-gap-width)) / var(--grid-column-count)
+  );
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
+  );
+  grid-gap: var(--grid-layout-gap);
+  overflow: auto;
+  margin: 1rem;
+}
+
+.container-tools {
+  /*
+   * User input values.
+   */
+  --grid-layout-gap: 1rem;
+  --grid-column-count: 3;
+  /*
+  * Calculated values.
+  */
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--min-width: calc(
+    var(--SMALL-SCREEN-WIDTH) / var(--grid-column-count)
+  );
+  --grid-item--max-width: calc(
+    (100% - var(--total-gap-width)) / var(--grid-column-count)
+  );
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
+  );
+  grid-gap: var(--grid-layout-gap);
+  overflow: auto;
+  margin: 1rem;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 0.05rem solid var(--md-default-fg-color--lighter);
+  border-radius: 0.75rem;
+  background-color: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+.tile:hover {
+  transform: scale(0.9);
+  box-shadow: var(--md-shadow-z2);
+}
+
+.tile::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.4;
+  background-color: var(--md-code-bg-color);
+  border-radius: 0.75rem;
+}
+
+.logo {
+  max-width: 15rem;
+  max-height: 15rem;
+  padding: 1rem;
+}
+
+.name {
+  padding: 0 1rem 1rem 1rem;
+  display: inherit;
+  flex-direction: inherit;
+  align-items: inherit;
+  text-align: center;
+}
+
+.name > * {
+  margin: 0 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

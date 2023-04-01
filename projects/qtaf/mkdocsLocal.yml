@@ -1,0 +1,35 @@
+# ============================================ #
+# PROJECT CONFIGURATION, FEEL FREE TO MODIFY   #
+# Then update mkdocs.yml using:                #
+# python docs.py update-project <project-dir>  #
+# ============================================ #
+
+site_name: QTAF - Qytera Test Automation Framework
+
+repo_name: QTAF
+repo_url: https://github.com/Qytera-Gmbh/QTAF
+
+# You can add custom CSS files like this:
+# extra_css:
+#   - stylesheets/styles.css
+
+nav:
+    - index.md
+    - Basics:
+          - Page Object Model: sections/Page_Object_Model.md
+          - Create new IntelliJ Project: sections/setup/IntelliJ_Project_Setup.md
+          - Create new VS Code Project: sections/setup/VSCode_Project_Setup.md
+    - First Steps:
+          - Create a new QTAF Project: sections/steps/New_QTAF_Project.md
+          - Using Data Providers in Test Scenarios: sections/steps/Data_Providers.md
+          - Exploring the HTML Report: sections/steps/HTML_Report_Plugin.md
+          - Browser Drivers: sections/steps/Drivers.md
+    - Plugins:
+          - Xray Plugin: sections/plugins/XRAY_Plugin.md
+          - Allure Plugin: sections/plugins/Allure_Plugin.md
+    - Cucumber:
+          - Create new Cucumber Project: sections/cucumber/New_Cucumber_Project.md
+    - Deep Dive:
+          - QTAF Logging: sections/dive/Overview_Logging.md
+          - QTAF Annotations: sections/dive/Overview_Annotations.md
+          - Setup QTAF locally: sections/dive/Setup_QTAF_Locally.md
