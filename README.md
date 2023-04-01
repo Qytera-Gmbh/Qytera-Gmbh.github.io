@@ -22,6 +22,10 @@ python docs.py setup-project <project-name>
 ```
 This will create a new project called `<project-name>` inside the `projects` directory.
 
+> **Note**
+> Make sure that you set up a corresponding GitHub action as well.
+> Have a look at the existing project actions and copy & paste one for yourself.
+
 ## Usage
 
 From inside your project's directory, run the following command to view your documentation using a live-reloading docs server:
@@ -40,3 +44,8 @@ Apart from that, you can freely write your documentation inside the project's di
 
 > **Note**
 > Make sure to checkout [the `mkdocs` reference](https://squidfunk.github.io/mkdocs-material/reference/) on how to use its many features.
+
+## Deployment
+
+You don't have to do any manual deploying.
+Everything is based on GitHub actions: If you modify your project's documentation and push the changes, your GitHub action will automatically redeploy your project's documentation.
