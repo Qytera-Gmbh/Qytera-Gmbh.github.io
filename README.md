@@ -15,7 +15,6 @@ To activate the virtual environment, run the following commands:
 - Windows:
 
 ```sh
-python -m venv venv
 .\venv\Scripts\activate
 ```
 
