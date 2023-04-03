@@ -4,14 +4,47 @@ Everything here is based on [mkdocs](https://www.mkdocs.org).
 
 ## Setup
 
-Run the following commands to setup everything:
+It is highly recommended to use virtual Python environments instead of global ones:
+
 ```sh
-python -m venv && source venv/bin/activate
+python -m venv venv
+```
+
+To activate the virtual environment, run the following commands:
+
+- Windows:
+
+```sh
+python -m venv venv
+.\venv\Scripts\activate
+```
+
+- Unix:
+
+```sh
+source venv/bin/activate
+```
+
+From then on, every python package will be installed into the `venv` directory without modifying your global python configuration.
+
+Run the following commands to setup everything (either inside your virtual environment, or outside/globally on your machine):
+
+```sh
 pip install -r requirements.txt
 ```
 
 If you want to work with videos, you should probably install [`ffmpeg`](https://ffmpeg.org/) as well.
 In the `scripts` directory, there is a useful script for generating video thumbnails.
+
+### Existing Project
+
+To prepare an existing project, simply run the following command:
+
+```sh
+python docs.py update-project path/to/project/dir
+```
+
+This will create a file called `mkdocs.yml` inside the project's directory, which can then be used to view the page as described [here](#usage).
 
 ### New Project
 
@@ -20,6 +53,7 @@ To create a new project, run the following command:
 ```sh
 python docs.py setup-project <project-name>
 ```
+
 This will create a new project called `<project-name>` inside the `projects` directory.
 
 > **Note**
@@ -34,7 +68,7 @@ From inside your project's directory, run the following command to view your doc
 mkdocs serve
 ```
 
-Whenever you modify `mkdocsLocal.yml` inside your project's directory, you should run the following command to update the *automatically generated* `mkdocs.yml` YAML file used by `mkdocs`:
+Whenever you modify `mkdocsLocal.yml` inside your project's directory, you should run the following command to update the _automatically generated_ `mkdocs.yml` YAML file used by `mkdocs`:
 
 ```sh
 python docs.py update-project <project-name>
