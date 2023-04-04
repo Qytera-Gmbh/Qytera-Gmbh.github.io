@@ -162,4 +162,5 @@ div[data-md-component="search"] {
   font-size: 0.85rem;
   font-variant: small-caps;
   text-overflow: ellipsis;
+  text-transform: none;
 }
