@@ -37,6 +37,9 @@ In the `scripts` directory, there is a useful script for generating video thumbn
 
 ### Existing Project
 
+> **Note**
+> Make sure you have [activated your virtual environment](#setup)!
+
 To prepare an existing project, simply run the following command:
 
 ```sh
@@ -47,6 +50,9 @@ This will create a file called `mkdocs.yml` inside the project's directory, whic
 
 ### New Project
 
+> **Note**
+> Make sure you have [activated your virtual environment](#setup)!
+
 To create a new project, run the following command:
 
 ```sh
@@ -55,11 +61,14 @@ python docs.py setup-project <project-name>
 
 This will create a new project called `<project-name>` inside the `projects` directory.
 
-> **Note**
+> **Warning**
 > Make sure that you set up a corresponding GitHub action as well.
-> Have a look at the existing project actions and copy & paste one for yourself.
+> Have a look at the existing project actions and copy & paste one for your new project.
 
 ## Usage
+
+> **Note**
+> Make sure you have [activated your virtual environment](#setup)!
 
 From inside your project's directory, run the following command to view your documentation using a live-reloading docs server:
 
@@ -67,16 +76,16 @@ From inside your project's directory, run the following command to view your doc
 mkdocs serve
 ```
 
-Whenever you modify `mkdocsLocal.yml` inside your project's directory, you should run the following command to update the _automatically generated_ `mkdocs.yml` YAML file used by `mkdocs`:
+Whenever you modify `mkdocsLocal.yml` inside your project's directory, you should run the following command to update the _automatically generated_ `mkdocs.yml` YAML file used by *mkdocs*:
 
 ```sh
-python docs.py update-project <project-name>
+python docs.py update-project path/to/project/dir
 ```
 
 Apart from that, you can freely write your documentation inside the project's directory.
 
 > **Note**
-> Make sure to checkout [the `mkdocs` reference](https://squidfunk.github.io/mkdocs-material/reference/) on how to use its many features.
+> Make sure to checkout [the *mkdocs* reference](https://squidfunk.github.io/mkdocs-material/reference/) on how to use its many features.
 
 ## Deployment
 
