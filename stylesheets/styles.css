@@ -113,7 +113,6 @@ div[data-md-component="search"] {
   align-items: center;
   justify-content: space-evenly;
   border: 0.05rem solid var(--md-default-fg-color--lighter);
-  border-radius: 0.75rem;
   background-color: none;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -121,7 +120,7 @@ div[data-md-component="search"] {
 }
 
 .tile:hover {
-  transform: scale(0.9);
+  transform: scale(0.92);
   box-shadow: var(--md-shadow-z2);
 }
 
@@ -136,7 +135,6 @@ div[data-md-component="search"] {
   z-index: -1;
   opacity: 0.4;
   background-color: var(--md-code-bg-color);
-  border-radius: 0.75rem;
 }
 
 .logo {
@@ -156,5 +154,12 @@ div[data-md-component="search"] {
 .name > * {
   margin: 0 !important;
   overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.name > h5 {
+  font-weight: lighter;
+  font-size: 0.85rem;
+  font-variant: small-caps;
   text-overflow: ellipsis;
 }
