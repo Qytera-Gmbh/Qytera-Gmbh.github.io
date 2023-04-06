@@ -105,7 +105,7 @@ Xray will also create a new test execution issue, unless you tell Xray to [reuse
 
     === "Video"
 
-        <video preload="none" poster="../../../assets/videos/usage_results_upload_00.jpg" controls muted>
-            <source src="../../../assets/videos/usage_results_upload_00.mp4" type="video/mp4">
+        <video preload="none" poster="../../../assets/videos/guides_results_upload_00.jpg" controls muted>
+            <source src="../../../assets/videos/guides_results_upload_00.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>

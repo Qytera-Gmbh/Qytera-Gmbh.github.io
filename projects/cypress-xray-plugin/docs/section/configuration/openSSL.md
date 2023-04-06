@@ -2,7 +2,7 @@
 
 !!! tip
     This is an advanced section.
-    Make sure to check out the [examples](../usage/openSSL.md) to see in which scenarios changing OpenSSL configuration might make sense.
+    Make sure to check out the [examples](../guides/openSSL.md) to see in which scenarios changing OpenSSL configuration might make sense.
 
 Sometimes it is necessary to configure OpenSSL if your Xray instance sits behind a proxy or uses dedicated root certificates that aren't available by default.
 In this case, you can set the following options prior to running your Cypress tests to configure the plugin's internal OpenSSL setup.

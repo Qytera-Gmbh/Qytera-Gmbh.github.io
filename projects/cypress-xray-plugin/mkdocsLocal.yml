@@ -23,11 +23,11 @@ nav:
       - "Options: Plugin": section/configuration/plugin.md
       - "Options: OpenSSL": section/configuration/openSSL.md
       - Option types: section/configuration/types.md
-  - Usage:
-      - Upload test results: section/usage/uploadTestResults.md
-      - Targeting existing issues: section/usage/targetingExistingIssues.md
-      - Feature file synchronization: section/usage/featureFileSynchronization.md
-      - OpenSSL: section/usage/openSSL.md
+  - Guides:
+      - Upload test results: section/guides/uploadTestResults.md
+      - Targeting existing issues: section/guides/targetingExistingIssues.md
+      - Feature file synchronization: section/guides/featureFileSynchronization.md
+      - OpenSSL: section/guides/openSSL.md
 
 extra_css:
   - stylesheets/styles.css

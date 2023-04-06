@@ -7,7 +7,7 @@ In order to access Xray, some Jira configuration is mandatory.
 ### `projectKey`
 : The key of the Jira project.
     This option is mandatory since otherwise Xray would not know which project to save the results to.
-    It is used in many places throughout the plugin, for example for mapping Cypress tests to existing test issues in Xray (see [targeting existing test issues](../usage/targetingExistingIssues.md)).
+    It is used in many places throughout the plugin, for example for mapping Cypress tests to existing test issues in Xray (see [targeting existing test issues](../guides/targetingExistingIssues.md)).
 : ***Environment variable***
     : `JIRA_PROJECT_KEY`
 : ***Type***

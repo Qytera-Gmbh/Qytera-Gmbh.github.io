@@ -7,7 +7,7 @@ When Cucumber is enabled, you can use the following options to configure the way
 ### `featureFileExtension`
 : The file extension of feature files you want to run in Cypress.
     The plugin will use this to parse all matching files to extract any tags contained within them.
-    Such tags are needed to identify to which test issue a feature file belongs (see [targeting existing test issues with Cucumber](../usage/targetingExistingIssues.md#cucumber)).
+    Such tags are needed to identify to which test issue a feature file belongs (see [targeting existing test issues with Cucumber](../guides/targetingExistingIssues.md#cucumber)).
 : ***Environment variable***
     : `CUCUMBER_FEATURE_FILE_EXTENSION`
 : ***Type***

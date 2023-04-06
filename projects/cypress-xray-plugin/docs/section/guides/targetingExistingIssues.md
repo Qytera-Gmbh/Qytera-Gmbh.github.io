@@ -74,8 +74,8 @@ The plugin parses all test case names and looks for sequences of the form `#!xml
 
     === "Video"
 
-        <video preload="none" poster="../../../assets/videos/usage_targeting_issues_00.jpg" controls muted>
-            <source src="../../../assets/videos/usage_targeting_issues_00.mp4" type="video/mp4">
+        <video preload="none" poster="../../../assets/videos/guides_targeting_issues_00.jpg" controls muted>
+            <source src="../../../assets/videos/guides_targeting_issues_00.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
@@ -215,8 +215,8 @@ In general, the plugin looks for scenario tags of the form:
 
     === "Video"
 
-        <video preload="none" poster="../../../assets/videos/usage_targeting_issues_02.jpg" controls muted>
-            <source src="../../../assets/videos/usage_targeting_issues_02.mp4" type="video/mp4">
+        <video preload="none" poster="../../../assets/videos/guides_targeting_issues_02.jpg" controls muted>
+            <source src="../../../assets/videos/guides_targeting_issues_02.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
@@ -285,8 +285,8 @@ You can prevent that from happening by specifying [the test execution issue key]
 
     === "Video"
 
-        <video preload="none" poster="../../../assets/videos/usage_targeting_issues_01.jpg" controls muted>
-            <source src="../../../assets/videos/usage_targeting_issues_01.mp4" type="video/mp4">
+        <video preload="none" poster="../../../assets/videos/guides_targeting_issues_01.jpg" controls muted>
+            <source src="../../../assets/videos/guides_targeting_issues_01.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 

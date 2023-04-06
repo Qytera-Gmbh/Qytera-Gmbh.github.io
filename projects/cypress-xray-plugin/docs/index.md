@@ -5,10 +5,10 @@
 
 <figure markdown>
    <video controls autoplay muted>
-       <source src="assets/videos/usage_results_upload_00.mp4" type="video/mp4">
+       <source src="assets/videos/guides_results_upload_00.mp4" type="video/mp4">
        Your browser does not support the video tag.
    </video>
-  <figcaption>Two passing tests and one failing test for <a href="https://example.org">https://example.org</a>. More info <a href="section/usage/uploadTestResults/">here</a>.</figcaption>
+  <figcaption>Two passing tests and one failing test for <a href="https://example.org">https://example.org</a>. More info <a href="section/guides/uploadTestResults/">here</a>.</figcaption>
 </figure>
 
 **A plugin for coupling together Cypress and Xray.**

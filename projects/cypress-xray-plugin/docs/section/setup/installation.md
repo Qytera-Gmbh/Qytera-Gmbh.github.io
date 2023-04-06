@@ -42,7 +42,7 @@ import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin/pl
 
 !!! tip
     Check out the [configuration](../configuration/introduction.md) for more information on how you should configure the plugin to make it work within *your* infrastructure.
-    You can also shoot a glance at the [examples](../usage/uploadTestResults.md#how-it-works) for a more hands-on approach.
+    You can also shoot a glance at the [examples](../guides/uploadTestResults.md#how-it-works) for a more hands-on approach.
 
 ## Cucumber support
 
@@ -112,4 +112,4 @@ The highlighted lines are the ones addressing Xray support.
 
 ??? info "Line 25"
     This line enables upstream and downstream synchronization of your feature files with your Xray instance.
-    See [here](../usage/featureFileSynchronization.md) for more information.
+    See [here](../guides/featureFileSynchronization.md) for more information.

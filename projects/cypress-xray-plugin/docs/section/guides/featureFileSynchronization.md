@@ -122,8 +122,8 @@ You can enable the upload using the [uploadFeatures](../configuration/cucumber.m
 
         Please note the the steps and the issue's summary changing due to the feature import.
 
-        <video preload="none" poster="../../../assets/videos/usage_feature_synchronization_00.jpg" controls muted>
-            <source src="../../../assets/videos/usage_feature_synchronization_00.mp4" type="video/mp4">
+        <video preload="none" poster="../../../assets/videos/guides_feature_synchronization_00.jpg" controls muted>
+            <source src="../../../assets/videos/guides_feature_synchronization_00.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
