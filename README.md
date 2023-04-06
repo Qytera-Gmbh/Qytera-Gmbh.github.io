@@ -32,8 +32,17 @@ Run the following commands to setup everything (either inside your virtual envir
 pip install -r requirements.txt
 ```
 
+#### ffmpeg
+
 If you want to work with videos, you should probably install [`ffmpeg`](https://ffmpeg.org/) as well.
 In the `scripts` directory, there is a useful script for generating video thumbnails.
+
+#### VS Code
+
+The following plugins are recommended when using VS Code:
+
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [YAML Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
 ### Existing Project
 
@@ -76,7 +85,7 @@ From inside your project's directory, run the following command to view your doc
 mkdocs serve
 ```
 
-Whenever you modify `mkdocsLocal.yml` inside your project's directory, you should run the following command to update the _automatically generated_ `mkdocs.yml` YAML file used by *mkdocs*:
+Whenever you modify `mkdocsLocal.yml` inside your project's directory, you should run the following command to update the _automatically generated_ `mkdocs.yml` YAML file used by _mkdocs_:
 
 ```sh
 python docs.py update-project path/to/project/dir
@@ -85,7 +94,7 @@ python docs.py update-project path/to/project/dir
 Apart from that, you can freely write your documentation inside the project's directory.
 
 > **Note**
-> Make sure to checkout [the *mkdocs* reference](https://squidfunk.github.io/mkdocs-material/reference/) on how to use its many features.
+> Make sure to checkout [the _mkdocs_ reference](https://squidfunk.github.io/mkdocs-material/reference/) on how to use its many features.
 
 ## Deployment
 
