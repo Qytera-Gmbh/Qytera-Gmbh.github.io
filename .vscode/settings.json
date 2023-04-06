@@ -1,6 +1,28 @@
 {
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.quickSuggestions": {
+        "strings": true
+      },
+      "editor.suggest.insertMode": "replace",
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+      "editor.unicodeHighlight.ambiguousCharacters": false,
+      "editor.unicodeHighlight.invisibleCharacters": false,
+      "diffEditor.ignoreTrimWhitespace": false,
+      "editor.wordWrap": "on",
+      "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+      }, 
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[yaml]": {
-        "editor.defaultFormatter": "redhat.vscode-yaml"
+        "editor.defaultFormatter": "redhat.vscode-yaml",
     },
     "yaml.schemas": {
         "https://squidfunk.github.io/mkdocs-material/schema.json": ["**/mkdocsRoot.yml", "**/mkdocsLocal.yml", "**/mkdocs.yml"]
@@ -12,7 +34,4 @@
       "tag:yaml.org,2002:python/name:materialx.emoji.twemoji",
       "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
     ],
-    "[css]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
   }
