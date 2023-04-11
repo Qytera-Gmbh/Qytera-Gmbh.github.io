@@ -11,13 +11,15 @@ npx cypress run --env XRAY_CLIENT_ID="ABCDEF",XRAY_CLIENT_SECRET="XYZ"
 
 Depending on the provided combinations of environment variables, the plugin will automatically know which Xray API type to use.
 
-When providing more than one valid combination of variables, evaluation precedence of the authentication methods is as follows:
+??? info "Providing multiple combinations"
 
-1. Cloud authentication
-2. PAT authentication
-3. Basic authentication
+    When providing more than one valid combination of variables, evaluation precedence of the authentication methods is as follows:
 
-This way, the cloud version will always be chosen in favor of the server version.
+    1. Cloud authentication
+    2. PAT authentication
+    3. Basic authentication
+
+    This way, the cloud version will always be chosen in favor of the server version.
 
 Below you will find all Xray authentication configurations that are currently supported and the environment variables you need to set to authenticate to their respective APIs.
 
