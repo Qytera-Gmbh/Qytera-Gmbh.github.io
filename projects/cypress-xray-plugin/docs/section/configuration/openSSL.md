@@ -11,7 +11,7 @@ In this case, you can set the following options prior to running your Cypress te
 
 ### `rootCAPath`
 : Specify the path to a root CA in `.pem` format.
-    This will then be used during authentication against & communication with the Xray instance.
+    This will then be used during authentication & communication with the Xray instance.
 : ***Environment variable***
     : `OPENSSL_ROOT_CA_PATH`
 : ***Type***

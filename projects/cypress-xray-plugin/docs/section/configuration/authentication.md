@@ -1,6 +1,6 @@
 # Authentication
 
-To use this plugin, you need to authenticate against your Xray instance.
+To use this plugin, you need to authenticate to your Xray instance.
 You must do this by setting up specific environment variables, e.g. a client ID and a client secret when using a cloud based Xray instance.
 
 To avoid adding your secrets to system environment variables, simply pass them to Cypress as a comma-separated list in the command line:
@@ -19,7 +19,7 @@ When providing more than one valid combination of variables, evaluation preceden
 
 This way, the cloud version will always be chosen in favor of the server version.
 
-Below you will find all Xray authentication configurations that are currently supported and the environment variables you need to set to authenticate against their respective APIs.
+Below you will find all Xray authentication configurations that are currently supported and the environment variables you need to set to authenticate to their respective APIs.
 
 ## Xray cloud
 
@@ -38,7 +38,7 @@ For the cloud version of Xray, the plugin expects the following environment vari
 
 ## Xray server
 
-Depending on your Jira version, you may either need to use *Personal Access Tokens* (PATs) for authenticating against Xray, or *Basic Authentication* using your Jira username and password.
+Depending on your Jira version, you may either need to use *Personal Access Tokens* (PATs) to authenticate to Xray, or *Basic Authentication* using your Jira username and password.
 
 !!! tip
     If you do not know which one you should be using, simply try PAT authentication first.
