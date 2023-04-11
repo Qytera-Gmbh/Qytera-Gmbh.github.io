@@ -14,9 +14,10 @@
 **A plugin for coupling together Cypress and Xray.**
 
 - [x] Upload test results to Xray
-- [X] Attach screenshots as defect evidence
-- [X] Attach results to existing test execution issues
-- [X] Reuse existing test plan issues
+- [x] Attach screenshots as defect evidence
+- [x] Attach results to existing test execution issues
+- [x] Reuse existing test plan issues
+- [x] CI/CD ready
 
 **Cucumber support**
 
