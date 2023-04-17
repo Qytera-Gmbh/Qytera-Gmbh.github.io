@@ -29,9 +29,9 @@ You can enable the upload using the [uploadFeatures](../configuration/cucumber.m
     Scenario: Redirect by clicking
     ```
 
-    !!! note
-        Please be aware that there is no way of keeping modified issue summaries when reusing issues this way.
-        Any modified summaries in Xray are always going to be replaced by the scenarios' names after a successful import.
+    !!! warning
+        Please be aware that there is no way of keeping Xray's issue summaries when synchronizing issues this way.
+        All Xray issue summaries will be replaced with the scenarios' names on successful import.
 
 ???+ example
 
