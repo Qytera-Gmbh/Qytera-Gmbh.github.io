@@ -1,7 +1,7 @@
 ![plugin header](assets/images/headerDark.svg#only-light)
 ![plugin header](assets/images/headerLight.svg#only-dark)
 
-# Home
+<h1><!-- no title, the image is title enough --></h1>
 
 <figure markdown>
    <video controls autoplay muted>
