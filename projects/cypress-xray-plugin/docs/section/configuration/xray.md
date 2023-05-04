@@ -6,6 +6,7 @@ You can provide a bunch of Xray settings which might become necessary depending 
 
 ### `uploadResults`
 : Turns execution results upload on or off.
+    Useful when switching upload on or off from the command line (via environment variables).
 : ***Environment variable***
     : `XRAY_UPLOAD_RESULTS`
 : ***Type***
