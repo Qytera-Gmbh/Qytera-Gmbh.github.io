@@ -27,6 +27,31 @@ You can provide a bunch of Xray settings which might become necessary depending 
         npx cypress run --env XRAY_UPLOAD_RESULTS=false
         ```
 
+### `uploadScreenshots`
+: Turns on or off the upload of screenshots Cypress takes during test execution.
+    !!! note
+        This option only takes effect once [`uploadResults`](#uploadresults) is turned on.
+        It is not possible to upload screenshots without uploading results.
+: ***Environment variable***
+    : `XRAY_UPLOAD_SCREENSHOTS`
+: ***Type***
+    : [`boolean`](types.md#boolean)
+: ***Default***
+    : `#!js true`
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin({
+            xray: {
+                uploadScreenshots: false
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_UPLOAD_SCREENSHOTS_=false
+        ```
+
 ### `statusPassed`
 : The status name of a test marked as passed in Xray.
     Should be used when custom status names have been setup in Xray.

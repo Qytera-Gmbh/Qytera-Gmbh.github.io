@@ -49,3 +49,24 @@ The plugin offers several options for customizing the upload further.
         npx cypress run --env PLUGIN_NORMALIZE_SCREENSHOT_NAMES=true
         ```
 
+### `debug`
+: Turns on or off extensive debugging output.
+: ***Environment variable***
+    : `PLUGIN_DEBUG`
+: ***Type***
+    : [`boolean`](types.md#boolean)
+: ***Default***
+    : `#!js false`
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin({
+            plugin: {
+                debug: true
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env PLUGIN_DEBUG=true
+        ```
