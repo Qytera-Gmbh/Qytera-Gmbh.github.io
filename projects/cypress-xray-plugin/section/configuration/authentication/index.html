@@ -405,18 +405,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#xray" class="md-nav__link">
+    Xray
+  </a>
+  
+    <nav class="md-nav" aria-label="Xray">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#xray-cloud" class="md-nav__link">
     Xray cloud
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#xray-server" class="md-nav__link">
     Xray server
   </a>
   
-    <nav class="md-nav" aria-label="Xray server">
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jira" class="md-nav__link">
+    Jira
+  </a>
+  
+    <nav class="md-nav" aria-label="Jira">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jira-cloud" class="md-nav__link">
+    Jira cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jira-server" class="md-nav__link">
+    Jira server
+  </a>
+  
+    <nav class="md-nav" aria-label="Jira server">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -430,6 +465,11 @@
   <a href="#basic-authentication" class="md-nav__link">
     Basic authentication
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -657,18 +697,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#xray" class="md-nav__link">
+    Xray
+  </a>
+  
+    <nav class="md-nav" aria-label="Xray">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#xray-cloud" class="md-nav__link">
     Xray cloud
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#xray-server" class="md-nav__link">
     Xray server
   </a>
   
-    <nav class="md-nav" aria-label="Xray server">
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jira" class="md-nav__link">
+    Jira
+  </a>
+  
+    <nav class="md-nav" aria-label="Jira">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jira-cloud" class="md-nav__link">
+    Jira cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jira-server" class="md-nav__link">
+    Jira server
+  </a>
+  
+    <nav class="md-nav" aria-label="Jira server">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -682,6 +757,11 @@
   <a href="#basic-authentication" class="md-nav__link">
     Basic authentication
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -709,11 +789,12 @@
 
 
 <h1 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Anchor link to this section for reference">⚓︎</a></h1>
-<p>To use this plugin, you need to authenticate to your Xray instance.
-You must do this by setting up specific environment variables, e.g. a client ID and a client secret when using a cloud based Xray instance.</p>
+<p>To use this plugin, you need to authenticate to your Xray instance and &mdash; depending on the options you configured &mdash; your Jira instance as well.
+You <em>must</em> do this by setting up specific environment variables, e.g. a client ID and a client secret when using a cloud based Xray instance.</p>
 <p>To avoid adding your secrets to system environment variables, simply pass them to Cypress as a comma-separated list in the command line:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;ABCDEF&quot;</span>,XRAY_CLIENT_SECRET<span class="o">=</span><span class="s2">&quot;XYZ&quot;</span>
 </code></pre></div></td></tr></table></div>
+<h2 id="xray">Xray<a class="headerlink" href="#xray" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>Depending on the provided combinations of environment variables, the plugin will automatically know which Xray API type to use.</p>
 <details class="info">
 <summary>Providing multiple combinations</summary>
@@ -726,7 +807,7 @@ You must do this by setting up specific environment variables, e.g. a client ID 
 <p>This way, the cloud version will always be chosen in favor of the server version.</p>
 </details>
 <p>Below you will find all Xray authentication configurations that are currently supported and the environment variables you need to set to authenticate to their respective APIs.</p>
-<h2 id="xray-cloud">Xray cloud<a class="headerlink" href="#xray-cloud" title="Anchor link to this section for reference">⚓︎</a></h2>
+<h3 id="xray-cloud">Xray cloud<a class="headerlink" href="#xray-cloud" title="Anchor link to this section for reference">⚓︎</a></h3>
 <p>For the cloud version of Xray, the plugin expects the following environment variables to be set:</p>
 <ul>
 <li><code>XRAY_CLIENT_ID</code></li>
@@ -741,8 +822,53 @@ You must do this by setting up specific environment variables, e.g. a client ID 
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;ABCDEF&quot;</span>,XRAY_CLIENT_SECRET<span class="o">=</span><span class="s2">&quot;XYZ&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<h2 id="xray-server">Xray server<a class="headerlink" href="#xray-server" title="Anchor link to this section for reference">⚓︎</a></h2>
-<p>Depending on your Jira version, you may either need to use <em>Personal Access Tokens</em> (PATs) to authenticate to Xray, or <em>Basic Authentication</em> using your Jira username and password.</p>
+<h3 id="xray-server">Xray server<a class="headerlink" href="#xray-server" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>For setting up Xray server authentication, see <a href="#jira-server">Jira server authentication</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Don't forget to provide the <a href="../jira/#serverurl">Jira URL</a>.</p>
+</div>
+<h2 id="jira">Jira<a class="headerlink" href="#jira" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>Some options require a direct connection to the underlying Jira instance (such as <a href="../jira/#attachvideo"><code>attachVideo</code></a>).
+These are options for things related to <em>Jira</em>, which aren't introduced by Xray add-ons, for example generic issue attachments.</p>
+<p>If you do not use any such option you can skip setting up Jira credentials.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Don't worry about unknowingly enabling options that require the Jira connection if you've skipped providing Jira credentials so far.
+The plugin will tell you in great detail which options have caused the plugin to look for the missing Jira credentials.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must provide a <a href="../jira/#serverurl">Jira URL</a> in the plugin's options if you want to connect to the Jira instance directly.</p>
+</div>
+<p>As with Xray authentication, the plugin will automatically choose the authentication method depending on the provided environment variables.</p>
+<details class="info">
+<summary>Providing multiple combinations</summary>
+<p>When providing more than one valid combination of variables, evaluation precedence of the authentication methods is as follows:</p>
+<ol>
+<li>Basic authentication (Jira cloud)</li>
+<li>PAT authentication (Jira server)</li>
+<li>Basic authentication (Jira server)</li>
+</ol>
+</details>
+<p>Below you will find all currently supported Jira authentication configurations and the environment variables you need to set.</p>
+<h3 id="jira-cloud">Jira cloud<a class="headerlink" href="#jira-cloud" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>For the cloud version of Jira, the plugin expects the following environment variables to be set:</p>
+<ul>
+<li><code>JIRA_USERNAME</code></li>
+<li><code>JIRA_API_TOKEN</code></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Consult Jira's <a href="https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/">official documentation</a> on how to set up cloud credentials.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_USERNAME</span><span class="o">=</span><span class="s2">&quot;user@company.com&quot;</span>,JIRA_API_TOKEN<span class="o">=</span><span class="s2">&quot;XYZ&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<h3 id="jira-server">Jira server<a class="headerlink" href="#jira-server" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Depending on your Jira version, you may either need to use Jira's <em>Personal Access Tokens</em> (PATs) to authenticate to Jira, or <em>Basic Authentication</em> using your Jira username and password.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you do not know which one you should be using, simply try PAT authentication first.
@@ -750,33 +876,29 @@ If it works, great!
 You should stick to it, as PATs are a safer alternative to using usernames and passwords.</p>
 <p>If PAT-based authentication does not work or you cannot even create tokens, you will need to use basic authentication.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In addition to setting up your credentials, working with server instances requires you to provide the <a href="../jira/#serverurl">Jira server URL</a> in the plugin's <a href="../jira/">Jira options</a>.</p>
-</div>
-<h3 id="pat-authentication">PAT authentication<a class="headerlink" href="#pat-authentication" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>For server versions of Xray, the plugin expects the following environment variables to be set:</p>
+<h4 id="pat-authentication">PAT authentication<a class="headerlink" href="#pat-authentication" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>For PAT authentication, the plugin expects the following environment variables to be set:</p>
 <ul>
-<li><code>XRAY_API_TOKEN</code></li>
+<li><code>JIRA_API_TOKEN</code></li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Consult Xray's <a href="https://confluence.atlassian.com/enterprise/using-personal-access-tokens-1026032365.html">official documentation</a> on how to set up server API tokens.</p>
+<p>Consult Jira's <a href="https://confluence.atlassian.com/enterprise/using-personal-access-tokens-1026032365.html">official documentation</a> on how to set up server API tokens.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_API_TOKEN</span><span class="o">=</span><span class="s2">&quot;XYZ&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_API_TOKEN</span><span class="o">=</span><span class="s2">&quot;XYZ&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<h3 id="basic-authentication">Basic authentication<a class="headerlink" href="#basic-authentication" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>For server versions of Xray, the plugin expects the following environment variables to be set:</p>
+<h4 id="basic-authentication">Basic authentication<a class="headerlink" href="#basic-authentication" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>For basic authentication, the plugin expects the following environment variables to be set:</p>
 <ul>
-<li><code>XRAY_USERNAME</code></li>
-<li><code>XRAY_PASSWORD</code></li>
+<li><code>JIRA_USERNAME</code></li>
+<li><code>JIRA_PASSWORD</code></li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_USERNAME</span><span class="o">=</span><span class="s2">&quot;Bob&quot;</span>,XRAY_PASSWORD<span class="o">=</span><span class="s2">&quot;superSecure!unhaxx0rable&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_USERNAME</span><span class="o">=</span><span class="s2">&quot;Bob&quot;</span>,JIRA_PASSWORD<span class="o">=</span><span class="s2">&quot;superSecure!unhaxx0rable&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 
