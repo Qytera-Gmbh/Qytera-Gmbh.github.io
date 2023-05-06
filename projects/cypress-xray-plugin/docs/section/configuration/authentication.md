@@ -11,7 +11,7 @@ npx cypress run --env XRAY_CLIENT_ID="ABCDEF",XRAY_CLIENT_SECRET="XYZ"
 
 !!! tip
     Have a look at this graph to quickly set up **_both_** Xray and Jira authentication.
-    Note that Xray server does **_not_** require dedicated credentials in addition to the Jira credentials.
+    Note that Xray server does **_not_** require dedicated credentials in addition to the Jira credentials, effectively setting up both at the same time.
     ```mermaid
     graph TD
         A{Xray<br/>instance};
