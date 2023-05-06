@@ -74,8 +74,8 @@ Jira-native features are things like issue assignment or uploading issue attachm
 If you do not plan on using Jira-native features you can skip setting up Jira credentials.
 
 !!! tip
-    Don't worry about unknowingly enabling options requiring the Jira connection if you've skipped providing Jira credentials so far.
-    The plugin will tell you in great detail which options have caused the it to look for the missing Jira credentials.
+    Don't worry about unknowingly enabling options requiring the Jira connection in the future if you've skipped providing Jira credentials so far.
+    The plugin will tell you in great detail which options have caused it to look for the missing Jira credentials.
 
 !!! note
     When using Xray cloud, you must still provide a [Jira URL](jira.md#serverurl) in the plugin's options to connect to Jira.
