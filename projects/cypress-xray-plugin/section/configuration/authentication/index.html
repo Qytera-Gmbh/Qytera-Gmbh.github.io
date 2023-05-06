@@ -797,7 +797,7 @@ You <em>must</em> do this by setting up specific environment variables, e.g. a c
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Have a look at this graph to quickly set up <strong><em>both</em></strong> Xray and Jira authentication.
-Note that Xray server does <strong><em>not</em></strong> require dedicated credentials in addition to the Jira credentials.
+Note that Xray server does <strong><em>not</em></strong> require dedicated credentials in addition to the Jira credentials, effectively setting up both at the same time.
 <pre class="mermaid"><code>graph TD
     A{Xray&lt;br/&gt;instance};
     B("XRAY_CLIENT_ID=&lt;i&gt;id&lt;/i&gt;&lt;br&gt;XRAY_CLIENT_SECRET=&lt;i&gt;secret&lt;/i&gt;&lt;br&gt;&lt;hr&gt;JIRA_USERNAME=&lt;i&gt;user@company.com&lt;/i&gt;&lt;br&gt;JIRA_API_TOKEN=&lt;i&gt;token&lt;/i&gt;");
