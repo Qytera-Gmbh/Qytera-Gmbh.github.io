@@ -58,12 +58,13 @@ For the cloud version of Xray, the plugin expects the following environment vari
     npx cypress run --env XRAY_CLIENT_ID="ABCDEF",XRAY_CLIENT_SECRET="XYZ"
     ```
 
+In contrast to Xray server, a [Jira URL](jira.md#url) is not necessary by default.
+This can change however, depending on your [configuration](#jira).
+
 ### Xray server
 
 For setting up Xray server authentication, see [Jira server authentication](#jira-server).
-
-!!! tip
-    Don't forget to provide the [Jira URL](jira.md#serverurl).
+Additionally, you must provide the [Jira URL](jira.md#url) of the Jira instance Xray is installed on.
 
 ## Jira
 
@@ -74,12 +75,9 @@ Jira-native features are things like issue assignment or uploading issue attachm
 If you do not plan on using Jira-native features you can skip setting up Jira credentials.
 
 !!! tip
-    Don't worry, you don't have to learn by heart which options require the Jira connection.
+    You don't have to learn by heart which options require the Jira connection.
     In case you unknowingly enable one of them in the future without having set up the Jira credentials, the plugin will tell you in great detail which options have caused it to look for the credentials (before running any tests).
-    Should you encounter such an error message, you can then either turn off the corresponding options or simply provide the credentials.
-
-!!! note
-    When using Xray cloud, you must still provide a [Jira URL](jira.md#serverurl) in the plugin's options to connect to Jira.
+    Should you encounter such an error message, you can then either turn off the corresponding options or provide the credentials.
 
 As with Xray authentication, the plugin will automatically choose the authentication method depending on the provided environment variables.
 
