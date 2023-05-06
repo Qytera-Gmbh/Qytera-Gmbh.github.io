@@ -468,8 +468,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#attachvideo" class="md-nav__link">
-    attachVideo
+  <a href="#attachvideos" class="md-nav__link">
+    attachVideos
   </a>
   
 </li>
@@ -733,8 +733,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#attachvideo" class="md-nav__link">
-    attachVideo
+  <a href="#attachvideos" class="md-nav__link">
+    attachVideos
   </a>
   
 </li>
@@ -943,7 +943,7 @@ Must be prefixed with the <a href="#projectkey">project key</a>.</div>
 </div>
 </div>
 </details>
-<h3 id="attachvideo"><code>attachVideo</code><a class="headerlink" href="#attachvideo" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="attachvideos"><code>attachVideos</code><a class="headerlink" href="#attachvideos" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
 <dd>Whether any videos Cypress captured during test execution should be attached to the test execution issue on results upload.<div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -956,7 +956,7 @@ It is not possible to attach videos without uploading results.</div>
 <dd>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>JIRA_ATTACH_VIDEO</code></dd>
+<dd><code>JIRA_ATTACH_VIDEOS</code></dd>
 </dl>
 </dd>
 <dd>
@@ -983,13 +983,13 @@ It is not possible to attach videos without uploading results.</div>
 <span class="normal"><a href="#__codelineno-8-4">4</a></span>
 <span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">        </span><span class="nx">attachVideo</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">        </span><span class="nx">attachVideos</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_ATTACH_VIDEO</span><span class="o">=</span><span class="nb">true</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_ATTACH_VIDEOS</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>

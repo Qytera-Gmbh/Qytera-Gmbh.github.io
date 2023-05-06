@@ -719,7 +719,7 @@ Alternatively (see <a href="https://docs.cypress.io/guides/guides/environment-va
 <p>Use <code class="highlight"><span class="nx">configureXrayPlugin</span><span class="p">()</span></code> to specify defaults when running and developing tests locally and environment variables in CI/CD setups to override these defaults.</p>
 </div>
 <h2 id="separation-of-xray-and-jira">Separation of Xray and Jira<a class="headerlink" href="#separation-of-xray-and-jira" title="Anchor link to this section for reference">⚓︎</a></h2>
-<p>You will probably wonder at some point why there's a split between Jira and Xray for some options, although they might be doing similar things, such as Jira's <a href="../jira/#attachvideo"><code>attachVideo</code></a> and Xray's <a href="../xray/#uploadscreenshots"><code>uploadScreenshots</code></a>.
+<p>You will probably wonder at some point why there's a split between Jira and Xray for some options, although they might be doing similar things, such as Jira's <a href="../jira/#attachvideos"><code>attachVideos</code></a> and Xray's <a href="../xray/#uploadscreenshots"><code>uploadScreenshots</code></a>.
 The reason for this are the two different APIs which need to be worked with behind the scenes.</p>
 <p>On the one hand, there is the Xray API for dealing with tasks specific to Xray which don't exist in native Jira, such as test steps or screenshot evidence.
 On the other hand, there is the Jira API for tasks Jira handles natively, such as attaching files to arbitrary issues.</p>
