@@ -447,11 +447,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#optional-settings" class="md-nav__link">
-    Optional settings
+  <a href="#mandatory-settings" class="md-nav__link">
+    Mandatory settings
   </a>
   
-    <nav class="md-nav" aria-label="Optional settings">
+    <nav class="md-nav" aria-label="Mandatory settings">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -460,6 +460,19 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-settings" class="md-nav__link">
+    Optional settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional settings">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#uploadfeatures" class="md-nav__link">
@@ -657,11 +670,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#optional-settings" class="md-nav__link">
-    Optional settings
+  <a href="#mandatory-settings" class="md-nav__link">
+    Mandatory settings
   </a>
   
-    <nav class="md-nav" aria-label="Optional settings">
+    <nav class="md-nav" aria-label="Mandatory settings">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -670,6 +683,19 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-settings" class="md-nav__link">
+    Optional settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional settings">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#uploadfeatures" class="md-nav__link">
@@ -710,7 +736,7 @@
 
 <h1 id="cucumber">Cucumber<a class="headerlink" href="#cucumber" title="Anchor link to this section for reference">⚓︎</a></h1>
 <p>When Cucumber is enabled, you can use the following options to configure the way the plugin works with your feature files.</p>
-<h2 id="optional-settings">Optional settings<a class="headerlink" href="#optional-settings" title="Anchor link to this section for reference">⚓︎</a></h2>
+<h2 id="mandatory-settings">Mandatory settings<a class="headerlink" href="#mandatory-settings" title="Anchor link to this section for reference">⚓︎</a></h2>
 <h3 id="featurefileextension"><code>featureFileExtension</code><a class="headerlink" href="#featurefileextension" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
 <dd>The file extension of feature files you want to run in Cypress.
@@ -728,12 +754,6 @@ Such tags are needed to identify to which test issue a feature file belongs (see
 <dd><code>string</code></dd>
 </dl>
 </dd>
-<dd>
-<dl>
-<dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="s2">&quot;.feature&quot;</span></code></dd>
-</dl>
-</dd>
 </dl>
 <details class="example" open="open">
 <summary>Example</summary>
@@ -746,18 +766,19 @@ Such tags are needed to identify to which test issue a feature file belongs (see
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nx">cucumber</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nx">featureFileExtension</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;.cucumber&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nx">featureFileExtension</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;.feature&quot;</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">CUCUMBER_FEATURE_FILE_EXTENSION</span><span class="o">=</span><span class="s2">&quot;.cucumber&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">CUCUMBER_FEATURE_FILE_EXTENSION</span><span class="o">=</span><span class="s2">&quot;.feature&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
 </details>
+<h2 id="optional-settings">Optional settings<a class="headerlink" href="#optional-settings" title="Anchor link to this section for reference">⚓︎</a></h2>
 <h3 id="uploadfeatures"><code>uploadFeatures</code><a class="headerlink" href="#uploadfeatures" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
 <dd>Set it to true to automatically create or update existing Xray issues (summary, steps), based on the feature file executed by Cypress.<div class="admonition note">
