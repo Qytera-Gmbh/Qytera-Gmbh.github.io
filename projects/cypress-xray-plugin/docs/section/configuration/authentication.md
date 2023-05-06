@@ -69,7 +69,7 @@ For setting up Xray server authentication, see [Jira server authentication](#jir
 
 Some options require a direct connection to the underlying Jira instance, such as [`attachVideos`](jira.md#attachvideos).
 These options address things which work natively in Jira and more importantly, independently of the features introduced by Xray add-ons.
-Jira-native features are issue assignment or uploading issue attachments, whereas those introduced by Xray are features like test steps, test execution tracking or test evidence upload.
+Jira-native features are things like issue assignment or uploading issue attachments, whereas those introduced by Xray are features like test steps, test execution tracking or test evidence upload.
 
 If you do not plan on using Jira-native features you can skip setting up Jira credentials.
 
