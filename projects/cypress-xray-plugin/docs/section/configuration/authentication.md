@@ -50,16 +50,17 @@ For setting up Xray server authentication, see [Jira server authentication](#jir
 ## Jira
 
 Some options require a direct connection to the underlying Jira instance, such as [`attachVideos`](jira.md#attachvideos).
-These are options for things related to *Jira*, which aren't introduced by Xray add-ons, for example generic issue attachments.
+These options address things which work natively in Jira and more importantly, independently of the features introduced by Xray add-ons.
+Jira-native features are issue assignment or uploading issue attachments, whereas those introduced by Xray are features like test steps, test execution tracking or test evidence upload.
 
-If you do not use any such option you can skip setting up Jira credentials.
+If you do not plan on using Jira-native features you can skip setting up Jira credentials.
 
 !!! tip
-    Don't worry about unknowingly enabling options that require the Jira connection if you've skipped providing Jira credentials so far.
-    The plugin will tell you in great detail which options have caused the plugin to look for the missing Jira credentials.
+    Don't worry about unknowingly enabling options requiring the Jira connection if you've skipped providing Jira credentials so far.
+    The plugin will tell you in great detail which options have caused the it to look for the missing Jira credentials.
 
 !!! note
-    You must provide a [Jira URL](jira.md#serverurl) in the plugin's options if you want to connect to the Jira instance directly.
+    When using Xray cloud, you must still provide a [Jira URL](jira.md#serverurl) in the plugin's options to connect to Jira.
 
 As with Xray authentication, the plugin will automatically choose the authentication method depending on the provided environment variables.
 
