@@ -9,6 +9,24 @@ To avoid adding your secrets to system environment variables, simply pass them t
 npx cypress run --env XRAY_CLIENT_ID="ABCDEF",XRAY_CLIENT_SECRET="XYZ"
 ```
 
+!!! tip
+    Have a look at this graph to quickly set up **_both_** Xray and Jira authentication.
+    Note that Xray server does **_not_** require dedicated credentials in addition to the Jira credentials.
+    ```mermaid
+    graph TD
+        A{Xray<br/>instance};
+        B("XRAY_CLIENT_ID=<i>id</i><br>XRAY_CLIENT_SECRET=<i>secret</i><br><hr>JIRA_USERNAME=<i>user@company.com</i><br>JIRA_API_TOKEN=<i>token</i>");
+        C{Jira<br/>auth};
+        A --->|Cloud| B;
+        A --->|Server| C;
+        C --->|PAT| D;
+        C --->|Basic| E;
+        D("JIRA_API_TOKEN=<i>token</i>");
+        E("JIRA_USERNAME=<i>user</i><br>JIRA_PASSWORD=<i>password</i>");
+        classDef code-node font-family:monospace,text-align:left;
+        class B,D,E code-node;
+    ```
+
 ## Xray
 
 Depending on the provided combinations of environment variables, the plugin will automatically know which Xray API type to use.
