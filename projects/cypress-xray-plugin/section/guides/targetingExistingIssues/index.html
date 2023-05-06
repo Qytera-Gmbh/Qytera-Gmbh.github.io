@@ -804,14 +804,13 @@ Without tags, the exact names of the test cases <a href="https://docs.getxray.ap
 <p class="admonition-title">Tip</p>
 <p>Just stick to this handy chart to decide which tagging scheme you should employ.
 <pre class="mermaid"><code>graph LR
-    classDef codeClass font-family:monospace;
-    A{Xray&lt;br/&gt;instance?};
+    A{Xray&lt;br/&gt;instance};
     B["@TestName:CYP-123"];
     C["@CYP-123"];
-    A ---&gt;|Cloud| B;
-    A ---&gt;|Server| C;
-    class D codeClass;
-    class E codeClass;</code></pre></p>
+    A ---&gt;|&amp;nbspCloud&amp;nbsp| B;
+    A ---&gt;|&amp;nbspServer&amp;nbsp| C;
+    classDef code-node font-family:monospace;
+    class B,C code-node;</code></pre></p>
 </div>
 <details class="info">
 <summary>Additional information</summary>

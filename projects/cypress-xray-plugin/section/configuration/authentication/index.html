@@ -794,6 +794,23 @@ You <em>must</em> do this by setting up specific environment variables, e.g. a c
 <p>To avoid adding your secrets to system environment variables, simply pass them to Cypress as a comma-separated list in the command line:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;ABCDEF&quot;</span>,XRAY_CLIENT_SECRET<span class="o">=</span><span class="s2">&quot;XYZ&quot;</span>
 </code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Have a look at this graph to quickly set up <strong><em>both</em></strong> Xray and Jira authentication.
+Note that Xray server does <strong><em>not</em></strong> require dedicated credentials in addition to the Jira credentials.
+<pre class="mermaid"><code>graph TD
+    A{Xray&lt;br/&gt;instance};
+    B("XRAY_CLIENT_ID=&lt;i&gt;id&lt;/i&gt;&lt;br&gt;XRAY_CLIENT_SECRET=&lt;i&gt;secret&lt;/i&gt;&lt;br&gt;&lt;hr&gt;JIRA_USERNAME=&lt;i&gt;user@company.com&lt;/i&gt;&lt;br&gt;JIRA_API_TOKEN=&lt;i&gt;token&lt;/i&gt;");
+    C{Jira&lt;br/&gt;auth};
+    A ---&gt;|Cloud| B;
+    A ---&gt;|Server| C;
+    C ---&gt;|PAT| D;
+    C ---&gt;|Basic| E;
+    D("JIRA_API_TOKEN=&lt;i&gt;token&lt;/i&gt;");
+    E("JIRA_USERNAME=&lt;i&gt;user&lt;/i&gt;&lt;br&gt;JIRA_PASSWORD=&lt;i&gt;password&lt;/i&gt;");
+    classDef code-node font-family:monospace,text-align:left;
+    class B,D,E code-node;</code></pre></p>
+</div>
 <h2 id="xray">Xray<a class="headerlink" href="#xray" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>Depending on the provided combinations of environment variables, the plugin will automatically know which Xray API type to use.</p>
 <details class="info">
@@ -830,16 +847,17 @@ You <em>must</em> do this by setting up specific environment variables, e.g. a c
 </div>
 <h2 id="jira">Jira<a class="headerlink" href="#jira" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>Some options require a direct connection to the underlying Jira instance, such as <a href="../jira/#attachvideos"><code>attachVideos</code></a>.
-These are options for things related to <em>Jira</em>, which aren't introduced by Xray add-ons, for example generic issue attachments.</p>
-<p>If you do not use any such option you can skip setting up Jira credentials.</p>
+These options address things which work natively in Jira and more importantly, independently of the features introduced by Xray add-ons.
+Jira-native features are issue assignment or uploading issue attachments, whereas those introduced by Xray are features like test steps, test execution tracking or test evidence upload.</p>
+<p>If you do not plan on using Jira-native features you can skip setting up Jira credentials.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Don't worry about unknowingly enabling options that require the Jira connection if you've skipped providing Jira credentials so far.
-The plugin will tell you in great detail which options have caused the plugin to look for the missing Jira credentials.</p>
+<p>Don't worry about unknowingly enabling options requiring the Jira connection if you've skipped providing Jira credentials so far.
+The plugin will tell you in great detail which options have caused the it to look for the missing Jira credentials.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You must provide a <a href="../jira/#serverurl">Jira URL</a> in the plugin's options if you want to connect to the Jira instance directly.</p>
+<p>When using Xray cloud, you must still provide a <a href="../jira/#serverurl">Jira URL</a> in the plugin's options to connect to Jira.</p>
 </div>
 <p>As with Xray authentication, the plugin will automatically choose the authentication method depending on the provided environment variables.</p>
 <details class="info">
