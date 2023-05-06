@@ -93,14 +93,13 @@ In general, the plugin looks for scenario tags of the form:
     Just stick to this handy chart to decide which tagging scheme you should employ.
     ```mermaid
     graph LR
-        classDef codeClass font-family:monospace;
-        A{Xray<br/>instance?};
+        A{Xray<br/>instance};
         B["@TestName:CYP-123"];
         C["@CYP-123"];
-        A --->|Cloud| B;
-        A --->|Server| C;
-        class D codeClass;
-        class E codeClass;
+        A --->|&nbspCloud&nbsp| B;
+        A --->|&nbspServer&nbsp| C;
+        classDef code-node font-family:monospace;
+        class B,C code-node;
     ```
 
 ??? info "Additional information"
