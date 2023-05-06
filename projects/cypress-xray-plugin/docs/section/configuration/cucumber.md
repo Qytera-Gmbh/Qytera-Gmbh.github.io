@@ -2,7 +2,7 @@
 
 When Cucumber is enabled, you can use the following options to configure the way the plugin works with your feature files.
 
-## Optional settings
+## Mandatory settings
 
 ### `featureFileExtension`
 : The file extension of feature files you want to run in Cypress.
@@ -12,21 +12,21 @@ When Cucumber is enabled, you can use the following options to configure the way
     : `CUCUMBER_FEATURE_FILE_EXTENSION`
 : ***Type***
     : `string`
-: ***Default***
-    : `#!js ".feature"`
 ???+ example
     === "Cypress configuration"
         ```js
         await configureXrayPlugin({
             cucumber: {
-                featureFileExtension: ".cucumber"
+                featureFileExtension: ".feature"
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env CUCUMBER_FEATURE_FILE_EXTENSION=".cucumber"
+        npx cypress run --env CUCUMBER_FEATURE_FILE_EXTENSION=".feature"
         ```
+
+## Optional settings
 
 ### `uploadFeatures`
 : Set it to true to automatically create or update existing Xray issues (summary, steps), based on the feature file executed by Cypress.
