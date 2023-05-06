@@ -839,12 +839,11 @@ Note that Xray server does <strong><em>not</em></strong> require dedicated crede
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;ABCDEF&quot;</span>,XRAY_CLIENT_SECRET<span class="o">=</span><span class="s2">&quot;XYZ&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
+<p>In contrast to Xray server, a <a href="../jira/#url">Jira URL</a> is not necessary by default.
+This can change however, depending on your <a href="#jira">configuration</a>.</p>
 <h3 id="xray-server">Xray server<a class="headerlink" href="#xray-server" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>For setting up Xray server authentication, see <a href="#jira-server">Jira server authentication</a>.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Don't forget to provide the <a href="../jira/#serverurl">Jira URL</a>.</p>
-</div>
+<p>For setting up Xray server authentication, see <a href="#jira-server">Jira server authentication</a>.
+Additionally, you must provide the <a href="../jira/#url">Jira URL</a> of the Jira instance Xray is installed on.</p>
 <h2 id="jira">Jira<a class="headerlink" href="#jira" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>Some options require a direct connection to the underlying Jira instance, such as <a href="../jira/#attachvideos"><code>attachVideos</code></a>.
 These options address things which work natively in Jira and more importantly, independently of the features introduced by Xray add-ons.
@@ -852,13 +851,9 @@ Jira-native features are things like issue assignment or uploading issue attachm
 <p>If you do not plan on using Jira-native features you can skip setting up Jira credentials.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Don't worry, you don't have to learn by heart which options require the Jira connection.
+<p>You don't have to learn by heart which options require the Jira connection.
 In case you unknowingly enable one of them in the future without having set up the Jira credentials, the plugin will tell you in great detail which options have caused it to look for the credentials (before running any tests).
-Should you encounter such an error message, you can then either turn off the corresponding options or simply provide the credentials.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When using Xray cloud, you must still provide a <a href="../jira/#serverurl">Jira URL</a> in the plugin's options to connect to Jira.</p>
+Should you encounter such an error message, you can then either turn off the corresponding options or provide the credentials.</p>
 </div>
 <p>As with Xray authentication, the plugin will automatically choose the authentication method depending on the provided environment variables.</p>
 <details class="info">
