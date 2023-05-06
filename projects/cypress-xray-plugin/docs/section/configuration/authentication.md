@@ -49,7 +49,7 @@ For setting up Xray server authentication, see [Jira server authentication](#jir
 
 ## Jira
 
-Some options require a direct connection to the underlying Jira instance (such as [`attachVideo`](jira.md#attachvideo)).
+Some options require a direct connection to the underlying Jira instance, such as [`attachVideos`](jira.md#attachvideos).
 These are options for things related to *Jira*, which aren't introduced by Xray add-ons, for example generic issue attachments.
 
 If you do not use any such option you can skip setting up Jira credentials.

@@ -46,7 +46,7 @@ npx cypress run
 
 ## Separation of Xray and Jira
 
-You will probably wonder at some point why there's a split between Jira and Xray for some options, although they might be doing similar things, such as Jira's [`attachVideo`](jira.md#attachvideo) and Xray's [`uploadScreenshots`](xray.md#uploadscreenshots).
+You will probably wonder at some point why there's a split between Jira and Xray for some options, although they might be doing similar things, such as Jira's [`attachVideos`](jira.md#attachvideos) and Xray's [`uploadScreenshots`](xray.md#uploadscreenshots).
 The reason for this are the two different APIs which need to be worked with behind the scenes.
 
 On the one hand, there is the Xray API for dealing with tasks specific to Xray which don't exist in native Jira, such as test steps or screenshot evidence.

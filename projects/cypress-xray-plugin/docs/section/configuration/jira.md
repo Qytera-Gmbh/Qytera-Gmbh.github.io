@@ -103,7 +103,7 @@ In order to access Xray, some Jira configuration is mandatory.
         npx cypress run --env JIRA_TEST_PLAN_ISSUE_KEY="PRJ-456"
         ```
 
-### `attachVideo`
+### `attachVideos`
 : Whether any videos Cypress captured during test execution should be attached to the test execution issue on results upload.
     !!! note
         If set to `#!js true`, requires the [Jira URL](#serverurl) and valid [Jira credentials](authentication.md#jira) to be set.
@@ -111,7 +111,7 @@ In order to access Xray, some Jira configuration is mandatory.
         This option only takes effect once [`uploadResults`](xray.md#uploadresults) is turned on.
         It is not possible to attach videos without uploading results.
 : ***Environment variable***
-    : `JIRA_ATTACH_VIDEO`
+    : `JIRA_ATTACH_VIDEOS`
 : ***Type***
     : [`boolean`](types.md#boolean)
 : ***Default***
@@ -121,11 +121,11 @@ In order to access Xray, some Jira configuration is mandatory.
         ```js
         await configureXrayPlugin({
             jira: {
-                attachVideo: true
+                attachVideos: true
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env JIRA_ATTACH_VIDEO=true
+        npx cypress run --env JIRA_ATTACH_VIDEOS=true
         ```
