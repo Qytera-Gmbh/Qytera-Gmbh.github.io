@@ -15,7 +15,7 @@
         <link rel="next" href="../xray/">
       
       <link rel="icon" href="../../../assets/images/qyteraIcon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
     
     
       
@@ -474,6 +474,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#createtestissues" class="md-nav__link">
+    createTestIssues
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -739,6 +746,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#createtestissues" class="md-nav__link">
+    createTestIssues
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -990,6 +1004,51 @@ It is not possible to attach videos without uploading results.</div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_ATTACH_VIDEOS</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<h3 id="createtestissues"><code>createTestIssues</code><a class="headerlink" href="#createtestissues" title="Anchor link to this section for reference">⚓︎</a></h3>
+<dl>
+<dd>Whether the plugin should create test issues for Cypress tests that have not been mapped to existing test issues (see <a href="../../guides/targetingExistingIssues/">targeting existing issues</a>) when importing test results to Xray.</dd>
+<dd>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>JIRA_CREATE_TEST_ISSUES</code></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Type</em></strong></dt>
+<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">true</span></code></dd>
+</dl>
+</dd>
+</dl>
+<details class="example" open="open">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Cypress configuration</label><label for="__tabbed_6_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">        </span><span class="nx">createTestIssues</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_CREATE_TEST_ISSUES</span><span class="o">=</span><span class="nb">false</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
