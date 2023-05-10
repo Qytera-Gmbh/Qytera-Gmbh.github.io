@@ -129,3 +129,25 @@ In order to access Xray, some Jira configuration is mandatory.
         ```sh
         npx cypress run --env JIRA_ATTACH_VIDEOS=true
         ```
+
+### `createTestIssues`
+: Whether the plugin should create test issues for Cypress tests that have not been mapped to existing test issues (see [targeting existing issues](../guides/targetingExistingIssues.md)) when importing test results to Xray.
+: ***Environment variable***
+    : `JIRA_CREATE_TEST_ISSUES`
+: ***Type***
+    : [`boolean`](types.md#boolean)
+: ***Default***
+    : `#!js true`
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin({
+            jira: {
+                createTestIssues: false
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env JIRA_CREATE_TEST_ISSUES=false
+        ```
