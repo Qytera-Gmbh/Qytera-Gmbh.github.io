@@ -53,14 +53,15 @@ You can provide a bunch of Xray settings which might become necessary depending 
         ```
 
 ### `statusPassed`
-: The status name of a test marked as passed in Xray.
+: The status name of a test marked as passed in Cypress.
     Should be used when custom status names have been setup in Xray.
 : ***Environment variable***
     : `XRAY_STATUS_PASSED`
 : ***Type***
     : `string`
 : ***Default***
-    : `#!js "PASSED"`
+    : `#!js "PASS"` (when providing Xray server credentials)
+    : `#!js "PASSED"` (when providing Xray cloud credentials)
 ???+ example
     === "Cypress configuration"
         ```js
@@ -76,14 +77,15 @@ You can provide a bunch of Xray settings which might become necessary depending 
         ```
 
 ### `statusFailed`
-: The status name of a test marked as failed in Xray.
+: The status name of a test marked as failed in Cypress.
     Should be used when custom status names have been setup in Xray.
 : ***Environment variable***
     : `XRAY_STATUS_FAILED`
 : ***Type***
     : `string`
 : ***Default***
-    : `#!js "FAILED"`
+    : `#!js "FAIL"` (when providing Xray server credentials)
+    : `#!js "FAILED"` (when providing Xray cloud credentials)
 ???+ example
     === "Cypress configuration"
         ```js
