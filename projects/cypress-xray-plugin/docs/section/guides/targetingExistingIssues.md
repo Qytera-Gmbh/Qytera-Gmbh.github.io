@@ -79,6 +79,16 @@ The plugin parses all test case names and looks for sequences of the form `#!xml
             Your browser does not support the video tag.
         </video>
 
+
+!!! bug "Bug"
+
+    There's currently an Xray cloud bug affecting the reuse of existing issues if the test title contains whitespace in front of a dash, such as `#!js "[START] - should be able to login"`.
+    Without a test issue key in the test title, (i.e. relying on summary matching for issue reuse during consecutive uploads), Xray will create duplicates ***even if there's a matching issue already***.
+
+    The corresponding bug can be tracked here: [https://jira.getxray.app/browse/XRAYCLOUD-6031](https://jira.getxray.app/browse/XRAYCLOUD-6031).
+
+    Including test issue keys is therefore even more recommended to avoid running into this problem.
+
 ### Reuse Cucumber test issues
 
 In feature files, you can annotate scenarios with a [tag](https://cucumber.io/docs/cucumber/api/?lang=java#tags) containing the corresponding test case issue key.
