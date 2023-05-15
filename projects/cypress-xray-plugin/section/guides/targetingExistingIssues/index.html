@@ -15,7 +15,7 @@
         <link rel="next" href="../featureFileSynchronization/">
       
       <link rel="icon" href="../../../assets/images/qyteraIcon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.12">
     
     
       
@@ -792,6 +792,13 @@ By including the test case issue keys in the titles, Xray will be able to match 
 </div>
 </div>
 </details>
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>There's currently an Xray cloud bug affecting the reuse of existing issues if the test title contains whitespace in front of a dash, such as <code class="highlight"><span class="s2">&quot;[START] - should be able to login&quot;</span></code>.
+Without a test issue key in the test title, (i.e. relying on summary matching for issue reuse during consecutive uploads), Xray will create duplicates <strong><em>even if there's a matching issue already</em></strong>.</p>
+<p>The corresponding bug can be tracked here: <a href="https://jira.getxray.app/browse/XRAYCLOUD-6031">https://jira.getxray.app/browse/XRAYCLOUD-6031</a>.</p>
+<p>Including test issue keys is therefore even more recommended to avoid running into this problem.</p>
+</div>
 <h3 id="reuse-cucumber-test-issues">Reuse Cucumber test issues<a class="headerlink" href="#reuse-cucumber-test-issues" title="Anchor link to this section for reference">⚓︎</a></h3>
 <p>In feature files, you can annotate scenarios with a <a href="https://cucumber.io/docs/cucumber/api/?lang=java#tags">tag</a> containing the corresponding test case issue key.
 Without tags, the exact names of the test cases <a href="https://docs.getxray.app/display/XRAYCLOUD/Importing+Cucumber+Tests+-+REST">will again be used</a>, this time being the concatenation of the <code class="highlight"><span class="nf">Feature</span></code> and <code class="highlight"><span class="nf">Scenario</span></code> names.</p>
@@ -1188,7 +1195,7 @@ To highlight the issue being reused, let's also add a new test case that looks f
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.instant", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c2be25ad.min.js"></script>
       
     
   </body>
