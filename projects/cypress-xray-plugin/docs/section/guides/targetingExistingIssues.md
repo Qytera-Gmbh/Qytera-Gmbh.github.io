@@ -91,6 +91,10 @@ The plugin parses all test case names and looks for sequences of the form `#!xml
 
 ### Reuse Cucumber test issues
 
+!!! development
+    Please note that Cucumber support is still in an experimental development stage.
+    You should probably expect Cucumber features to not work consistently for the time being.
+
 In feature files, you can annotate scenarios with a [tag](https://cucumber.io/docs/cucumber/api/?lang=java#tags) containing the corresponding test case issue key.
 Without tags, the exact names of the test cases [will again be used](https://docs.getxray.app/display/XRAYCLOUD/Importing+Cucumber+Tests+-+REST), this time being the concatenation of the `#!gherkin Feature` and `#!gherkin Scenario` names.
 

@@ -46,6 +46,10 @@ import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin/pl
 
 ## Cucumber support
 
+!!! development
+    Please note that Cucumber support is still in an experimental development stage.
+    You should probably expect Cucumber features to not work consistently for the time being.
+
 For Cucumber support, this plugin builds upon the [cypress-cucumber-preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor) plugin for executing Cucumber feature files.
 
 With added Xray synchronization, this plugin allows you to automatically download or upload feature files to Xray when running your Cypress tests and to track their execution results in Xray.

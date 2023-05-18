@@ -2,6 +2,10 @@
 
 When Cucumber is enabled, you can use the following options to configure the way the plugin works with your feature files.
 
+!!! development
+    Please note that Cucumber support is still in an experimental development stage.
+    You should probably expect Cucumber features to not work consistently for the time being.
+
 ## Mandatory settings
 
 ### `featureFileExtension`

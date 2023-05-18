@@ -2,6 +2,10 @@
 
 The plugin allows you to keep your local feature files in sync with the step definitions in Xray.
 
+!!! development
+    Please note that Cucumber support is still in an experimental development stage.
+    You should probably expect Cucumber features to not work consistently for the time being.
+
 ## Feature file upload
 
 <figure markdown>

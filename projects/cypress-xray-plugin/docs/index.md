@@ -24,10 +24,10 @@ hide:
 - [x] Reuse existing test execution and test plan issues
 - [x] CI/CD ready
 
-**Cucumber support**
+**Cucumber support** (<span class="development">experimental</span> :fontawesome-solid-person-digging:{ .development })
 
 - [x] Automatic synchronization of Xray step definitions based on your feature files
-- [ ] Automatic execution of tests based on Xray step definitions (:fontawesome-solid-person-digging:{ .development })
+- [ ] Automatic execution of tests based on Xray step definitions
 
 !!! note
     This plugin only works when running Cypress through the CLI (i.e. `#!sh npx cypress run`).
