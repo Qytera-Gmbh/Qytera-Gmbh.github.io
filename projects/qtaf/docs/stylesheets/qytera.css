@@ -29,6 +29,9 @@
   --md-accent-fg-color: var(--DARK_GREEN);
   --md-typeset-a-color: var(--DARK_RED);
 }
+[data-md-color-scheme="qytera"] img[src$="#only-dark"] {
+  display: none; /* Hide dark images in light mode */
+}
 
 /*
  * Allow tables to span 100% of available space.
