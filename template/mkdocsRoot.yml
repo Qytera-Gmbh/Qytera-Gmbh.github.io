@@ -4,12 +4,14 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: qytera
+      primary: custom
       toggle:
         icon: material/lightbulb-on
         name: Switch to dark mode
 
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: custom
       toggle:
         icon: material/lightbulb-outline
         name: Switch to light mode
