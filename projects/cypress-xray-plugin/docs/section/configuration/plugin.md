@@ -4,10 +4,10 @@ The plugin offers several options for customizing the upload further.
 
 ## Optional settings
 
-### `overwriteIssueSummary`
-: Decide whether to keep the issues' existing summaries or whether to overwrite them with each upload.
+### `debug`
+: Turns on or off extensive debugging output.
 : ***Environment variable***
-    : `PLUGIN_OVERWRITE_ISSUE_SUMMARY`
+    : `PLUGIN_DEBUG`
 : ***Type***
     : [`boolean`](types.md#boolean)
 : ***Default***
@@ -17,13 +17,13 @@ The plugin offers several options for customizing the upload further.
         ```js
         await configureXrayPlugin({
             plugin: {
-                overwriteIssueSummary: true
+                debug: true
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env PLUGIN_OVERWRITE_ISSUE_SUMMARY=true
+        npx cypress run --env PLUGIN_DEBUG=true
         ```
 
 ### `normalizeScreenshotNames`
@@ -49,10 +49,10 @@ The plugin offers several options for customizing the upload further.
         npx cypress run --env PLUGIN_NORMALIZE_SCREENSHOT_NAMES=true
         ```
 
-### `debug`
-: Turns on or off extensive debugging output.
+### `overwriteIssueSummary`
+: Decide whether to keep the issues' existing summaries or whether to overwrite them with each upload.
 : ***Environment variable***
-    : `PLUGIN_DEBUG`
+    : `PLUGIN_OVERWRITE_ISSUE_SUMMARY`
 : ***Type***
     : [`boolean`](types.md#boolean)
 : ***Default***
@@ -62,11 +62,11 @@ The plugin offers several options for customizing the upload further.
         ```js
         await configureXrayPlugin({
             plugin: {
-                debug: true
+                overwriteIssueSummary: true
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env PLUGIN_DEBUG=true
+        npx cypress run --env PLUGIN_OVERWRITE_ISSUE_SUMMARY=true
         ```

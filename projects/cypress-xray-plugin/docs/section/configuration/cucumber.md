@@ -32,30 +32,6 @@ When Cucumber is enabled, you can use the following options to configure the way
 
 ## Optional settings
 
-### `uploadFeatures`
-: Set it to true to automatically create or update existing Xray issues (summary, steps), based on the feature file executed by Cypress.
-    !!! note
-        Enable this option if the source of truth for test cases are local feature files in Cypress and Xray is only used for tracking execution status/history.
-: ***Environment variable***
-    : `CUCUMBER_UPLOAD_FEATURES`
-: ***Type***
-    : [`boolean`](types.md#boolean)
-: ***Default***
-    : `#!js false`
-???+ example
-    === "Cypress configuration"
-        ```js
-        await configureXrayPlugin({
-            cucumber: {
-                uploadFeatures: true
-            },
-        });
-        ```
-    === "Environment variable"
-        ```sh
-        npx cypress run --env CUCUMBER_UPLOAD_FEATURES=true
-        ```
-
 ### `downloadFeatures`
 !!! development
     This feature will be added in future versions of the plugin.
@@ -81,4 +57,28 @@ When Cucumber is enabled, you can use the following options to configure the way
     === "Environment variable"
         ```sh
         npx cypress run --env CUCUMBER_DOWNLOAD_FEATURES=true
+        ```
+
+### `uploadFeatures`
+: Set it to true to automatically create or update existing Xray issues (summary, steps), based on the feature file executed by Cypress.
+    !!! note
+        Enable this option if the source of truth for test cases are local feature files in Cypress and Xray is only used for tracking execution status/history.
+: ***Environment variable***
+    : `CUCUMBER_UPLOAD_FEATURES`
+: ***Type***
+    : [`boolean`](types.md#boolean)
+: ***Default***
+    : `#!js false`
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin({
+            cucumber: {
+                uploadFeatures: true
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env CUCUMBER_UPLOAD_FEATURES=true
         ```

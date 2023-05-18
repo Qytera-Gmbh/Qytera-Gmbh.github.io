@@ -4,52 +4,52 @@ You can provide a bunch of Xray settings which might become necessary depending 
 
 ## Optional settings
 
-### `uploadResults`
-: Turns execution results upload on or off.
-    Useful when switching upload on or off from the command line (via environment variables).
+### `statusFailed`
+: The status name of a test marked as failed in Cypress.
+    Should be used when custom status names have been setup in Xray.
 : ***Environment variable***
-    : `XRAY_UPLOAD_RESULTS`
+    : `XRAY_STATUS_FAILED`
 : ***Type***
-    : [`boolean`](types.md#boolean)
+    : `string`
 : ***Default***
-    : `#!js true`
+    : `#!js "FAIL"` (when providing Xray server credentials)
+    : `#!js "FAILED"` (when providing Xray cloud credentials)
 ???+ example
     === "Cypress configuration"
         ```js
         await configureXrayPlugin({
             xray: {
-                uploadResults: false
+                statusFailed: "FAILURE"
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env XRAY_UPLOAD_RESULTS=false
+        npx cypress run --env XRAY_STATUS_FAILED=FAILURE
         ```
 
-### `uploadScreenshots`
-: Turns on or off the upload of screenshots Cypress takes during test execution.
-    !!! note
-        This option only takes effect once [`uploadResults`](#uploadresults) is turned on.
-        It is not possible to upload screenshots without uploading results.
+### `statusPassed`
+: The status name of a test marked as passed in Cypress.
+    Should be used when custom status names have been setup in Xray.
 : ***Environment variable***
-    : `XRAY_UPLOAD_SCREENSHOTS`
+    : `XRAY_STATUS_PASSED`
 : ***Type***
-    : [`boolean`](types.md#boolean)
+    : `string`
 : ***Default***
-    : `#!js true`
+    : `#!js "PASS"` (when providing Xray server credentials)
+    : `#!js "PASSED"` (when providing Xray cloud credentials)
 ???+ example
     === "Cypress configuration"
         ```js
         await configureXrayPlugin({
             xray: {
-                uploadScreenshots: false
+                statusPassed: "SUCCESS"
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env XRAY_UPLOAD_SCREENSHOTS_=false
+        npx cypress run --env XRAY_STATUS_PASSED=SUCCESS
         ```
 
 ### `statusPassed`
@@ -100,32 +100,33 @@ You can provide a bunch of Xray settings which might become necessary depending 
         npx cypress run --env XRAY_STATUS_FAILED=FAILURE
         ```
 
-### `testType`
-: The test type of the test issues.
-    This option will be used to set the corresponding field on Xray issues created during upload (happens when a test does not yet have a corresponding Xray issue).
+### `steps`
+
+All options related to manual test issue steps.
+
+#### `maxLengthAction`
+: The maximum length a step's action description can have in terms of characters. Some Xray instances might enforce limits on the length and reject step updates in case the action's description exceeds said limit.
 : ***Environment variable***
-    : `XRAY_TEST_TYPE`
+    : `XRAY_STEPS_MAX_LENGTH_ACTION`
 : ***Type***
-    : `string`
+    : `number`
 : ***Default***
-    : `#!js "Manual"`
+    : `#!js 8000` ([more info](https://github.com/Qytera-Gmbh/cypress-xray-plugin/issues/50))
 ???+ example
     === "Cypress configuration"
         ```js
         await configureXrayPlugin({
             xray: {
-                testType: "Cucumber"
+                steps: {
+                    maxLengthAction: 1234
+                }
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env XRAY_TEST_TYPE=Cucumber
+        npx cypress run --env XRAY_STEPS_MAX_LENGTH_ACTION=1234
         ```
-
-### `steps`
-
-All options related to manual test issue steps.
 
 #### `update`
 : Whether to update a manual test issue's test steps during execution results upload.
@@ -157,26 +158,73 @@ All options related to manual test issue steps.
         npx cypress run --env XRAY_STEPS_UPDATE=false
         ```
 
-#### `maxLengthAction`
-: The maximum length a step's action description can have in terms of characters. Some Xray instances might enforce limits on the length and reject step updates in case the action's description exceeds said limit.
+### `testType`
+: The test type of the test issues.
+    This option will be used to set the corresponding field on Xray issues created during upload (happens when a test does not yet have a corresponding Xray issue).
 : ***Environment variable***
-    : `XRAY_STEPS_MAX_LENGTH_ACTION`
+    : `XRAY_TEST_TYPE`
 : ***Type***
-    : `number`
+    : `string`
 : ***Default***
-    : `#!js 8000` ([more info](https://github.com/Qytera-Gmbh/cypress-xray-plugin/issues/50))
+    : `#!js "Manual"`
 ???+ example
     === "Cypress configuration"
         ```js
         await configureXrayPlugin({
             xray: {
-                steps: {
-                    maxLengthAction: 1234
-                }
+                testType: "Cucumber"
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env XRAY_STEPS_MAX_LENGTH_ACTION=1234
+        npx cypress run --env XRAY_TEST_TYPE=Cucumber
+        ```
+
+### `uploadResults`
+: Turns execution results upload on or off.
+    Useful when switching upload on or off from the command line (via environment variables).
+: ***Environment variable***
+    : `XRAY_UPLOAD_RESULTS`
+: ***Type***
+    : [`boolean`](types.md#boolean)
+: ***Default***
+    : `#!js true`
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin({
+            xray: {
+                uploadResults: false
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_UPLOAD_RESULTS=false
+        ```
+
+### `uploadScreenshots`
+: Turns on or off the upload of screenshots Cypress takes during test execution.
+    !!! note
+        This option only takes effect once [`uploadResults`](#uploadresults) is turned on.
+        It is not possible to upload screenshots without uploading results.
+: ***Environment variable***
+    : `XRAY_UPLOAD_SCREENSHOTS`
+: ***Type***
+    : [`boolean`](types.md#boolean)
+: ***Default***
+    : `#!js true`
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin({
+            xray: {
+                uploadScreenshots: false
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_UPLOAD_SCREENSHOTS_=false
         ```
