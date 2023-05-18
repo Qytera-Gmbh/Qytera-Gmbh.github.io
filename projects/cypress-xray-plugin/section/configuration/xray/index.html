@@ -475,6 +475,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    steps
+  </a>
+  
+    <nav class="md-nav" aria-label="steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxlengthaction" class="md-nav__link">
+    maxLengthAction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -710,6 +737,33 @@
   <a href="#testtype" class="md-nav__link">
     testType
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    steps
+  </a>
+  
+    <nav class="md-nav" aria-label="steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxlengthaction" class="md-nav__link">
+    maxLengthAction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -969,6 +1023,115 @@ This option will be used to set the corresponding field on Xray issues created d
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_TEST_TYPE</span><span class="o">=</span>Cucumber
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<h3 id="steps"><code>steps</code><a class="headerlink" href="#steps" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>All options related to manual test issue steps.</p>
+<h4 id="update"><code>update</code><a class="headerlink" href="#update" title="Anchor link to this section for reference">⚓︎</a></h4>
+<dl>
+<dd>Whether to update a manual test issue's test steps during execution results upload.<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+If set to true (default), <strong><em>all</em></strong> existing steps will be replaced with the plugin's steps.</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+The plugin currently creates only one step containing the code of the corresponding Cypress test function.</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+Steps of existing issues can only be updated if <a href="../plugin/#overwriteissuesummary"><code>overwriteIssueSummary</code></a> is enabled as well, since Xray <em>requires</em> an issue summary whenever test details are updated.</div>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_STEPS_UPDATE</code></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Type</em></strong></dt>
+<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">true</span></code></dd>
+</dl>
+</dd>
+</dl>
+<details class="example" open="open">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Cypress configuration</label><label for="__tabbed_6_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">        </span><span class="nx">steps</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">            </span><span class="nx">update</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_STEPS_UPDATE</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<h4 id="maxlengthaction"><code>maxLengthAction</code><a class="headerlink" href="#maxlengthaction" title="Anchor link to this section for reference">⚓︎</a></h4>
+<dl>
+<dd>The maximum length a step's action description can have in terms of characters. Some Xray instances might enforce limits on the length and reject step updates in case the action's description exceeds said limit.</dd>
+<dd>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_STEPS_MAX_LENGTH_ACTION</code></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>number</code></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="mf">8000</span></code> (<a href="https://github.com/Qytera-Gmbh/cypress-xray-plugin/issues/50">more info</a>)</dd>
+</dl>
+</dd>
+</dl>
+<details class="example" open="open">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Cypress configuration</label><label for="__tabbed_7_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span>
+<span class="normal"><a href="#__codelineno-12-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">        </span><span class="nx">steps</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">            </span><span class="nx">maxLengthAction</span><span class="o">:</span><span class="w"> </span><span class="mf">1234</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_STEPS_MAX_LENGTH_ACTION</span><span class="o">=</span><span class="m">1234</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
