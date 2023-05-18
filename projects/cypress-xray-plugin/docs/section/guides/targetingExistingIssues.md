@@ -27,7 +27,7 @@ This applies to the other direction, too.
 If someone changes test case issue titles in Xray and the test cases in Cypress aren't adapted accordingly, you will end up with new test case issues.
 
 To prevent that from happening, you can include test case issue keys in your test case titles.
-Simply add the test case issue's key *anywhere* in the name of the `#!js it()` function:
+Simply add the test case issue's key *anywhere* in the name of the *innermost* `#!js it()` function:
 
 ```js
 describe("a suite", () => {
