@@ -52,54 +52,6 @@ You can provide a bunch of Xray settings which might become necessary depending 
         npx cypress run --env XRAY_STATUS_PASSED=SUCCESS
         ```
 
-### `statusPassed`
-: The status name of a test marked as passed in Cypress.
-    Should be used when custom status names have been setup in Xray.
-: ***Environment variable***
-    : `XRAY_STATUS_PASSED`
-: ***Type***
-    : `string`
-: ***Default***
-    : `#!js "PASS"` (when providing Xray server credentials)
-    : `#!js "PASSED"` (when providing Xray cloud credentials)
-???+ example
-    === "Cypress configuration"
-        ```js
-        await configureXrayPlugin({
-            xray: {
-                statusPassed: "SUCCESS"
-            },
-        });
-        ```
-    === "Environment variable"
-        ```sh
-        npx cypress run --env XRAY_STATUS_PASSED=SUCCESS
-        ```
-
-### `statusFailed`
-: The status name of a test marked as failed in Cypress.
-    Should be used when custom status names have been setup in Xray.
-: ***Environment variable***
-    : `XRAY_STATUS_FAILED`
-: ***Type***
-    : `string`
-: ***Default***
-    : `#!js "FAIL"` (when providing Xray server credentials)
-    : `#!js "FAILED"` (when providing Xray cloud credentials)
-???+ example
-    === "Cypress configuration"
-        ```js
-        await configureXrayPlugin({
-            xray: {
-                statusFailed: "FAILURE"
-            },
-        });
-        ```
-    === "Environment variable"
-        ```sh
-        npx cypress run --env XRAY_STATUS_FAILED=FAILURE
-        ```
-
 ### `steps`
 
 All options related to manual test issue steps.
