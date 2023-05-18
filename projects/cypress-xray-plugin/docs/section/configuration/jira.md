@@ -151,3 +151,47 @@ In order to access Xray, some Jira configuration is mandatory.
         ```sh
         npx cypress run --env JIRA_CREATE_TEST_ISSUES=false
         ```
+
+### `testExecutionIssueSummary`
+: The summary of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through [`testExecutionIssueKey`](#testexecutionissuekey)).
+: ***Environment variable***
+    : `JIRA_TEST_EXECUTION_ISSUE_SUMMARY`
+: ***Type***
+    : `string`
+: ***Default***
+    : ``#!js `Execution Results [${t}]` `` with `t` being a Unix timestamp when Cypress started testing
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin({
+            jira: {
+                testExecutionIssueSummary: "Monday morning regression test"
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env JIRA_TEST_EXECUTION_ISSUE_SUMMARY="Monday morning regression test"
+        ```
+
+### `testExecutionIssueDescription`
+: The description of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through [`testExecutionIssueKey`](#testexecutionissuekey)).
+: ***Environment variable***
+    : `JIRA_TEST_EXECUTION_ISSUE_DESCRIPTION`
+: ***Type***
+    : `string`
+: ***Default***
+    : ``#!js `Cypress version: ${version} Browser: ${name} (${version})` `` with values depending on Cypress and the chosen browser
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin({
+            jira: {
+                testExecutionIssueDescription: "This test run was approved by Mr Anderson."
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env JIRA_TEST_EXECUTION_ISSUE_DESCRIPTION="This test run was approved by Mr Anderson."
+        ```
