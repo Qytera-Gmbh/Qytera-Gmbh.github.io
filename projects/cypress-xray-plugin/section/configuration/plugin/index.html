@@ -469,8 +469,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#overwriteissuesummary" class="md-nav__link">
-    overwriteIssueSummary
+  <a href="#debug" class="md-nav__link">
+    debug
   </a>
   
 </li>
@@ -483,8 +483,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#debug" class="md-nav__link">
-    debug
+  <a href="#overwriteissuesummary" class="md-nav__link">
+    overwriteIssueSummary
   </a>
   
 </li>
@@ -665,8 +665,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#overwriteissuesummary" class="md-nav__link">
-    overwriteIssueSummary
+  <a href="#debug" class="md-nav__link">
+    debug
   </a>
   
 </li>
@@ -679,8 +679,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#debug" class="md-nav__link">
-    debug
+  <a href="#overwriteissuesummary" class="md-nav__link">
+    overwriteIssueSummary
   </a>
   
 </li>
@@ -711,13 +711,13 @@
 <h1 id="plugin">Plugin<a class="headerlink" href="#plugin" title="Anchor link to this section for reference">⚓︎</a></h1>
 <p>The plugin offers several options for customizing the upload further.</p>
 <h2 id="optional-settings">Optional settings<a class="headerlink" href="#optional-settings" title="Anchor link to this section for reference">⚓︎</a></h2>
-<h3 id="overwriteissuesummary"><code>overwriteIssueSummary</code><a class="headerlink" href="#overwriteissuesummary" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="debug"><code>debug</code><a class="headerlink" href="#debug" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
-<dd>Decide whether to keep the issues' existing summaries or whether to overwrite them with each upload.</dd>
+<dd>Turns on or off extensive debugging output.</dd>
 <dd>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>PLUGIN_OVERWRITE_ISSUE_SUMMARY</code></dd>
+<dd><code>PLUGIN_DEBUG</code></dd>
 </dl>
 </dd>
 <dd>
@@ -744,13 +744,13 @@
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nx">overwriteIssueSummary</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nx">debug</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">PLUGIN_OVERWRITE_ISSUE_SUMMARY</span><span class="o">=</span><span class="nb">true</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">PLUGIN_DEBUG</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -802,13 +802,13 @@ With this option enabled, the plugin only keeps characters <code>a-zA-Z0-9.</cod
 </div>
 </div>
 </details>
-<h3 id="debug"><code>debug</code><a class="headerlink" href="#debug" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="overwriteissuesummary"><code>overwriteIssueSummary</code><a class="headerlink" href="#overwriteissuesummary" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
-<dd>Turns on or off extensive debugging output.</dd>
+<dd>Decide whether to keep the issues' existing summaries or whether to overwrite them with each upload.</dd>
 <dd>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>PLUGIN_DEBUG</code></dd>
+<dd><code>PLUGIN_OVERWRITE_ISSUE_SUMMARY</code></dd>
 </dl>
 </dd>
 <dd>
@@ -835,13 +835,13 @@ With this option enabled, the plugin only keeps characters <code>a-zA-Z0-9.</cod
 <span class="normal"><a href="#__codelineno-4-4">4</a></span>
 <span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="nx">debug</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="nx">overwriteIssueSummary</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">PLUGIN_DEBUG</span><span class="o">=</span><span class="nb">true</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">PLUGIN_OVERWRITE_ISSUE_SUMMARY</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>

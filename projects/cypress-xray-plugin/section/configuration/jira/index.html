@@ -447,27 +447,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#url" class="md-nav__link">
-    url
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testexecutionissuekey" class="md-nav__link">
-    testExecutionIssueKey
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testplanissuekey" class="md-nav__link">
-    testPlanIssueKey
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#attachvideos" class="md-nav__link">
     attachVideos
   </a>
@@ -482,6 +461,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#testexecutionissuedescription" class="md-nav__link">
+    testExecutionIssueDescription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testexecutionissuekey" class="md-nav__link">
+    testExecutionIssueKey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#testexecutionissuesummary" class="md-nav__link">
     testExecutionIssueSummary
   </a>
@@ -489,8 +482,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#testexecutionissuedescription" class="md-nav__link">
-    testExecutionIssueDescription
+  <a href="#testplanissuekey" class="md-nav__link">
+    testPlanIssueKey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    url
   </a>
   
 </li>
@@ -733,27 +733,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#url" class="md-nav__link">
-    url
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testexecutionissuekey" class="md-nav__link">
-    testExecutionIssueKey
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testplanissuekey" class="md-nav__link">
-    testPlanIssueKey
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#attachvideos" class="md-nav__link">
     attachVideos
   </a>
@@ -768,6 +747,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#testexecutionissuedescription" class="md-nav__link">
+    testExecutionIssueDescription
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testexecutionissuekey" class="md-nav__link">
+    testExecutionIssueKey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#testexecutionissuesummary" class="md-nav__link">
     testExecutionIssueSummary
   </a>
@@ -775,8 +768,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#testexecutionissuedescription" class="md-nav__link">
-    testExecutionIssueDescription
+  <a href="#testplanissuekey" class="md-nav__link">
+    testPlanIssueKey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    url
   </a>
   
 </li>
@@ -849,19 +849,32 @@ It is used in many places throughout the plugin, for example for <a href="../../
 </div>
 </details>
 <h2 id="optional-settings">Optional settings<a class="headerlink" href="#optional-settings" title="Anchor link to this section for reference">⚓︎</a></h2>
-<h3 id="url"><code>url</code><a class="headerlink" href="#url" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="attachvideos"><code>attachVideos</code><a class="headerlink" href="#attachvideos" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
+<dd>Whether any videos Cypress captured during test execution should be attached to the test execution issue on results upload.<div class="admonition note">
+<p class="admonition-title">Note</p>
+If set to <code class="highlight"><span class="kc">true</span></code>, requires the <a href="#serverurl">Jira URL</a> and valid <a href="../authentication/#jira">Jira credentials</a> to be set.</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+This option only takes effect once <a href="../xray/#uploadresults"><code>uploadResults</code></a> is turned on.
+It is not possible to attach videos without uploading results.</div>
+</dd>
 <dd>
-<p>Use this parameter to specify the base URL of your Jira instance.</p>
-<p>For Jira cloud, it is usually of the form <code>https://your-domain.atlassian.net</code> (without the <code>/jira</code> part, see <a href="https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#ad-hoc-api-calls/">here</a>).</p>
 <dl>
-<dt>For Jira server, you can have a look <a href="https://confluence.atlassian.com/adminjiraserver/configuring-the-base-url-938847830.html">here</a> to determine your base URL.</dt>
-<dd><strong><em>Environment variable</em></strong></dd>
-<dd><code>JIRA_URL</code></dd>
-<dd><strong><em>Type</em></strong></dd>
-<dd><code>string</code></dd>
-<dd><strong><em>Default</em></strong></dd>
-<dd><code class="highlight"><span class="kc">undefined</span></code></dd>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>JIRA_ATTACH_VIDEOS</code></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Type</em></strong></dt>
+<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">false</span></code></dd>
 </dl>
 </dd>
 </dl>
@@ -876,13 +889,103 @@ It is used in many places throughout the plugin, for example for <a href="../../
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
 <span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://example.org/development/jira&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="nx">attachVideos</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_URL</span><span class="o">=</span><span class="s2">&quot;https://example.org/development/jira&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_ATTACH_VIDEOS</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<h3 id="createtestissues"><code>createTestIssues</code><a class="headerlink" href="#createtestissues" title="Anchor link to this section for reference">⚓︎</a></h3>
+<dl>
+<dd>Whether the plugin should create test issues for Cypress tests that have not been mapped to existing test issues (see <a href="../../guides/targetingExistingIssues/">targeting existing issues</a>) when importing test results to Xray.</dd>
+<dd>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>JIRA_CREATE_TEST_ISSUES</code></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Type</em></strong></dt>
+<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">true</span></code></dd>
+</dl>
+</dd>
+</dl>
+<details class="example" open="open">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Cypress configuration</label><label for="__tabbed_3_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="nx">createTestIssues</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_CREATE_TEST_ISSUES</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<h3 id="testexecutionissuedescription"><code>testExecutionIssueDescription</code><a class="headerlink" href="#testexecutionissuedescription" title="Anchor link to this section for reference">⚓︎</a></h3>
+<dl>
+<dd>The description of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through <a href="#testexecutionissuekey"><code>testExecutionIssueKey</code></a>).</dd>
+<dd>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>JIRA_TEST_EXECUTION_ISSUE_DESCRIPTION</code></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="sb">`Cypress version: </span><span class="si">${</span><span class="nx">version</span><span class="si">}</span><span class="sb"> Browser: </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"> (</span><span class="si">${</span><span class="nx">version</span><span class="si">}</span><span class="sb">)`</span></code> with values depending on Cypress and the chosen browser</dd>
+</dl>
+</dd>
+</dl>
+<details class="example" open="open">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Cypress configuration</label><label for="__tabbed_4_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">        </span><span class="nx">testExecutionIssueDescription</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;This test run was approved by Mr Anderson.&quot;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_DESCRIPTION</span><span class="o">=</span><span class="s2">&quot;This test run was approved by Mr Anderson.&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -916,22 +1019,67 @@ Must be prefixed with the <a href="#projectkey">project key</a>.</div>
 </dl>
 <details class="example" open="open">
 <summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Cypress configuration</label><label for="__tabbed_3_2">Environment variable</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Cypress configuration</label><label for="__tabbed_5_2">Environment variable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="nx">testExecutionIssueKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ-123&quot;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p">});</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">        </span><span class="nx">testExecutionIssueKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ-123&quot;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_KEY</span><span class="o">=</span><span class="s2">&quot;PRJ-123&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_KEY</span><span class="o">=</span><span class="s2">&quot;PRJ-123&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<h3 id="testexecutionissuesummary"><code>testExecutionIssueSummary</code><a class="headerlink" href="#testexecutionissuesummary" title="Anchor link to this section for reference">⚓︎</a></h3>
+<dl>
+<dd>The summary of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through <a href="#testexecutionissuekey"><code>testExecutionIssueKey</code></a>).</dd>
+<dd>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>JIRA_TEST_EXECUTION_ISSUE_SUMMARY</code></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="sb">`Execution Results [</span><span class="si">${</span><span class="nx">t</span><span class="si">}</span><span class="sb">]`</span></code> with <code>t</code> being a Unix timestamp when Cypress started testing</dd>
+</dl>
+</dd>
+</dl>
+<details class="example" open="open">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Cypress configuration</label><label for="__tabbed_6_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">        </span><span class="nx">testExecutionIssueSummary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Monday morning regression test&quot;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_SUMMARY</span><span class="o">=</span><span class="s2">&quot;Monday morning regression test&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -964,148 +1112,6 @@ Must be prefixed with the <a href="#projectkey">project key</a>.</div>
 </dl>
 <details class="example" open="open">
 <summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Cypress configuration</label><label for="__tabbed_4_2">Environment variable</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span>
-<span class="normal"><a href="#__codelineno-6-3">3</a></span>
-<span class="normal"><a href="#__codelineno-6-4">4</a></span>
-<span class="normal"><a href="#__codelineno-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">        </span><span class="nx">testPlanIssueKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ-456&quot;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="p">});</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_PLAN_ISSUE_KEY</span><span class="o">=</span><span class="s2">&quot;PRJ-456&quot;</span>
-</code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-</details>
-<h3 id="attachvideos"><code>attachVideos</code><a class="headerlink" href="#attachvideos" title="Anchor link to this section for reference">⚓︎</a></h3>
-<dl>
-<dd>Whether any videos Cypress captured during test execution should be attached to the test execution issue on results upload.<div class="admonition note">
-<p class="admonition-title">Note</p>
-If set to <code class="highlight"><span class="kc">true</span></code>, requires the <a href="#serverurl">Jira URL</a> and valid <a href="../authentication/#jira">Jira credentials</a> to be set.</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-This option only takes effect once <a href="../xray/#uploadresults"><code>uploadResults</code></a> is turned on.
-It is not possible to attach videos without uploading results.</div>
-</dd>
-<dd>
-<dl>
-<dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>JIRA_ATTACH_VIDEOS</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
-<dt><strong><em>Type</em></strong></dt>
-<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
-</dl>
-</dd>
-<dd>
-<dl>
-<dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="kc">false</span></code></dd>
-</dl>
-</dd>
-</dl>
-<details class="example" open="open">
-<summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Cypress configuration</label><label for="__tabbed_5_2">Environment variable</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span>
-<span class="normal"><a href="#__codelineno-8-3">3</a></span>
-<span class="normal"><a href="#__codelineno-8-4">4</a></span>
-<span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">        </span><span class="nx">attachVideos</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="p">});</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_ATTACH_VIDEOS</span><span class="o">=</span><span class="nb">true</span>
-</code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-</details>
-<h3 id="createtestissues"><code>createTestIssues</code><a class="headerlink" href="#createtestissues" title="Anchor link to this section for reference">⚓︎</a></h3>
-<dl>
-<dd>Whether the plugin should create test issues for Cypress tests that have not been mapped to existing test issues (see <a href="../../guides/targetingExistingIssues/">targeting existing issues</a>) when importing test results to Xray.</dd>
-<dd>
-<dl>
-<dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>JIRA_CREATE_TEST_ISSUES</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
-<dt><strong><em>Type</em></strong></dt>
-<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
-</dl>
-</dd>
-<dd>
-<dl>
-<dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="kc">true</span></code></dd>
-</dl>
-</dd>
-</dl>
-<details class="example" open="open">
-<summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Cypress configuration</label><label for="__tabbed_6_2">Environment variable</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span>
-<span class="normal"><a href="#__codelineno-10-3">3</a></span>
-<span class="normal"><a href="#__codelineno-10-4">4</a></span>
-<span class="normal"><a href="#__codelineno-10-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">        </span><span class="nx">createTestIssues</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="p">});</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_CREATE_TEST_ISSUES</span><span class="o">=</span><span class="nb">false</span>
-</code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-</details>
-<h3 id="testexecutionissuesummary"><code>testExecutionIssueSummary</code><a class="headerlink" href="#testexecutionissuesummary" title="Anchor link to this section for reference">⚓︎</a></h3>
-<dl>
-<dd>The summary of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through <a href="#testexecutionissuekey"><code>testExecutionIssueKey</code></a>).</dd>
-<dd>
-<dl>
-<dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>JIRA_TEST_EXECUTION_ISSUE_SUMMARY</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
-<dt><strong><em>Type</em></strong></dt>
-<dd><code>string</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
-<dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="sb">`Execution Results [</span><span class="si">${</span><span class="nx">t</span><span class="si">}</span><span class="sb">]`</span></code> with <code>t</code> being a Unix timestamp when Cypress started testing</dd>
-</dl>
-</dd>
-</dl>
-<details class="example" open="open">
-<summary>Example</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Cypress configuration</label><label for="__tabbed_7_2">Environment variable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1115,37 +1121,31 @@ It is not possible to attach videos without uploading results.</div>
 <span class="normal"><a href="#__codelineno-12-4">4</a></span>
 <span class="normal"><a href="#__codelineno-12-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">        </span><span class="nx">testExecutionIssueSummary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Monday morning regression test&quot;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">        </span><span class="nx">testPlanIssueKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ-456&quot;</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_SUMMARY</span><span class="o">=</span><span class="s2">&quot;Monday morning regression test&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_PLAN_ISSUE_KEY</span><span class="o">=</span><span class="s2">&quot;PRJ-456&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
 </details>
-<h3 id="testexecutionissuedescription"><code>testExecutionIssueDescription</code><a class="headerlink" href="#testexecutionissuedescription" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="url"><code>url</code><a class="headerlink" href="#url" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
-<dd>The description of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through <a href="#testexecutionissuekey"><code>testExecutionIssueKey</code></a>).</dd>
 <dd>
+<p>Use this parameter to specify the base URL of your Jira instance.</p>
+<p>For Jira cloud, it is usually of the form <code>https://your-domain.atlassian.net</code> (without the <code>/jira</code> part, see <a href="https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#ad-hoc-api-calls/">here</a>).</p>
 <dl>
-<dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>JIRA_TEST_EXECUTION_ISSUE_DESCRIPTION</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
-<dt><strong><em>Type</em></strong></dt>
+<dt>For Jira server, you can have a look <a href="https://confluence.atlassian.com/adminjiraserver/configuring-the-base-url-938847830.html">here</a> to determine your base URL.</dt>
+<dd><strong><em>Environment variable</em></strong></dd>
+<dd><code>JIRA_URL</code></dd>
+<dd><strong><em>Type</em></strong></dd>
 <dd><code>string</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
-<dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="sb">`Cypress version: </span><span class="si">${</span><span class="nx">version</span><span class="si">}</span><span class="sb"> Browser: </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"> (</span><span class="si">${</span><span class="nx">version</span><span class="si">}</span><span class="sb">)`</span></code> with values depending on Cypress and the chosen browser</dd>
+<dd><strong><em>Default</em></strong></dd>
+<dd><code class="highlight"><span class="kc">undefined</span></code></dd>
 </dl>
 </dd>
 </dl>
@@ -1160,13 +1160,13 @@ It is not possible to attach videos without uploading results.</div>
 <span class="normal"><a href="#__codelineno-14-4">4</a></span>
 <span class="normal"><a href="#__codelineno-14-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">        </span><span class="nx">testExecutionIssueDescription</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;This test run was approved by Mr Anderson.&quot;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://example.org/development/jira&quot;</span>
 <a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_DESCRIPTION</span><span class="o">=</span><span class="s2">&quot;This test run was approved by Mr Anderson.&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_URL</span><span class="o">=</span><span class="s2">&quot;https://example.org/development/jira&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>

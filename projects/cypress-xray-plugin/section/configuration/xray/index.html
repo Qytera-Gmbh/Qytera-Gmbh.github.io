@@ -441,15 +441,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uploadresults" class="md-nav__link">
-    uploadResults
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uploadscreenshots" class="md-nav__link">
-    uploadScreenshots
+  <a href="#statusfailed" class="md-nav__link">
+    statusFailed
   </a>
   
 </li>
@@ -462,15 +455,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#statusfailed" class="md-nav__link">
-    statusFailed
+  <a href="#statuspassed_1" class="md-nav__link">
+    statusPassed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#testtype" class="md-nav__link">
-    testType
+  <a href="#statusfailed_1" class="md-nav__link">
+    statusFailed
   </a>
   
 </li>
@@ -484,21 +477,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    update
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#maxlengthaction" class="md-nav__link">
     maxLengthAction
   </a>
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    update
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testtype" class="md-nav__link">
+    testType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploadresults" class="md-nav__link">
+    uploadResults
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploadscreenshots" class="md-nav__link">
+    uploadScreenshots
+  </a>
   
 </li>
         
@@ -706,15 +720,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uploadresults" class="md-nav__link">
-    uploadResults
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uploadscreenshots" class="md-nav__link">
-    uploadScreenshots
+  <a href="#statusfailed" class="md-nav__link">
+    statusFailed
   </a>
   
 </li>
@@ -727,15 +734,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#statusfailed" class="md-nav__link">
-    statusFailed
+  <a href="#statuspassed_1" class="md-nav__link">
+    statusPassed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#testtype" class="md-nav__link">
-    testType
+  <a href="#statusfailed_1" class="md-nav__link">
+    statusFailed
   </a>
   
 </li>
@@ -749,21 +756,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    update
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#maxlengthaction" class="md-nav__link">
     maxLengthAction
   </a>
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    update
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testtype" class="md-nav__link">
+    testType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploadresults" class="md-nav__link">
+    uploadResults
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploadscreenshots" class="md-nav__link">
+    uploadScreenshots
+  </a>
   
 </li>
         
@@ -793,26 +821,27 @@
 <h1 id="xray">Xray<a class="headerlink" href="#xray" title="Anchor link to this section for reference">⚓︎</a></h1>
 <p>You can provide a bunch of Xray settings which might become necessary depending on your project configuration.</p>
 <h2 id="optional-settings">Optional settings<a class="headerlink" href="#optional-settings" title="Anchor link to this section for reference">⚓︎</a></h2>
-<h3 id="uploadresults"><code>uploadResults</code><a class="headerlink" href="#uploadresults" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="statusfailed"><code>statusFailed</code><a class="headerlink" href="#statusfailed" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
-<dd>Turns execution results upload on or off.
-Useful when switching upload on or off from the command line (via environment variables).</dd>
+<dd>The status name of a test marked as failed in Cypress.
+Should be used when custom status names have been setup in Xray.</dd>
 <dd>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>XRAY_UPLOAD_RESULTS</code></dd>
+<dd><code>XRAY_STATUS_FAILED</code></dd>
 </dl>
 </dd>
 <dd>
 <dl>
 <dt><strong><em>Type</em></strong></dt>
-<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
+<dd><code>string</code></dd>
 </dl>
 </dd>
 <dd>
 <dl>
 <dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="kc">true</span></code></dd>
+<dd><code class="highlight"><span class="s2">&quot;FAIL&quot;</span></code> (when providing Xray server credentials)</dd>
+<dd><code class="highlight"><span class="s2">&quot;FAILED&quot;</span></code> (when providing Xray cloud credentials)</dd>
 </dl>
 </dd>
 </dl>
@@ -827,41 +856,39 @@ Useful when switching upload on or off from the command line (via environment va
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nx">uploadResults</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nx">statusFailed</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;FAILURE&quot;</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_UPLOAD_RESULTS</span><span class="o">=</span><span class="nb">false</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_STATUS_FAILED</span><span class="o">=</span>FAILURE
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
 </details>
-<h3 id="uploadscreenshots"><code>uploadScreenshots</code><a class="headerlink" href="#uploadscreenshots" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="statuspassed"><code>statusPassed</code><a class="headerlink" href="#statuspassed" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
-<dd>Turns on or off the upload of screenshots Cypress takes during test execution.<div class="admonition note">
-<p class="admonition-title">Note</p>
-This option only takes effect once <a href="#uploadresults"><code>uploadResults</code></a> is turned on.
-It is not possible to upload screenshots without uploading results.</div>
-</dd>
+<dd>The status name of a test marked as passed in Cypress.
+Should be used when custom status names have been setup in Xray.</dd>
 <dd>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>XRAY_UPLOAD_SCREENSHOTS</code></dd>
+<dd><code>XRAY_STATUS_PASSED</code></dd>
 </dl>
 </dd>
 <dd>
 <dl>
 <dt><strong><em>Type</em></strong></dt>
-<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
+<dd><code>string</code></dd>
 </dl>
 </dd>
 <dd>
 <dl>
 <dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="kc">true</span></code></dd>
+<dd><code class="highlight"><span class="s2">&quot;PASS&quot;</span></code> (when providing Xray server credentials)</dd>
+<dd><code class="highlight"><span class="s2">&quot;PASSED&quot;</span></code> (when providing Xray cloud credentials)</dd>
 </dl>
 </dd>
 </dl>
@@ -876,19 +903,19 @@ It is not possible to upload screenshots without uploading results.</div>
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
 <span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="nx">uploadScreenshots</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="nx">statusPassed</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_UPLOAD_SCREENSHOTS_</span><span class="o">=</span><span class="nb">false</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_STATUS_PASSED</span><span class="o">=</span>SUCCESS
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
 </details>
-<h3 id="statuspassed"><code>statusPassed</code><a class="headerlink" href="#statuspassed" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="statuspassed_1"><code>statusPassed</code><a class="headerlink" href="#statuspassed_1" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
 <dd>The status name of a test marked as passed in Cypress.
 Should be used when custom status names have been setup in Xray.</dd>
@@ -935,7 +962,7 @@ Should be used when custom status names have been setup in Xray.</dd>
 </div>
 </div>
 </details>
-<h3 id="statusfailed"><code>statusFailed</code><a class="headerlink" href="#statusfailed" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="statusfailed_1"><code>statusFailed</code><a class="headerlink" href="#statusfailed_1" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
 <dd>The status name of a test marked as failed in Cypress.
 Should be used when custom status names have been setup in Xray.</dd>
@@ -982,26 +1009,27 @@ Should be used when custom status names have been setup in Xray.</dd>
 </div>
 </div>
 </details>
-<h3 id="testtype"><code>testType</code><a class="headerlink" href="#testtype" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="steps"><code>steps</code><a class="headerlink" href="#steps" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>All options related to manual test issue steps.</p>
+<h4 id="maxlengthaction"><code>maxLengthAction</code><a class="headerlink" href="#maxlengthaction" title="Anchor link to this section for reference">⚓︎</a></h4>
 <dl>
-<dd>The test type of the test issues.
-This option will be used to set the corresponding field on Xray issues created during upload (happens when a test does not yet have a corresponding Xray issue).</dd>
+<dd>The maximum length a step's action description can have in terms of characters. Some Xray instances might enforce limits on the length and reject step updates in case the action's description exceeds said limit.</dd>
 <dd>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>XRAY_TEST_TYPE</code></dd>
+<dd><code>XRAY_STEPS_MAX_LENGTH_ACTION</code></dd>
 </dl>
 </dd>
 <dd>
 <dl>
 <dt><strong><em>Type</em></strong></dt>
-<dd><code>string</code></dd>
+<dd><code>number</code></dd>
 </dl>
 </dd>
 <dd>
 <dl>
 <dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="s2">&quot;Manual&quot;</span></code></dd>
+<dd><code class="highlight"><span class="mf">8000</span></code> (<a href="https://github.com/Qytera-Gmbh/cypress-xray-plugin/issues/50">more info</a>)</dd>
 </dl>
 </dd>
 </dl>
@@ -1014,22 +1042,24 @@ This option will be used to set the corresponding field on Xray issues created d
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
 <span class="normal"><a href="#__codelineno-8-4">4</a></span>
-<span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">        </span><span class="nx">testType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Cucumber&quot;</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="p">});</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">        </span><span class="nx">steps</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">            </span><span class="nx">maxLengthAction</span><span class="o">:</span><span class="w"> </span><span class="mf">1234</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_TEST_TYPE</span><span class="o">=</span>Cucumber
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_STEPS_MAX_LENGTH_ACTION</span><span class="o">=</span><span class="m">1234</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
 </details>
-<h3 id="steps"><code>steps</code><a class="headerlink" href="#steps" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>All options related to manual test issue steps.</p>
 <h4 id="update"><code>update</code><a class="headerlink" href="#update" title="Anchor link to this section for reference">⚓︎</a></h4>
 <dl>
 <dd>Whether to update a manual test issue's test steps during execution results upload.<div class="admonition warning">
@@ -1088,25 +1118,26 @@ Steps of existing issues can only be updated if <a href="../plugin/#overwriteiss
 </div>
 </div>
 </details>
-<h4 id="maxlengthaction"><code>maxLengthAction</code><a class="headerlink" href="#maxlengthaction" title="Anchor link to this section for reference">⚓︎</a></h4>
+<h3 id="testtype"><code>testType</code><a class="headerlink" href="#testtype" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
-<dd>The maximum length a step's action description can have in terms of characters. Some Xray instances might enforce limits on the length and reject step updates in case the action's description exceeds said limit.</dd>
+<dd>The test type of the test issues.
+This option will be used to set the corresponding field on Xray issues created during upload (happens when a test does not yet have a corresponding Xray issue).</dd>
 <dd>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>XRAY_STEPS_MAX_LENGTH_ACTION</code></dd>
+<dd><code>XRAY_TEST_TYPE</code></dd>
 </dl>
 </dd>
 <dd>
 <dl>
 <dt><strong><em>Type</em></strong></dt>
-<dd><code>number</code></dd>
+<dd><code>string</code></dd>
 </dl>
 </dd>
 <dd>
 <dl>
 <dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="mf">8000</span></code> (<a href="https://github.com/Qytera-Gmbh/cypress-xray-plugin/issues/50">more info</a>)</dd>
+<dd><code class="highlight"><span class="s2">&quot;Manual&quot;</span></code></dd>
 </dl>
 </dd>
 </dl>
@@ -1119,19 +1150,110 @@ Steps of existing issues can only be updated if <a href="../plugin/#overwriteiss
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
 <span class="normal"><a href="#__codelineno-12-3">3</a></span>
 <span class="normal"><a href="#__codelineno-12-4">4</a></span>
-<span class="normal"><a href="#__codelineno-12-5">5</a></span>
-<span class="normal"><a href="#__codelineno-12-6">6</a></span>
-<span class="normal"><a href="#__codelineno-12-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">        </span><span class="nx">steps</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">            </span><span class="nx">maxLengthAction</span><span class="o">:</span><span class="w"> </span><span class="mf">1234</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="p">});</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">        </span><span class="nx">testType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Cucumber&quot;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_STEPS_MAX_LENGTH_ACTION</span><span class="o">=</span><span class="m">1234</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_TEST_TYPE</span><span class="o">=</span>Cucumber
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<h3 id="uploadresults"><code>uploadResults</code><a class="headerlink" href="#uploadresults" title="Anchor link to this section for reference">⚓︎</a></h3>
+<dl>
+<dd>Turns execution results upload on or off.
+Useful when switching upload on or off from the command line (via environment variables).</dd>
+<dd>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_UPLOAD_RESULTS</code></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Type</em></strong></dt>
+<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">true</span></code></dd>
+</dl>
+</dd>
+</dl>
+<details class="example" open="open">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Cypress configuration</label><label for="__tabbed_8_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">        </span><span class="nx">uploadResults</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_UPLOAD_RESULTS</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<h3 id="uploadscreenshots"><code>uploadScreenshots</code><a class="headerlink" href="#uploadscreenshots" title="Anchor link to this section for reference">⚓︎</a></h3>
+<dl>
+<dd>Turns on or off the upload of screenshots Cypress takes during test execution.<div class="admonition note">
+<p class="admonition-title">Note</p>
+This option only takes effect once <a href="#uploadresults"><code>uploadResults</code></a> is turned on.
+It is not possible to upload screenshots without uploading results.</div>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_UPLOAD_SCREENSHOTS</code></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Type</em></strong></dt>
+<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">true</span></code></dd>
+</dl>
+</dd>
+</dl>
+<details class="example" open="open">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Cypress configuration</label><label for="__tabbed_9_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">        </span><span class="nx">uploadScreenshots</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_UPLOAD_SCREENSHOTS_</span><span class="o">=</span><span class="nb">false</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
