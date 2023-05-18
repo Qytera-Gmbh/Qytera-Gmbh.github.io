@@ -122,3 +122,61 @@ You can provide a bunch of Xray settings which might become necessary depending 
         ```sh
         npx cypress run --env XRAY_TEST_TYPE=Cucumber
         ```
+
+### `steps`
+
+All options related to manual test issue steps.
+
+#### `update`
+: Whether to update a manual test issue's test steps during execution results upload.
+    !!! warning
+        If set to true (default), ***all*** existing steps will be replaced with the plugin's steps.
+    !!! note
+        The plugin currently creates only one step containing the code of the corresponding Cypress test function.
+    !!! note
+        Steps of existing issues can only be updated if [`overwriteIssueSummary`](./plugin.md#overwriteissuesummary) is enabled as well, since Xray *requires* an issue summary whenever test details are updated.
+: ***Environment variable***
+    : `XRAY_STEPS_UPDATE`
+: ***Type***
+    : [`boolean`](types.md#boolean)
+: ***Default***
+    : `#!js true`
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin({
+            xray: {
+                steps: {
+                    update: false
+                }
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_STEPS_UPDATE=false
+        ```
+
+#### `maxLengthAction`
+: The maximum length a step's action description can have in terms of characters. Some Xray instances might enforce limits on the length and reject step updates in case the action's description exceeds said limit.
+: ***Environment variable***
+    : `XRAY_STEPS_MAX_LENGTH_ACTION`
+: ***Type***
+    : `number`
+: ***Default***
+    : `#!js 8000` ([more info](https://github.com/Qytera-Gmbh/cypress-xray-plugin/issues/50))
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin({
+            xray: {
+                steps: {
+                    maxLengthAction: 1234
+                }
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_STEPS_MAX_LENGTH_ACTION=1234
+        ```
