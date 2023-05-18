@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 ![plugin header](assets/images/headerDark.svg#only-light)
 ![plugin header](assets/images/headerLight.svg#only-dark)
 
