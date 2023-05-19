@@ -87,7 +87,7 @@ All options related to manual test issue steps.
     !!! note
         The plugin currently creates only one step containing the code of the corresponding Cypress test function.
     !!! note
-        If a test issue key has been provided for a test case, its steps will only be updated if [`overwriteIssueSummary`](./plugin.md#overwriteissuesummary) is enabled as well, since Xray *requires* an issue summary whenever test details are updated.
+        If a test issue key has been provided for a test case (see [targeting existing issues](../guides/targetingExistingIssues.md)), its steps will only be updated if [`overwriteIssueSummary`](./plugin.md#overwriteissuesummary) is enabled as well, since Xray *requires* an issue summary whenever test details should be updated.
         When not providing a test issue key, a test case's steps will *always* be updated.
 : ***Environment variable***
     : `XRAY_STEPS_UPDATE`
