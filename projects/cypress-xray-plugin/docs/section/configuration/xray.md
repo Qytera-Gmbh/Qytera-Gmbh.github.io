@@ -5,7 +5,7 @@ You can provide a bunch of Xray settings which might become necessary depending 
 ## Optional settings
 
 ### `statusFailed`
-: The status name of a test marked as failed in Cypress.
+: The Xray status name of a test marked as failed by Cypress.
     Should be used when custom status names have been setup in Xray.
 : ***Environment variable***
     : `XRAY_STATUS_FAILED`
@@ -29,7 +29,7 @@ You can provide a bunch of Xray settings which might become necessary depending 
         ```
 
 ### `statusPassed`
-: The status name of a test marked as passed in Cypress.
+: The Xray status name of a test marked as passed by Cypress.
     Should be used when custom status names have been setup in Xray.
 : ***Environment variable***
     : `XRAY_STATUS_PASSED`
@@ -50,6 +50,55 @@ You can provide a bunch of Xray settings which might become necessary depending 
     === "Environment variable"
         ```sh
         npx cypress run --env XRAY_STATUS_PASSED=SUCCESS
+        ```
+
+### `statusPending`
+: The Xray status name of a test marked as pending by Cypress.
+    Should be used when custom status names have been setup in Xray.
+: ***Environment variable***
+    : `XRAY_STATUS_PENDING`
+: ***Type***
+    : `string`
+: ***Default***
+    : `#!js "TODO"`
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin({
+            xray: {
+                statusPending: "AWAITING EXECUTION"
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_STATUS_PENDING="AWAITING EXECUTION"
+        ```
+
+### `statusSkipped`
+: The Xray status name of a test marked as skipped by Cypress.
+    Should be used when custom status names have been setup in Xray.
+: ***Environment variable***
+    : `XRAY_STATUS_SKIPPED`
+: ***Type***
+    : `string`
+: ***Default***
+    : `#!js "FAILED"`
+
+    !!! note
+        Defaults to `#!js "FAILED"` because Cypress only skips test cases if errors occur, as described [here](https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests#Skipped).
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin({
+            xray: {
+                statusSkipped: "IGNORED"
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_STATUS_SKIPPED="IGNORED"
         ```
 
 ### `steps`
