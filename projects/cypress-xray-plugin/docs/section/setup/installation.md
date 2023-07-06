@@ -50,33 +50,33 @@ import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin/pl
     Please note that Cucumber support is still in an experimental development stage.
     You should probably expect Cucumber features to not work consistently for the time being.
 
-For Cucumber support, this plugin builds upon the [cypress-cucumber-preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor) plugin for executing Cucumber feature files.
+For Cucumber support, this plugin builds upon the [`cypress-cucumber-preprocessor`](https://github.com/badeball/cypress-cucumber-preprocessor) plugin for executing Cucumber feature files.
 
 With added Xray synchronization, this plugin allows you to automatically download or upload feature files to Xray when running your Cypress tests and to track their execution results in Xray.
 
-!!! note
-    The following section is unfortunately quite involved.
-    Cypress currently [does not allow registering multiple plugins](https://github.com/cypress-io/cypress/issues/22428), but this plugin relies on the aforementioned Cucumber preprocessor to work properly.
-    Once this changes, this section will become much more streamlined, I promise :disappointed_relieved:
-
-
-Run the following commands to add Cucumber executability (more information [here](https://github.com/badeball/cypress-cucumber-preprocessor)) to your project:
+Run the following commands to add Cucumber executability to your project:
 
 ```sh
 npm i -D @badeball/cypress-cucumber-preprocessor
 npm i -D @bahmutov/cypress-esbuild-preprocessor
+npm i -D cypress-on-fix
 ```
+
+!!! note
+    Package `cypress-on-fix` is required for registering multiple event handlers to Cypress's events (see [here](https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/event-handlers.md)).
 
 To enable the plugin, modify the `#!js setupNodeEvents()` function in your Cypress configuration file as follows:
 
-```js hl_lines="8-15 23 25"
+```js hl_lines="10-17 19 21"
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
 import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
 import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin/plugin";
+import fix from "cypress-on-fix";
 
 // ...
     async setupNodeEvents(on, config) {
+        const fixedOn = fix(on);
         await configureXrayPlugin({
             jira: {
                 projectKey: "PRJ"
@@ -85,15 +85,9 @@ import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypre
                 featureFileExtension: ".feature"
             }
         });
-        await addCucumberPreprocessorPlugin(on, config, {
-            omitBeforeRunHandler: true,
-            omitAfterRunHandler: true,
-            omitBeforeSpecHandler: true,
-            omitAfterSpecHandler: true,
-            omitAfterScreenshotHandler: true,
-        });
-        await addXrayResultUpload(on);
-        on("file:preprocessor", async (file) => {
+        await addCucumberPreprocessorPlugin(fixedOn, config);
+        await addXrayResultUpload(fixedOn);
+        fixedOn("file:preprocessor", async (file) => {
             await syncFeatureFile(file);
             const cucumberPlugin = createBundler({
                 plugins: [createEsbuildPlugin(config)],
@@ -107,13 +101,13 @@ import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypre
 
 The highlighted lines are the ones addressing Xray support.
 
-??? info "Lines 8-15"
+??? info "Lines 10-17"
     Here you should configure the Xray plugin the way you want it to work with your Xray instance.
-    See [here](../configuration/introduction.md) for more information.
+    Read [this](../configuration/introduction.md) for more information.
 
-??? info "Line 23"
+??? info "Line 19"
     This line enables the upload of test results to your Xray instance when Cypress is done running your tests.
 
-??? info "Line 25"
+??? info "Line 21"
     This line enables upstream and downstream synchronization of your feature files with your Xray instance.
     See [here](../guides/featureFileSynchronization.md) for more information.
