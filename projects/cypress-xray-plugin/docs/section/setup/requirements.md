@@ -1,9 +1,9 @@
 # Requirements
 
-## :fontawesome-brands-node-js:{ .node-js } Node.JS
+## :fontawesome-brands-node-js:{ .node-js } Node.js v15+
 
-Since this plugin runs within the Cypress ecosphere, [Node.JS](https://nodejs.org/en/download/) is required to run it along Cypress.
+Since this plugin runs within the Cypress ecosphere, [Node.js](https://nodejs.org/en/download/) is required to run it along Cypress.
 With you using Cypress, you probably have installed it already.
 
 !!! info
-    Type `node --version` in a terminal to check if it's installed already.
+    Type `node --version` in a terminal to check if v15 or above is installed already.
