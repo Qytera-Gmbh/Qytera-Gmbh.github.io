@@ -49,6 +49,28 @@ The plugin offers several options for customizing the upload further.
         npx cypress run --env PLUGIN_ENABLED=false
         ```
 
+### `logDirectory`
+: The directory which all error and debug log files will be written to.
+: ***Environment variable***
+    : `PLUGIN_LOG_DIRECTORY`
+: ***Type***
+    : `string`
+: ***Default***
+    : `#!js logs`
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin({
+            plugin: {
+                logDirectory: "/home/logs"
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env PLUGIN_LOG_DIRECTORY="/home/logs"
+        ```
+
 ### `normalizeScreenshotNames`
 : Some Xray setups might struggle with uploaded evidence if the filenames contain non-ASCII characters.
     With this option enabled, the plugin only keeps characters `a-zA-Z0-9.` in screenshot names and replaces all other sequences with `_`.
