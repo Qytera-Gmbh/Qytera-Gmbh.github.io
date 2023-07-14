@@ -55,6 +55,11 @@ To prepare an existing project, simply run the following command:
 python docs.py update-project path/to/project/dir
 ```
 
+For example:
+```sh
+python docs.py update-project projects/cypress-xray-plugin
+```
+
 This will create a file called `mkdocs.yml` inside the project's directory, which can then be used to view the page as described [here](#usage).
 
 ### New Project
