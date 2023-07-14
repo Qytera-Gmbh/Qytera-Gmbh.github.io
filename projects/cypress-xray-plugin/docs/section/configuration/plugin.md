@@ -56,7 +56,7 @@ The plugin offers several options for customizing the upload further.
 : ***Type***
     : `string`
 : ***Default***
-    : `#!js logs`
+    : `#!js "logs"`
 ???+ example
     === "Cypress configuration"
         ```js
