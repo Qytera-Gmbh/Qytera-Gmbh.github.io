@@ -197,7 +197,7 @@ In general, the plugin looks for scenario tags of the form:
         import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
         import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
         import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
-        import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin/plugin";
+        import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin";
 
         // ...
             async setupNodeEvents(on, config) {
@@ -278,7 +278,7 @@ You can prevent that from happening by specifying [the test execution issue key]
     === "cypress.config.js"
 
         ```js hl_lines="8"
-        import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin/plugin";
+        import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin";
 
         // ...
             async setupNodeEvents(on, config) {

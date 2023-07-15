@@ -11,7 +11,7 @@
 To upload your test results to Xray, make sure you have enabled the results upload in your configuration file:
 
 ```js
-import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin/plugin";
+import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin";
 
 // ...
     async setupNodeEvents(on, config) {
@@ -86,7 +86,7 @@ Xray will also create a new test execution issue, unless you tell Xray to [reuse
     === "cypress.config.js"
 
         ```js
-        import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin/plugin";
+        import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin";
 
         // ...
             async setupNodeEvents(on, config) {

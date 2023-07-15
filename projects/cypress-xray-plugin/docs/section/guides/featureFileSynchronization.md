@@ -89,7 +89,7 @@ You can enable the upload using the [uploadFeatures](../configuration/cucumber.m
         import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
         import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
         import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
-        import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin/plugin";
+        import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin";
 
         // ...
             async setupNodeEvents(on, config) {

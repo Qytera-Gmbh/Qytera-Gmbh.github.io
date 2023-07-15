@@ -26,7 +26,7 @@ import "cypress-xray-plugin/register";
 Modify the `#!js setupNodeEvents()` function in your Cypress configuration file as follows:
 
 ```js
-import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin/plugin";
+import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin";
 
 // ...
     async setupNodeEvents(on, config) {
@@ -71,7 +71,7 @@ To enable the plugin, modify the `#!js setupNodeEvents()` function in your Cypre
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
 import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
 import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
-import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin/plugin";
+import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin";
 import fix from "cypress-on-fix";
 
 // ...
