@@ -228,7 +228,7 @@ import de.qytera.qtaf.core.guice.annotations.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import javax.inject.Singleton;
+import jakarta.inject.Singleton;
 
 
 @Singleton
@@ -266,7 +266,7 @@ package org.acme;
 import de.qytera.qtaf.testng.context.QtafTestNGContext;
 import org.acme.page_objects.*;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 
 public class TestContext extends QtafTestNGContext {
@@ -324,7 +324,7 @@ First, we need to add the QTAF HTML Report plugin as a dependency to our project
 Furthermore we have to activate the creation of the HTML report in the `qtaf.json` file. Make sure that the value `htmlReport.enabled` in the configuration file is set to `true`:
 
 ```json
-  "htmlReport":{
+  "htmlReport": {
     "enabled":true
   }
 ```
@@ -346,7 +346,7 @@ QTAF offers you the possibility to run test cases on different browsers. You can
 Change the value of the `driver.name` attribute in the `configuration.json` file. Possible values include `chrome`, `firefox`, `edge`, `opera` and `ie`.
 
 ```json
-  "driver":{
+  "driver": {
     "name": "chrome"
   }
 ```

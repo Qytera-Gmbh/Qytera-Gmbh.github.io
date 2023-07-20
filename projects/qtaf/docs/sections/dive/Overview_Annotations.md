@@ -38,7 +38,7 @@ The annotation `@Singleton` comes from the Java library and is used for page obj
 
 ```java
 import de.qytera.qtaf.core.guice.annotations.Step;
-import javax.inject.Singleton;
+import jakarta.inject.Singleton;
 
 @Singleton
 public class CalendarPage extends TestContext {
@@ -66,7 +66,7 @@ The annotation `@Step` comes from the QTAF framework and is used for methods tha
 In QTAF, the page object classes are instantiated in the `TestContext` class. To prevent them from being instantiated more than once and to avoid infinite loops during instantiation, page object classes are provided with the annotation `@Singleton`. In the TestContext classes, we add attributes that are of the type of the respective page object class and provide these attributes with the annotation `@Inject`. This causes QTAF to automatically take care of instantiating these classes. We do not have to call a constructor.
 
 ```java
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 public class TestContext extends QtafTestNGContext {
 

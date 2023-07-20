@@ -37,13 +37,13 @@ In addition to `qtaf-core`, first integrate the dependency `qtaf-allure-plugin` 
     <dependency>
         <groupId>de.qytera</groupId>
         <artifactId>qtaf-core</artifactId>
-        <version>0.0.3</version>
+        <version>${qtafVersion}</version>
         <scope>compile</scope>
     </dependency>
     <dependency>
         <groupId>de.qytera</groupId>
         <artifactId>qtaf-allure-plugin</artifactId>
-        <version>0.0.3</version>
+        <version>${qtafVersion}</version>
         <scope>compile</scope>
     </dependency>
 </dependencies>
@@ -54,7 +54,7 @@ Check the <a href="https://mvnrepository.com/artifact/de.qytera/qtaf-allure-plug
 This completes the installation of the Allure plugin. In the `configuration.json` file, you can now add the following options for taking screenshots, which will then be included in the Allure report:
 
 ```json
-"driver":{
+"driver": {
   "name": "chrome",
   "screenshots": {
     "beforeScenario": true,

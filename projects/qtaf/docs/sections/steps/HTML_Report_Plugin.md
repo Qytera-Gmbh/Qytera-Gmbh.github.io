@@ -15,13 +15,13 @@ In addition to `qtaf-core`, first integrate the dependency `qtaf-html-report-plu
     <dependency>
         <groupId>de.qytera</groupId>
         <artifactId>qtaf-core</artifactId>
-        <version>0.0.3</version>
+        <version>${qtafVersion}</version>
         <scope>compile</scope>
     </dependency>
     <dependency>
         <groupId>de.qytera</groupId>
         <artifactId>qtaf-html-report-plugin</artifactId>
-        <version>0.0.3</version>
+        <version>${qtafVersion}</version>
         <scope>compile</scope>
     </dependency>
 </dependencies>
