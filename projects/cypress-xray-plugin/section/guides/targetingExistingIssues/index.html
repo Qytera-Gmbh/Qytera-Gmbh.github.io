@@ -15,7 +15,7 @@
         <link rel="next" href="../featureFileSynchronization/">
       
       <link rel="icon" href="../../../assets/images/qyteraIcon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.19">
     
     
       
@@ -554,16 +554,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#reuse-test-case-issues" class="md-nav__link">
-    Reuse test case issues
+  <a href="#reuse-cypress-issues" class="md-nav__link">
+    Reuse Cypress issues
   </a>
   
-    <nav class="md-nav" aria-label="Reuse test case issues">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reuse-cucumber-issues" class="md-nav__link">
+    Reuse Cucumber issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Reuse Cucumber issues">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#reuse-cucumber-test-issues" class="md-nav__link">
-    Reuse Cucumber test issues
+  <a href="#test-issues" class="md-nav__link">
+    Test issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precondition-issues" class="md-nav__link">
+    Precondition issues
   </a>
   
 </li>
@@ -650,16 +664,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#reuse-test-case-issues" class="md-nav__link">
-    Reuse test case issues
+  <a href="#reuse-cypress-issues" class="md-nav__link">
+    Reuse Cypress issues
   </a>
   
-    <nav class="md-nav" aria-label="Reuse test case issues">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reuse-cucumber-issues" class="md-nav__link">
+    Reuse Cucumber issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Reuse Cucumber issues">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#reuse-cucumber-test-issues" class="md-nav__link">
-    Reuse Cucumber test issues
+  <a href="#test-issues" class="md-nav__link">
+    Test issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precondition-issues" class="md-nav__link">
+    Precondition issues
   </a>
   
 </li>
@@ -695,43 +723,19 @@
 
 
 <h1 id="targeting-existing-issues">Targeting existing issues<a class="headerlink" href="#targeting-existing-issues" title="Anchor link to this section for reference">⚓︎</a></h1>
-<p>Usually, it is best to target and reuse existing Jira issues to not clutter up your projects with unnecessary test case (or test execution) issues.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Reusing existing test case issues is highly recommended.
-It simplifies test case management <em>a lot</em>.</p>
-</div>
-<h2 id="reuse-test-case-issues">Reuse test case issues<a class="headerlink" href="#reuse-test-case-issues" title="Anchor link to this section for reference">⚓︎</a></h2>
-<p>By default, Xray will always create a new test case issue whenever you execute a test and your project does not contain a test case issue with <em>the exact name</em> as your test case.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>The exact name of test cases in Cypress is the concatenation of the names of <code class="highlight"><span class="nx">it</span><span class="p">()</span></code> and <code class="highlight"><span class="nx">describe</span><span class="p">()</span></code> functions.
-For example, the following test case is called <code class="highlight"><span class="s2">&quot;a suite has a test case&quot;</span></code>:</p>
+<p>The plugin does not upload any results unless you reuse existing Jira issues to not clutter up your projects with unnecessary test case (or test execution) issues.
+This section teaches you everything you need to know to target such existing issues.</p>
+<h2 id="reuse-cypress-issues">Reuse Cypress issues<a class="headerlink" href="#reuse-cypress-issues" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>To link Cypress tests to Jira issues, simply add the test case issue's key <em>anywhere</em> in the name of the <em>innermost</em> <code class="highlight"><span class="nx">it</span><span class="p">()</span></code> function (or corresponding alternatives like <code class="highlight"><span class="nx">specify</span><span class="p">()</span></code>):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;a suite&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;has a test case&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;PRJ-123 has a test case&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="c1">// ...</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="p">});</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">});</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<p>This means, that whenever you change the titles of your test cases in Cypress in <code class="highlight"><span class="nx">it</span><span class="p">()</span></code> or <code class="highlight"><span class="nx">describe</span><span class="p">()</span></code> functions, Xray will create new test case issues for you on result upload.
-This applies to the other direction, too.
-If someone changes test case issue titles in Xray and the test cases in Cypress aren't adapted accordingly, you will end up with new test case issues.</p>
-<p>To prevent that from happening, you can include test case issue keys in your test case titles.
-Simply add the test case issue's key <em>anywhere</em> in the name of the <em>innermost</em> <code class="highlight"><span class="nx">it</span><span class="p">()</span></code> function:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;a suite&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;PRJ-123 has a test case&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">        </span><span class="c1">// ...</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="p">});</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 <p><img alt="retrieving test case issue numbers" src="../../../assets/images/issueKeyLight.png#only-light" style="float: right; margin-left: 1em; border: 1px solid var(--md-default-fg-color);" />
 <img alt="retrieving test case issue numbers" src="../../../assets/images/issueKeyDark.png#only-dark" style="float: right; margin-left: 1em; border: 1px solid var(--md-default-fg-color);" />
@@ -744,43 +748,43 @@ By including the test case issue keys in the titles, Xray will be able to match 
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">demo.spec.cy.js</label><label for="__tabbed_1_2">Video</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;the upload demo&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="nx">beforeEach</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="nx">cy</span><span class="p">.</span><span class="nx">visit</span><span class="p">(</span><span class="s2">&quot;https://example.org&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="p">});</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;CYP-124 should do something with the title&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">        </span><span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s2">&quot;exist&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="p">});</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;CYP-125 should find two lovely paragraphs&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">        </span><span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s2">&quot;have.length&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="p">});</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;CYP-126 should still be unable to find a delicious span element&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">        </span><span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s2">&quot;exist&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">    </span><span class="p">});</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="p">})</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;the upload demo&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="nx">beforeEach</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="nx">cy</span><span class="p">.</span><span class="nx">visit</span><span class="p">(</span><span class="s2">&quot;https://example.org&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="p">});</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;CYP-124 should do something with the title&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s2">&quot;exist&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="p">});</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;CYP-125 should find two lovely paragraphs&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">        </span><span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s2">&quot;have.length&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="p">});</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;CYP-126 should still be unable to find a delicious span element&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">        </span><span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s2">&quot;exist&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">    </span><span class="p">});</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="p">})</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -792,307 +796,88 @@ By including the test case issue keys in the titles, Xray will be able to match 
 </div>
 </div>
 </details>
-<div class="admonition bug">
-<p class="admonition-title">Bug</p>
-<p>There's currently an Xray cloud bug affecting the reuse of existing issues if the test title contains whitespace in front of a dash, such as <code class="highlight"><span class="s2">&quot;[START] - should be able to login&quot;</span></code>.
-Without a test issue key in the test title, (i.e. relying on summary matching for issue reuse during consecutive uploads), Xray will create duplicates <strong><em>even if there's a matching issue already</em></strong>.</p>
-<p>The corresponding bug can be tracked here: <a href="https://jira.getxray.app/browse/XRAYCLOUD-6031">https://jira.getxray.app/browse/XRAYCLOUD-6031</a>.</p>
-<p>Including test issue keys is therefore even more recommended to avoid running into this problem.</p>
-</div>
-<h3 id="reuse-cucumber-test-issues">Reuse Cucumber test issues<a class="headerlink" href="#reuse-cucumber-test-issues" title="Anchor link to this section for reference">⚓︎</a></h3>
-<div class="admonition development">
-<p class="admonition-title">Development</p>
-<p>Please note that Cucumber support is still in an experimental development stage.
-You should probably expect Cucumber features to not work consistently for the time being.</p>
-</div>
-<p>In feature files, you can annotate scenarios with a <a href="https://cucumber.io/docs/cucumber/api/?lang=java#tags">tag</a> containing the corresponding test case issue key.
-Without tags, the exact names of the test cases <a href="https://docs.getxray.app/display/XRAYCLOUD/Importing+Cucumber+Tests+-+REST">will again be used</a>, this time being the concatenation of the <code class="highlight"><span class="nf">Feature</span></code> and <code class="highlight"><span class="nf">Scenario</span></code> names.</p>
-<p>In general, the plugin looks for scenario tags of the form:</p>
-<ul>
-<li><code class="highlight">@TestName:<span class="nt">&lt;projectKey&gt;</span>-<span class="nt">&lt;number&gt;</span></code></li>
-<li><code class="highlight">@<span class="nt">&lt;projectKey&gt;</span>-<span class="nt">&lt;number&gt;</span></code></li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Just stick to this handy chart to decide which tagging scheme you should employ.
-<pre class="mermaid"><code>graph LR
-    A{Xray&lt;br/&gt;instance};
-    B["@TestName:CYP-123"];
-    C["@CYP-123"];
-    A ---&gt;|&amp;nbspCloud&amp;nbsp| B;
-    A ---&gt;|&amp;nbspServer&amp;nbsp| C;
-    classDef code-node font-family:monospace;
-    class B,C code-node;</code></pre></p>
-</div>
-<details class="info">
-<summary>Additional information</summary>
-<p>The reason for the distinction is Xray cloud and Xray server expecting different tags during <a href="../featureFileSynchronization/#feature-file-upload">feature file import</a> when mapping scenarios to existing test case issues.</p>
-<p>While <em>the plugin</em> itself does not care which one you use, you should probably stick to the one that better fits your Xray instance.
-Using the wrong one might not matter in terms of reusing Cucumber test issues, but it is going to matter when enabling <a href="../featureFileSynchronization/#feature-file-upload">feature file importing</a> in the future, since then you would need to either:</p>
-<ul>
-<li>
-<p>Change all existing tags to the right ones, i.e. for Xray cloud:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nt">@CYP-123</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">Scenario:</span><span class="nf"> A scenario</span>
+<h2 id="reuse-cucumber-issues">Reuse Cucumber issues<a class="headerlink" href="#reuse-cucumber-issues" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>To link your Cucumber feature files to existing Jira issues, you need to tag both scenario (outlines) and backgrounds.
+The tagging schemes follow the schemes Xray expects when importing feature files (see <a href="https://docs.getxray.app/display/XRAY/Testing+using+Cypress+and+Cucumber+in+JavaScript">here</a> or <a href="https://docs.getxray.app/display/XRAY/Importing+Cucumber+Tests+-+REST">here</a>).</p>
+<h3 id="test-issues">Test issues<a class="headerlink" href="#test-issues" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>In feature files, you must annotate scenarios (or scenario outlines) with a <a href="https://cucumber.io/docs/cucumber/api/?lang=java#tags">tag</a> containing the corresponding test case issue key.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Xray server</label><label for="__tabbed_2_2">Xray cloud</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">Feature:</span><span class="nf"> Shopping cart</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nf">@CYP-129</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="k">Scenario:</span><span class="nf"> Add socks</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="k">    Given </span><span class="nf">Bob is logged in</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nf">    </span><span class="k">When </span><span class="nf">three socks are added from the shop</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="nf">    </span><span class="k">Then </span><span class="nf">the shopping cart should contain three socks</span>
 </code></pre></div></td></tr></table></div>
-<p style="text-align: center;">&darr;</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">Feature:</span><span class="nf"> Shopping cart</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="nf">@TestName:CYP-129</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">Scenario:</span><span class="nf"> Add socks</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="k">    Given </span><span class="nf">Bob is logged in</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="nf">    </span><span class="k">When </span><span class="nf">three socks are added from the shop</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nf">    </span><span class="k">Then </span><span class="nf">the shopping cart should contain three socks</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="precondition-issues">Precondition issues<a class="headerlink" href="#precondition-issues" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>In feature files, you must add a comment to a background's <em>very first step</em> containing the <a href="https://cucumber.io/docs/cucumber/api/?lang=java#tags">tag</a> for a corresponding precondition issue key.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can find more information about preconditions <a href="https://docs.getxray.app/display/XRAY/Pre-Condition">here</a> for Xray server and <a href="https://docs.getxray.app/display/XRAYCLOUD/Precondition">here</a> for Xray cloud.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Xray server</label><label for="__tabbed_3_2">Xray cloud</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">@TestName:CYP-123</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">Scenario:</span><span class="nf"> A scenario</span>
-</code></pre></div></td></tr></table></div></p>
-</li>
-<li>
-<p>Add "the right ones" to your scenarios, i.e. for Xray cloud:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">@CYP-123</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">Scenario:</span><span class="nf"> A scenario</span>
-</code></pre></div></td></tr></table></div>
-<p style="text-align: center;">&darr;</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">@CYP-123</span><span class="nf"> </span><span class="nt">@TestName:CYP-123</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">Scenario:</span><span class="nf"> A scenario</span>
-</code></pre></div></td></tr></table></div></p>
-<p>This has the additional disadvantage that Xray will add the wrong one (<code class="highlight">@CYP-123</code>) as a label to your test case issue during feature file import.</p>
-</li>
-</ul>
-</details>
-<details class="example" open="open">
-<summary>Example</summary>
-<p>In the following scenario, the link on <a href="https://example.org">https://example.org</a> will be clicked and its redirection will be verified.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">demo.spec.feature</label><label for="__tabbed_2_2">demo.spec.js</label><label for="__tabbed_2_3">cypress.config.js</label><label for="__tabbed_2_4">Video</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span>
-<span class="normal"><a href="#__codelineno-7-3">3</a></span>
-<span class="normal"><a href="#__codelineno-7-4">4</a></span>
-<span class="normal"><a href="#__codelineno-7-5">5</a></span>
-<span class="normal"><a href="#__codelineno-7-6">6</a></span>
-<span class="normal"><a href="#__codelineno-7-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">Feature:</span><span class="nf"> Example page redirection</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="nf">    @TestName:CYP-129</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="nf">    </span><span class="k">Scenario:</span><span class="nf"> Redirect by clicking</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="k">        Given </span><span class="nf">the example page</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="nf">        </span><span class="k">When </span><span class="nf">the link is clicked</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="nf">        </span><span class="k">Then </span><span class="nf">a redirect should occur</span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">Feature:</span><span class="nf"> Big feature on lovely page</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">Background:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c">    #@CYP-332</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="k">    Given </span><span class="nf">a browser</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="nf">    </span><span class="k">Then </span><span class="nf">the lovely page should open</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-8-10">10</a></span>
-<span class="normal"><a href="#__codelineno-8-11">11</a></span>
-<span class="normal"><a href="#__codelineno-8-12">12</a></span>
-<span class="normal"><a href="#__codelineno-8-13">13</a></span>
-<span class="normal"><a href="#__codelineno-8-14">14</a></span>
-<span class="normal"><a href="#__codelineno-8-15">15</a></span>
-<span class="normal"><a href="#__codelineno-8-16">16</a></span>
-<span class="normal"><a href="#__codelineno-8-17">17</a></span>
-<span class="normal"><a href="#__codelineno-8-18">18</a></span>
-<span class="normal"><a href="#__codelineno-8-19">19</a></span>
-<span class="normal"><a href="#__codelineno-8-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Given</span><span class="p">,</span><span class="w"> </span><span class="nx">Then</span><span class="p">,</span><span class="w"> </span><span class="nx">When</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@badeball/cypress-cucumber-preprocessor&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="nx">Given</span><span class="p">(</span><span class="s2">&quot;the example page&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="nx">cy</span><span class="p">.</span><span class="nx">visit</span><span class="p">(</span><span class="s2">&quot;https://example.org&quot;</span><span class="p">);</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="p">});</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="nx">When</span><span class="p">(</span><span class="s2">&quot;the link is clicked&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="c1">// Intercept the click, since it unfortunately redirects to a http:// location</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="c1">// and causes Cypress to abort the execution.</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">    </span><span class="nx">cy</span><span class="p">.</span><span class="nx">intercept</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://www.iana.org/domains/example&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">        </span><span class="nx">request</span><span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s2">&quot;link was clicked&quot;</span><span class="p">);</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span><span class="p">}).</span><span class="kr">as</span><span class="p">(</span><span class="s2">&quot;redirect&quot;</span><span class="p">);</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">    </span><span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="p">});</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15"></a>
-<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="nx">Then</span><span class="p">(</span><span class="s2">&quot;a redirect should occur&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">    </span><span class="nx">cy</span><span class="p">.</span><span class="nx">wait</span><span class="p">(</span><span class="s2">&quot;@redirect&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">request</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">        </span><span class="nx">expect</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;link was clicked&quot;</span><span class="p">);</span>
-<a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">    </span><span class="p">});</span>
-<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="p">});</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">Feature:</span><span class="nf"> Big feature on lovely page</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">Background:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c">    #@Precondition:CYP-332</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="k">    Given </span><span class="nf">a browser</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="nf">    </span><span class="k">Then </span><span class="nf">the lovely page should open</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<div class="tabbed-block">
-<p>See <a href="../../setup/installation/#cucumber-support">Cucumber installation</a>.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-9-10">10</a></span>
-<span class="normal"><a href="#__codelineno-9-11">11</a></span>
-<span class="normal"><a href="#__codelineno-9-12">12</a></span>
-<span class="normal"><a href="#__codelineno-9-13">13</a></span>
-<span class="normal"><a href="#__codelineno-9-14">14</a></span>
-<span class="normal"><a href="#__codelineno-9-15">15</a></span>
-<span class="normal"><a href="#__codelineno-9-16">16</a></span>
-<span class="normal"><a href="#__codelineno-9-17">17</a></span>
-<span class="normal"><a href="#__codelineno-9-18">18</a></span>
-<span class="normal"><a href="#__codelineno-9-19">19</a></span>
-<span class="normal"><a href="#__codelineno-9-20">20</a></span>
-<span class="normal"><a href="#__codelineno-9-21">21</a></span>
-<span class="normal"><a href="#__codelineno-9-22">22</a></span>
-<span class="normal"><a href="#__codelineno-9-23">23</a></span>
-<span class="normal"><a href="#__codelineno-9-24">24</a></span>
-<span class="normal"><a href="#__codelineno-9-25">25</a></span>
-<span class="normal"><a href="#__codelineno-9-26">26</a></span>
-<span class="normal"><a href="#__codelineno-9-27">27</a></span>
-<span class="normal"><a href="#__codelineno-9-28">28</a></span>
-<span class="normal"><a href="#__codelineno-9-29">29</a></span>
-<span class="normal"><a href="#__codelineno-9-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">addCucumberPreprocessorPlugin</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@badeball/cypress-cucumber-preprocessor&quot;</span><span class="p">;</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">createEsbuildPlugin</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@badeball/cypress-cucumber-preprocessor/esbuild&quot;</span><span class="p">;</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">createBundler</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@bahmutov/cypress-esbuild-preprocessor&quot;</span><span class="p">;</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">addXrayResultUpload</span><span class="p">,</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">,</span><span class="w"> </span><span class="nx">syncFeatureFile</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;cypress-xray-plugin/plugin&quot;</span><span class="p">;</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a>
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="c1">// ...</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">setupNodeEvents</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">            </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">                </span><span class="nx">projectKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;CYP&quot;</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">        </span><span class="p">});</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">addCucumberPreprocessorPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">            </span><span class="nx">omitBeforeRunHandler</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">            </span><span class="nx">omitAfterRunHandler</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">            </span><span class="nx">omitBeforeSpecHandler</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">            </span><span class="nx">omitAfterSpecHandler</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="w">            </span><span class="nx">omitAfterScreenshotHandler</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="w">        </span><span class="p">});</span>
-<a id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">addXrayResultUpload</span><span class="p">(</span><span class="nx">on</span><span class="p">);</span>
-<a id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="w">        </span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;file:preprocessor&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">file</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="nx">syncFeatureFile</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
-<a id="__codelineno-9-23" name="__codelineno-9-23"></a><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">cucumberPlugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createBundler</span><span class="p">({</span>
-<a id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="w">                </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">createEsbuildPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">)],</span>
-<a id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="w">            </span><span class="p">});</span>
-<a id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">cucumberPlugin</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
-<a id="__codelineno-9-27" name="__codelineno-9-27"></a><span class="w">        </span><span class="p">});</span>
-<a id="__codelineno-9-28" name="__codelineno-9-28"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">config</span><span class="p">;</span>
-<a id="__codelineno-9-29" name="__codelineno-9-29"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-9-30" name="__codelineno-9-30"></a><span class="c1">// ...</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<p><video preload="none" poster="../../../assets/videos/guides_targeting_issues_02.jpg" controls muted>
-    <source src="../../../assets/videos/guides_targeting_issues_02.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video></p>
 </div>
 </div>
-</div>
-</details>
 <h2 id="reuse-test-execution-issues">Reuse test execution issues<a class="headerlink" href="#reuse-test-execution-issues" title="Anchor link to this section for reference">⚓︎</a></h2>
-<p>By default, Xray will always create a new test execution issue whenever you upload test results.</p>
+<p>By default, the plugin will always create a new test execution issue whenever you upload test results.</p>
 <p>You can prevent that from happening by specifying <a href="../../configuration/jira/#testexecutionissuekey">the test execution issue key</a> you want to attach the results to.</p>
-<details class="example" open="open">
-<summary>Example</summary>
-<p>The following example builds upon the <a href="../uploadTestResults/#how-it-works">upload results example</a>, which created test execution issue <code>CYP-123</code>.</p>
-<p>By providing the test execution issue key, Xray won't create a new execution issue for this upload.
-To highlight the issue being reused, let's also add a new test case that looks for an <code class="highlight"><span class="nt">&lt;a&gt;</span></code> element.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">demo.spec.cy.js</label><label for="__tabbed_3_2">cypress.config.js</label><label for="__tabbed_3_3">Video</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-10-10">10</a></span>
-<span class="normal"><a href="#__codelineno-10-11">11</a></span>
-<span class="normal"><a href="#__codelineno-10-12">12</a></span>
-<span class="normal"><a href="#__codelineno-10-13">13</a></span>
-<span class="normal"><a href="#__codelineno-10-14">14</a></span>
-<span class="normal"><a href="#__codelineno-10-15">15</a></span>
-<span class="normal"><a href="#__codelineno-10-16">16</a></span>
-<span class="normal"><a href="#__codelineno-10-17">17</a></span>
-<span class="normal"><a href="#__codelineno-10-18">18</a></span>
-<span class="normal"><a href="#__codelineno-10-19">19</a></span>
-<span class="normal"><a href="#__codelineno-10-20">20</a></span>
-<span class="normal"><a href="#__codelineno-10-21">21</a></span>
-<span class="normal"><a href="#__codelineno-10-22">22</a></span>
-<span class="normal"><a href="#__codelineno-10-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;the upload demo&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">    </span><span class="nx">beforeEach</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">        </span><span class="nx">cy</span><span class="p">.</span><span class="nx">visit</span><span class="p">(</span><span class="s2">&quot;https://example.org&quot;</span><span class="p">);</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">    </span><span class="p">});</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a>
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;CYP-124 should find a title element&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">        </span><span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s2">&quot;exist&quot;</span><span class="p">);</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">    </span><span class="p">});</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10"></a>
-<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;CYP-125 should find two paragraph elements&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">        </span><span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s2">&quot;have.length&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">    </span><span class="p">});</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14"></a>
-<a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;CYP-126 should fail to find a span element&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="w">        </span><span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s2">&quot;exist&quot;</span><span class="p">);</span>
-<a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">    </span><span class="p">});</span>
-<a id="__codelineno-10-18" name="__codelineno-10-18"></a>
-<a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="hll"><span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;should find an anchor element&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="hll"><span class="w">        </span><span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s2">&quot;exist&quot;</span><span class="p">);</span>
-</span><a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="hll"><span class="w">    </span><span class="p">});</span>
-</span><a id="__codelineno-10-22" name="__codelineno-10-22"></a>
-<a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="p">})</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-11-10">10</a></span>
-<span class="normal"><a href="#__codelineno-11-11">11</a></span>
-<span class="normal"><a href="#__codelineno-11-12">12</a></span>
-<span class="normal"><a href="#__codelineno-11-13">13</a></span>
-<span class="normal"><a href="#__codelineno-11-14">14</a></span>
-<span class="normal"><a href="#__codelineno-11-15">15</a></span>
-<span class="normal"><a href="#__codelineno-11-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">addXrayResultUpload</span><span class="p">,</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;cypress-xray-plugin/plugin&quot;</span><span class="p">;</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="c1">// ...</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">setupNodeEvents</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">            </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">                </span><span class="nx">projectKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;CYP&quot;</span><span class="p">,</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="hll"><span class="w">                </span><span class="nx">testExecutionIssueKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;CYP-123&quot;</span>
-</span><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">            </span><span class="p">},</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">            </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">                </span><span class="nx">uploadResults</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="w">        </span><span class="p">});</span>
-<a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">addXrayResultUpload</span><span class="p">(</span><span class="nx">on</span><span class="p">);</span>
-<a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="c1">// ...</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<p><video preload="none" poster="../../../assets/videos/guides_targeting_issues_01.jpg" controls muted>
-    <source src="../../../assets/videos/guides_targeting_issues_01.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video></p>
-</div>
-</div>
-</div>
-</details>
 
 
 

@@ -15,7 +15,7 @@
         <link rel="next" href="../plugin/">
       
       <link rel="icon" href="../../../assets/images/qyteraIcon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.19">
     
     
       
@@ -736,11 +736,6 @@
 
 <h1 id="cucumber">Cucumber<a class="headerlink" href="#cucumber" title="Anchor link to this section for reference">⚓︎</a></h1>
 <p>When Cucumber is enabled, you can use the following options to configure the way the plugin works with your feature files.</p>
-<div class="admonition development">
-<p class="admonition-title">Development</p>
-<p>Please note that Cucumber support is still in an experimental development stage.
-You should probably expect Cucumber features to not work consistently for the time being.</p>
-</div>
 <h2 id="mandatory-settings">Mandatory settings<a class="headerlink" href="#mandatory-settings" title="Anchor link to this section for reference">⚓︎</a></h2>
 <h3 id="featurefileextension"><code>featureFileExtension</code><a class="headerlink" href="#featurefileextension" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
@@ -769,7 +764,7 @@ Such tags are needed to identify to which test issue a feature file belongs (see
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nx">cucumber</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nx">featureFileExtension</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;.feature&quot;</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="p">},</span>
@@ -822,7 +817,7 @@ Enable this option if the source of truth for test cases are step definitions in
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nx">cucumber</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="nx">downloadFeatures</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="p">},</span>
@@ -838,7 +833,7 @@ Enable this option if the source of truth for test cases are step definitions in
 </details>
 <h3 id="uploadfeatures"><code>uploadFeatures</code><a class="headerlink" href="#uploadfeatures" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
-<dd>Set it to true to automatically create or update existing Xray issues (summary, steps), based on the feature file executed by Cypress.<div class="admonition note">
+<dd>Set it to true to automatically create or update existing Xray issues (steps, labels, ...), based on the feature file executed by Cypress.<div class="admonition note">
 <p class="admonition-title">Note</p>
 Enable this option if the source of truth for test cases are local feature files in Cypress and Xray is only used for tracking execution status/history.</div>
 </dd>
@@ -870,7 +865,7 @@ Enable this option if the source of truth for test cases are local feature files
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
 <span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="nx">cucumber</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="nx">uploadFeatures</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="p">},</span>

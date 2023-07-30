@@ -15,7 +15,7 @@
         <link rel="next" href="../../configuration/introduction/">
       
       <link rel="icon" href="../../../assets/images/qyteraIcon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.19">
     
     
       
@@ -669,16 +669,12 @@
 
 
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Anchor link to this section for reference">⚓︎</a></h1>
-<p>This plugin can either be run:</p>
+<p>This plugin can be run:</p>
 <ul>
-<li><em>without</em> Cucumber support (standard): when you keep all your Cypress test cases in plain JavaScript/TypeScript files</li>
+<li><em>without</em> Cucumber support: when you keep all your Cypress test cases in plain JavaScript/TypeScript files</li>
 <li><em>with</em> Cucumber support: when using Cucumber feature files for running tests</li>
+<li><em>with a mix of both</em> at the same time</li>
 </ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can always switch between both setups later on.
-If you are unsure and want to try things out first, do not setup Cucumber for now.</p>
-</div>
 <p>Run the following command to add the plugin to your Cypress project:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>npm<span class="w"> </span>i<span class="w"> </span>-D<span class="w"> </span>cypress-xray-plugin
 </code></pre></div></td></tr></table></div>
@@ -698,32 +694,35 @@ If you are unsure and want to try things out first, do not setup Cucumber for no
 <span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-2-10">10</a></span>
 <span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">addXrayResultUpload</span><span class="p">,</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;cypress-xray-plugin/plugin&quot;</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">addXrayResultUpload</span><span class="p">,</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;cypress-xray-plugin&quot;</span><span class="p">;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1">// ...</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">setupNodeEvents</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">            </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">                </span><span class="nx">projectKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ&quot;</span><span class="w"> </span><span class="c1">// just a placeholder</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">        </span><span class="p">});</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">addXrayResultUpload</span><span class="p">(</span><span class="nx">on</span><span class="p">);</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1">// ...</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">            </span><span class="nx">config</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">                </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">                    </span><span class="nx">projectKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ&quot;</span><span class="p">,</span><span class="w">         </span><span class="c1">// placeholder value</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">                    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://example.org&quot;</span><span class="w"> </span><span class="c1">// placeholder value</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">                </span><span class="p">}</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">        </span><span class="p">);</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">addXrayResultUpload</span><span class="p">(</span><span class="nx">on</span><span class="p">);</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="c1">// ...</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Check out the <a href="../../configuration/introduction/">configuration</a> for more information on how you should configure the plugin to make it work within <em>your</em> infrastructure.
+<p>Check out the <a href="../../configuration/introduction/">configuration</a> for more information on how you should configure the plugin to make it work within your infrastructure.
 You can also shoot a glance at the <a href="../../guides/uploadTestResults/#how-it-works">examples</a> for a more hands-on approach.</p>
 </div>
 <h2 id="cucumber-support">Cucumber support<a class="headerlink" href="#cucumber-support" title="Anchor link to this section for reference">⚓︎</a></h2>
-<div class="admonition development">
-<p class="admonition-title">Development</p>
-<p>Please note that Cucumber support is still in an experimental development stage.
-You should probably expect Cucumber features to not work consistently for the time being.</p>
-</div>
 <p>For Cucumber support, this plugin builds upon the <a href="https://github.com/badeball/cypress-cucumber-preprocessor"><code>cypress-cucumber-preprocessor</code></a> plugin for executing Cucumber feature files.</p>
-<p>With added Xray synchronization, this plugin allows you to automatically download or upload feature files to Xray when running your Cypress tests and to track their execution results in Xray.</p>
+<p>With added Xray synchronization, this plugin allows you to automatically upload feature files to Xray when running your Cypress tests and to track their execution results in Xray.</p>
 <p>Run the following commands to add Cucumber executability to your project:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
@@ -764,48 +763,56 @@ You should probably expect Cucumber features to not work consistently for the ti
 <span class="normal"><a href="#__codelineno-4-26">26</a></span>
 <span class="normal"><a href="#__codelineno-4-27">27</a></span>
 <span class="normal"><a href="#__codelineno-4-28">28</a></span>
-<span class="normal"><a href="#__codelineno-4-29">29</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">addCucumberPreprocessorPlugin</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@badeball/cypress-cucumber-preprocessor&quot;</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">addCucumberPreprocessorPlugin</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@badeball/cypress-cucumber-preprocessor&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">createEsbuildPlugin</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@badeball/cypress-cucumber-preprocessor/esbuild&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">createBundler</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@bahmutov/cypress-esbuild-preprocessor&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">addXrayResultUpload</span><span class="p">,</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">,</span><span class="w"> </span><span class="nx">syncFeatureFile</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;cypress-xray-plugin/plugin&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">addXrayResultUpload</span><span class="p">,</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">,</span><span class="w"> </span><span class="nx">syncFeatureFile</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;cypress-xray-plugin&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="k">import</span><span class="w"> </span><span class="nx">fix</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;cypress-on-fix&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6"></a>
 <a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="c1">// ...</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">setupNodeEvents</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">fixedOn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fix</span><span class="p">(</span><span class="nx">on</span><span class="p">);</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="hll"><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">({</span>
-</span><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="hll"><span class="w">            </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="hll"><span class="w">                </span><span class="nx">projectKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ&quot;</span>
-</span><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="hll"><span class="w">            </span><span class="p">},</span>
-</span><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="hll"><span class="w">            </span><span class="nx">cucumber</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="hll"><span class="w">                </span><span class="nx">featureFileExtension</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;.feature&quot;</span>
-</span><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="hll"><span class="w">            </span><span class="p">}</span>
-</span><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="hll"><span class="w">        </span><span class="p">});</span>
-</span><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">addCucumberPreprocessorPlugin</span><span class="p">(</span><span class="nx">fixedOn</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">);</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="hll"><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">addXrayResultUpload</span><span class="p">(</span><span class="nx">fixedOn</span><span class="p">);</span>
-</span><a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">        </span><span class="nx">fixedOn</span><span class="p">(</span><span class="s2">&quot;file:preprocessor&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">file</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="hll"><span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="nx">syncFeatureFile</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
-</span><a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">cucumberPlugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createBundler</span><span class="p">({</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">                </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">createEsbuildPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">)],</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">            </span><span class="p">});</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">cucumberPlugin</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">        </span><span class="p">});</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">config</span><span class="p">;</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="c1">// ...</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="hll"><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span>
+</span><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="hll"><span class="w">            </span><span class="nx">config</span><span class="p">,</span>
+</span><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="hll"><span class="w">            </span><span class="p">{</span>
+</span><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="hll"><span class="w">                </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="hll"><span class="w">                    </span><span class="nx">projectKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ&quot;</span><span class="p">,</span>
+</span><a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="hll"><span class="w">                    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://example.org&quot;</span>
+</span><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="hll"><span class="w">                </span><span class="p">}</span>
+</span><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="hll"><span class="w">                </span><span class="nx">cucumber</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="hll"><span class="w">                    </span><span class="nx">featureFileExtension</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;.feature&quot;</span>
+</span><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="hll"><span class="w">                </span><span class="p">}</span>
+</span><a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="hll"><span class="w">            </span><span class="p">}</span>
+</span><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="hll"><span class="w">        </span><span class="p">);</span>
+</span><a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">addCucumberPreprocessorPlugin</span><span class="p">(</span><span class="nx">fixedOn</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">);</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="hll"><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">addXrayResultUpload</span><span class="p">(</span><span class="nx">fixedOn</span><span class="p">);</span>
+</span><a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">        </span><span class="nx">fixedOn</span><span class="p">(</span><span class="s2">&quot;file:preprocessor&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">file</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="hll"><span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="nx">syncFeatureFile</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
+</span><a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">cucumberPlugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createBundler</span><span class="p">({</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">                </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">createEsbuildPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">)],</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">            </span><span class="p">});</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">cucumberPlugin</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">        </span><span class="p">});</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">config</span><span class="p">;</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="c1">// ...</span>
 </code></pre></div></td></tr></table></div>
 <p>The highlighted lines are the ones addressing Xray support.</p>
 <details class="info">
-<summary>Lines 10-17</summary>
+<summary>Lines 10-21</summary>
 <p>Here you should configure the Xray plugin the way you want it to work with your Xray instance.
 Read <a href="../../configuration/introduction/">this</a> for more information.</p>
 </details>
 <details class="info">
-<summary>Line 19</summary>
+<summary>Line 23</summary>
 <p>This line enables the upload of test results to your Xray instance when Cypress is done running your tests.</p>
 </details>
 <details class="info">
-<summary>Line 21</summary>
+<summary>Line 25</summary>
 <p>This line enables upstream and downstream synchronization of your feature files with your Xray instance.
 See <a href="../../guides/featureFileSynchronization/">here</a> for more information.</p>
 </details>
