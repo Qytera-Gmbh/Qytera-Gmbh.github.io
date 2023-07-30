@@ -1,7 +1,6 @@
 # OpenSSL
 
 !!! tip
-    This is an advanced section.
     Make sure to check out the [examples](../guides/openSSL.md) to see in which scenarios changing OpenSSL configuration might make sense.
 
 Sometimes it is necessary to configure OpenSSL if your Xray instance sits behind a proxy or uses dedicated root certificates that aren't available by default.
@@ -21,7 +20,7 @@ In this case, you can set the following options prior to running your Cypress te
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             openSSL: {
                 rootCAPath: "/home/cert.pem"
             },
@@ -129,7 +128,7 @@ In this case, you can set the following options prior to running your Cypress te
         ```js
         import { constants } from "crypto";
 
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             openSSL: {
                 secureOptions: constants.SSL_OP_LEGACY_SERVER_CONNECT | constants.SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION; // 262148
             },

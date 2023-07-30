@@ -16,18 +16,22 @@ hide:
   <figcaption>Two passing tests and one failing test for <a href="https://example.org">https://example.org</a>. More info <a href="section/guides/uploadTestResults/">here</a>.</figcaption>
 </figure>
 
-**A plugin for coupling together Cypress and Xray.**
+**A plugin for coupling together Cypress and Xray:**
 
-- [x] Upload test results to Xray
-- [x] Attach screenshots as test execution evidence
-- [x] Attach videos to test execution issues
-- [x] Reuse existing test execution and test plan issues
-- [x] CI/CD ready
+- Upload test results to Xray
+- Attach screenshots as test execution evidence
+- Attach videos to test execution issues
+- Reuse existing test execution and test plan issues
+- CI/CD ready
+- Cucumber support
 
-**Cucumber support** (<span class="development">experimental</span> :fontawesome-solid-person-digging:{ .development })
+:smartbear-cucumber:{ .cucumber } <span class="cucumber"><b>Cucumber only:</b></span>
 
-- [x] Automatic synchronization of Xray step definitions based on your feature files
-- [ ] Automatic execution of tests based on Xray step definitions
+- Automatic import of feature files to Jira
+
+:fontawesome-solid-person-digging:{ .development } <span class="development"><b>Future features:</b></span>
+
+- Automatic execution of Cucumber tests based on Xray step definitions
 
 !!! note
     This plugin only works when running Cypress through the CLI (i.e. `#!sh npx cypress run`).

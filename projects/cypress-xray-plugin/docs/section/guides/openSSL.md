@@ -20,7 +20,7 @@ Error messages requiring you to provide custom SSL certificates might look like 
     Then, tell the plugin to trust that CA by providing the certificate's path in [the options](../configuration/openSSL.md#rootcapath):
 
     ```js
-    await configureXrayPlugin({
+    await configureXrayPlugin(config, {
         openSSL: {
             rootCAPath: "/home/cert.pem"
         },
@@ -43,7 +43,7 @@ Error messages requiring you to provide security options might look like any of 
     ```js
     import { constants } from "crypto";
 
-    await configureXrayPlugin({
+    await configureXrayPlugin(config, {
         openSSL: {
             secureOptions: constants.SSL_OP_LEGACY_SERVER_CONNECT,
         },

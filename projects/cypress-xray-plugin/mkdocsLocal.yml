@@ -9,6 +9,14 @@ site_name: Cypress Xray Plugin
 repo_name: Cypress Xray Plugin
 repo_url: https://github.com/Qytera-Gmbh/cypress-xray-plugin
 
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      options:
+        custom_icons:
+          - overrides/.icons
+
 nav:
   - index.md
   - Setup:
@@ -31,3 +39,7 @@ nav:
 
 extra_css:
   - stylesheets/styles.css
+
+theme:
+  name: material
+  custom_dir: overrides

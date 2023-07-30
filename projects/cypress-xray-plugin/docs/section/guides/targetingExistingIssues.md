@@ -1,33 +1,11 @@
 # Targeting existing issues
 
-Usually, it is best to target and reuse existing Jira issues to not clutter up your projects with unnecessary test case (or test execution) issues.
+The plugin does not upload any results unless you reuse existing Jira issues to not clutter up your projects with unnecessary test case (or test execution) issues.
+This section teaches you everything you need to know to target such existing issues.
 
-!!! tip
-    Reusing existing test case issues is highly recommended.
-    It simplifies test case management *a lot*.
+## Reuse Cypress issues
 
-## Reuse test case issues
-
-By default, Xray will always create a new test case issue whenever you execute a test and your project does not contain a test case issue with *the exact name* as your test case.
-
-!!! info
-    The exact name of test cases in Cypress is the concatenation of the names of `#!js it()` and `#!js describe()` functions.
-    For example, the following test case is called `#!js "a suite has a test case"`:
-
-    ```js
-    describe("a suite", () => {
-        it("has a test case", () => {
-            // ...
-        });
-    });
-    ```
-
-This means, that whenever you change the titles of your test cases in Cypress in `#!js it()` or `#!js describe()` functions, Xray will create new test case issues for you on result upload.
-This applies to the other direction, too.
-If someone changes test case issue titles in Xray and the test cases in Cypress aren't adapted accordingly, you will end up with new test case issues.
-
-To prevent that from happening, you can include test case issue keys in your test case titles.
-Simply add the test case issue's key *anywhere* in the name of the *innermost* `#!js it()` function:
+To link Cypress tests to Jira issues, simply add the test case issue's key *anywhere* in the name of the *innermost* `#!js it()` function (or corresponding alternatives like `#!js specify()`):
 
 ```js
 describe("a suite", () => {
@@ -79,227 +57,72 @@ The plugin parses all test case names and looks for sequences of the form `#!xml
             Your browser does not support the video tag.
         </video>
 
+## Reuse Cucumber issues
 
-!!! bug "Bug"
+To link your Cucumber feature files to existing Jira issues, you need to tag both scenario (outlines) and backgrounds.
+The tagging schemes follow the schemes Xray expects when importing feature files (see [here](https://docs.getxray.app/display/XRAY/Testing+using+Cypress+and+Cucumber+in+JavaScript) or [here](https://docs.getxray.app/display/XRAY/Importing+Cucumber+Tests+-+REST)).
 
-    There's currently an Xray cloud bug affecting the reuse of existing issues if the test title contains whitespace in front of a dash, such as `#!js "[START] - should be able to login"`.
-    Without a test issue key in the test title, (i.e. relying on summary matching for issue reuse during consecutive uploads), Xray will create duplicates ***even if there's a matching issue already***.
+### Test issues
 
-    The corresponding bug can be tracked here: [https://jira.getxray.app/browse/XRAYCLOUD-6031](https://jira.getxray.app/browse/XRAYCLOUD-6031).
+In feature files, you must annotate scenarios (or scenario outlines) with a [tag](https://cucumber.io/docs/cucumber/api/?lang=java#tags) containing the corresponding test case issue key.
 
-    Including test issue keys is therefore even more recommended to avoid running into this problem.
+=== "Xray server"
 
-### Reuse Cucumber test issues
+    ```gherkin
+    Feature: Shopping cart
 
-!!! development
-    Please note that Cucumber support is still in an experimental development stage.
-    You should probably expect Cucumber features to not work consistently for the time being.
-
-In feature files, you can annotate scenarios with a [tag](https://cucumber.io/docs/cucumber/api/?lang=java#tags) containing the corresponding test case issue key.
-Without tags, the exact names of the test cases [will again be used](https://docs.getxray.app/display/XRAYCLOUD/Importing+Cucumber+Tests+-+REST), this time being the concatenation of the `#!gherkin Feature` and `#!gherkin Scenario` names.
-
-In general, the plugin looks for scenario tags of the form:
-
-- `#!xml @TestName:<projectKey>-<number>`
-- `#!xml @<projectKey>-<number>`
-
-!!! tip
-    Just stick to this handy chart to decide which tagging scheme you should employ.
-    ```mermaid
-    graph LR
-        A{Xray<br/>instance};
-        B["@TestName:CYP-123"];
-        C["@CYP-123"];
-        A --->|&nbspCloud&nbsp| B;
-        A --->|&nbspServer&nbsp| C;
-        classDef code-node font-family:monospace;
-        class B,C code-node;
+    @CYP-129
+    Scenario: Add socks
+        Given Bob is logged in
+        When three socks are added from the shop
+        Then the shopping cart should contain three socks
     ```
 
-??? info "Additional information"
-    The reason for the distinction is Xray cloud and Xray server expecting different tags during [feature file import](featureFileSynchronization.md#feature-file-upload) when mapping scenarios to existing test case issues.
+=== "Xray cloud"
 
-    While *the plugin* itself does not care which one you use, you should probably stick to the one that better fits your Xray instance.
-    Using the wrong one might not matter in terms of reusing Cucumber test issues, but it is going to matter when enabling [feature file importing](featureFileSynchronization.md#feature-file-upload) in the future, since then you would need to either:
+    ```gherkin
+    Feature: Shopping cart
 
-    - Change all existing tags to the right ones, i.e. for Xray cloud:
+    @TestName:CYP-129
+    Scenario: Add socks
+        Given Bob is logged in
+        When three socks are added from the shop
+        Then the shopping cart should contain three socks
+    ```
 
-        ```gherkin
-        @CYP-123
-        Scenario: A scenario
-        ```
-        <p style="text-align: center;">&darr;</p>
-        ```gherkin
-        @TestName:CYP-123
-        Scenario: A scenario
-        ```
+### Precondition issues
 
-    - Add "the right ones" to your scenarios, i.e. for Xray cloud:
+In feature files, you must add a comment to a background's *very first step* containing the [tag](https://cucumber.io/docs/cucumber/api/?lang=java#tags) for a corresponding precondition issue key.
 
-        ```gherkin
-        @CYP-123
-        Scenario: A scenario
-        ```
-        <p style="text-align: center;">&darr;</p>
-        ```gherkin
-        @CYP-123 @TestName:CYP-123
-        Scenario: A scenario
-        ```
+!!! note
+    You can find more information about preconditions [here](https://docs.getxray.app/display/XRAY/Pre-Condition) for Xray server and [here](https://docs.getxray.app/display/XRAYCLOUD/Precondition) for Xray cloud.
 
-        This has the additional disadvantage that Xray will add the wrong one (`#!xml @CYP-123`) as a label to your test case issue during feature file import.
+=== "Xray server"
 
-???+ example
+    ```gherkin
+    Feature: Big feature on lovely page
 
-    In the following scenario, the link on [https://example.org](https://example.org) will be clicked and its redirection will be verified.
+    Background:
+        #@CYP-332
+        Given a browser
+        Then the lovely page should open
+    ```
 
-    === "demo.spec.feature"
+=== "Xray cloud"
 
-        ```gherkin
-        Feature: Example page redirection
+    ```gherkin
+    Feature: Big feature on lovely page
 
-            @TestName:CYP-129
-            Scenario: Redirect by clicking
-                Given the example page
-                When the link is clicked
-                Then a redirect should occur
-        ```
-
-    === "demo.spec.js"
-
-        ```js
-        import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
-
-        Given("the example page", function () {
-            cy.visit("https://example.org");
-        });
-
-        When("the link is clicked", function () {
-            // Intercept the click, since it unfortunately redirects to a http:// location
-            // and causes Cypress to abort the execution.
-            cy.intercept("GET", "https://www.iana.org/domains/example", (request) => {
-                request.reply("link was clicked");
-            }).as("redirect");
-            cy.get("a").click();
-        });
-
-        Then("a redirect should occur", function () {
-            cy.wait("@redirect").then((request) => {
-                expect(request.response.body).to.eq("link was clicked");
-            });
-        });
-        ```
-
-    === "cypress.config.js"
-
-        See [Cucumber installation](../setup/installation.md#cucumber-support).
-
-        ```js
-        import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
-        import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
-        import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
-        import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin/plugin";
-
-        // ...
-            async setupNodeEvents(on, config) {
-                await configureXrayPlugin({
-                    jira: {
-                        projectKey: "CYP"
-                    }
-                });
-                await addCucumberPreprocessorPlugin(on, config, {
-                    omitBeforeRunHandler: true,
-                    omitAfterRunHandler: true,
-                    omitBeforeSpecHandler: true,
-                    omitAfterSpecHandler: true,
-                    omitAfterScreenshotHandler: true,
-                });
-                await addXrayResultUpload(on);
-                on("file:preprocessor", async (file) => {
-                    await syncFeatureFile(file);
-                    const cucumberPlugin = createBundler({
-                        plugins: [createEsbuildPlugin(config)],
-                    });
-                    return cucumberPlugin(file);
-                });
-                return config;
-            }
-        // ...
-        ```
-
-    === "Video"
-
-        <video preload="none" poster="../../../assets/videos/guides_targeting_issues_02.jpg" controls muted>
-            <source src="../../../assets/videos/guides_targeting_issues_02.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
+    Background:
+        #@Precondition:CYP-332
+        Given a browser
+        Then the lovely page should open
+    ```
 
 ## Reuse test execution issues
 
-By default, Xray will always create a new test execution issue whenever you upload test results.
+By default, the plugin will always create a new test execution issue whenever you upload test results.
 
 You can prevent that from happening by specifying [the test execution issue key](../configuration/jira.md#testexecutionissuekey) you want to attach the results to.
 
-???+ example
-
-    The following example builds upon the [upload results example](uploadTestResults.md#how-it-works), which created test execution issue `CYP-123`.
-
-    By providing the test execution issue key, Xray won't create a new execution issue for this upload.
-    To highlight the issue being reused, let's also add a new test case that looks for an `#!xml <a>` element.
-
-    === "demo.spec.cy.js"
-
-        ```js hl_lines="19-21"
-        describe("the upload demo", () => {
-
-            beforeEach(() => {
-                cy.visit("https://example.org");
-            });
-
-            it("CYP-124 should find a title element", () => {
-                cy.get("h1").should("exist");
-            });
-
-            it("CYP-125 should find two paragraph elements", () => {
-                cy.get("p").should("have.length", 2);
-            });
-
-            it("CYP-126 should fail to find a span element", () => {
-                cy.get("span").should("exist");
-            });
-
-            it("should find an anchor element", () => {
-                cy.get("a").should("exist");
-            });
-
-        })
-        ```
-
-    === "cypress.config.js"
-
-        ```js hl_lines="8"
-        import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin/plugin";
-
-        // ...
-            async setupNodeEvents(on, config) {
-                await configureXrayPlugin({
-                    jira: {
-                        projectKey: "CYP",
-                        testExecutionIssueKey: "CYP-123"
-                    },
-                    xray: {
-                        uploadResults: true
-                    }
-                });
-                await addXrayResultUpload(on);
-            }
-        // ...
-        ```
-
-    === "Video"
-
-        <video preload="none" poster="../../../assets/videos/guides_targeting_issues_01.jpg" controls muted>
-            <source src="../../../assets/videos/guides_targeting_issues_01.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
 

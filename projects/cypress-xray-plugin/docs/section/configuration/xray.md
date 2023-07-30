@@ -17,7 +17,7 @@ You can provide a bunch of Xray settings which might become necessary depending 
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             xray: {
                 statusFailed: "FAILURE"
             },
@@ -41,7 +41,7 @@ You can provide a bunch of Xray settings which might become necessary depending 
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             xray: {
                 statusPassed: "SUCCESS"
             },
@@ -64,7 +64,7 @@ You can provide a bunch of Xray settings which might become necessary depending 
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             xray: {
                 statusPending: "AWAITING EXECUTION"
             },
@@ -90,7 +90,7 @@ You can provide a bunch of Xray settings which might become necessary depending 
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             xray: {
                 statusSkipped: "IGNORED"
             },
@@ -116,7 +116,7 @@ All options related to manual test issue steps.
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             xray: {
                 steps: {
                     maxLengthAction: 1234
@@ -135,52 +135,26 @@ All options related to manual test issue steps.
         If set to true (default), ***all*** existing steps will be replaced with the plugin's steps.
     !!! note
         The plugin currently creates only one step containing the code of the corresponding Cypress test function.
-    !!! note
-        If a test issue key has been provided for a test case (see [targeting existing issues](../guides/targetingExistingIssues.md)), its steps will only be updated if [`overwriteIssueSummary`](./plugin.md#overwriteissuesummary) is enabled as well, since Xray *requires* an issue summary whenever test details should be updated.
-        When not providing a test issue key, a test case's steps will *always* be updated.
 : ***Environment variable***
     : `XRAY_STEPS_UPDATE`
 : ***Type***
     : [`boolean`](types.md#boolean)
 : ***Default***
-    : `#!js true`
+    : `#!js false`
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             xray: {
                 steps: {
-                    update: false
+                    update: true
                 }
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env XRAY_STEPS_UPDATE=false
-        ```
-
-### `testType`
-: The test type of the test issues.
-    This option will be used to set the corresponding field on Xray issues created during upload (happens when a test does not yet have a corresponding Xray issue).
-: ***Environment variable***
-    : `XRAY_TEST_TYPE`
-: ***Type***
-    : `string`
-: ***Default***
-    : `#!js "Manual"`
-???+ example
-    === "Cypress configuration"
-        ```js
-        await configureXrayPlugin({
-            xray: {
-                testType: "Cucumber"
-            },
-        });
-        ```
-    === "Environment variable"
-        ```sh
-        npx cypress run --env XRAY_TEST_TYPE=Cucumber
+        npx cypress run --env XRAY_STEPS_UPDATE=true
         ```
 
 ### `uploadResults`
@@ -195,7 +169,7 @@ All options related to manual test issue steps.
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             xray: {
                 uploadResults: false
             },
@@ -220,7 +194,7 @@ All options related to manual test issue steps.
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             xray: {
                 uploadScreenshots: false
             },

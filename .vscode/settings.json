@@ -15,6 +15,8 @@
     },
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2
     },
     "yaml.schemas": {
         "https://squidfunk.github.io/mkdocs-material/schema.json": ["**/mkdocsRoot.yml", "**/mkdocsLocal.yml", "**/mkdocs.yml"]

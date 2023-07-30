@@ -2,10 +2,6 @@
 
 The plugin allows you to keep your local feature files in sync with the step definitions in Xray.
 
-!!! development
-    Please note that Cucumber support is still in an experimental development stage.
-    You should probably expect Cucumber features to not work consistently for the time being.
-
 ## Feature file upload
 
 <figure markdown>
@@ -17,25 +13,8 @@ The plugin allows you to keep your local feature files in sync with the step def
 Uploading feature files is useful if the source of truth for test cases are local feature files in Cypress and Xray is only used for tracking execution results.
 You can enable the upload using the [uploadFeatures](../configuration/cucumber.md#uploadfeatures) setting and by making sure that [feature file synchronization](../setup/installation.md#cucumber-support) is enabled.
 !!! tip
-    Don't forget to add tags to your scenarios to make [issue reuse](targetingExistingIssues.md#reuse-cucumber-test-issues) more comfortable.
-
-    These tags are different for the cloud and server version.
-    You can verify this by letting Xray export a [Cucumber test case to a feature file](https://docs.getxray.app/display/XRAY/Export+Cucumber+Features) followed by an inspection into the tags of the generated files.
-
-    For Xray cloud, the tags must be provided in the following form:
-    ```gherkin
-    @TestName:CYP-129
-    Scenario: Redirect by clicking
-    ```
-    For Xray server, they must be provided like this:
-    ```gherkin
-    @CYP-129
-    Scenario: Redirect by clicking
-    ```
-
-    !!! warning
-        Please be aware that there is no way of keeping Xray's issue summaries when synchronizing issues this way.
-        All Xray issue summaries will be replaced with the scenarios' names on successful import.
+    Don't forget to [add tags](targetingExistingIssues.md#reuse-cucumber-test-issues) to your backgrounds, scenarios and scenario outlines.
+    Uploads of untagged feature files will always be skipped as a precautionary measure.
 
 ???+ example
 
@@ -89,11 +68,11 @@ You can enable the upload using the [uploadFeatures](../configuration/cucumber.m
         import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
         import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
         import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
-        import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin/plugin";
+        import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin";
 
         // ...
             async setupNodeEvents(on, config) {
-                await configureXrayPlugin({
+                await configureXrayPlugin(config, {
                     jira: {
                         projectKey: "CYP"
                     },
