@@ -15,7 +15,7 @@ import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin";
 
 // ...
     async setupNodeEvents(on, config) {
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             xray: {
                 uploadResults: true
             }
@@ -36,12 +36,9 @@ npx cypress run
 
 ## How it works
 
-When uploading results, Xray will create a new test issue for each executed test unless any of the following apply:
+The plugin will only upload results for tests you have linked to existing [test issues](targetingExistingIssues.md).
 
-* there already exists a test issue with the *exact* name as the executed test
-* you have [provided a test issue key](targetingExistingIssues.md) to tell Xray which issue to reuse
-
-Xray will also create a new test execution issue, unless you tell Xray to [reuse a specific test execution issue](../configuration/jira.md#testexecutionissuekey).
+The plugin will also create a new test execution issue, unless you tell it to [reuse a specific test execution issue](../configuration/jira.md#testexecutionissuekey).
 
 ??? abstract "Xray Documentation"
     You can find more information on the mechanisms and constraints regarding imports of test execution results [here](https://docs.getxray.app/display/XRAY/Import+Execution+Results#ImportExecutionResults-XrayJSONformat) for Xray server and [here](https://docs.getxray.app/display/XRAYCLOUD/Using+Xray+JSON+format+to+import+execution+results#UsingXrayJSONformattoimportexecutionresults-XrayJSONformat) for Xray cloud.
@@ -90,9 +87,10 @@ Xray will also create a new test execution issue, unless you tell Xray to [reuse
 
         // ...
             async setupNodeEvents(on, config) {
-                await configureXrayPlugin({
+                await configureXrayPlugin(config, {
                     jira: {
-                        projectKey: "CYP"
+                        projectKey: "CYP",
+                        url: "https://example.org"
                     },
                     xray: {
                         uploadResults: true
@@ -102,10 +100,3 @@ Xray will also create a new test execution issue, unless you tell Xray to [reuse
             }
         // ...
         ```
-
-    === "Video"
-
-        <video preload="none" poster="../../../assets/videos/guides_results_upload_00.jpg" controls muted>
-            <source src="../../../assets/videos/guides_results_upload_00.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>

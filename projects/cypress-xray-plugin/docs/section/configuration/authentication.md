@@ -1,6 +1,6 @@
 # Authentication
 
-To use this plugin, you need to authenticate to your Xray instance and &mdash; depending on the options you configured &mdash; your Jira instance as well.
+To use this plugin, you need to authenticate to both your Xray instance and your Jira instance.
 You *must* do this by setting up specific environment variables, e.g. a client ID and a client secret when using a cloud based Xray instance.
 
 To avoid adding your secrets to system environment variables, simply pass them to Cypress as a comma-separated list in the command line:
@@ -10,7 +10,7 @@ npx cypress run --env XRAY_CLIENT_ID="ABCDEF",XRAY_CLIENT_SECRET="XYZ"
 ```
 
 !!! tip
-    Have a look at this graph to quickly set up **_both_** Xray and Jira authentication.
+    Have a look at this graph to quickly set up Xray and Jira authentication.
     Note that Xray server does **_not_** require dedicated credentials in addition to the Jira credentials, effectively setting up both at the same time.
     ```mermaid
     graph TD
@@ -39,8 +39,6 @@ Depending on the provided combinations of environment variables, the plugin will
     2. PAT authentication
     3. Basic authentication
 
-    This way, the cloud version will always be chosen in favor of the server version.
-
 Below you will find all Xray authentication configurations that are currently supported and the environment variables you need to set to authenticate to their respective APIs.
 
 ### Xray cloud
@@ -58,26 +56,11 @@ For the cloud version of Xray, the plugin expects the following environment vari
     npx cypress run --env XRAY_CLIENT_ID="ABCDEF",XRAY_CLIENT_SECRET="XYZ"
     ```
 
-In contrast to Xray server, a [Jira URL](jira.md#url) is not necessary by default.
-This can change however, depending on your [configuration](#jira).
-
 ### Xray server
 
 For setting up Xray server authentication, see [Jira server authentication](#jira-server).
-Additionally, you must provide the [Jira URL](jira.md#url) of the Jira instance Xray is installed on.
 
 ## Jira
-
-Some options require a direct connection to the underlying Jira instance, such as [`attachVideos`](jira.md#attachvideos).
-These options address things which work natively in Jira and more importantly, independently of the features introduced by Xray add-ons.
-Jira-native features are things like issue assignment or uploading issue attachments, whereas those introduced by Xray are features like test steps, test execution tracking or test evidence upload.
-
-If you do not plan on using Jira-native features you can skip setting up Jira credentials.
-
-!!! tip
-    You don't have to learn by heart which options require the Jira connection.
-    In case you unknowingly enable one of them in the future without having set up the Jira credentials, the plugin will tell you in great detail which options have caused it to look for the credentials (before running any tests).
-    Should you encounter such an error message, you can then either turn off the corresponding options or provide the credentials.
 
 As with Xray authentication, the plugin will automatically choose the authentication method depending on the provided environment variables.
 

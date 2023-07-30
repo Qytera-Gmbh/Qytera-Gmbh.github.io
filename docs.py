@@ -88,7 +88,7 @@ YamlDumper.add_representer(Yaml, Yaml.represent)
 
 def _merged_value(value: str | List | Dict, other: str | List | Dict) -> str | List | Dict:
     if isinstance(value, str):
-        if not not isinstance(other, str):
+        if not isinstance(other, str):
             raise ValueError(f"cannot update value {value}: {other} is not a scalar")
         return other
     elif isinstance(value, list):

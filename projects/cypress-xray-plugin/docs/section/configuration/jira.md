@@ -15,7 +15,7 @@ In order to access Xray, some Jira configuration is mandatory.
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             jira: {
                 projectKey: "PRJ"
             },
@@ -25,6 +25,8 @@ In order to access Xray, some Jira configuration is mandatory.
         ```sh
         npx cypress run --env JIRA_PROJECT_KEY="PRJ"
         ```
+
+### `url`
 
 ## Optional settings
 
@@ -55,28 +57,6 @@ In order to access Xray, some Jira configuration is mandatory.
         npx cypress run --env JIRA_ATTACH_VIDEOS=true
         ```
 
-### `createTestIssues`
-: Whether the plugin should create test issues for Cypress tests that have not been mapped to existing test issues (see [targeting existing issues](../guides/targetingExistingIssues.md)) when importing test results to Xray.
-: ***Environment variable***
-    : `JIRA_CREATE_TEST_ISSUES`
-: ***Type***
-    : [`boolean`](types.md#boolean)
-: ***Default***
-    : `#!js true`
-???+ example
-    === "Cypress configuration"
-        ```js
-        await configureXrayPlugin({
-            jira: {
-                createTestIssues: false
-            },
-        });
-        ```
-    === "Environment variable"
-        ```sh
-        npx cypress run --env JIRA_CREATE_TEST_ISSUES=false
-        ```
-
 ### `testExecutionIssueDescription`
 : The description of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through [`testExecutionIssueKey`](#testexecutionissuekey)).
 : ***Environment variable***
@@ -88,7 +68,7 @@ In order to access Xray, some Jira configuration is mandatory.
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             jira: {
                 testExecutionIssueDescription: "This test run was approved by Mr Anderson."
             },
@@ -113,7 +93,7 @@ In order to access Xray, some Jira configuration is mandatory.
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             jira: {
                 testExecutionIssueKey: "PRJ-123"
             },
@@ -135,7 +115,7 @@ In order to access Xray, some Jira configuration is mandatory.
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             jira: {
                 testExecutionIssueSummary: "Monday morning regression test"
             },
@@ -146,52 +126,85 @@ In order to access Xray, some Jira configuration is mandatory.
         npx cypress run --env JIRA_TEST_EXECUTION_ISSUE_SUMMARY="Monday morning regression test"
         ```
 
+### `testExecutionIssueType`
+: The issue type name of test executions. By default, Xray calls them `Test Execution`, but it's possible that they have been renamed or translated in your Jira instance.
+
+    Use this option to specify the type of the test executions the plugin should create for each run (if needed, see [here](#testexecutionissuekey)).
+
+: ***Environment variable***
+    : `JIRA_TEST_EXECUTION_ISSUE_TYPE`
+: ***Type***
+    : `string`
+: ***Default***
+    : `#!js Test Plan`
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(config, {
+            jira: {
+                testExecutionIssueType: "Test Run"
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env JIRA_TEST_EXECUTION_ISSUE_TYPE="Test Run"
+        ```
+
+
 ### `testPlanIssueKey`
-: A test plan issue key to attach the execution to.
+: The summary of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through [`testExecutionIssueKey`](#testexecutionissuekey)).
+: ***Environment variable***
+    : `JIRA_TEST_EXECUTION_ISSUE_SUMMARY`
+: ***Type***
+    : `string`
+: ***Default***
+    : ``#!js `Execution Results [${t}]` `` with `t` being a Unix timestamp when Cypress started testing
+???+ example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(config, {
+            jira: {
+                testExecutionIssueSummary: "Monday morning regression test"
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env JIRA_TEST_EXECUTION_ISSUE_SUMMARY="Monday morning regression test"
+        ```
+
+### `testPlanIssueType`
+: The issue type name of test plans. By default, Xray calls them `Test Plan`, but it's possible that they have been renamed or translated in your Jira instance.
+
     !!! note
-        Must be prefixed with the [project key](#projectkey).
+        You can ignore this setting if:
+
+        - you're using Xray cloud and
+        - you're not running any Cucumber tests
+
+        The plugin only accesses this option when:
+
+        - you're using Xray server and
+        - you're running Cucumber tests and
+        - [a test plan issue key](#testplanissuekey) has been specified and it's trying to attach the test execution to it
+
 : ***Environment variable***
-    : `JIRA_TEST_PLAN_ISSUE_KEY`
+    : `JIRA_TEST_PLAN_ISSUE_TYPE`
 : ***Type***
     : `string`
 : ***Default***
-    : `#!js undefined`
+    : `#!js Test Plan`
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             jira: {
-                testPlanIssueKey: "PRJ-456"
+                testPlanIssueType: "Plan de test" // 🇫🇷
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env JIRA_TEST_PLAN_ISSUE_KEY="PRJ-456"
-        ```
-
-### `url`
-: Use this parameter to specify the base URL of your Jira instance.
-
-    For Jira cloud, it is usually of the form `https://your-domain.atlassian.net` (without the `/jira` part, see [here](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#ad-hoc-api-calls/)).
-
-    For Jira server, you can have a look [here](https://confluence.atlassian.com/adminjiraserver/configuring-the-base-url-938847830.html) to determine your base URL.
-: ***Environment variable***
-    : `JIRA_URL`
-: ***Type***
-    : `string`
-: ***Default***
-    : `#!js undefined`
-???+ example
-    === "Cypress configuration"
-        ```js
-        await configureXrayPlugin({
-            jira: {
-                url: "https://example.org/development/jira"
-            },
-        });
-        ```
-    === "Environment variable"
-        ```sh
-        npx cypress run --env JIRA_URL="https://example.org/development/jira"
+        npx cypress run --env JIRA_TEST_PLAN_ISSUE_TYPE="Plan de test"
         ```

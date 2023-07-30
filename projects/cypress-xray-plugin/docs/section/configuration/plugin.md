@@ -15,7 +15,7 @@ The plugin offers several options for customizing the upload further.
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             plugin: {
                 debug: true
             },
@@ -38,7 +38,7 @@ The plugin offers several options for customizing the upload further.
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             plugin: {
                 enabled: false
             },
@@ -60,7 +60,7 @@ The plugin offers several options for customizing the upload further.
 ???+ example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(config, {
             plugin: {
                 logDirectory: "/home/logs"
             },
@@ -92,26 +92,4 @@ The plugin offers several options for customizing the upload further.
     === "Environment variable"
         ```sh
         npx cypress run --env PLUGIN_NORMALIZE_SCREENSHOT_NAMES=true
-        ```
-
-### `overwriteIssueSummary`
-: Decide whether to keep the issues' existing summaries or whether to overwrite them with each upload.
-: ***Environment variable***
-    : `PLUGIN_OVERWRITE_ISSUE_SUMMARY`
-: ***Type***
-    : [`boolean`](types.md#boolean)
-: ***Default***
-    : `#!js false`
-???+ example
-    === "Cypress configuration"
-        ```js
-        await configureXrayPlugin({
-            plugin: {
-                overwriteIssueSummary: true
-            },
-        });
-        ```
-    === "Environment variable"
-        ```sh
-        npx cypress run --env PLUGIN_OVERWRITE_ISSUE_SUMMARY=true
         ```
