@@ -915,7 +915,8 @@ It is not possible to attach videos without uploading results.</div>
 </details>
 <h3 id="testexecutionissuedescription"><code>testExecutionIssueDescription</code><a class="headerlink" href="#testexecutionissuedescription" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
-<dd>The description of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through <a href="#testexecutionissuekey"><code>testExecutionIssueKey</code></a>).</dd>
+<dd>The description of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through <a href="#testexecutionissuekey"><code>testExecutionIssueKey</code></a>).
+If the <a href="#testexecutionissuekey"><code>testExecutionIssueKey</code></a> is configured but the <code>testExecutionIssueDescription</code> is omitted, the existing test execution issue's description will not be modified.</dd>
 <dd>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
@@ -1009,7 +1010,8 @@ Must be prefixed with the <a href="#projectkey">project key</a>.</div>
 </details>
 <h3 id="testexecutionissuesummary"><code>testExecutionIssueSummary</code><a class="headerlink" href="#testexecutionissuesummary" title="Anchor link to this section for reference">⚓︎</a></h3>
 <dl>
-<dd>The summary of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through <a href="#testexecutionissuekey"><code>testExecutionIssueKey</code></a>).</dd>
+<dd>The summary of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through <a href="#testexecutionissuekey"><code>testExecutionIssueKey</code></a>).
+If the <a href="#testexecutionissuekey"><code>testExecutionIssueKey</code></a> is configured but the <code>testExecutionIssueSummary</code> is omitted, the existing test execution issue's summary will not be modified.</dd>
 <dd>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
@@ -1073,7 +1075,7 @@ Must be prefixed with the <a href="#projectkey">project key</a>.</div>
 <dd>
 <dl>
 <dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="nx">Test</span><span class="w"> </span><span class="nx">Plan</span></code></dd>
+<dd><code class="highlight"><span class="nx">Test</span><span class="w"> </span><span class="nx">Execution</span></code></dd>
 </dl>
 </dd>
 </dl>
