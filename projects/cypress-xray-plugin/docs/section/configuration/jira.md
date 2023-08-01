@@ -33,8 +33,6 @@ In order to access Xray, some Jira configuration is mandatory.
 ### `attachVideos`
 : Whether any videos Cypress captured during test execution should be attached to the test execution issue on results upload.
     !!! note
-        If set to `#!js true`, requires the [Jira URL](#serverurl) and valid [Jira credentials](authentication.md#jira) to be set.
-    !!! note
         This option only takes effect once [`uploadResults`](xray.md#uploadresults) is turned on.
         It is not possible to attach videos without uploading results.
 : ***Environment variable***
