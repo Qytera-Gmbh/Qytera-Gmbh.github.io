@@ -57,6 +57,7 @@ In order to access Xray, some Jira configuration is mandatory.
 
 ### `testExecutionIssueDescription`
 : The description of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through [`testExecutionIssueKey`](#testexecutionissuekey)).
+    If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `testExecutionIssueDescription` is omitted, the existing test execution issue's description will not be modified.
 : ***Environment variable***
     : `JIRA_TEST_EXECUTION_ISSUE_DESCRIPTION`
 : ***Type***
@@ -104,6 +105,7 @@ In order to access Xray, some Jira configuration is mandatory.
 
 ### `testExecutionIssueSummary`
 : The summary of the test execution issue, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through [`testExecutionIssueKey`](#testexecutionissuekey)).
+    If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `testExecutionIssueSummary` is omitted, the existing test execution issue's summary will not be modified.
 : ***Environment variable***
     : `JIRA_TEST_EXECUTION_ISSUE_SUMMARY`
 : ***Type***
@@ -134,7 +136,7 @@ In order to access Xray, some Jira configuration is mandatory.
 : ***Type***
     : `string`
 : ***Default***
-    : `#!js Test Plan`
+    : `#!js Test Execution`
 ???+ example
     === "Cypress configuration"
         ```js
