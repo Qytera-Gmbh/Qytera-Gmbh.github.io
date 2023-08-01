@@ -180,7 +180,7 @@ In order to access Xray, some Jira configuration is mandatory.
     !!! note
         You can ignore this setting if:
 
-        - you're using Xray cloud and
+        - you're using Xray cloud or
         - you're not running any Cucumber tests
 
         The plugin only accesses this option when:
