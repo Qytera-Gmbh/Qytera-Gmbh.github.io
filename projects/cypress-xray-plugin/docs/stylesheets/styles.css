@@ -6,3 +6,20 @@
 .cucumber {
   color: #23d96c;
 }
+
+/*
+ * Make definition tables more tight.
+ */
+
+.md-typeset dt > strong,
+.md-typeset dd > p,
+.md-typeset dd > code {
+  line-height: 1;
+}
+
+.md-typeset dt,
+.md-typeset dd,
+.md-typeset dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
