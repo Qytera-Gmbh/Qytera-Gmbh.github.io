@@ -13,10 +13,10 @@ hide:
      <source src="assets/videos/showcase.mp4" type="video/mp4">
      Your browser does not support the video tag.
    </video>
-  <figcaption>Two passing tests and one failing test for <a href="https://example.org">https://example.org</a></figcaption>
+  <figcaption>Two passing tests and one failing test for <a href="https://example.org">https://example.org</a>.</figcaption>
 </figure>
 
-**A plugin for coupling together Cypress and Xray:**
+<h2 style="color:var(--md-default-fg-color--light)"><i>A plugin for coupling together Cypress and Xray.</i></h2>
 
 - Upload test results to Xray
 - Attach screenshots as test execution evidence
@@ -25,11 +25,11 @@ hide:
 - CI/CD ready
 - Cucumber support
 
-:smartbear-cucumber:{ .cucumber } <span class="cucumber"><b>Cucumber only:</b></span>
+:smartbear-cucumber:{ .cucumber } <span class="cucumber"><i>Cucumber only:</i></span>
 
 - Automatic import of feature files to Jira
 
-:fontawesome-solid-person-digging:{ .development } <span class="development"><b>Future features:</b></span>
+:fontawesome-solid-person-digging:{ .development } <span class="development"><i>Future features:</i></span>
 
 - Automatic execution of Cucumber tests based on Xray step definitions
 
