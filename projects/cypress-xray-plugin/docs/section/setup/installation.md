@@ -1,24 +1,21 @@
 # Installation
 
-This plugin can be run:
+This plugin can be used to run:
 
-- *without* Cucumber support: when you keep all your Cypress test cases in plain JavaScript/TypeScript files
-- *with* Cucumber support: when using Cucumber feature files for running tests
-- *with a mix of both* at the same time
+- _Cypress tests_: plain JavaScript/TypeScript specs
+- _Cucumber tests_: Cucumber feature files
 
 Run the following command to add the plugin to your Cypress project:
 
 ```sh
-npm i -D cypress-xray-plugin
+npm install --save-dev cypress-xray-plugin
 ```
 
-and register the plugin's event listeners in the `e2e.js` file:
+Below you will find the two ways to setup the plugin's basics, one for Cypress tests only (when not running Cucumber feature files) and for added Cucumber support.
 
-```js
-import "cypress-xray-plugin/register";
-```
+<hr/>
 
-## Standard installation
+## Cypress tests only
 
 Modify the `#!js setupNodeEvents()` function in your Cypress configuration file as follows:
 
@@ -45,7 +42,9 @@ import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin";
     Check out the [configuration](../configuration/introduction.md) for more information on how you should configure the plugin to make it work within your infrastructure.
     You can also shoot a glance at the [examples](../guides/uploadTestResults.md#how-it-works) for a more hands-on approach.
 
-## Cucumber support
+<hr/>
+
+## Cucumber tests
 
 For Cucumber support, this plugin builds upon the [`cypress-cucumber-preprocessor`](https://github.com/badeball/cypress-cucumber-preprocessor) plugin for executing Cucumber feature files.
 

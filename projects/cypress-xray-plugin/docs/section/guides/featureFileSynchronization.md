@@ -2,6 +2,8 @@
 
 The plugin allows you to keep your local feature files in sync with the step definitions in Xray.
 
+<hr/>
+
 ## Feature file upload
 
 <figure markdown>
@@ -127,6 +129,8 @@ If you want to use [different languages](https://cucumber.io/docs/gherkin/langua
             Wenn Klick auf Link
             Dann Weiterleitung findet statt
     ```
+
+<hr/>
 
 ## Feature file download
 

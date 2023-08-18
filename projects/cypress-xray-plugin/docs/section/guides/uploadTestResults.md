@@ -6,6 +6,8 @@
   <figcaption>The plugin allows you to upload Cypress test results to Xray server or Xray cloud.</figcaption>
 </figure>
 
+<hr/>
+
 ## Setup
 
 To upload your test results to Xray, make sure you have enabled the results upload in your configuration file:
@@ -34,6 +36,8 @@ npx cypress run
 !!! note
     Don't forget to provide your [authentication credentials](../configuration/authentication.md).
 
+<hr/>
+
 ## How it works
 
 The plugin will only upload results for tests you have linked to existing [test issues](targetingExistingIssues.md).
@@ -48,13 +52,14 @@ The plugin will also create a new test execution issue, unless you tell it to [r
 
     The following example consists of three test cases for [https://example.org](https://example.org):
 
-    1. :white_check_mark: The first one tries to find a `#!html <h1>` element.
-    2. :white_check_mark: The second one asserts that the page contains two `#!html <p>` elements.
-    3. :x: The third one tries to find a `#!html <span>` element, which does not exist on the page.
+    1. :white_check_mark: The first one tries to find an `#!html <h1>` element with text `Example Domain`.
+    2. :white_check_mark: The second one asserts that the page contains an `#!html <a>` element with a `href` attribute.
+    3. :x: The third one tries to find an `#!html <img>` element, which does not exist on the page.
 
-    When uploading the results, Xray will create three test case issues corresponding to the test cases that have been executed.
-    Additionally, a test execution issue will be created containing the three executed test issues.
+    When uploading the results, the plugin will create a test execution issue containing the three executed test issues.
     Since Cypress automatically takes screenshots on failure, the execution will also contain the screenshot as evidence for the failed test case.
+
+    A corresponding video can be seen [here](../../index.md).
 
     === "demo.spec.cy.js"
 
@@ -65,16 +70,16 @@ The plugin will also create a new test execution issue, unless you tell it to [r
                 cy.visit("https://example.org");
             });
 
-            it("should find a title element", () => {
-                cy.get("h1").should("exist");
+            it("CYP-410 Contains a title", () => {
+                cy.get("h1").should("contain.text", "Example Domain");
             });
 
-            it("should find two paragraph elements", () => {
-                cy.get("p").should("have.length", 2);
+            it("CYP-411 Contains a link", () => {
+                cy.get("a").should("have.attr", "href");
             });
 
-            it("should fail to find a span element", () => {
-                cy.get("span").should("exist");
+            it("CYP-412 Fails a test", () => {
+                cy.get("img").should("be.visible");
             });
 
         })
@@ -90,7 +95,7 @@ The plugin will also create a new test execution issue, unless you tell it to [r
                 await configureXrayPlugin(config, {
                     jira: {
                         projectKey: "CYP",
-                        url: "https://example.org"
+                        url: "https://atlassian.com"
                     },
                     xray: {
                         uploadResults: true
