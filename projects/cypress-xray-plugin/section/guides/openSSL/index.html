@@ -670,6 +670,8 @@
 <p>It is not unlikely that you will find yourself sitting behind a proxy or for your Xray instance to be accessible through VPN only.
 In such scenarios, default HTTP requests might fail because of security concerns.</p>
 <p>Here, you will find a list of common security issues and how to approach them.</p>
+<hr/>
+
 <h2 id="trusting-custom-root-cas">Trusting custom root CAs<a class="headerlink" href="#trusting-custom-root-cas" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>In case an Xray instance is setup on an internal network with custom <a href="https://www.ssl.com/faqs/what-is-a-certificate-authority/">CA certificates</a>, you will need to download these certificates and provide them to the Xray plugin.</p>
 <p>Error messages requiring you to provide custom SSL certificates might look like any of the following:</p>
@@ -694,6 +696,8 @@ Then, tell the plugin to trust that CA by providing the certificate's path in <a
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
+<hr/>
+
 <h2 id="providing-security-options">Providing security options<a class="headerlink" href="#providing-security-options" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>Some webservers might run outdated or legacy code, including the one where your Xray instance might be installed.
 Modern HTTP clients usually reject communication attempts to such servers out of security considerations.
