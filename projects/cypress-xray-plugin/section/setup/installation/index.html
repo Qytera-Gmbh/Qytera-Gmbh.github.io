@@ -340,8 +340,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cypress-tests-only" class="md-nav__link">
-    Cypress tests only
+  <a href="#cypress-tests" class="md-nav__link">
+    Cypress tests
   </a>
   
 </li>
@@ -637,8 +637,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cypress-tests-only" class="md-nav__link">
-    Cypress tests only
+  <a href="#cypress-tests" class="md-nav__link">
+    Cypress tests
   </a>
   
 </li>
@@ -669,18 +669,18 @@
 
 
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Anchor link to this section for reference">⚓︎</a></h1>
-<p>This plugin can be used to run:</p>
-<ul>
-<li><em>Cypress tests</em>: plain JavaScript/TypeScript specs</li>
-<li><em>Cucumber tests</em>: Cucumber feature files</li>
-</ul>
 <p>Run the following command to add the plugin to your Cypress project:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>npm<span class="w"> </span>install<span class="w"> </span>--save-dev<span class="w"> </span>cypress-xray-plugin
 </code></pre></div></td></tr></table></div>
+<p>This plugin easily handles:</p>
+<ul>
+<li><em>Cypress test executions</em>: JavaScript/TypeScript specs</li>
+<li><em>Cucumber test executions</em>: Cucumber feature files</li>
+</ul>
 <p>Below you will find the two ways to setup the plugin's basics, one for Cypress tests only (when not running Cucumber feature files) and for added Cucumber support.</p>
 <hr/>
 
-<h2 id="cypress-tests-only">Cypress tests only<a class="headerlink" href="#cypress-tests-only" title="Anchor link to this section for reference">⚓︎</a></h2>
+<h2 id="cypress-tests">Cypress tests<a class="headerlink" href="#cypress-tests" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>Modify the <code class="highlight"><span class="nx">setupNodeEvents</span><span class="p">()</span></code> function in your Cypress configuration file as follows:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -724,12 +724,12 @@ You can also shoot a glance at the <a href="../../guides/uploadTestResults/#how-
 <h2 id="cucumber-tests">Cucumber tests<a class="headerlink" href="#cucumber-tests" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>For Cucumber support, this plugin builds upon the <a href="https://github.com/badeball/cypress-cucumber-preprocessor"><code>cypress-cucumber-preprocessor</code></a> plugin for executing Cucumber feature files.</p>
 <p>With added Xray synchronization, this plugin allows you to automatically upload feature files to Xray when running your Cypress tests and to track their execution results in Xray.</p>
-<p>Run the following commands to add Cucumber executability to your project:</p>
+<p>Run the additional following commands to handle Cucumber test executions as well:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>npm<span class="w"> </span>i<span class="w"> </span>-D<span class="w"> </span>@badeball/cypress-cucumber-preprocessor
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>npm<span class="w"> </span>i<span class="w"> </span>-D<span class="w"> </span>@bahmutov/cypress-esbuild-preprocessor
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>npm<span class="w"> </span>i<span class="w"> </span>-D<span class="w"> </span>cypress-on-fix
+<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>npm<span class="w"> </span>install<span class="w"> </span>--save-dev<span class="w"> </span>@badeball/cypress-cucumber-preprocessor
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>npm<span class="w"> </span>install<span class="w"> </span>--save-dev<span class="w"> </span>@bahmutov/cypress-esbuild-preprocessor
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>npm<span class="w"> </span>install<span class="w"> </span>--save-dev<span class="w"> </span>cypress-on-fix
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
