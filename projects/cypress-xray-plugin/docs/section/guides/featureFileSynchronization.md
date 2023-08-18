@@ -66,40 +66,40 @@ You can enable the upload using the [uploadFeatures](../configuration/cucumber.m
 
     === "cypress.config.js"
 
-        ```js hl_lines="12-15"
+        ```js hl_lines="17-20"
         import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
         import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
         import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
         import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin";
+        import fix from "cypress-on-fix";
 
         // ...
-            async setupNodeEvents(on, config) {
-                await configureXrayPlugin(config, {
+        async setupNodeEvents(on, config) {
+            const fixedOn = fix(on);
+            await configureXrayPlugin(
+                config,
+                {
                     jira: {
-                        projectKey: "CYP"
-                    },
+                        projectKey: "CYP",
+                        url: "https://example.atlassian.net"
+                    }
                     cucumber: {
                         featureFileExtension: ".feature",
                         uploadFeatures: true
                     }
+                }
+            );
+            await addCucumberPreprocessorPlugin(fixedOn, config);
+            await addXrayResultUpload(fixedOn);
+            fixedOn("file:preprocessor", async (file) => {
+                await syncFeatureFile(file);
+                const cucumberPlugin = createBundler({
+                    plugins: [createEsbuildPlugin(config)],
                 });
-                await addCucumberPreprocessorPlugin(on, config, {
-                    omitBeforeRunHandler: true,
-                    omitAfterRunHandler: true,
-                    omitBeforeSpecHandler: true,
-                    omitAfterSpecHandler: true,
-                    omitAfterScreenshotHandler: true,
-                });
-                await addXrayResultUpload(on);
-                on("file:preprocessor", async (file) => {
-                    await syncFeatureFile(file);
-                    const cucumberPlugin = createBundler({
-                        plugins: [createEsbuildPlugin(config)],
-                    });
-                    return cucumberPlugin(file);
-                });
-                return config;
-            }
+                return cucumberPlugin(file);
+            });
+            return config;
+        }
         // ...
         ```
 
