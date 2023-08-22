@@ -15,7 +15,7 @@
         <link rel="next" href="../Setup_QTAF_Locally/">
       
       <link rel="icon" href="../../../assets/images/qyteraIcon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -661,35 +661,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#singleton" class="md-nav__link">
-    @Singleton
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#step" class="md-nav__link">
     @Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-context" class="md-nav__link">
-    Test context
-  </a>
-  
-    <nav class="md-nav" aria-label="Test context">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#inject" class="md-nav__link">
-    @Inject
   </a>
   
 </li>
@@ -790,35 +763,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#singleton" class="md-nav__link">
-    @Singleton
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#step" class="md-nav__link">
     @Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-context" class="md-nav__link">
-    Test context
-  </a>
-  
-    <nav class="md-nav" aria-label="Test context">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#inject" class="md-nav__link">
-    @Inject
   </a>
   
 </li>
@@ -882,67 +828,8 @@
 <h3 id="test">@Test<a class="headerlink" href="#test" title="Anchor link to this section for reference">⚓︎</a></h3>
 <p>The annotation <code>@Test</code> comes from the TestNG framework and can be used as usual to annotate methods that contain test cases. Several test cases can be defined in a class. The test cases that are defined within a class should have a similar context, otherwise the test cases should be divided among several classes.</p>
 <h2 id="page-objects">Page Objects<a class="headerlink" href="#page-objects" title="Anchor link to this section for reference">⚓︎</a></h2>
-<h3 id="singleton">@Singleton<a class="headerlink" href="#singleton" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>The annotation <code>@Singleton</code> comes from the Java library and is used for page object classes. Since QTAF instantiates these classes by means of dependency injection, we have to tell QTAF that we want to create only one instance of this class at runtime. Otherwise, endless loops can occur if page objects have mutual relationships to each other and keep trying to instantiate each other.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.guice.annotations.Step</span><span class="p">;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.inject.Singleton</span><span class="p">;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="nd">@Singleton</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CalendarPage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">TestContext</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">moduleButtonSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;#moduleTab_Calendar&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="nd">@Step</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Click contact module button&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Click contact module button&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">clickMeetingsModuleButton</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="n">WebElement</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="n">moduleButtonSelector</span><span class="p">));</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="n">menu</span><span class="p">.</span><span class="na">click</span><span class="p">();</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
 <h3 id="step">@Step<a class="headerlink" href="#step" title="Anchor link to this section for reference">⚓︎</a></h3>
 <p>The annotation <code>@Step</code> comes from the QTAF framework and is used for methods that represent a test step. This annotation has the attributes <code>name</code> and <code>description</code>, with which the test step can be given a name and a description. These attributes are used when generating log files and reports.</p>
-<h2 id="test-context">Test context<a class="headerlink" href="#test-context" title="Anchor link to this section for reference">⚓︎</a></h2>
-<h3 id="inject">@Inject<a class="headerlink" href="#inject" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>In QTAF, the page object classes are instantiated in the <code>TestContext</code> class. To prevent them from being instantiated more than once and to avoid infinite loops during instantiation, page object classes are provided with the annotation <code>@Singleton</code>. In the TestContext classes, we add attributes that are of the type of the respective page object class and provide these attributes with the annotation <code>@Inject</code>. This causes QTAF to automatically take care of instantiating these classes. We do not have to call a constructor.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.inject.Inject</span><span class="p">;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestContext</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="nd">@Inject</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">Navigator</span><span class="w"> </span><span class="n">navigator</span><span class="p">;</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="nd">@Inject</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">LoginFormPO</span><span class="w"> </span><span class="n">loginForm</span><span class="p">;</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="nd">@Inject</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">TopNavbar</span><span class="w"> </span><span class="n">topNavbar</span><span class="p">;</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
 <hr>
 <div style="display: flex; flex-direction: row; justify-content: space-between">
   <a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>

@@ -15,7 +15,7 @@
         <link rel="next" href="../HTML_Report_Plugin/">
       
       <link rel="icon" href="../../../assets/images/qyteraIcon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -783,27 +783,25 @@
 <span class="normal"><a href="#__codelineno-1-16">16</a></span>
 <span class="normal"><a href="#__codelineno-1-17">17</a></span>
 <span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.*</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.*</span><span class="p">;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nd">@TestFeature</span><span class="p">(</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Calls form&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Create call form&quot;</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">)</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="nd">@Singleton</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CallsTest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">TestContext</span><span class="w"> </span><span class="p">{</span><span class="w">    </span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="nd">@DataProvider</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;callsData&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="w"> </span><span class="nf">getCallsData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="p">{</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">                </span><span class="p">{</span><span class="s">&quot;Daily&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Daily conference&quot;</span><span class="p">},</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">                </span><span class="p">{</span><span class="s">&quot;Weekly&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Weekly conference&quot;</span><span class="p">},</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">                </span><span class="p">{</span><span class="s">&quot;Meeting John Doe&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Meeting with John Doe&quot;</span><span class="p">},</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">                </span><span class="p">{</span><span class="s">&quot;Meeting Jane Doe&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Meeting with Jane Doe&quot;</span><span class="p">},</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">        </span><span class="p">};</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">    </span><span class="c1">// ...</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="p">}</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CallsTest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">TestContext</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="nd">@DataProvider</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;callsData&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="w"> </span><span class="nf">getCallsData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[][]</span><span class="p">{</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">                </span><span class="p">{</span><span class="s">&quot;Daily&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Daily conference&quot;</span><span class="p">},</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">                </span><span class="p">{</span><span class="s">&quot;Weekly&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Weekly conference&quot;</span><span class="p">},</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">                </span><span class="p">{</span><span class="s">&quot;Meeting John Doe&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Meeting with John Doe&quot;</span><span class="p">},</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">                </span><span class="p">{</span><span class="s">&quot;Meeting Jane Doe&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Meeting with Jane Doe&quot;</span><span class="p">},</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">        </span><span class="p">};</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">    </span><span class="c1">// ...</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Each test scenario that uses a Data Provider is executed once for each row of the data matrix. In our example, our data provider leifert a data matrix with four rows, accordingly the corresponding test scenarios are executed four times. The columns of the data matrix correspond to the number of parameters passed to the test scenarios. In our example, each execution of a test scenario would be passed two parameters of type String.</p>
 <p>Now we still need to link our test scenario to our data provider. First, add the attribute <code>dataProvider</code> to the <code>@Test</code> annotation and give this attribute the same value as the attribute <code>name</code> of the <code>@DataProvider</code> annotation. Furthermore, add two parameters of type String to your Java method. Within the test scenario, replace all static parameters with the new dynamic parameters that the method takes. This may look like this:</p>
