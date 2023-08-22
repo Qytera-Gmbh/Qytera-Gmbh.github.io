@@ -153,7 +153,7 @@ Now the project is ready so that we can run it for the first time. To do this, w
 
 <img src="../../../assets/images/cucumber/cucumber_testrunner_exec.jpg" />
 
-A browser will open for a short time. However, since we have not yet created any test cases, it will close again after a short time. Furthermore, a configuration file called `configuration.json` is created in the resource directory, as well as the folder `logs`, in which you can already see log files for the test run we have just carried out.
+A browser will open for a short time. However, since we have not yet created any test cases, it will close again after a short time. Furthermore, a configuration file called `qtaf.json` is created in the resource directory, as well as the folder `logs`, in which you can already see log files for the test run we have just carried out.
 
 The project is now ready for the creation of test cases.
 

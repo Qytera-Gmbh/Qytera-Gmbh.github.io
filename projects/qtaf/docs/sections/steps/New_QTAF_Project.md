@@ -52,7 +52,6 @@ package org.acme.tests;
 
 import de.qytera.qtaf.core.config.annotations.TestFeature;
 import de.qytera.qtaf.testng.context.QtafTestNGContext;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 @TestFeature(
@@ -63,12 +62,12 @@ public class TestOne extends QtafTestNGContext {
 
     @Test(testName = "Test Success", description = "This test should pass")
     public void testSuccess() {
-        Assert.assertEquals(2 * 2, 4);
+        assertEquals(2 * 2, 4);
     }
 
     @Test(testName = "Test Failure", description = "This test should fail")
     public void testFailure() {
-        Assert.assertEquals(2 * 2, 3);
+        assertEquals(2 * 2, 3);
     }
 }
 ```
@@ -112,7 +111,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class HelloSeleniumTest {
-    String headlineSelector = "h1.display-1";
+    By headlineSelector = By.cssSelector("h1.display-1");
 
     @Test(
       testName = "Open browser and visit selenium documentation",
@@ -126,7 +125,7 @@ public class HelloSeleniumTest {
         driver.get("https://selenium.dev");
 
         // Extract headline text from website
-        String headlineText = driver.findElement(By.cssSelector(headlineSelector)).getText();
+        String headlineText = driver.findElement(headlineSelector)).getText();
         Assert.assertEquals(headlineText, "Selenium automates browsers. That's it!");
 
         // Close the driver
@@ -148,7 +147,7 @@ import org.testng.annotations.Test;
         description = "Our first Selenium test"
 )
 public class HelloSeleniumTest extends QtafTestNGContext {
-    String headlineSelector = "h1.display-1";
+    By headlineSelector = By.cssSelector()"h1.display-1";
 
     @Test(
       testName = "Open browser and visit selenium documentation",
@@ -159,8 +158,7 @@ public class HelloSeleniumTest extends QtafTestNGContext {
         driver.get("https://selenium.dev");
 
         // Extract headline text from website
-        String headlineText = driver.findElement(By.cssSelector(headlineSelector)).getText();
-        Assert.assertEquals(headlineText, "Selenium automates browsers. That's it!");
+        assertEquals($(headlineSelector).text(), "Selenium automates browsers. That's it!");
     }
 }
 ```
@@ -191,11 +189,11 @@ import org.testng.annotations.Test;
         description = "Our first Selenium test"
 )
 public class HelloSeleniumTest extends QtafTestNGContext {
-    String headlineSelector = "h1.display-1";
+    By headlineSelector = By.cssSelector()"h1.display-1";
 
     @Test(
-      testName = "Open browser and visit selenium documentation",
-      description = "Open the browser and go to the selenium documentation website"
+        testName = "Open browser and visit selenium documentation",
+        description = "Open the browser and go to the selenium documentation website"
     )
     public void testBrowser() {
         openSite("https://selenium.dev");
@@ -209,15 +207,14 @@ public class HelloSeleniumTest extends QtafTestNGContext {
 
     public void checkHeadline(String expectedText) {
         // Extract headline text from website
-        String headlineText = driver.findElement(By.cssSelector(headlineSelector)).getText();
-        Assert.assertEquals(headlineText, expectedText);
+        assertEquals($(headlineSelector).text(), expectedText);
     }
 }
 ```
 
 The advantages of this code example are obvious: the code becomes more readable and by outsourcing test steps to separate methods, they can also be reused in other test cases. However, QTAF goes one step further and expects methods that represent test steps to be defined in separate classes. Thus, there are classes in which the methods contain test cases and other classes in which the methods only contain test steps. Instead of defining all test steps within a single class, it makes sense to bundle only those test steps within a class that all address a specific area of the website. Areas of the website can be, for example, a login form, a navigation bar or a specific menu. This also contributes to the maintainability of the code in larger projects.
 
-Let's now look at how to define such a page object class in QTAF. We first create the package `org.acme.page_objects`, in which we will define our page object classes. The name of the package can also be chosen differently. In this package we now create the class `MainSitePO`. Within this class we define the methods `openSite` and `checkHeadline` as we had defined them before in the class `HelloSeleniumTest`. Then we have to add annotations to our new class. First, we add the annotation `@Singleton` to the class. This ensures that only one object is created from this class at runtime. Next, we add the annotation `@Step` to each method that represents a test step. Within this annotation we can define the attributes name and description. The name and description of the test step will be used later in the reporting.
+Let's now look at how to define such a page object class in QTAF. We first create the package `org.acme.page_objects`, in which we will define our page object classes. The name of the package can also be chosen differently. In this package we now create the class `MainSitePO`. Within this class we define the methods `openSite` and `checkHeadline` as we had defined them before in the class `HelloSeleniumTest`. Then we have to add annotations to our new class. We add the annotation `@Step` to each method that represents a test step. Within this annotation we can define the attributes name and description. The name and description of the test step will be used later in the reporting.
 
 Our new page object class should look like this:
 
@@ -231,9 +228,8 @@ import org.openqa.selenium.WebElement;
 import javax.inject.Singleton;
 
 
-@Singleton
 public class MainSitePO extends QtafTestNGContext {
-    String headlineSelector = "h1.display-1";
+    By headlineSelector = By.cssSelector()"h1.display-1";
 
     @Step(
         name = "Open Site",
@@ -250,62 +246,41 @@ public class MainSitePO extends QtafTestNGContext {
     )
     public void checkHeadline(String expectedText) {
         // Extract headline text from website
-        String headlineText = driver.findElement(By.cssSelector(headlineSelector)).getText();
-        Assert.assertEquals(headlineText, expectedText);
+        assertEquals($(headlineSelector).text(), expectedText);
     }
 }
 ```
 
-Now we only have to import our new page object class into our test case class. Until now, our test case class inherited from the `QtafTestNGContext` class from the QTAF framework, which, for example, provides a pre-configured Selenium driver via the `driver` attribute. Since we have now created page object classes, it makes sense to create a new class called `TestContext`, let it inherit from `QtafTestNGContext` and then instantiate our page objects here. The test classes then inherit from our own test context class and thus inherit the Selenium driver and our own page objects.
-
-The test context class could look like this:
-
-```java
-package org.acme;
-
-import de.qytera.qtaf.testng.context.QtafTestNGContext;
-import org.acme.page_objects.*;
-
-import javax.inject.Inject;
-
-
-public class TestContext extends QtafTestNGContext {
-
-    @Inject
-    protected MainSitePO mainSitePO;
-}
-```
-
-Our test case class, which now inherits from TestContext, then looks like this:
+Now we need to instantiate this page object class in out test case. This can be done by the function `load` that is provided by the QTAF test context. This function accepts a class reference and creates a new instance of this class. It is important to instantiate the page object by calling the `load`and not using the `new`keyword, otherwise logging will not work for this page object. Internally QTAF injects code before and after each step method so that we can trace these functions. Our test case class, which now uses our page object class, then looks like this:
 
 ```java
 package org.acme.tests;
 
 import de.qytera.qtaf.core.config.annotations.TestFeature;
 import de.qytera.qtaf.testng.context.QtafTestNGContext;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.acme.TestContext;
 
 @TestFeature(
         name = "SeleniumTest",
         description = "Our first Selenium test"
 )
-public class HelloSeleniumTest extends TestContext {
-    String headlineSelector = "h1.display-1";
-
+public class HelloSeleniumTest extends QtafTestNGContext {
     @Test(
-      testName = "Open browser and visit selenium documentation",
-      description = "Open the browser and go to the selenium documentation website"
+        testName = "Open browser and visit selenium documentation",
+        description = "Open the browser and go to the selenium documentation website"
     )
     public void testBrowser() {
+        // Instantiate page objects
+        MainSitePO mainSitePO = load(MainSitePO.class)
+
+        // Test case
         mainSitePO.openSite("https://selenium.dev");
         mainSitePO.checkHeadline("Selenium automates browsers. That's it!");
     }
 }
 ```
 
-Now we have divided our project into page objects and the test steps defined in them. We can now call the main method of `TestRunner` and execute our test cases.
+Now we have divided our project into page objects and the test steps defined in them. We can now call the main method of `TestRunner` or execute the command `mvn clean test`. This will run our test cases.
 
 # Create reports
 
@@ -343,7 +318,7 @@ QTAF offers you the possibility to run test cases on different browsers. You can
 
 **Option 1: Use the configuration file**
 
-Change the value of the `driver.name` attribute in the `configuration.json` file. Possible values include `chrome`, `firefox`, `edge`, `opera` and `ie`.
+Change the value of the `driver.name` attribute in the `qtaf.json` file. Possible values include `chrome`, `firefox`, `edge`, `opera` and `ie`.
 
 ```json
   "driver":{
@@ -359,7 +334,7 @@ QTAF test cases can also be executed via the command line. This is advantageous 
 
 **Option 3: Use environment variables**
 
-As a third option, QTAF offers to set configuration parameters via environment variables. For example, if you want to test on the Edge browser, set the environment variable `DRIVER_NAME` to the value `edge`. In a Bash shell, you can also set environment variables directly before the actual command. This would look like this: `DRIVER_NAME=edge mvn clean test`. Environment variables also always overwrite the values in the `configuration.json` file.
+As a third option, QTAF offers to set configuration parameters via environment variables. For example, if you want to test on the Edge browser, set the environment variable `DRIVER_NAME` to the value `edge`. In a Bash shell, you can also set environment variables directly before the actual command. This would look like this: `DRIVER_NAME=edge mvn clean test`. Environment variables also always overwrite the values in the `qtaf.json` file.
 
 <hr>
 <div style="display: flex; flex-direction: row; justify-content: space-between">

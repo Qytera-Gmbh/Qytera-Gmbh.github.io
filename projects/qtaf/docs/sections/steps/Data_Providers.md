@@ -45,8 +45,7 @@ import org.testng.annotations.*;
         name = "Calls form",
         description = "Create call form"
 )
-@Singleton
-public class CallsTest extends TestContext {    
+public class CallsTest extends TestContext {
     @DataProvider(name = "callsData")
     public Object[][] getCallsData() {
         return new Object[][]{
@@ -56,7 +55,7 @@ public class CallsTest extends TestContext {
                 {"Meeting Jane Doe", "Meeting with Jane Doe"},
         };
     }
-    
+
     // ...
 }
 ```
