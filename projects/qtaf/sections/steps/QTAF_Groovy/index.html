@@ -15,7 +15,7 @@
     
     
       
-        <title>Use QTAF with Kotlin - QTAF - Qytera Test Automation Framework</title>
+        <title>Use QTAF with Groovy - QTAF - Qytera Test Automation Framework</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#use-qtaf-with-kotlin" class="md-skip">
+        <a href="#use-qtaf-with-groovy" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Use QTAF with Kotlin
+              Use QTAF with Groovy
             
           </span>
         </div>
@@ -641,15 +641,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#new-qtaf-kotlin-project-using-maven" class="md-nav__link">
-    New QTAF Kotlin project using Maven
+  <a href="#new-qtaf-groovy-project-using-maven" class="md-nav__link">
+    New QTAF Groovy project using Maven
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#new-qtaf-kotlin-project-using-gradle" class="md-nav__link">
-    New QTAF Kotlin project using Gradle
+  <a href="#new-qtaf-groovy-project-using-gradle" class="md-nav__link">
+    New QTAF Groovy project using Gradle
   </a>
   
 </li>
@@ -693,17 +693,15 @@
   
 
 
-<h1 id="use-qtaf-with-kotlin">Use QTAF with Kotlin<a class="headerlink" href="#use-qtaf-with-kotlin" title="Anchor link to this section for reference">⚓︎</a></h1>
-<p>QTAF is written in Java, but can also be used with Kotlin, as Java and Kotlin compile to Bytecode for the same runtime. For creating a new QTAF project with Kotlin you can choose between Maven and Gradle as a build system. In this article we will show you for both systems how you can setup a new QTAF project.</p>
-<h2 id="new-qtaf-kotlin-project-using-maven">New QTAF Kotlin project using Maven<a class="headerlink" href="#new-qtaf-kotlin-project-using-maven" title="Anchor link to this section for reference">⚓︎</a></h2>
+<h1 id="use-qtaf-with-groovy">Use QTAF with Groovy<a class="headerlink" href="#use-qtaf-with-groovy" title="Anchor link to this section for reference">⚓︎</a></h1>
+<p>QTAF is written in Java, but can also be used with Groovy, as Java and Groovy compile to Bytecode for the same runtime. For creating a new QTAF project with Groovy you can choose between Maven and Gradle as a build system. In this article we will show you for both systems how you can setup a new QTAF project.</p>
+<h2 id="new-qtaf-groovy-project-using-maven">New QTAF Groovy project using Maven<a class="headerlink" href="#new-qtaf-groovy-project-using-maven" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>Create a new project with IntelliJ or VSCode as you would create it when using Java. The <code>pom.xml</code> file should look like the following code sample.</p>
 <p>There are two dependencies you have to add to <code>pom.xml</code>:
-- <a href="https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib" href="blank_">kotlin-stdlib</a>
+- <a href="https://mvnrepository.com/artifact/org.apache.groovy/groovy-all" href="blank_">groovy-all</a>
 - <a href="https://mvnrepository.com/artifact/de.qytera/qtaf-core" target="_blank">qtaf-core</a></p>
 <p>Also you need to add the following Maven plugins:
-- <a href="https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-maven-plugin" target="_blank">Kotlin Maven Plugin</a>
-- <a href="https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin" target="_blank">Exec Maven Plugin</a>
-- <a href="https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin" target="_blank">Apache maven Compiler Plugin</a></p>
+- <a href="https://mvnrepository.com/artifact/org.codehaus.gmavenplus/gmavenplus-plugin" target="_blank">GMavenPlus Plugin</a></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -764,116 +762,70 @@
 <span class="normal"><a href="#__codelineno-0-58">58</a></span>
 <span class="normal"><a href="#__codelineno-0-59">59</a></span>
 <span class="normal"><a href="#__codelineno-0-60">60</a></span>
-<span class="normal"><a href="#__codelineno-0-61">61</a></span>
-<span class="normal"><a href="#__codelineno-0-62">62</a></span>
-<span class="normal"><a href="#__codelineno-0-63">63</a></span>
-<span class="normal"><a href="#__codelineno-0-64">64</a></span>
-<span class="normal"><a href="#__codelineno-0-65">65</a></span>
-<span class="normal"><a href="#__codelineno-0-66">66</a></span>
-<span class="normal"><a href="#__codelineno-0-67">67</a></span>
-<span class="normal"><a href="#__codelineno-0-68">68</a></span>
-<span class="normal"><a href="#__codelineno-0-69">69</a></span>
-<span class="normal"><a href="#__codelineno-0-70">70</a></span>
-<span class="normal"><a href="#__codelineno-0-71">71</a></span>
-<span class="normal"><a href="#__codelineno-0-72">72</a></span>
-<span class="normal"><a href="#__codelineno-0-73">73</a></span>
-<span class="normal"><a href="#__codelineno-0-74">74</a></span>
-<span class="normal"><a href="#__codelineno-0-75">75</a></span>
-<span class="normal"><a href="#__codelineno-0-76">76</a></span>
-<span class="normal"><a href="#__codelineno-0-77">77</a></span>
-<span class="normal"><a href="#__codelineno-0-78">78</a></span>
-<span class="normal"><a href="#__codelineno-0-79">79</a></span>
-<span class="normal"><a href="#__codelineno-0-80">80</a></span>
-<span class="normal"><a href="#__codelineno-0-81">81</a></span>
-<span class="normal"><a href="#__codelineno-0-82">82</a></span>
-<span class="normal"><a href="#__codelineno-0-83">83</a></span>
-<span class="normal"><a href="#__codelineno-0-84">84</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">         </span><span class="na">xmlns=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0&quot;</span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">         </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">         </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span class="nt">&gt;</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>KotlinQtafMavenDemo<span class="nt">&lt;/artifactId&gt;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>org.example<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>de.qytera.qtafgroovy<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>QtafGroovyMavenDemo<span class="nt">&lt;/artifactId&gt;</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="nt">&lt;name&gt;</span>consoleApp<span class="nt">&lt;/name&gt;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="nt">&lt;properties&gt;</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">        </span><span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="nt">&lt;kotlin.code.style&gt;</span>official<span class="nt">&lt;/kotlin.code.style&gt;</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">        </span><span class="nt">&lt;kotlin.compiler.jvmTarget&gt;</span>17<span class="nt">&lt;/kotlin.compiler.jvmTarget&gt;</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="nt">&lt;/properties&gt;</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="nt">&lt;repositories&gt;</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">        </span><span class="nt">&lt;repository&gt;</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">            </span><span class="nt">&lt;id&gt;</span>mavenCentral<span class="nt">&lt;/id&gt;</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">            </span><span class="nt">&lt;url&gt;</span>https://repo1.maven.org/maven2/<span class="nt">&lt;/url&gt;</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">        </span><span class="nt">&lt;/repository&gt;</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">    </span><span class="nt">&lt;/repositories&gt;</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">    </span><span class="nt">&lt;build&gt;</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">        </span><span class="nt">&lt;sourceDirectory&gt;</span>src/main/kotlin<span class="nt">&lt;/sourceDirectory&gt;</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">        </span><span class="nt">&lt;testSourceDirectory&gt;</span>src/test/kotlin<span class="nt">&lt;/testSourceDirectory&gt;</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">        </span><span class="nt">&lt;plugins&gt;</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.jetbrains.kotlin<span class="nt">&lt;/groupId&gt;</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>kotlin-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">                </span><span class="nt">&lt;version&gt;</span>1.9.0<span class="nt">&lt;/version&gt;</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">                </span><span class="nt">&lt;executions&gt;</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">                    </span><span class="nt">&lt;execution&gt;</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">                        </span><span class="nt">&lt;id&gt;</span>compile<span class="nt">&lt;/id&gt;</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="w">                        </span><span class="nt">&lt;phase&gt;</span>compile<span class="nt">&lt;/phase&gt;</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">                        </span><span class="nt">&lt;goals&gt;</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="w">                            </span><span class="nt">&lt;goal&gt;</span>compile<span class="nt">&lt;/goal&gt;</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="w">                        </span><span class="nt">&lt;/goals&gt;</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">                    </span><span class="nt">&lt;/execution&gt;</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="w">                    </span><span class="nt">&lt;execution&gt;</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="w">                        </span><span class="nt">&lt;id&gt;</span>test-compile<span class="nt">&lt;/id&gt;</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="w">                        </span><span class="nt">&lt;phase&gt;</span>test-compile<span class="nt">&lt;/phase&gt;</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="w">                        </span><span class="nt">&lt;goals&gt;</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="w">                            </span><span class="nt">&lt;goal&gt;</span>test-compile<span class="nt">&lt;/goal&gt;</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="w">                        </span><span class="nt">&lt;/goals&gt;</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="w">                    </span><span class="nt">&lt;/execution&gt;</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="w">                </span><span class="nt">&lt;/executions&gt;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;dependencies&gt;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.apache.groovy<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>groovy-all<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>4.0.2<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">            </span><span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">            </span><span class="nt">&lt;groupId&gt;</span>de.qytera<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>qtaf-core<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>0.2.0<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">    </span><span class="nt">&lt;/dependencies&gt;</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">    </span><span class="nt">&lt;build&gt;</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">        </span><span class="nt">&lt;plugins&gt;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.codehaus.gmavenplus<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>gmavenplus-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">                </span><span class="nt">&lt;version&gt;</span>1.13.1<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">                </span><span class="nt">&lt;executions&gt;</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">                    </span><span class="nt">&lt;execution&gt;</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">                        </span><span class="nt">&lt;goals&gt;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">                            </span><span class="nt">&lt;goal&gt;</span>execute<span class="nt">&lt;/goal&gt;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">                        </span><span class="nt">&lt;/goals&gt;</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">                    </span><span class="nt">&lt;/execution&gt;</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">                </span><span class="nt">&lt;/executions&gt;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="w">                </span><span class="nt">&lt;dependencies&gt;</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">                    </span><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="w">                        </span><span class="nt">&lt;groupId&gt;</span>org.apache.groovy<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="w">                        </span><span class="nt">&lt;artifactId&gt;</span>groovy<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">                        </span><span class="nt">&lt;version&gt;</span>4.0.2<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="w">                        </span><span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="w">                    </span><span class="nt">&lt;/dependency&gt;</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="w">                </span><span class="nt">&lt;/dependencies&gt;</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="w">                </span><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="w">                    </span><span class="nt">&lt;scripts&gt;</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="w">                        </span><span class="nt">&lt;script&gt;</span>src/main/groovy/Main.groovy<span class="nt">&lt;/script&gt;</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="w">                    </span><span class="nt">&lt;/scripts&gt;</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="w">                </span><span class="nt">&lt;/configuration&gt;</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo<span class="nt">&lt;/groupId&gt;</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>exec-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="w">                </span><span class="nt">&lt;version&gt;</span>1.6.0<span class="nt">&lt;/version&gt;</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="w">                </span><span class="nt">&lt;configuration&gt;</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="w">                    </span><span class="nt">&lt;mainClass&gt;</span>MainKt<span class="nt">&lt;/mainClass&gt;</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="w">                </span><span class="nt">&lt;/configuration&gt;</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="w">                </span><span class="nt">&lt;configuration&gt;</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="w">                    </span><span class="nt">&lt;source&gt;</span>17<span class="nt">&lt;/source&gt;</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="w">                    </span><span class="nt">&lt;target&gt;</span>17<span class="nt">&lt;/target&gt;</span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="w">                </span><span class="nt">&lt;/configuration&gt;</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="w">        </span><span class="nt">&lt;/plugins&gt;</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="w">    </span><span class="nt">&lt;/build&gt;</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a>
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="w">    </span><span class="nt">&lt;dependencies&gt;</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.jetbrains.kotlin<span class="nt">&lt;/groupId&gt;</span>
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>kotlin-stdlib<span class="nt">&lt;/artifactId&gt;</span>
-<a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>1.9.0<span class="nt">&lt;/version&gt;</span>
-<a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="w">            </span><span class="nt">&lt;groupId&gt;</span>de.qytera<span class="nt">&lt;/groupId&gt;</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>qtaf-core<span class="nt">&lt;/artifactId&gt;</span>
-<a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>0.2.0<span class="nt">&lt;/version&gt;</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a>
-<a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="w">    </span><span class="nt">&lt;/dependencies&gt;</span>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="nt">&lt;/project&gt;</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">        </span><span class="nt">&lt;/plugins&gt;</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="w">    </span><span class="nt">&lt;/build&gt;</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="w">    </span><span class="nt">&lt;properties&gt;</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="w">        </span><span class="nt">&lt;maven.compiler.source&gt;</span>17<span class="nt">&lt;/maven.compiler.source&gt;</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="w">        </span><span class="nt">&lt;maven.compiler.target&gt;</span>17<span class="nt">&lt;/maven.compiler.target&gt;</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="w">        </span><span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="w">    </span><span class="nt">&lt;/properties&gt;</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="nt">&lt;/project&gt;</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="new-qtaf-kotlin-project-using-gradle">New QTAF Kotlin project using Gradle<a class="headerlink" href="#new-qtaf-kotlin-project-using-gradle" title="Anchor link to this section for reference">⚓︎</a></h2>
-<p>If you use Gradle the file <code>build.gradle.kts</code> should have the following content:</p>
+<h2 id="new-qtaf-groovy-project-using-gradle">New QTAF Groovy project using Gradle<a class="headerlink" href="#new-qtaf-groovy-project-using-gradle" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>If you use Gradle the file <code>build.gradle</code> should have the following content:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -895,49 +847,31 @@
 <span class="normal"><a href="#__codelineno-1-19">19</a></span>
 <span class="normal"><a href="#__codelineno-1-20">20</a></span>
 <span class="normal"><a href="#__codelineno-1-21">21</a></span>
-<span class="normal"><a href="#__codelineno-1-22">22</a></span>
-<span class="normal"><a href="#__codelineno-1-23">23</a></span>
-<span class="normal"><a href="#__codelineno-1-24">24</a></span>
-<span class="normal"><a href="#__codelineno-1-25">25</a></span>
-<span class="normal"><a href="#__codelineno-1-26">26</a></span>
-<span class="normal"><a href="#__codelineno-1-27">27</a></span>
-<span class="normal"><a href="#__codelineno-1-28">28</a></span>
-<span class="normal"><a href="#__codelineno-1-29">29</a></span>
-<span class="normal"><a href="#__codelineno-1-30">30</a></span>
-<span class="normal"><a href="#__codelineno-1-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">plugins</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">kotlin</span><span class="p">(</span><span class="s">&quot;jvm&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="s">&quot;1.8.0&quot;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">application</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">}</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;de.qytera&quot;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.0.1&quot;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">repositories</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="n">mavenCentral</span><span class="p">()</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="p">}</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">    </span><span class="n">testImplementation</span><span class="p">(</span><span class="n">kotlin</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">))</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;de.qytera:qtaf-core:0.2.0&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="p">}</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="n">tasks</span><span class="p">.</span><span class="na">test</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">    </span><span class="n">useTestNG</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//Tells Gradle to use TestNG</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">        </span><span class="n">useDefaultListeners</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// Tells TestNG to execute its default reporting structure</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="w">        </span><span class="n">suites</span><span class="p">(</span><span class="s">&quot;testng.xml&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="p">}</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24"></a>
-<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="n">kotlin</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">    </span><span class="n">jvmToolchain</span><span class="p">(</span><span class="m">17</span><span class="p">)</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="p">}</span>
-<a id="__codelineno-1-28" name="__codelineno-1-28"></a>
-<a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="n">application</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="w">    </span><span class="n">mainClass</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="s">&quot;TestRunnerKt&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">plugins</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;groovy&#39;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="o">}</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;de.qytera.qtaf&#39;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1.0-SNAPSHOT&#39;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">repositories</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="n">mavenCentral</span><span class="o">()</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="o">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;org.apache.groovy:groovy:4.0.2&#39;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;de.qytera:qtaf-core:0.2.0&#39;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="o">}</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="n">test</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">    </span><span class="n">useTestNG</span><span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="c1">//Tells Gradle to use TestNG</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">        </span><span class="n">useDefaultListeners</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// Tells TestNG to execute its default reporting structure</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">        </span><span class="n">suites</span><span class="w"> </span><span class="s1">&#39;src/test/suite.xml&#39;</span><span class="w"> </span><span class="c1">//location of our suite.xml</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="creating-page-object-classes">Creating page object classes<a class="headerlink" href="#creating-page-object-classes" title="Anchor link to this section for reference">⚓︎</a></h2>
-<p>A page object class in Kotlin looks like the following code snippet. Methods and classes <b>MUST</b> be marked with the keyword <code>open</code>, otherwise logging will not work correctly, because internally these classes and methods are compile to final classes and final method. These methods cannot be intercepted by the framework we use for tracking calls to these methods.</p>
+<p>A page object class in Groovy looks like the following code snippet. Methods and classes <b>MUST</b> not be defined using the keyword <code>def</code>, otherwise logging will not work correctly.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -954,33 +888,25 @@
 <span class="normal"><a href="#__codelineno-2-14">14</a></span>
 <span class="normal"><a href="#__codelineno-2-15">15</a></span>
 <span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span>
-<span class="normal"><a href="#__codelineno-2-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">// src/test/&lt;your-package-name&gt;/SeleniumPage.kt</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">com.codeborne.selenide.Selenide.element</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.guice.annotations.Step</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="k">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.testng.context.QtafTestNGContext</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="k">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.By</span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">// src/test/&lt;your-package-name&gt;/SeleniumPage.groovy</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.guice.annotations.Step</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.testng.context.QtafTestNGContext</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">static</span><span class="w"> </span><span class="n">com</span><span class="o">.</span><span class="na">codeborne</span><span class="o">.</span><span class="na">selenide</span><span class="o">.</span><span class="na">Selenide</span><span class="o">.</span><span class="n">$</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="kd">open</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">SeleniumPage</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">headlineSelector</span><span class="p">:</span><span class="w"> </span><span class="n">By</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;h1&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="nd">@Step</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open Website&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Navigate to the given URL&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="kd">open</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">openWebsite</span><span class="p">(</span><span class="n">url</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="nd">@Step</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Read headline&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Read the headline of the website&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">    </span><span class="kd">open</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">checkHeadline</span><span class="p">(</span><span class="n">expectedText</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">givenText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">(</span><span class="n">headlineSelector</span><span class="p">).</span><span class="na">text</span><span class="p">()</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">givenText</span><span class="p">,</span><span class="w"> </span><span class="n">expectedText</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Expected headline to be </span><span class="si">$</span><span class="n">expectedText</span><span class="s">, but was </span><span class="si">$</span><span class="n">givenText</span><span class="s">&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="p">}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="kd">class</span><span class="w"> </span><span class="nc">SeleniumPage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="nd">@Step</span><span class="o">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Open site&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Open the website https://www.selenium.dev&quot;</span><span class="o">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">openSite</span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">        </span><span class="n">driver</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s2">&quot;https://www.selenium.dev&quot;</span><span class="o">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="nd">@Step</span><span class="o">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Check headline&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Check that the headline matches the given text&quot;</span><span class="o">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">checkHeadline</span><span class="o">(</span><span class="n">String</span><span class="w"> </span><span class="n">expectedText</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">        </span><span class="n">assertEquals</span><span class="o">(</span><span class="n">$</span><span class="o">(</span><span class="s2">&quot;h1&quot;</span><span class="o">).</span><span class="na">text</span><span class="o">(),</span><span class="w"> </span><span class="n">expectedText</span><span class="o">)</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
-<p>A test case in Kotlin looks like the following sample. Also make sure that your classes and methods are marked as <code>open</code>.</p>
+<p>A test case in Groovy looks like the following sample. Also make surenot to use the keyword <code>def</code> for methods.</p>
 <h2 id="create-test-case-classes">Create test case classes<a class="headerlink" href="#create-test-case-classes" title="Anchor link to this section for reference">⚓︎</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
@@ -997,35 +923,29 @@
 <span class="normal"><a href="#__codelineno-3-13">13</a></span>
 <span class="normal"><a href="#__codelineno-3-14">14</a></span>
 <span class="normal"><a href="#__codelineno-3-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">// src/test/&lt;your-package-name&gt;/DemoTest.kt</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">de.qytera.kotlindemo.page_objects.SeleniumPage</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.config.annotations.TestFeature</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.testng.context.QtafTestNGContext</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="k">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.config.annotations.TestFeature</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtafgroovy.page_objects.SeleniumPage</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.testng.context.QtafTestNGContext</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nd">@TestFeature</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test One&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test One&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="kd">open</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">DemoTest</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="nd">@Test</span><span class="p">()</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="kd">open</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">testOne</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">page</span><span class="p">:</span><span class="w"> </span><span class="n">SeleniumPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load</span><span class="p">(</span><span class="n">SeleniumPage</span><span class="o">::</span><span class="n">class</span><span class="p">.</span><span class="na">java</span><span class="p">)</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">openWebsite</span><span class="p">(</span><span class="s">&quot;https://www.selenium.dev&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">        </span><span class="n">page</span><span class="p">.</span><span class="na">checkHeadline</span><span class="p">(</span><span class="s">&quot;Selenium automates browsers. That&#39;s it!&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="p">}</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nd">@TestFeature</span><span class="o">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Test Feature One&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Test Feature One&quot;</span><span class="o">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="kd">class</span><span class="w"> </span><span class="nc">TestOne</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="nd">@Test</span><span class="o">(</span><span class="n">testName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Test One&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Test One&quot;</span><span class="o">)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">testOne</span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">        </span><span class="kt">def</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load</span><span class="o">(</span><span class="n">SeleniumPage</span><span class="o">)</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">        </span><span class="n">page</span><span class="o">.</span><span class="na">openSite</span><span class="o">()</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">        </span><span class="n">page</span><span class="o">.</span><span class="na">checkHeadline</span><span class="o">(</span><span class="s2">&quot;Selenium automates browsers. That&#39;s it!&quot;</span><span class="o">)</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="running-the-test-cases">Running the test cases<a class="headerlink" href="#running-the-test-cases" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>You can run the test cases with the same command as in Java: <code>mvn clean test</code> or <code>gradle test</code>.</p>
 <p>The second option is to create a class that extends <code>TestRunner</code> and call its <code>main</code> method. Here is the code for this class:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span>
-<span class="normal"><a href="#__codelineno-4-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">// src/test/&lt;your-package-name&gt;/TestRunner.kt</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.testng.QtafTestNGRunner</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span><span class="w"> </span><span class="n">Array</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="n">QtafTestNGRunner</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">// src/test/&lt;your-package-name&gt;/Main.kt</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kd">class</span><span class="w"> </span><span class="nc">TestRunner</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGRunner</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 
 
