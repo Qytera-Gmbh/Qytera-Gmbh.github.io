@@ -125,7 +125,10 @@ dependencies {
 }
 
 tasks.test {
-    useJUnitPlatform()
+    useTestNG() { //Tells Gradle to use TestNG
+        useDefaultListeners = true // Tells TestNG to execute its default reporting structure
+        suites("testng.xml")
+    }
 }
 
 kotlin {
@@ -133,7 +136,7 @@ kotlin {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("TestRunnerKt")
 }
 ```
 
@@ -188,12 +191,12 @@ open class DemoTest() : QtafTestNGContext() {
 
 ## Running the test cases
 
-You can run the test cases with the same command as in Java: `mvn clean test`.
+You can run the test cases with the same command as in Java: `mvn clean test` or `gradle test`.
 
 The second option is to create a class that extends `TestRunner` and call its `main` method. Here is the code for this class:
 
 ```kotlin
-// src/test/<your-package-name>/Main.kt
+// src/test/<your-package-name>/TestRunner.kt
 import de.qytera.qtaf.testng.QtafTestNGRunner
 
 fun main(args: Array<String>) {
