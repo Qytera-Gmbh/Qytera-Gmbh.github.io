@@ -24,6 +24,9 @@ nav:
           - Using Data Providers in Test Scenarios: sections/steps/Data_Providers.md
           - Exploring the HTML Report: sections/steps/HTML_Report_Plugin.md
           - Browser Drivers: sections/steps/Drivers.md
+    - Kotlin and Groovy:
+          - Qtaf and Kotlin: sections/steps/QTAF_Kotlin.md
+          - Qtaf and Groovy: sections/steps/QTAF_Groovy.md
     - Plugins:
           - Xray Plugin: sections/plugins/XRAY_Plugin.md
           - Allure Plugin: sections/plugins/Allure_Plugin.md
