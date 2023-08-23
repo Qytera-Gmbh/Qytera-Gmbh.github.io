@@ -738,24 +738,16 @@
 <p>When Cucumber is enabled, you can use the following options to configure the way the plugin works with your feature files.</p>
 <h2 id="mandatory-settings">Mandatory settings<a class="headerlink" href="#mandatory-settings" title="Anchor link to this section for reference">⚓︎</a></h2>
 <h3 id="featurefileextension"><code>featureFileExtension</code><a class="headerlink" href="#featurefileextension" title="Anchor link to this section for reference">⚓︎</a></h3>
-<dl>
-<dd>The file extension of feature files you want to run in Cypress.
+<p>The file extension of feature files you want to run in Cypress.
 The plugin will use this to parse all matching files to extract any tags contained within them.
-Such tags are needed to identify to which test issue a feature file belongs (see <a href="../../guides/targetingExistingIssues/#cucumber">targeting existing test issues with Cucumber</a>).</dd>
-<dd>
+Such tags are needed to identify to which test issue a feature file belongs (see <a href="../../guides/targetingExistingIssues/#cucumber">targeting existing test issues with Cucumber</a>).</p>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>CUCUMBER_FEATURE_FILE_EXTENSION</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Type</em></strong></dt>
 <dd><code>string</code></dd>
 </dl>
-</dd>
-</dl>
-<details class="example" open="open">
+<details class="example">
 <summary>Example</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Cypress configuration</label><label for="__tabbed_1_2">Environment variable</label></div>
 <div class="tabbed-content">
@@ -784,31 +776,20 @@ Such tags are needed to identify to which test issue a feature file belongs (see
 <p class="admonition-title">Development</p>
 <p>This feature will be added in future versions of the plugin.</p>
 </div>
-<dl>
-<dd>Set it to true to automatically download feature files from Xray for Cypress to execute.<div class="admonition note">
+<p>Set it to true to automatically download feature files from Xray for Cypress to execute.</p>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
-Enable this option if the source of truth for test cases are step definitions in Xray and Cypress is only used for running tests.</div>
-</dd>
-<dd>
+<p>Enable this option if the source of truth for test cases are step definitions in Xray and Cypress is only used for running tests.</p>
+</div>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>CUCUMBER_DOWNLOAD_FEATURES</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Type</em></strong></dt>
 <dd><a href="../types/#boolean"><code>boolean</code></a></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Default</em></strong></dt>
 <dd><code class="highlight"><span class="kc">false</span></code></dd>
 </dl>
-</dd>
-</dl>
-<details class="example" open="open">
+<details class="example">
 <summary>Example</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Cypress configuration</label><label for="__tabbed_2_2">Environment variable</label></div>
 <div class="tabbed-content">
@@ -831,32 +812,23 @@ Enable this option if the source of truth for test cases are step definitions in
 </div>
 </div>
 </details>
+<hr/>
+
 <h3 id="uploadfeatures"><code>uploadFeatures</code><a class="headerlink" href="#uploadfeatures" title="Anchor link to this section for reference">⚓︎</a></h3>
-<dl>
-<dd>Set it to true to automatically create or update existing Xray issues (steps, labels, ...), based on the feature file executed by Cypress.<div class="admonition note">
+<p>Set it to true to automatically create or update existing Xray issues (steps, labels, ...), based on the feature file executed by Cypress.</p>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
-Enable this option if the source of truth for test cases are local feature files in Cypress and Xray is only used for tracking execution status/history.</div>
-</dd>
-<dd>
+<p>Enable this option if the source of truth for test cases are local feature files in Cypress and Xray is only used for tracking execution status/history.</p>
+</div>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>CUCUMBER_UPLOAD_FEATURES</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Type</em></strong></dt>
 <dd><a href="../types/#boolean"><code>boolean</code></a></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Default</em></strong></dt>
 <dd><code class="highlight"><span class="kc">false</span></code></dd>
 </dl>
-</dd>
-</dl>
-<details class="example" open="open">
+<details class="example">
 <summary>Example</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Cypress configuration</label><label for="__tabbed_3_2">Environment variable</label></div>
 <div class="tabbed-content">

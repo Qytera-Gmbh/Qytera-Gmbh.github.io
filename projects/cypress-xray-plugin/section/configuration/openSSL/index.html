@@ -703,29 +703,17 @@
 In this case, you can set the following options prior to running your Cypress tests to configure the plugin's internal OpenSSL setup.</p>
 <h2 id="optional-settings">Optional settings<a class="headerlink" href="#optional-settings" title="Anchor link to this section for reference">⚓︎</a></h2>
 <h3 id="rootcapath"><code>rootCAPath</code><a class="headerlink" href="#rootcapath" title="Anchor link to this section for reference">⚓︎</a></h3>
-<dl>
-<dd>Specify the path to a root CA in <code>.pem</code> format.
-This will then be used during authentication &amp; communication with the Xray instance.</dd>
-<dd>
+<p>Specify the path to a root CA in <code>.pem</code> format.
+This will then be used during authentication &amp; communication with the Xray instance.</p>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>OPENSSL_ROOT_CA_PATH</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Type</em></strong></dt>
 <dd><code>string</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Default</em></strong></dt>
 <dd><code class="highlight"><span class="kc">undefined</span></code></dd>
 </dl>
-</dd>
-</dl>
-<details class="example" open="open">
+<details class="example">
 <summary>Example</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Cypress configuration</label><label for="__tabbed_1_2">Environment variable</label></div>
 <div class="tabbed-content">
@@ -748,14 +736,18 @@ This will then be used during authentication &amp; communication with the Xray i
 </div>
 </div>
 </details>
+<hr/>
+
 <h3 id="secureoptions"><code>secureOptions</code><a class="headerlink" href="#secureoptions" title="Anchor link to this section for reference">⚓︎</a></h3>
-<dl>
-<dd>A <a href="https://nodejs.org/api/crypto.html#crypto-constants">crypto constant</a> (see list below) that will be used to configure the <code class="highlight"><span class="nx">securityOptions</span></code> of the <a href="https://nodejs.org/api/https.html#class-httpsagent"><code>https.Agent</code></a> used for sending requests to your Xray instance.<div class="admonition note">
+<p>A <a href="https://nodejs.org/api/crypto.html#crypto-constants">crypto constant</a> (see list below) that will be used to configure the <code class="highlight"><span class="nx">securityOptions</span></code> of the <a href="https://nodejs.org/api/https.html#class-httpsagent"><code>https.Agent</code></a> used for sending requests to your Xray instance.</p>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
-Compute their bitwise OR if you need to set more than one option.</div>
+<p>Compute their bitwise OR if you need to set more than one option.</p>
+</div>
 <details class="abstract">
 <summary>List of Security Options</summary>
-The following list of OpenSSL security option constants can be obtained by running the following code in a node environment:<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<p>The following list of OpenSSL security option constants can be obtained by running the following code in a node environment:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">constants</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;crypto&quot;</span><span class="p">;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">constants</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
@@ -1054,27 +1046,15 @@ The following list of OpenSSL security option constants can be obtained by runni
 </tbody>
 </table>
 </details>
-</dd>
-<dd>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>OPENSSL_SECURE_OPTIONS</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Type</em></strong></dt>
 <dd><code>number</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Default</em></strong></dt>
 <dd><code class="highlight"><span class="kc">undefined</span></code></dd>
 </dl>
-</dd>
-</dl>
-<details class="example" open="open">
+<details class="example">
 <summary>Example</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Cypress configuration</label><label for="__tabbed_2_2">Environment variable</label></div>
 <div class="tabbed-content">

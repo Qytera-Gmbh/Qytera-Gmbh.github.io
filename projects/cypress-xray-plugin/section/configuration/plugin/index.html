@@ -726,28 +726,16 @@
 <p>The plugin offers several options for customizing the upload further.</p>
 <h2 id="optional-settings">Optional settings<a class="headerlink" href="#optional-settings" title="Anchor link to this section for reference">⚓︎</a></h2>
 <h3 id="debug"><code>debug</code><a class="headerlink" href="#debug" title="Anchor link to this section for reference">⚓︎</a></h3>
-<dl>
-<dd>Turns on or off extensive debugging output.</dd>
-<dd>
+<p>Turns on or off extensive debugging output.</p>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>PLUGIN_DEBUG</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Type</em></strong></dt>
 <dd><a href="../types/#boolean"><code>boolean</code></a></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Default</em></strong></dt>
 <dd><code class="highlight"><span class="kc">false</span></code></dd>
 </dl>
-</dd>
-</dl>
-<details class="example" open="open">
+<details class="example">
 <summary>Example</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Cypress configuration</label><label for="__tabbed_1_2">Environment variable</label></div>
 <div class="tabbed-content">
@@ -770,30 +758,20 @@
 </div>
 </div>
 </details>
+<hr/>
+
 <h3 id="enabled"><code>enabled</code><a class="headerlink" href="#enabled" title="Anchor link to this section for reference">⚓︎</a></h3>
-<dl>
-<dd>Enables or disables the entire plugin.
-Setting this option to <code>false</code> disables all plugin functions, including authentication checks, uploads or feature file synchronization.</dd>
-<dd>
+<p>Enables or disables the entire plugin.
+Setting this option to <code>false</code> disables all plugin functions, including authentication checks, uploads or feature file synchronization.</p>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>PLUGIN_ENABLED</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Type</em></strong></dt>
 <dd><a href="../types/#boolean"><code>boolean</code></a></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Default</em></strong></dt>
 <dd><code class="highlight"><span class="kc">true</span></code></dd>
 </dl>
-</dd>
-</dl>
-<details class="example" open="open">
+<details class="example">
 <summary>Example</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Cypress configuration</label><label for="__tabbed_2_2">Environment variable</label></div>
 <div class="tabbed-content">
@@ -816,29 +794,19 @@ Setting this option to <code>false</code> disables all plugin functions, includi
 </div>
 </div>
 </details>
+<hr/>
+
 <h3 id="logdirectory"><code>logDirectory</code><a class="headerlink" href="#logdirectory" title="Anchor link to this section for reference">⚓︎</a></h3>
-<dl>
-<dd>The directory which all error and debug log files will be written to.</dd>
-<dd>
+<p>The directory which all error and debug log files will be written to.</p>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>PLUGIN_LOG_DIRECTORY</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Type</em></strong></dt>
 <dd><code>string</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Default</em></strong></dt>
 <dd><code class="highlight"><span class="s2">&quot;logs&quot;</span></code></dd>
 </dl>
-</dd>
-</dl>
-<details class="example" open="open">
+<details class="example">
 <summary>Example</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Cypress configuration</label><label for="__tabbed_3_2">Environment variable</label></div>
 <div class="tabbed-content">
@@ -861,30 +829,20 @@ Setting this option to <code>false</code> disables all plugin functions, includi
 </div>
 </div>
 </details>
+<hr/>
+
 <h3 id="normalizescreenshotnames"><code>normalizeScreenshotNames</code><a class="headerlink" href="#normalizescreenshotnames" title="Anchor link to this section for reference">⚓︎</a></h3>
-<dl>
-<dd>Some Xray setups might struggle with uploaded evidence if the filenames contain non-ASCII characters.
-With this option enabled, the plugin only keeps characters <code>a-zA-Z0-9.</code> in screenshot names and replaces all other sequences with <code>_</code>.</dd>
-<dd>
+<p>Some Xray setups might struggle with uploaded evidence if the filenames contain non-ASCII characters.
+With this option enabled, the plugin only keeps characters <code>a-zA-Z0-9.</code> in screenshot names and replaces all other sequences with <code>_</code>.</p>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>PLUGIN_NORMALIZE_SCREENSHOT_NAMES</code></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Type</em></strong></dt>
 <dd><a href="../types/#boolean"><code>boolean</code></a></dd>
-</dl>
-</dd>
-<dd>
-<dl>
 <dt><strong><em>Default</em></strong></dt>
 <dd><code class="highlight"><span class="kc">false</span></code></dd>
 </dl>
-</dd>
-</dl>
-<details class="example" open="open">
+<details class="example">
 <summary>Example</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Cypress configuration</label><label for="__tabbed_4_2">Environment variable</label></div>
 <div class="tabbed-content">
