@@ -60,6 +60,9 @@ For the cloud version of Xray, the plugin expects the following environment vari
 
 For setting up Xray server authentication, see [Jira server authentication](#jira-server).
 
+!!! note
+    Xray server does not require any additional credentials.
+
 ## Jira
 
 As with Xray authentication, the plugin will automatically choose the authentication method depending on the provided environment variables.

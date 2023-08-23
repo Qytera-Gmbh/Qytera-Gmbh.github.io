@@ -44,6 +44,8 @@ npx cypress run
 !!! tip
     Use `#!js configureXrayPlugin()` to specify defaults when running and developing tests locally and environment variables in CI/CD setups to override these defaults.
 
+<hr/>
+
 ## Separation of Xray and Jira
 
 You will probably wonder at some point why there's a split between Jira and Xray for some options, although they might be doing similar things, such as Jira's [`attachVideos`](jira.md#attachvideos) and Xray's [`uploadScreenshots`](xray.md#uploadscreenshots).

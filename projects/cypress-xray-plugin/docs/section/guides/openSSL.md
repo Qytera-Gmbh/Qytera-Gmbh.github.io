@@ -5,6 +5,8 @@ In such scenarios, default HTTP requests might fail because of security concerns
 
 Here, you will find a list of common security issues and how to approach them.
 
+<hr/>
+
 ## Trusting custom root CAs
 
 In case an Xray instance is setup on an internal network with custom [CA certificates](https://www.ssl.com/faqs/what-is-a-certificate-authority/), you will need to download these certificates and provide them to the Xray plugin.
@@ -26,6 +28,8 @@ Error messages requiring you to provide custom SSL certificates might look like 
         },
     });
     ```
+
+<hr/>
 
 ## Providing security options
 

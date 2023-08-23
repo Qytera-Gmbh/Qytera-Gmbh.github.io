@@ -1,24 +1,21 @@
 # Installation
 
-This plugin can be run:
-
-- *without* Cucumber support: when you keep all your Cypress test cases in plain JavaScript/TypeScript files
-- *with* Cucumber support: when using Cucumber feature files for running tests
-- *with a mix of both* at the same time
-
 Run the following command to add the plugin to your Cypress project:
 
 ```sh
-npm i -D cypress-xray-plugin
+npm install --save-dev cypress-xray-plugin
 ```
 
-and register the plugin's event listeners in the `e2e.js` file:
+This plugin easily handles:
 
-```js
-import "cypress-xray-plugin/register";
-```
+- _Cypress test executions_: JavaScript/TypeScript specs
+- _Cucumber test executions_: Cucumber feature files
 
-## Standard installation
+Below you will find the two ways to setup the plugin's basics, one for Cypress tests only (when not running Cucumber feature files) and for added Cucumber support.
+
+<hr/>
+
+## Cypress tests
 
 Modify the `#!js setupNodeEvents()` function in your Cypress configuration file as follows:
 
@@ -45,18 +42,20 @@ import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin";
     Check out the [configuration](../configuration/introduction.md) for more information on how you should configure the plugin to make it work within your infrastructure.
     You can also shoot a glance at the [examples](../guides/uploadTestResults.md#how-it-works) for a more hands-on approach.
 
-## Cucumber support
+<hr/>
+
+## Cucumber tests
 
 For Cucumber support, this plugin builds upon the [`cypress-cucumber-preprocessor`](https://github.com/badeball/cypress-cucumber-preprocessor) plugin for executing Cucumber feature files.
 
 With added Xray synchronization, this plugin allows you to automatically upload feature files to Xray when running your Cypress tests and to track their execution results in Xray.
 
-Run the following commands to add Cucumber executability to your project:
+Run the additional following commands to handle Cucumber test executions as well:
 
 ```sh
-npm i -D @badeball/cypress-cucumber-preprocessor
-npm i -D @bahmutov/cypress-esbuild-preprocessor
-npm i -D cypress-on-fix
+npm install --save-dev @badeball/cypress-cucumber-preprocessor
+npm install --save-dev @bahmutov/cypress-esbuild-preprocessor
+npm install --save-dev cypress-on-fix
 ```
 
 !!! note

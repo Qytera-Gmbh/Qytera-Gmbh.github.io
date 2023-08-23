@@ -32,54 +32,10 @@ The annotation `@Test` comes from the TestNG framework and can be used as usual 
 
 ## Page Objects
 
-### @Singleton
-
-The annotation `@Singleton` comes from the Java library and is used for page object classes. Since QTAF instantiates these classes by means of dependency injection, we have to tell QTAF that we want to create only one instance of this class at runtime. Otherwise, endless loops can occur if page objects have mutual relationships to each other and keep trying to instantiate each other.
-
-```java
-import de.qytera.qtaf.core.guice.annotations.Step;
-import javax.inject.Singleton;
-
-@Singleton
-public class CalendarPage extends TestContext {
-    String moduleButtonSelector = "#moduleTab_Calendar";
-
-    @Step(name = "Click contact module button", description = "Click contact module button")
-    public void clickMeetingsModuleButton() {
-        WebElement menu = driver.findElement(By.cssSelector(moduleButtonSelector));
-        menu.click();
-    }
-
-}
-```
-
 ### @Step
 
 The annotation `@Step` comes from the QTAF framework and is used for methods that represent a test step. This annotation has the attributes `name` and `description`, with which the test step can be given a name and a description. These attributes are used when generating log files and reports.
 
-
-
-## Test context
-
-### @Inject
-
-In QTAF, the page object classes are instantiated in the `TestContext` class. To prevent them from being instantiated more than once and to avoid infinite loops during instantiation, page object classes are provided with the annotation `@Singleton`. In the TestContext classes, we add attributes that are of the type of the respective page object class and provide these attributes with the annotation `@Inject`. This causes QTAF to automatically take care of instantiating these classes. We do not have to call a constructor.
-
-```java
-import javax.inject.Inject;
-
-public class TestContext extends QtafTestNGContext {
-
-    @Inject
-    protected Navigator navigator;
-
-    @Inject
-    protected LoginFormPO loginForm;
-
-    @Inject
-    protected TopNavbar topNavbar;
-}
-```
 
 <hr>
 <div style="display: flex; flex-direction: row; justify-content: space-between">

@@ -19,6 +19,10 @@ On the following pages you can find instructions for the product QTAF.
     - [Running test cases on the Saucelabs platform](sections/steps/Drivers#running-test-cases-on-the-saucelabs-platform)
     - [Write your own drivers](sections/steps/Drivers#writing-your-own-drivers)
 
+#### Use QTAF with Kotlin and Groovy
+- [Create a Kotlin QTAF project with Maven / Gradle](sections/steps/QTAF_Kotlin.md)
+- [Create a Groovy QTAF project with Maven / Gradle](sections/steps/QTAF_Groovy.md)
+
 #### QTAF Plugins
 - [Xray Plugin](sections/plugins/XRAY_Plugin.md)
 - [Allure Plugin](sections/plugins/Allure_Plugin.md)

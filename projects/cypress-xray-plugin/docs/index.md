@@ -9,19 +9,14 @@ hide:
 <h1><!-- no title, the image is title enough --></h1>
 
 <figure markdown>
-   <span>video coming soon... :see_no_evil:</span>
-   <br>
-   <span style="color:#888888"><i>&mdash; csvtuda, July 31st 2023</i></span>
    <video controls autoplay muted>
-     <!--
-     <source src="assets/videos/guides_results_upload_00.mp4" type="video/mp4">
+     <source src="assets/videos/showcase.mp4" type="video/mp4">
      Your browser does not support the video tag.
-     -->
    </video>
-  <figcaption>Two passing tests and one failing test for <a href="https://example.org">https://example.org</a>. More info <a href="section/guides/uploadTestResults/">here</a>.</figcaption>
+  <figcaption>Two passing tests and one failing test for <a href="https://example.org">https://example.org</a>.</figcaption>
 </figure>
 
-**A plugin for coupling together Cypress and Xray:**
+<h2 style="color:var(--md-default-fg-color--light)"><i>A plugin for coupling together Cypress and Xray.</i></h2>
 
 - Upload test results to Xray
 - Attach screenshots as test execution evidence
@@ -30,11 +25,11 @@ hide:
 - CI/CD ready
 - Cucumber support
 
-:smartbear-cucumber:{ .cucumber } <span class="cucumber"><b>Cucumber only:</b></span>
+:smartbear-cucumber:{ .cucumber } <span class="cucumber"><i>Cucumber only:</i></span>
 
 - Automatic import of feature files to Jira
 
-:fontawesome-solid-person-digging:{ .development } <span class="development"><b>Future features:</b></span>
+:fontawesome-solid-person-digging:{ .development } <span class="development"><i>Future features:</i></span>
 
 - Automatic execution of Cucumber tests based on Xray step definitions
 
