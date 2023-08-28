@@ -147,7 +147,7 @@ import org.testng.annotations.Test;
         description = "Our first Selenium test"
 )
 public class HelloSeleniumTest extends QtafTestNGContext {
-    By headlineSelector = By.cssSelector()"h1.display-1";
+    By headlineSelector = By.cssSelector("h1.display-1");
 
     @Test(
       testName = "Open browser and visit selenium documentation",
@@ -189,7 +189,7 @@ import org.testng.annotations.Test;
         description = "Our first Selenium test"
 )
 public class HelloSeleniumTest extends QtafTestNGContext {
-    By headlineSelector = By.cssSelector()"h1.display-1";
+    By headlineSelector = By.cssSelector("h1.display-1");
 
     @Test(
         testName = "Open browser and visit selenium documentation",
@@ -229,7 +229,7 @@ import javax.inject.Singleton;
 
 
 public class MainSitePO extends QtafTestNGContext {
-    By headlineSelector = By.cssSelector()"h1.display-1";
+    By headlineSelector = By.cssSelector("h1.display-1");
 
     @Step(
         name = "Open Site",
