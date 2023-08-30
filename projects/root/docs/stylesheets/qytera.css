@@ -5,29 +5,31 @@
  * # =========================================== #
  */
 :root {
-  --DARK_RED: #580a24;
-  --DARK_BLUE: #1f1f39;
-  --DARK_GREEN: #627d77;
-  --LIGHT_GREEN: #dae5cd;
-  --BRIGHT_GREEN: #d0e18e;
-  --HUE_DARK_RED: 340;
-  --HUE_DARK_GREEN: 167;
+  --QYTERA_RED: #520e0e;
+  --BRIGHT_HYPERLINK: #438e17;
+  --BRIGHT_HYPERLINK_HOVER: #2c5f0f;
+  --DARK_HYPERLINK: #d0e18e;
+  --DARK_HYPERLINK_HOVER: #adbc6b;
+  --HUE_BACKGROUND: 187;
 }
 
 /*
  * Modify slate color theme based on Qytera colors.
  */
 [data-md-color-scheme="slate"] {
-  --md-hue: var(--HUE_DARK_GREEN);
-  --md-primary-fg-color: var(--DARK_RED);
-  --md-accent-fg-color: var(--LIGHT_GREEN);
-  --md-typeset-a-color: var(--BRIGHT_GREEN);
+  --md-hue: var(--HUE_BACKGROUND);
+  --md-primary-fg-color: var(--QYTERA_RED);
+  --md-typeset-a-color: var(--DARK_HYPERLINK);
+  --md-accent-fg-color: var(--DARK_HYPERLINK_HOVER);
 }
 
 [data-md-color-scheme="qytera"] {
-  --md-primary-fg-color: var(--DARK_RED);
-  --md-accent-fg-color: var(--DARK_GREEN);
-  --md-typeset-a-color: var(--DARK_RED);
+  --md-primary-fg-color: var(--QYTERA_RED);
+  --md-typeset-a-color: var(--BRIGHT_HYPERLINK);
+  --md-accent-fg-color: var(--BRIGHT_HYPERLINK_HOVER);
+}
+[data-md-color-scheme="qytera"] img[src$="#only-dark"] {
+  display: none; /* Hide dark images in light mode */
 }
 
 /*
