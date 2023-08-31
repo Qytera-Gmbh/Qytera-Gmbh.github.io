@@ -989,8 +989,8 @@
 <h1 id="qtaf-test-automation-design-patterns">QTAF Test Automation Design Patterns<a class="headerlink" href="#qtaf-test-automation-design-patterns" title="Anchor link to this section for reference">⚓︎</a></h1>
 <p>As projects grow it is neccessary that code is readable and maintainable. Design patterns help to master large projects and they help other developers understanding the code. In this article we want to introduce you to the most convenient design patterns in test automation with QTAF.</p>
 <h2 id="lazy-loading-with-the-supplier-pattern">Lazy Loading with the Supplier Pattern<a class="headerlink" href="#lazy-loading-with-the-supplier-pattern" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p><b>Why lazy loading?</b></p>
 <p>
-<b>Why lazy loading?</b>
 The supplier pattern helps you to deal with page objecs. For complex sites it can be neccessary to build nested page objects where you have a parent page objects that represents a whole page and child page objects that represent fractions of that site. When we have nested page objects it can be neccessary to pass web elements between two page objects, for example if the parent page objects wants to delegate the responsibility for some fraction of a page to a child page object and need to tell the child page object what its root element is. The parent page objects would instantiate these child objects and then pass the root web element of the page fraction to them. But this can lead to untraceability of web elements, because at construction time of the child page object the page fraction might not be available. Also in long lasting test cases elements can become stale, because the page might have been reloaded or changed during the test case. There needs to be a mechanism that loads the web elements that the parent page object provided only at the time when they are needeed.
 </p>
 <p><b>Different approaches</b></p>
