@@ -37,7 +37,7 @@ First we define the parent page object. It has a method named `getArticle()` whi
 
 ```java
 public class ParentPageObject extends QtafTestNGContext {
-    SelenideElement getArticle() {
+    public SelenideElement getArticle() {
         return $("article");
     }
 }
@@ -68,11 +68,11 @@ Last we need a function in the parent page object that constructs the child page
 ```java
 
 public class ParentPageObject extends QtafTestNGContext {
-    SelenideElement getArticle() {
+    public SelenideElement getArticle() {
         return $("article");
     }
 
-    ChildPageObject getChildPageObject() {
+    public ChildPageObject getChildPageObject() {
         return load(ChildPageObject.class).setParent(this::getArticle)
     }
 }
