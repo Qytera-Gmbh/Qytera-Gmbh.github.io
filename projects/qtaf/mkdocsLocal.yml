@@ -24,6 +24,8 @@ nav:
           - Using Data Providers in Test Scenarios: sections/steps/Data_Providers.md
           - Exploring the HTML Report: sections/steps/HTML_Report_Plugin.md
           - Browser Drivers: sections/steps/Drivers.md
+    - Advanced Topics:
+          - Design Patterns: sections/design_patterns/Design_Patterns.md
     - Kotlin and Groovy:
           - Qtaf and Kotlin: sections/steps/QTAF_Kotlin.md
           - Qtaf and Groovy: sections/steps/QTAF_Groovy.md
