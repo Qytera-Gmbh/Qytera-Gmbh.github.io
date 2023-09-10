@@ -13,7 +13,7 @@ The plugin allows you to keep your local feature files in sync with the step def
 </figure>
 
 Uploading feature files is useful if the source of truth for test cases are local feature files in Cypress and Xray is only used for tracking execution results.
-You can enable the upload using the [uploadFeatures](../configuration/cucumber.md#uploadfeatures) setting and by making sure that [feature file synchronization](../setup/installation.md#cucumber-support) is enabled.
+You can enable the upload using the [`uploadFeatures`](../configuration/cucumber.md#uploadfeatures) setting and by making sure that [feature file synchronization](../setup/installation.md#cucumber-support) is enabled.
 !!! tip
     Don't forget to [add tags](targetingExistingIssues.md#reuse-cucumber-test-issues) to your backgrounds, scenarios and scenario outlines.
     Uploads of untagged feature files will always be skipped as a precautionary measure.
