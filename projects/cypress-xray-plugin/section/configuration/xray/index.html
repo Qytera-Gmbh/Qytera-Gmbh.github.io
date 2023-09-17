@@ -508,51 +508,37 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#statusfailed" class="md-nav__link">
-    statusFailed
+  <a href="#status" class="md-nav__link">
+    status
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#statuspassed" class="md-nav__link">
-    statusPassed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#statuspending" class="md-nav__link">
-    statusPending
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#statusskipped" class="md-nav__link">
-    statusSkipped
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#steps" class="md-nav__link">
-    steps
-  </a>
-  
-    <nav class="md-nav" aria-label="steps">
+    <nav class="md-nav" aria-label="status">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#maxlengthaction" class="md-nav__link">
-    maxLengthAction
+  <a href="#failed" class="md-nav__link">
+    failed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    update
+  <a href="#passed" class="md-nav__link">
+    passed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pending" class="md-nav__link">
+    pending
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipped" class="md-nav__link">
+    skipped
   </a>
   
 </li>
@@ -835,51 +821,37 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#statusfailed" class="md-nav__link">
-    statusFailed
+  <a href="#status" class="md-nav__link">
+    status
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#statuspassed" class="md-nav__link">
-    statusPassed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#statuspending" class="md-nav__link">
-    statusPending
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#statusskipped" class="md-nav__link">
-    statusSkipped
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#steps" class="md-nav__link">
-    steps
-  </a>
-  
-    <nav class="md-nav" aria-label="steps">
+    <nav class="md-nav" aria-label="status">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#maxlengthaction" class="md-nav__link">
-    maxLengthAction
+  <a href="#failed" class="md-nav__link">
+    failed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    update
+  <a href="#passed" class="md-nav__link">
+    passed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pending" class="md-nav__link">
+    pending
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipped" class="md-nav__link">
+    skipped
   </a>
   
 </li>
@@ -929,9 +901,13 @@
 <h1 id="xray">Xray<a class="headerlink" href="#xray" title="Anchor link to this section for reference">⚓︎</a></h1>
 <p>You can provide a bunch of Xray settings which might become necessary depending on your project configuration.</p>
 <h2 id="optional-settings">Optional settings<a class="headerlink" href="#optional-settings" title="Anchor link to this section for reference">⚓︎</a></h2>
-<h3 id="statusfailed"><code>statusFailed</code><a class="headerlink" href="#statusfailed" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>The Xray status name of a test marked as failed by Cypress.
-Should be used when custom status names have been setup in Xray.</p>
+<h3 id="status"><code>status</code><a class="headerlink" href="#status" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>These status options represent mapping of Cypress statuses to corresponding Xray statuses.
+If you have custom statuses setup in Xray, you should provide their names here.</p>
+<hr/>
+
+<h4 id="failed"><code>failed</code><a class="headerlink" href="#failed" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>The Xray status name of a test marked as failed by Cypress.</p>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>XRAY_STATUS_FAILED</code></dd>
@@ -950,11 +926,15 @@ Should be used when custom status names have been setup in Xray.</p>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nx">statusFailed</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;FAILURE&quot;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">});</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">            </span><span class="nx">failed</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;FAILURE&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -966,9 +946,8 @@ Should be used when custom status names have been setup in Xray.</p>
 </details>
 <hr/>
 
-<h3 id="statuspassed"><code>statusPassed</code><a class="headerlink" href="#statuspassed" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>The Xray status name of a test marked as passed by Cypress.
-Should be used when custom status names have been setup in Xray.</p>
+<h4 id="passed"><code>passed</code><a class="headerlink" href="#passed" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>The Xray status name of a test marked as passed by Cypress.</p>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>XRAY_STATUS_PASSED</code></dd>
@@ -987,11 +966,15 @@ Should be used when custom status names have been setup in Xray.</p>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="nx">statusPassed</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="p">});</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">            </span><span class="nx">passed</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1003,9 +986,8 @@ Should be used when custom status names have been setup in Xray.</p>
 </details>
 <hr/>
 
-<h3 id="statuspending"><code>statusPending</code><a class="headerlink" href="#statuspending" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>The Xray status name of a test marked as pending by Cypress.
-Should be used when custom status names have been setup in Xray.</p>
+<h4 id="pending"><code>pending</code><a class="headerlink" href="#pending" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>The Xray status name of a test marked as pending by Cypress.</p>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>XRAY_STATUS_PENDING</code></dd>
@@ -1023,11 +1005,15 @@ Should be used when custom status names have been setup in Xray.</p>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
 <span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="nx">statusPending</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;AWAITING EXECUTION&quot;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p">});</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">            </span><span class="nx">pending</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;AWAITING EXECUTION&quot;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1039,9 +1025,8 @@ Should be used when custom status names have been setup in Xray.</p>
 </details>
 <hr/>
 
-<h3 id="statusskipped"><code>statusSkipped</code><a class="headerlink" href="#statusskipped" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>The Xray status name of a test marked as skipped by Cypress.
-Should be used when custom status names have been setup in Xray.</p>
+<h4 id="skipped"><code>skipped</code><a class="headerlink" href="#skipped" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>The Xray status name of a test marked as skipped by Cypress.</p>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>XRAY_STATUS_SKIPPED</code></dd>
@@ -1065,105 +1050,19 @@ Should be used when custom status names have been setup in Xray.</p>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
 <span class="normal"><a href="#__codelineno-6-4">4</a></span>
-<span class="normal"><a href="#__codelineno-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">        </span><span class="nx">statusSkipped</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;IGNORED&quot;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="p">});</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">        </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">            </span><span class="nx">skipped</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;IGNORED&quot;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_STATUS_SKIPPED</span><span class="o">=</span><span class="s2">&quot;IGNORED&quot;</span>
-</code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-</details>
-<hr/>
-
-<h3 id="steps"><code>steps</code><a class="headerlink" href="#steps" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>All options related to manual test issue steps.</p>
-<hr/>
-
-<h4 id="maxlengthaction"><code>maxLengthAction</code><a class="headerlink" href="#maxlengthaction" title="Anchor link to this section for reference">⚓︎</a></h4>
-<p>The maximum length a step's action description can have in terms of characters. Some Xray instances might enforce limits on the length and reject step updates in case the action's description exceeds said limit.</p>
-<dl>
-<dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>XRAY_STEPS_MAX_LENGTH_ACTION</code></dd>
-<dt><strong><em>Type</em></strong></dt>
-<dd><code>number</code></dd>
-<dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="mf">8000</span></code> (<a href="https://github.com/Qytera-Gmbh/cypress-xray-plugin/issues/50">more info</a>)</dd>
-</dl>
-<details class="example">
-<summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Cypress configuration</label><label for="__tabbed_5_2">Environment variable</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span>
-<span class="normal"><a href="#__codelineno-8-3">3</a></span>
-<span class="normal"><a href="#__codelineno-8-4">4</a></span>
-<span class="normal"><a href="#__codelineno-8-5">5</a></span>
-<span class="normal"><a href="#__codelineno-8-6">6</a></span>
-<span class="normal"><a href="#__codelineno-8-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">        </span><span class="nx">steps</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">            </span><span class="nx">maxLengthAction</span><span class="o">:</span><span class="w"> </span><span class="mf">1234</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="p">});</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_STEPS_MAX_LENGTH_ACTION</span><span class="o">=</span><span class="m">1234</span>
-</code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-</details>
-<hr/>
-
-<h4 id="update"><code>update</code><a class="headerlink" href="#update" title="Anchor link to this section for reference">⚓︎</a></h4>
-<p>Whether to update a manual test issue's test steps during execution results upload.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If set to true (default), <strong><em>all</em></strong> existing steps will be replaced with the plugin's steps.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The plugin currently creates only one step containing the code of the corresponding Cypress test function.</p>
-</div>
-<dl>
-<dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>XRAY_STEPS_UPDATE</code></dd>
-<dt><strong><em>Type</em></strong></dt>
-<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
-<dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="kc">false</span></code></dd>
-</dl>
-<details class="example">
-<summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Cypress configuration</label><label for="__tabbed_6_2">Environment variable</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span>
-<span class="normal"><a href="#__codelineno-10-3">3</a></span>
-<span class="normal"><a href="#__codelineno-10-4">4</a></span>
-<span class="normal"><a href="#__codelineno-10-5">5</a></span>
-<span class="normal"><a href="#__codelineno-10-6">6</a></span>
-<span class="normal"><a href="#__codelineno-10-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">        </span><span class="nx">steps</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">            </span><span class="nx">update</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="p">});</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_STEPS_UPDATE</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1184,22 +1083,22 @@ Useful when switching upload on or off from the command line (via environment va
 </dl>
 <details class="example">
 <summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Cypress configuration</label><label for="__tabbed_7_2">Environment variable</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Cypress configuration</label><label for="__tabbed_5_2">Environment variable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
-<span class="normal"><a href="#__codelineno-12-2">2</a></span>
-<span class="normal"><a href="#__codelineno-12-3">3</a></span>
-<span class="normal"><a href="#__codelineno-12-4">4</a></span>
-<span class="normal"><a href="#__codelineno-12-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">        </span><span class="nx">uploadResults</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="p">});</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">        </span><span class="nx">uploadResults</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_UPLOAD_RESULTS</span><span class="o">=</span><span class="nb">false</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_UPLOAD_RESULTS</span><span class="o">=</span><span class="nb">false</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1224,22 +1123,22 @@ It is not possible to upload screenshots without uploading results.</p>
 </dl>
 <details class="example">
 <summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Cypress configuration</label><label for="__tabbed_8_2">Environment variable</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Cypress configuration</label><label for="__tabbed_6_2">Environment variable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
-<span class="normal"><a href="#__codelineno-14-2">2</a></span>
-<span class="normal"><a href="#__codelineno-14-3">3</a></span>
-<span class="normal"><a href="#__codelineno-14-4">4</a></span>
-<span class="normal"><a href="#__codelineno-14-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">        </span><span class="nx">uploadScreenshots</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="p">});</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">        </span><span class="nx">uploadScreenshots</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_UPLOAD_SCREENSHOTS_</span><span class="o">=</span><span class="nb">false</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_UPLOAD_SCREENSHOTS_</span><span class="o">=</span><span class="nb">false</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
