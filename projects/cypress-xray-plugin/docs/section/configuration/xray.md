@@ -4,10 +4,16 @@ You can provide a bunch of Xray settings which might become necessary depending 
 
 ## Optional settings
 
-### `statusFailed`
+### `status`
+
+These status options represent mapping of Cypress statuses to corresponding Xray statuses.
+If you have custom statuses setup in Xray, you should provide their names here.
+
+<hr/>
+
+#### `failed`
 
 The Xray status name of a test marked as failed by Cypress.
-Should be used when custom status names have been setup in Xray.
 
 ***Environment variable***
 : `XRAY_STATUS_FAILED`
@@ -24,7 +30,9 @@ Should be used when custom status names have been setup in Xray.
         ```js
         await configureXrayPlugin(config, {
             xray: {
-                statusFailed: "FAILURE"
+                status: {
+                    failed: "FAILURE"
+                }
             },
         });
         ```
@@ -35,10 +43,9 @@ Should be used when custom status names have been setup in Xray.
 
 <hr/>
 
-### `statusPassed`
+#### `passed`
 
 The Xray status name of a test marked as passed by Cypress.
-Should be used when custom status names have been setup in Xray.
 
 ***Environment variable***
 : `XRAY_STATUS_PASSED`
@@ -55,7 +62,9 @@ Should be used when custom status names have been setup in Xray.
         ```js
         await configureXrayPlugin(config, {
             xray: {
-                statusPassed: "SUCCESS"
+                status: {
+                    passed: "SUCCESS"
+                }
             },
         });
         ```
@@ -66,10 +75,9 @@ Should be used when custom status names have been setup in Xray.
 
 <hr/>
 
-### `statusPending`
+#### `pending`
 
 The Xray status name of a test marked as pending by Cypress.
-Should be used when custom status names have been setup in Xray.
 
 ***Environment variable***
 : `XRAY_STATUS_PENDING`
@@ -85,7 +93,9 @@ Should be used when custom status names have been setup in Xray.
         ```js
         await configureXrayPlugin(config, {
             xray: {
-                statusPending: "AWAITING EXECUTION"
+                status: {
+                    pending: "AWAITING EXECUTION"
+                }
             },
         });
         ```
@@ -96,10 +106,9 @@ Should be used when custom status names have been setup in Xray.
 
 <hr/>
 
-### `statusSkipped`
+#### `skipped`
 
 The Xray status name of a test marked as skipped by Cypress.
-Should be used when custom status names have been setup in Xray.
 
 ***Environment variable***
 : `XRAY_STATUS_SKIPPED`
@@ -118,85 +127,15 @@ Should be used when custom status names have been setup in Xray.
         ```js
         await configureXrayPlugin(config, {
             xray: {
-                statusSkipped: "IGNORED"
+                status: {
+                    skipped: "IGNORED"
+                }
             },
         });
         ```
     === "Environment variable"
         ```sh
         npx cypress run --env XRAY_STATUS_SKIPPED="IGNORED"
-        ```
-
-<hr/>
-
-### `steps`
-
-All options related to manual test issue steps.
-
-<hr/>
-
-#### `maxLengthAction`
-
-The maximum length a step's action description can have in terms of characters. Some Xray instances might enforce limits on the length and reject step updates in case the action's description exceeds said limit.
-
-***Environment variable***
-: `XRAY_STEPS_MAX_LENGTH_ACTION`
-
-***Type***
-: `number`
-
-***Default***
-: `#!js 8000` ([more info](https://github.com/Qytera-Gmbh/cypress-xray-plugin/issues/50))
-
-??? example
-    === "Cypress configuration"
-        ```js
-        await configureXrayPlugin(config, {
-            xray: {
-                steps: {
-                    maxLengthAction: 1234
-                }
-            },
-        });
-        ```
-    === "Environment variable"
-        ```sh
-        npx cypress run --env XRAY_STEPS_MAX_LENGTH_ACTION=1234
-        ```
-
-<hr/>
-
-#### `update`
-
-Whether to update a manual test issue's test steps during execution results upload.
-!!! warning
-    If set to true (default), ***all*** existing steps will be replaced with the plugin's steps.
-!!! note
-    The plugin currently creates only one step containing the code of the corresponding Cypress test function.
-
-***Environment variable***
-: `XRAY_STEPS_UPDATE`
-
-***Type***
-: [`boolean`](types.md#boolean)
-
-***Default***
-: `#!js false`
-
-??? example
-    === "Cypress configuration"
-        ```js
-        await configureXrayPlugin(config, {
-            xray: {
-                steps: {
-                    update: true
-                }
-            },
-        });
-        ```
-    === "Environment variable"
-        ```sh
-        npx cypress run --env XRAY_STEPS_UPDATE=true
         ```
 
 <hr/>
