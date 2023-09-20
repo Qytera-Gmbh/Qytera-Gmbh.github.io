@@ -1,0 +1,27 @@
+/*
+ * Make definition tables more tight.
+ */
+.md-typeset dt > strong,
+.md-typeset dd > p,
+.md-typeset dd > code {
+  line-height: 1;
+}
+.md-typeset dt,
+.md-typeset dd,
+.md-typeset dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*
+ * Prevent highly nested headings from becoming too small and difficult to see/read.
+ */
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5 {
+  font-size: 1.25em !important;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 1.6em 0 0.8em;
+  text-transform: none !important;
+}

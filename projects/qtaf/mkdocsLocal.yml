@@ -9,9 +9,8 @@ site_name: QTAF - Qytera Test Automation Framework
 repo_name: QTAF
 repo_url: https://github.com/Qytera-Gmbh/QTAF
 
-# You can add custom CSS files like this:
-# extra_css:
-#   - stylesheets/styles.css
+extra_css:
+  - stylesheets/styles.css
 
 nav:
     - index.md

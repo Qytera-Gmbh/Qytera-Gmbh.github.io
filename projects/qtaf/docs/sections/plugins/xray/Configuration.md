@@ -1,8 +1,39 @@
 # Configuration
 
-All Xray plugin options can be specified within the `#!json xray` object of the configuration JSON.
+All Xray plugin options can be specified within the `#!json xray` property of the configuration JSON.
 
-## `authentication`
+<hr/>
+
+## Mandatory settings
+
+Some settings are mandatory if the plugin [is enabled](#enabled). Without the settings listed here, the plugin cannot function properly.
+
+<hr/>
+
+### `projectKey`
+
+The Jira key of the project to upload results to.
+It is used for identification of relevant test cases, meaning that only test cases with an `#!java @XrayTest` annotation containing the project key will be tracked and eventually uploaded to Xray.
+
+***Environment variable***
+: `XRAY_PROJECTKEY`
+
+***Type***
+: `string`
+
+??? example
+    === "QTAF JSON"
+        ```json
+        "xray": {
+	        "projectKey": "PRJ"
+        }
+        ```
+    === "Environment variable"
+        ```sh
+        XRAY_PROJECTKEY="PRJ"
+        ```
+
+### `authentication`
 
 In order to upload results to Xray, QTAF needs to authenticate to it.
 
@@ -12,8 +43,8 @@ In order to upload results to Xray, QTAF needs to authenticate to it.
     graph LR
         A{Xray<br/>instance};
         B("xray.clientId=<i>id</i><br>xray.clientSecret=<i>secret</i><br><hr>jira.username=<i>user@company.com</i><br>jira.apiToken=<i>token</i>");
-        A --->|&nbsp cloud &nbsp| B;
-        A --->|&nbsp server &nbsp| D;
+        A ---->|&nbsp cloud &nbsp| B;
+        A ---->|&nbsp server &nbsp| D;
         D("xray.bearerToken=<i>token</i><br><hr>jira.apiToken=<i>token</i>");
         classDef code-node text-align:left;
         class B,D,E code-node;
@@ -23,7 +54,7 @@ In order to upload results to Xray, QTAF needs to authenticate to it.
 
 <hr/>
 
-### `xray`
+#### `xray`
 
 Xray server or Xray cloud credentials can be specified here.
 
@@ -35,7 +66,7 @@ Xray server or Xray cloud credentials can be specified here.
 
 <hr/>
 
-#### `bearerToken` :fontawesome-solid-server:{ title="Xray server" }
+##### `bearerToken` :fontawesome-solid-server:{ title="Xray server" }
 
 The Jira PAT of the user QTAF should use for interacting with Xray.
 
@@ -63,7 +94,7 @@ The Jira PAT of the user QTAF should use for interacting with Xray.
 
 <hr/>
 
-#### `clientId` :fontawesome-solid-cloud:{ title="Xray cloud" }
+##### `clientId` :fontawesome-solid-cloud:{ title="Xray cloud" }
 
 The ID of the user all requests will be done in behalf of.
 
@@ -91,7 +122,7 @@ The ID of the user all requests will be done in behalf of.
 
 <hr/>
 
-#### `clientSecret` :fontawesome-solid-cloud:{ title="Xray cloud" }
+##### `clientSecret` :fontawesome-solid-cloud:{ title="Xray cloud" }
 
 The secret of the user all requests will be done in behalf of.
 
@@ -119,13 +150,13 @@ The secret of the user all requests will be done in behalf of.
 
 <hr/>
 
-### `jira`
+#### `jira`
 
 Additional Jira credentials might be necessary too, depending on how you configure the plugin.
 
 <hr/>
 
-#### `username` :fontawesome-solid-cloud:{ title="Xray cloud" }
+##### `username` :fontawesome-solid-cloud:{ title="Xray cloud" }
 
 The username for Jira Cloud authentication.
 It is usually the Email address of the user, as described [here](https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/).
@@ -154,7 +185,7 @@ It is usually the Email address of the user, as described [here](https://develop
 
 <hr/>
 
-#### `apiToken`
+##### `apiToken`
 
 The API token granting access to the API of the Jira instance.
 More information:
@@ -182,6 +213,47 @@ More information:
     === "Environment variable"
         ```sh
         XRAY_AUTHENTICATION_JIRA_APITOKEN="MyLittleJiraSecret"
+        ```
+
+<hr/>
+
+## Optional settings
+
+The settings listed here are optional. They are still very useful in influencing the plugin's behaviour.
+
+### `enabled`
+
+Enables or disables the plugin entirely.
+If set to `#!java false`, the plugin will be skipped completely and no results will be uploaded.
+
+***Environment variable***
+: `XRAY_ENABLED`
+
+***Type***
+: `boolean`
+: Accepted strings (case-insensitive):
+
+    - `"true"`
+      `"1"`
+      `"y"`
+
+    - `"false"`
+      `"0"`
+      `"n"`
+
+***Default***
+: `#!java false`
+
+??? example
+    === "QTAF JSON"
+        ```json
+        "xray": {
+	        "enabled": "y"
+        }
+        ```
+    === "Environment variable"
+        ```sh
+        XRAY_ENABLED="y"
         ```
 
 <hr/>
