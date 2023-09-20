@@ -1,6 +1,16 @@
 # Configuration
 
-All Xray plugin options can be specified within the `#!json xray` property of the configuration JSON.
+All Xray plugin options can be specified within the `#!json xray` property of the configuration JSON:
+
+```json
+"xray": {
+	"service": "cloud",
+	"url": {
+		"xray": null,
+		"jira": null
+	}
+},
+```
 
 <hr/>
 
@@ -221,6 +231,8 @@ More information:
 
 The settings listed here are optional. They are still very useful in influencing the plugin's behaviour.
 
+<hr/>
+
 ### `enabled`
 
 Enables or disables the plugin entirely.
@@ -255,6 +267,106 @@ If set to `#!java false`, the plugin will be skipped completely and no results w
         ```sh
         XRAY_ENABLED="y"
         ```
+
+<hr/>
+
+### `resultsUpload`
+
+These settings determine the plugin's behaviour regarding the results upload.
+
+#### `assignee`
+
+The Jira user to assign created test executions to.
+The following values should be provided here:
+
+- :fontawesome-solid-cloud:{ title="Xray cloud" } The account ID, usually of the form `61f8f589e688d6007068a792`.
+  You can retrieve account IDs by exporting an issue as XML where the user is visible (reporter, assignee, ...). The XML element containing the account ID will then look something like this:
+  ```xml
+  <assignee accountid="61f8f589e688d6007068a792">John Miller</assignee>
+  ```
+- :fontawesome-solid-server:{ title="Xray server" } The username used for login, for example `miller_j`.
+  You can retrieve usernames of other users by exporting an issue as XML where the user is visible (reporter, assignee, ...). The XML element will then look something like this:
+  ```xml
+  <assignee>miller_j</assignee>
+  ```
+
+!!! note
+    If the configured assignee is `#!json null`, the test execution issues will not be assigned to anyone.
+
+***Environment variable***
+: `XRAY_RESULTS_UPLOAD_ASSIGNEE`
+
+***Type***
+: `string`
+
+***Default***
+: `#!java null`
+
+??? example
+    === "QTAF JSON"
+        ```json
+        "xray": {
+	        "resultsUpload": {
+            "assignee": "61f8f589e688d6007068a792"
+          }
+        }
+        ```
+    === "Environment variable"
+        ```sh
+        XRAY_RESULTS_UPLOAD_ASSIGNEE="61f8f589e688d6007068a792"
+        ```
+
+
+
+
+```json
+"resultsUpload": {
+	"customStatus": {
+		"testExecutionIssue": {
+			"passed": null,
+			"failed": null
+		},
+		"test": {
+			"passed": null,
+			"failed": null,
+			"pending": null,
+			"skipped": null
+		},
+		"step": {
+			"passed": null,
+			"failed": null,
+			"pending": null,
+			"skipped": null,
+			"undefined": null
+		}
+	},
+	"environments": {
+		"enabled": true,
+		"os": true,
+		"driver": true
+	},
+	"scenarioImageEvidence": true,
+	"scenarioReportEvidence": true,
+	"testPlanKey": null,
+	"tests": {
+		"info": {
+			"keepJiraSummary": false,
+			"steps": {
+				"update": false,
+				"merge": false
+			}
+		},
+		"iterations": {
+			"parameters": {
+				"maxLength": {
+					"name": null,
+					"value": null
+				}
+			}
+		}
+	}
+}
+```
 
 <hr/>
 
