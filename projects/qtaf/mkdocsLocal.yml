@@ -38,3 +38,4 @@ nav:
           - QTAF Logging: sections/dive/Overview_Logging.md
           - QTAF Annotations: sections/dive/Overview_Annotations.md
           - Setup QTAF locally: sections/dive/Setup_QTAF_Locally.md
+    - FAQ: sections/faq/FAQ.md
