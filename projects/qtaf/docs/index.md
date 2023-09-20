@@ -24,7 +24,7 @@ On the following pages you can find instructions for the product QTAF.
 - [Create a Groovy QTAF project with Maven / Gradle](sections/steps/QTAF_Groovy.md)
 
 #### QTAF Plugins
-- [Xray Plugin](sections/plugins/XRAY_Plugin.md)
+- [Xray Plugin](sections/plugins/xray/XRAY_Plugin.md)
 - [Allure Plugin](sections/plugins/Allure_Plugin.md)
 
 #### QTAF and Cucumber

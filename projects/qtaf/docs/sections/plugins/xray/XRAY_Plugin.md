@@ -8,11 +8,11 @@ The first step is to create the definitions of our test cases in Xray. In our ex
 
 First you have to click on "Testing Board" in the left menu of Jira to get to the user interface of Xray. The following screenshot shows the testing board of our example project. Create the three test case definitions for our test cases here.
 
-<img src="../../../assets/images/qtaf/xray_plugin/xray_testing_board.png" />
+<img src="../../../../assets/images/qtaf/xray_plugin/xray_testing_board.png" />
 
 Test steps must still be defined for each of the three tests. In the Xray user interface, these can be found in the "Test Details" section. In our example, we assume that the tests `QTAF-1`, `QTAF-2` and `QTAF-3` have two, three and two steps respectively. The following picture shows the test case `QTAF-1` in Xray:
 
-<img src="../../../assets/images/qtaf/xray_plugin/xray_test_steps.png" />
+<img src="../../../../assets/images/qtaf/xray_plugin/xray_test_steps.png" />
 
 ## QTAF and Xray
 

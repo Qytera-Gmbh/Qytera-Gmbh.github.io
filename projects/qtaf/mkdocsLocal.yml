@@ -30,8 +30,10 @@ nav:
           - Qtaf and Kotlin: sections/steps/QTAF_Kotlin.md
           - Qtaf and Groovy: sections/steps/QTAF_Groovy.md
     - Plugins:
-          - Xray Plugin: sections/plugins/XRAY_Plugin.md
           - Allure Plugin: sections/plugins/Allure_Plugin.md
+    - Xray Plugin:
+      - Introduction: sections/plugins/xray/XRAY_Plugin.md
+      - Configuration: sections/plugins/xray/Configuration.md
     - Cucumber:
           - Create new Cucumber Project: sections/cucumber/New_Cucumber_Project.md
     - Deep Dive:
