@@ -1,16 +1,14 @@
 # Configuration
 
-All Xray plugin options can be specified within the `#!json xray` property of the configuration JSON:
+All Xray plugin options can be specified within the `#!json xray` property of the configuration JSON.
 
-```json
-"xray": {
-	"service": "cloud",
-	"url": {
-		"xray": null,
-		"jira": null
-	}
-},
-```
+!!! note
+    The following icons describe whether the individual settings apply to Xray server or Xray cloud only:
+
+    - :fontawesome-solid-cloud:{ title="Xray cloud" .xray-icon } Setting applicable to/relevant for Xray cloud only
+    - :fontawesome-solid-server:{ title="Xray server" .xray-icon } Setting applicable to/relevant for Xray server only
+
+    All settings without such icons are applicable to both versions.
 
 <hr/>
 
@@ -1279,6 +1277,97 @@ Merging the iterations' steps can therefore help for data-driven testing.
     === "Environment variable"
         ```sh
         XRAY_RESULTS_UPLOAD_TESTS_STEPS_MERGE="true"
+        ```
+
+<hr/>
+
+## `service`
+
+Defines whether the targeted Xray instance is an Xray cloud or Xray server instance.
+QTAF requires this setting because Xray's APIs need to be addressed slightly differently.
+
+***Environment variable***
+: `XRAY_SERVICE`
+
+***Type***
+: `#!json "cloud"` or `#!json "server"`
+
+??? example
+    === "QTAF JSON"
+
+        ```json
+        "xray": {
+	        "service": "server"
+        }
+        ```
+
+    === "Environment variable"
+        ```sh
+        XRAY_SERVICE="server"
+        ```
+
+<hr/>
+
+## `url`
+
+To properly connect to Xray, QTAF needs to know where the Xray and Jira instances can be found.
+
+<hr/>
+
+### `jira`
+
+Defines the base URL of the Jira instance.
+For Jira cloud, it is usually of the form `https://your-domain.atlassian.net` (without the `/jira` part, see [here](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#ad-hoc-api-calls/)).
+For Jira server, you can have a look [here](https://confluence.atlassian.com/adminjiraserver/configuring-the-base-url-938847830.html) to determine your base URL.
+
+***Environment variable***
+: `XRAY_URL_JIRA`
+
+***Type***
+: `string`
+
+??? example
+    === "QTAF JSON"
+
+        ```json
+        "xray": {
+	        "url": {
+            "jira": "https://example.org/development/jira"
+          }
+        }
+        ```
+
+    === "Environment variable"
+        ```sh
+        XRAY_URL_JIRA="https://example.org/development/jira"
+        ```
+
+<hr/>
+
+### `xray` :fontawesome-solid-server:{ title="Xray server" .xray-icon }
+
+Defines the base URL of the Xray instance.
+
+***Environment variable***
+: `XRAY_URL_XRAY`
+
+***Type***
+: `string`
+
+??? example
+    === "QTAF JSON"
+
+        ```json
+        "xray": {
+	        "url": {
+            "xray": "https://xray.jira.company.com"
+          }
+        }
+        ```
+
+    === "Environment variable"
+        ```sh
+        XRAY_URL_XRAY="https://xray.jira.company.com"
         ```
 
 <hr/>
