@@ -980,6 +980,72 @@ When set to `#!json null`, QTAF will not add created test execution issues to an
 
 The settings below allow configuring the way test cases themselves are updated during test results upload.
 
+#### `iterations`
+
+When uploading data-driven test results, QTAF will automatically use Xray's iterations in test executions.
+Settings related to these iterations are listed here.
+
+##### `parameters`
+
+Xray can add parameters to data-driven test iteration results, which provide information about the names and values of the concrete test case parameters.
+Parameter settings are listed here.
+
+!!! info
+    For more information about iteration parameters, please see:
+
+    - :fontawesome-solid-cloud:{ title="Xray cloud" .xray-icon } [Xray documentation](https://docs.getxray.app/display/XRAYCLOUD/Execute+Tests#ExecuteTests-Iterations)
+    - :fontawesome-solid-server:{ title="Xray server" .xray-icon } [Xray documentation](https://docs.getxray.app/display/XRAY/Execute+Tests#ExecuteTests-Iterations)
+
+
+
+###### `maxLength`
+
+Xray enforces a hard limit on the length of both parameter names and values, which is different for Xray cloud and Xray server and from version to version.
+It is recommended to provide reasonable values like `#!json 30` here for both `#!json name` and `#!json value` to keep things readable and to prevent Xray from rejecting test result uploads altogether.
+QTAF will automatically truncate parameter names and values of the iterations to the numbers provided here.
+
+!!! warning
+    If set to `#!json null`, QTAF will not truncate parameter names or values whatsoever, possibly resulting in failed result uploads.
+    Make sure to manually identify the limit your Xray instance is enforcing through the UI!
+
+***Environment variables***
+: `XRAY_RESULTS_UPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_NAME`
+: `XRAY_RESULTS_UPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_VALUE`
+
+***Type***
+: `number`
+
+***Default***
+: `#!json null`
+
+??? example
+    === "QTAF JSON"
+
+        ```json
+        "xray": {
+          "resultsUpload": {
+            "tests": {
+              "iterations": {
+                "parameters": {
+                  "maxLength": {
+                    "name": 42,
+                    "value": 50
+                  }
+                }
+              }
+            }
+          }
+        }
+        ```
+
+    === "Environment variable"
+        ```sh
+        XRAY_RESULTS_UPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_NAME=42
+        XRAY_RESULTS_UPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_VALUE=50
+        ```
+
+<hr/>
+
 #### `info`
 
 Settings regarding general test case information.
@@ -1214,23 +1280,6 @@ Merging the iterations' steps can therefore help for data-driven testing.
         ```sh
         XRAY_RESULTS_UPLOAD_TESTS_STEPS_MERGE="true"
         ```
-
-<hr/>
-
-```json
-"resultsUpload": {
-	"tests": {
-		"iterations": {
-			"parameters": {
-				"maxLength": {
-					"name": null,
-					"value": null
-				}
-			}
-		}
-	}
-}
-```
 
 <hr/>
 
