@@ -25,7 +25,7 @@ hide:
 - CI/CD ready
 - Cucumber support
 
-:smartbear-cucumber:{ .cucumber } <span class="cucumber"><i>Cucumber only:</i></span>
+:smartbear-cucumber: <span class="cucumber"><i>Cucumber only:</i></span>
 
 - Automatic import of feature files to Jira
 
