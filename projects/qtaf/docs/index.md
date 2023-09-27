@@ -15,16 +15,16 @@ On the following pages you can find instructions for the product QTAF.
 - [Use Data Providers in your test scenarios](sections/steps/Data_Providers.md)
 - [Exploring the HTML report](sections/steps/HTML_Report_Plugin.md)
 - [How to run your tests against different browsers using QTAF](sections/steps/Drivers.md)
-    - [Connect QTAF to a remote driver](sections/steps/Drivers#running-test-cases-on-a-remote-browser)
-    - [Running test cases on the Saucelabs platform](sections/steps/Drivers#running-test-cases-on-the-saucelabs-platform)
-    - [Write your own drivers](sections/steps/Drivers#writing-your-own-drivers)
+    - [Connect QTAF to a remote driver](sections/steps/Drivers.md#running-test-cases-on-a-remote-browser)
+    - [Running test cases on the Saucelabs platform](sections/steps/Drivers.md#running-test-cases-on-the-saucelabs-platform)
+    - [Write your own drivers](sections/steps/Drivers.md#writing-your-own-drivers)
 
 #### Use QTAF with Kotlin and Groovy
 - [Create a Kotlin QTAF project with Maven / Gradle](sections/steps/QTAF_Kotlin.md)
 - [Create a Groovy QTAF project with Maven / Gradle](sections/steps/QTAF_Groovy.md)
 
 #### QTAF Plugins
-- [Xray Plugin](sections/plugins/XRAY_Plugin.md)
+- [Xray Plugin](sections/plugins/xray/XRAY_Plugin.md)
 - [Allure Plugin](sections/plugins/Allure_Plugin.md)
 
 #### QTAF and Cucumber
