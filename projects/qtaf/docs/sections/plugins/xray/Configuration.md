@@ -342,7 +342,7 @@ These settings allow mapping QTAF test _steps_ to Xray _step_ statuses.
 The Xray status of failed steps.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_FAILED`
+: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_FAILED`
 
 ***Type***
 : `string`
@@ -368,7 +368,7 @@ The Xray status of failed steps.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_FAILED="ERROR"
+        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_FAILED="ERROR"
         ```
 
 <hr/>
@@ -378,7 +378,7 @@ The Xray status of failed steps.
 The Xray status of passed steps.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_PASSED`
+: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_PASSED`
 
 ***Type***
 : `string`
@@ -404,7 +404,7 @@ The Xray status of passed steps.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_PASSED="DONE"
+        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_PASSED="DONE"
         ```
 
 <hr/>
@@ -414,7 +414,7 @@ The Xray status of passed steps.
 The Xray status of pending steps.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_PENDING`
+: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_PENDING`
 
 ***Type***
 : `string`
@@ -439,7 +439,7 @@ The Xray status of pending steps.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_PENDING="EXECUTING"
+        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_PENDING="EXECUTING"
         ```
 
 <hr/>
@@ -449,7 +449,7 @@ The Xray status of pending steps.
 The Xray status of skipped steps.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_SKIPPED`
+: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_SKIPPED`
 
 ***Type***
 : `string`
@@ -474,7 +474,7 @@ The Xray status of skipped steps.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_SKIPPED="TODO"
+        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_SKIPPED="TODO"
         ```
 
 <hr/>
@@ -493,7 +493,7 @@ These settings allow mapping QTAF _test_ statuses to Xray statuses, for example 
 The Xray status of failed tests.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_FAILED`
+: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_FAILED`
 
 ***Type***
 : `string`
@@ -519,7 +519,7 @@ The Xray status of failed tests.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_FAILED="ERROR"
+        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_FAILED="ERROR"
         ```
 
 <hr/>
@@ -529,7 +529,7 @@ The Xray status of failed tests.
 The Xray status of passed tests.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_PASSED`
+: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_PASSED`
 
 ***Type***
 : `string`
@@ -555,7 +555,7 @@ The Xray status of passed tests.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_PASSED="DONE"
+        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_PASSED="DONE"
         ```
 
 <hr/>
@@ -565,7 +565,7 @@ The Xray status of passed tests.
 The Xray status of pending tests.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_PENDING`
+: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_PENDING`
 
 ***Type***
 : `string`
@@ -590,7 +590,7 @@ The Xray status of pending tests.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_PENDING="EXECUTING"
+        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_PENDING="EXECUTING"
         ```
 
 <hr/>
@@ -600,7 +600,7 @@ The Xray status of pending tests.
 The Xray status of skipped tests.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_SKIPPED`
+: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_SKIPPED`
 
 ***Type***
 : `string`
@@ -625,7 +625,7 @@ The Xray status of skipped tests.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_SKIPPED="TODO"
+        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_SKIPPED="TODO"
         ```
 
 <hr/>
@@ -642,7 +642,7 @@ The Jira status to transition test execution issues to if tests failed.
 If the status is `#!json null`, the issue will have the default issue status of issues created in the project.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_EXECUTION_ISSUE_FAILED`
+: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_EXECUTION_ISSUE_FAILED`
 
 ***Type***
 : `string`
@@ -667,7 +667,7 @@ If the status is `#!json null`, the issue will have the default issue status of 
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_EXECUTION_ISSUE_FAILED="Review"
+        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_EXECUTION_ISSUE_FAILED="Review"
         ```
 
 <hr/>
@@ -678,7 +678,7 @@ The Jira status to transition test execution issues to if all tests passed.
 If the status is `#!json null`, the issue will have the default issue status of issues created in the project.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_EXECUTION_ISSUE_PASSED`
+: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_EXECUTION_ISSUE_PASSED`
 
 ***Type***
 : `string`
@@ -703,7 +703,7 @@ If the status is `#!json null`, the issue will have the default issue status of 
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_EXECUTION_ISSUE_PASSED="Done"
+        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_EXECUTION_ISSUE_PASSED="Done"
         ```
 
 <hr/>
