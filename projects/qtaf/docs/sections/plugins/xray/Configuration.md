@@ -296,7 +296,7 @@ The following values should be provided here:
     If the configured assignee is `#!json null`, the test execution issues will not be assigned to anyone.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_ASSIGNEE`
+: `XRAY_RESULTSUPLOAD_ASSIGNEE`
 
 ***Type***
 : `string`
@@ -317,7 +317,7 @@ The following values should be provided here:
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_ASSIGNEE="61f8f589e688d6007068a792"
+        XRAY_RESULTSUPLOAD_ASSIGNEE="61f8f589e688d6007068a792"
         ```
 
 <hr/>
@@ -342,7 +342,7 @@ These settings allow mapping QTAF test _steps_ to Xray _step_ statuses.
 The Xray status of failed steps.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_STEP_FAILED`
+: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_FAILED`
 
 ***Type***
 : `string`
@@ -368,7 +368,7 @@ The Xray status of failed steps.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_STEP_FAILED="ERROR"
+        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_FAILED="ERROR"
         ```
 
 <hr/>
@@ -378,7 +378,7 @@ The Xray status of failed steps.
 The Xray status of passed steps.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_STEP_PASSED`
+: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_PASSED`
 
 ***Type***
 : `string`
@@ -404,7 +404,7 @@ The Xray status of passed steps.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_STEP_PASSED="DONE"
+        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_PASSED="DONE"
         ```
 
 <hr/>
@@ -414,7 +414,7 @@ The Xray status of passed steps.
 The Xray status of pending steps.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_STEP_PENDING`
+: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_PENDING`
 
 ***Type***
 : `string`
@@ -439,7 +439,7 @@ The Xray status of pending steps.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_STEP_PENDING="EXECUTING"
+        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_PENDING="EXECUTING"
         ```
 
 <hr/>
@@ -449,7 +449,7 @@ The Xray status of pending steps.
 The Xray status of skipped steps.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_STEP_SKIPPED`
+: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_SKIPPED`
 
 ***Type***
 : `string`
@@ -474,7 +474,7 @@ The Xray status of skipped steps.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_STEP_SKIPPED="TODO"
+        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_STEP_SKIPPED="TODO"
         ```
 
 <hr/>
@@ -493,7 +493,7 @@ These settings allow mapping QTAF _test_ statuses to Xray statuses, for example 
 The Xray status of failed tests.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_TEST_FAILED`
+: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_FAILED`
 
 ***Type***
 : `string`
@@ -519,7 +519,7 @@ The Xray status of failed tests.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_TEST_FAILED="ERROR"
+        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_FAILED="ERROR"
         ```
 
 <hr/>
@@ -529,7 +529,7 @@ The Xray status of failed tests.
 The Xray status of passed tests.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_TEST_PASSED`
+: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_PASSED`
 
 ***Type***
 : `string`
@@ -555,7 +555,7 @@ The Xray status of passed tests.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_TEST_PASSED="DONE"
+        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_PASSED="DONE"
         ```
 
 <hr/>
@@ -565,7 +565,7 @@ The Xray status of passed tests.
 The Xray status of pending tests.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_TEST_PENDING`
+: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_PENDING`
 
 ***Type***
 : `string`
@@ -590,7 +590,7 @@ The Xray status of pending tests.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_TEST_PENDING="EXECUTING"
+        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_PENDING="EXECUTING"
         ```
 
 <hr/>
@@ -600,7 +600,7 @@ The Xray status of pending tests.
 The Xray status of skipped tests.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_TEST_SKIPPED`
+: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_SKIPPED`
 
 ***Type***
 : `string`
@@ -625,7 +625,7 @@ The Xray status of skipped tests.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_TEST_SKIPPED="TODO"
+        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_SKIPPED="TODO"
         ```
 
 <hr/>
@@ -642,7 +642,7 @@ The Jira status to transition test execution issues to if tests failed.
 If the status is `#!json null`, the issue will have the default issue status of issues created in the project.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_TEST_EXECUTION_ISSUE_FAILED`
+: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_EXECUTION_ISSUE_FAILED`
 
 ***Type***
 : `string`
@@ -667,7 +667,7 @@ If the status is `#!json null`, the issue will have the default issue status of 
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_TEST_EXECUTION_ISSUE_FAILED="Review"
+        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_EXECUTION_ISSUE_FAILED="Review"
         ```
 
 <hr/>
@@ -678,7 +678,7 @@ The Jira status to transition test execution issues to if all tests passed.
 If the status is `#!json null`, the issue will have the default issue status of issues created in the project.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_TEST_EXECUTION_ISSUE_PASSED`
+: `XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_EXECUTION_ISSUE_PASSED`
 
 ***Type***
 : `string`
@@ -703,7 +703,7 @@ If the status is `#!json null`, the issue will have the default issue status of 
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_CUSTOM_STATUS_TEST_EXECUTION_ISSUE_PASSED="Done"
+        XRAY_RESULTSUPLOAD_CUSTOM_STATUS_TEST_EXECUTION_ISSUE_PASSED="Done"
         ```
 
 <hr/>
@@ -726,7 +726,7 @@ The following settings can be used to control the way QTAF assigns test environm
 Toggles whether QTAF should add the name of the Selenium driver used to execute the tests as test environment.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_ENVIRONMENTS_DRIVER`
+: `XRAY_RESULTSUPLOAD_ENVIRONMENTS_DRIVER`
 
 ***Type***
 : `boolean`
@@ -758,7 +758,7 @@ Toggles whether QTAF should add the name of the Selenium driver used to execute 
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_ENVIRONMENTS_DRIVER="false"
+        XRAY_RESULTSUPLOAD_ENVIRONMENTS_DRIVER="false"
         ```
 
 <hr/>
@@ -769,7 +769,7 @@ Toggles whether QTAF should include test environments during test execution issu
 Setting this option to `false` will result in no test environments being added to the test execution issue.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_ENVIRONMENTS_ENABLED`
+: `XRAY_RESULTSUPLOAD_ENVIRONMENTS_ENABLED`
 
 ***Type***
 : `boolean`
@@ -801,7 +801,7 @@ Setting this option to `false` will result in no test environments being added t
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_ENVIRONMENTS_ENABLED="n"
+        XRAY_RESULTSUPLOAD_ENVIRONMENTS_ENABLED="n"
         ```
 
 <hr/>
@@ -811,7 +811,7 @@ Setting this option to `false` will result in no test environments being added t
 Toggles whether QTAF should add the name of the operating system the tests were executed on as test environment.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_ENVIRONMENTS_OS`
+: `XRAY_RESULTSUPLOAD_ENVIRONMENTS_OS`
 
 ***Type***
 : `boolean`
@@ -843,7 +843,7 @@ Toggles whether QTAF should add the name of the operating system the tests were 
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_ENVIRONMENTS_OS="0"
+        XRAY_RESULTSUPLOAD_ENVIRONMENTS_OS="0"
         ```
 
 <hr/>
@@ -860,7 +860,7 @@ Setting this to `true` will result in QTAF adding all screenshots it takes durin
     - :fontawesome-solid-server:{ title="Xray server" .xray-icon } [Xray documentation](https://docs.getxray.app/display/XRAY/Execute+Tests#ExecuteTests-Evidence)
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_SCENARIOIMAGEEVIDENCE`
+: `XRAY_RESULTSUPLOAD_SCENARIOIMAGEEVIDENCE`
 
 ***Type***
 : `boolean`
@@ -890,7 +890,7 @@ Setting this to `true` will result in QTAF adding all screenshots it takes durin
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_SCENARIOIMAGEEVIDENCE="y"
+        XRAY_RESULTSUPLOAD_SCENARIOIMAGEEVIDENCE="y"
         ```
 
 <hr/>
@@ -906,7 +906,7 @@ Toggles whether QTAF should attach the HTML report it generates as evidence to t
     - :fontawesome-solid-server:{ title="Xray server" .xray-icon } [Xray documentation](https://docs.getxray.app/display/XRAY/Execute+Tests#ExecuteTests-Evidence)
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_SCENARIOREPORTEVIDENCE`
+: `XRAY_RESULTSUPLOAD_SCENARIOREPORTEVIDENCE`
 
 ***Type***
 : `boolean`
@@ -936,7 +936,7 @@ Toggles whether QTAF should attach the HTML report it generates as evidence to t
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_SCENARIOREPORTEVIDENCE="1"
+        XRAY_RESULTSUPLOAD_SCENARIOREPORTEVIDENCE="1"
         ```
 
 <hr/>
@@ -948,7 +948,7 @@ QTAF uses this setting to retrieve such configured test plans.
 When set to `#!json null`, QTAF will not add created test execution issues to any test plan.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_TESTPLANKEY`
+: `XRAY_RESULTSUPLOAD_TESTPLANKEY`
 
 ***Type***
 : `string`
@@ -969,7 +969,7 @@ When set to `#!json null`, QTAF will not add created test execution issues to an
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_TESTPLANKEY="PRJ-123"
+        XRAY_RESULTSUPLOAD_TESTPLANKEY="PRJ-123"
         ```
 
 <hr/>
@@ -1007,8 +1007,8 @@ QTAF will automatically truncate parameter names and values of the iterations to
     Make sure to manually identify the limit your Xray instance is enforcing through the UI!
 
 ***Environment variables***
-: `XRAY_RESULTS_UPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_NAME`
-: `XRAY_RESULTS_UPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_VALUE`
+: `XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_NAME`
+: `XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_VALUE`
 
 ***Type***
 : `number`
@@ -1038,8 +1038,8 @@ QTAF will automatically truncate parameter names and values of the iterations to
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_NAME=42
-        XRAY_RESULTS_UPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_VALUE=50
+        XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_NAME=42
+        XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_VALUE=50
         ```
 
 <hr/>
@@ -1054,7 +1054,7 @@ When uploading test results, QTAF can automatically rename existing test issues 
 This setting toggles whether this is allowed to happen or whether the test case's existing summaries should be kept.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_TESTS_INFO_KEEPJIRASUMMARY`
+: `XRAY_RESULTSUPLOAD_TESTS_INFO_KEEPJIRASUMMARY`
 
 ***Type***
 : `boolean`
@@ -1088,7 +1088,7 @@ This setting toggles whether this is allowed to happen or whether the test case'
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_TESTS_INFO_KEEPJIRASUMMARY="y"
+        XRAY_RESULTSUPLOAD_TESTS_INFO_KEEPJIRASUMMARY="y"
         ```
 
 <hr/>
@@ -1105,7 +1105,7 @@ Setting this to `#!json true` will result in QTAF replacing _all_ existing steps
 To not modify any existing steps, set this to `#!json false`.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_TESTS_STEPS_UPDATE`
+: `XRAY_RESULTSUPLOAD_TESTS_STEPS_UPDATE`
 
 ***Type***
 : `boolean`
@@ -1141,7 +1141,7 @@ To not modify any existing steps, set this to `#!json false`.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_TESTS_STEPS_UPDATE="true"
+        XRAY_RESULTSUPLOAD_TESTS_STEPS_UPDATE="true"
         ```
 
 <hr/>
@@ -1240,7 +1240,7 @@ In situations like above where individual test runs might not _always_ consist o
 Merging the iterations' steps can therefore help for data-driven testing.
 
 ***Environment variable***
-: `XRAY_RESULTS_UPLOAD_TESTS_STEPS_MERGE`
+: `XRAY_RESULTSUPLOAD_TESTS_STEPS_MERGE`
 
 ***Type***
 : `boolean`
@@ -1276,7 +1276,7 @@ Merging the iterations' steps can therefore help for data-driven testing.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTS_UPLOAD_TESTS_STEPS_MERGE="true"
+        XRAY_RESULTSUPLOAD_TESTS_STEPS_MERGE="true"
         ```
 
 <hr/>
