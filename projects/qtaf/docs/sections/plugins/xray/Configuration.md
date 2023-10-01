@@ -642,7 +642,7 @@ The Jira status to transition test execution issues to if tests failed.
 If the status is `#!json null`, the issue will have the default issue status of issues created in the project.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_EXECUTION_ISSUE_FAILED`
+: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TESTEXECUTIONISSUE_FAILED`
 
 ***Type***
 : `string`
@@ -667,7 +667,7 @@ If the status is `#!json null`, the issue will have the default issue status of 
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_EXECUTION_ISSUE_FAILED="Review"
+        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TESTEXECUTIONISSUE_FAILED="Review"
         ```
 
 <hr/>
@@ -678,7 +678,7 @@ The Jira status to transition test execution issues to if all tests passed.
 If the status is `#!json null`, the issue will have the default issue status of issues created in the project.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_EXECUTION_ISSUE_PASSED`
+: `XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TESTEXECUTIONISSUE_PASSED`
 
 ***Type***
 : `string`
@@ -703,7 +703,7 @@ If the status is `#!json null`, the issue will have the default issue status of 
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_EXECUTION_ISSUE_PASSED="Done"
+        XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TESTEXECUTIONISSUE_PASSED="Done"
         ```
 
 <hr/>
