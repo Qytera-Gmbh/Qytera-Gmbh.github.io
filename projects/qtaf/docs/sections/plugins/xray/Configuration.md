@@ -1007,8 +1007,8 @@ QTAF will automatically truncate parameter names and values of the iterations to
     Make sure to manually identify the limit your Xray instance is enforcing through the UI!
 
 ***Environment variables***
-: `XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_NAME`
-: `XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_VALUE`
+: `XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAXLENGTH_NAME`
+: `XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAXLENGTH_VALUE`
 
 ***Type***
 : `number`
@@ -1038,8 +1038,8 @@ QTAF will automatically truncate parameter names and values of the iterations to
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_NAME=42
-        XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAX_LENGTH_VALUE=50
+        XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAXLENGTH_NAME=42
+        XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAXLENGTH_VALUE=50
         ```
 
 <hr/>
