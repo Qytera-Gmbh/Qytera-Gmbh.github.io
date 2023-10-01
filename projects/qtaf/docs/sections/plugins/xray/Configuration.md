@@ -60,11 +60,11 @@ The Jira PAT of the user QTAF should use for interacting with Xray.
 
         ```json
         "xray": {
-	        "authentication": {
-		        "xray": {
-			        "bearerToken": "BigSecretToken"
-		        }
-	        }
+          "authentication": {
+            "xray": {
+              "bearerToken": "BigSecretToken"
+            }
+          }
         }
         ```
 
@@ -90,11 +90,11 @@ The ID of the user all requests will be done in behalf of.
 
         ```json
         "xray": {
-	        "authentication": {
-		        "xray": {
-			        "clientId": "12345ABCDEF"
-		        }
-	        }
+          "authentication": {
+            "xray": {
+              "clientId": "12345ABCDEF"
+            }
+          }
         }
         ```
 
@@ -120,11 +120,11 @@ The secret of the user all requests will be done in behalf of.
 
         ```json
         "xray": {
-	        "authentication": {
-		        "xray": {
-			        "clientSecret": "xyzSuperSecretxyz"
-		        }
-	        }
+          "authentication": {
+            "xray": {
+              "clientSecret": "xyzSuperSecretxyz"
+            }
+          }
         }
         ```
 
@@ -157,11 +157,11 @@ It is usually the Email address of the user, as described [here](https://develop
 
         ```json
         "xray": {
-	        "authentication": {
-		        "jira": {
-			        "username": "fred@example.com"
-		        }
-	        }
+          "authentication": {
+            "jira": {
+              "username": "fred@example.com"
+            }
+          }
         }
         ```
 
@@ -191,11 +191,11 @@ More information:
 
         ```json
         "xray": {
-	        "authentication": {
-		        "jira": {
-			        "apiToken": "MyLittleJiraSecret"
-		        }
-	        }
+          "authentication": {
+            "jira": {
+              "apiToken": "MyLittleJiraSecret"
+            }
+          }
         }
         ```
 
@@ -234,7 +234,7 @@ If set to `#!java false`, the plugin will be skipped completely and no results w
 
         ```json
         "xray": {
-	        "enabled": "y"
+          "enabled": "y"
         }
         ```
 
@@ -261,7 +261,7 @@ It is used for identification of relevant test cases, meaning that only test cas
 
         ```json
         "xray": {
-	        "projectKey": "PRJ"
+          "projectKey": "PRJ"
         }
         ```
 
@@ -309,7 +309,7 @@ The following values should be provided here:
 
         ```json
         "xray": {
-	        "resultsUpload": {
+          "resultsUpload": {
             "assignee": "61f8f589e688d6007068a792"
           }
         }
@@ -1297,7 +1297,7 @@ QTAF requires this setting because Xray's APIs need to be addressed slightly dif
 
         ```json
         "xray": {
-	        "service": "server"
+          "service": "server"
         }
         ```
 
@@ -1331,7 +1331,7 @@ For Jira server, you can have a look [here](https://confluence.atlassian.com/adm
 
         ```json
         "xray": {
-	        "url": {
+          "url": {
             "jira": "https://example.org/development/jira"
           }
         }
@@ -1359,7 +1359,7 @@ Defines the base URL of the Xray instance.
 
         ```json
         "xray": {
-	        "url": {
+          "url": {
             "xray": "https://xray.jira.company.com"
           }
         }
