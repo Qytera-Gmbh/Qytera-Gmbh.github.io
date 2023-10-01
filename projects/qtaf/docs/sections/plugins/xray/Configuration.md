@@ -1105,7 +1105,7 @@ Setting this to `#!json true` will result in QTAF replacing _all_ existing steps
 To not modify any existing steps, set this to `#!json false`.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_TESTS_STEPS_UPDATE`
+: `XRAY_RESULTSUPLOAD_TESTS_INFO_STEPS_UPDATE`
 
 ***Type***
 : `boolean`
@@ -1141,7 +1141,7 @@ To not modify any existing steps, set this to `#!json false`.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_TESTS_STEPS_UPDATE="true"
+        XRAY_RESULTSUPLOAD_TESTS_INFO_STEPS_UPDATE="true"
         ```
 
 <hr/>
@@ -1240,7 +1240,7 @@ In situations like above where individual test runs might not _always_ consist o
 Merging the iterations' steps can therefore help for data-driven testing.
 
 ***Environment variable***
-: `XRAY_RESULTSUPLOAD_TESTS_STEPS_MERGE`
+: `XRAY_RESULTSUPLOAD_TESTS_INFO_STEPS_MERGE`
 
 ***Type***
 : `boolean`
@@ -1276,7 +1276,7 @@ Merging the iterations' steps can therefore help for data-driven testing.
 
     === "Environment variable"
         ```sh
-        XRAY_RESULTSUPLOAD_TESTS_STEPS_MERGE="true"
+        XRAY_RESULTSUPLOAD_TESTS_INFO_STEPS_MERGE="true"
         ```
 
 <hr/>
