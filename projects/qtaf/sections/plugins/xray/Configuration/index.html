@@ -1,0 +1,3654 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../XRAY_Plugin/">
+      
+      
+        <link rel="next" href="../../../cucumber/New_Cucumber_Project/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/qyteraIcon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Configuration - QTAF - Qytera Test Automation Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/qytera.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/styles.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="qytera" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://qytera.de" title="QTAF - Qytera Test Automation Framework" class="md-header__button md-logo" aria-label="QTAF - Qytera Test Automation Framework" data-md-component="logo">
+      
+  <img src="../../../../assets/images/qyteraLogoBorder.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QTAF - Qytera Test Automation Framework
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="qytera" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1h4m6-10h3v2h-3v-2M1 11h3v2H1v-2M13 1v3h-2V1h2M4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93 4.92 3.5m12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12-1.42-1.42Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Qytera-Gmbh/QTAF" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    QTAF
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://qytera.de" title="QTAF - Qytera Test Automation Framework" class="md-nav__button md-logo" aria-label="QTAF - Qytera Test Automation Framework" data-md-component="logo">
+      
+  <img src="../../../../assets/images/qyteraLogoBorder.svg" alt="logo">
+
+    </a>
+    QTAF - Qytera Test Automation Framework
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Qytera-Gmbh/QTAF" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    QTAF
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page_Object_Model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Page Object Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/IntelliJ_Project_Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create new IntelliJ Project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/VSCode_Project_Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create new VS Code Project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    First Steps
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            First Steps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../steps/New_QTAF_Project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create a new QTAF Project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../steps/Data_Providers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Data Providers in Test Scenarios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../steps/HTML_Report_Plugin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exploring the HTML Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../steps/Drivers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Browser Drivers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Advanced Topics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced Topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design_patterns/Design_Patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Patterns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Kotlin and Groovy
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Kotlin and Groovy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../steps/QTAF_Kotlin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qtaf and Kotlin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../steps/QTAF_Groovy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qtaf and Groovy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Plugins
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Plugins
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allure_Plugin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Allure Plugin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Xray Plugin
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Xray Plugin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../XRAY_Plugin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xray" class="md-nav__link">
+    xray
+  </a>
+  
+    <nav class="md-nav" aria-label="xray">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bearertoken" class="md-nav__link">
+    bearerToken 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clientid" class="md-nav__link">
+    clientId 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clientsecret" class="md-nav__link">
+    clientSecret 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jira" class="md-nav__link">
+    jira
+  </a>
+  
+    <nav class="md-nav" aria-label="jira">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#username" class="md-nav__link">
+    username 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apitoken" class="md-nav__link">
+    apiToken
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabled" class="md-nav__link">
+    enabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projectkey" class="md-nav__link">
+    projectKey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultsupload" class="md-nav__link">
+    resultsUpload
+  </a>
+  
+    <nav class="md-nav" aria-label="resultsUpload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assignee" class="md-nav__link">
+    assignee
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customstatus" class="md-nav__link">
+    customStatus
+  </a>
+  
+    <nav class="md-nav" aria-label="customStatus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step" class="md-nav__link">
+    step
+  </a>
+  
+    <nav class="md-nav" aria-label="step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failed" class="md-nav__link">
+    failed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passed" class="md-nav__link">
+    passed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pending" class="md-nav__link">
+    pending
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipped" class="md-nav__link">
+    skipped
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    test
+  </a>
+  
+    <nav class="md-nav" aria-label="test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failed_1" class="md-nav__link">
+    failed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passed_1" class="md-nav__link">
+    passed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pending_1" class="md-nav__link">
+    pending
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipped_1" class="md-nav__link">
+    skipped
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testexecutionissue" class="md-nav__link">
+    testExecutionIssue
+  </a>
+  
+    <nav class="md-nav" aria-label="testExecutionIssue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failed_2" class="md-nav__link">
+    failed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passed_2" class="md-nav__link">
+    passed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environments" class="md-nav__link">
+    environments
+  </a>
+  
+    <nav class="md-nav" aria-label="environments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#driver" class="md-nav__link">
+    driver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabled_1" class="md-nav__link">
+    enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os" class="md-nav__link">
+    os
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenarioimageevidence" class="md-nav__link">
+    scenarioImageEvidence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenarioreportevidence" class="md-nav__link">
+    scenarioReportEvidence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testplankey" class="md-nav__link">
+    testPlanKey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    tests
+  </a>
+  
+    <nav class="md-nav" aria-label="tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iterations" class="md-nav__link">
+    iterations
+  </a>
+  
+    <nav class="md-nav" aria-label="iterations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maxlength" class="md-nav__link">
+    maxLength
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    info
+  </a>
+  
+    <nav class="md-nav" aria-label="info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keepjirasummary" class="md-nav__link">
+    keepJiraSummary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    steps
+  </a>
+  
+    <nav class="md-nav" aria-label="steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    merge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    url
+  </a>
+  
+    <nav class="md-nav" aria-label="url">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jira_1" class="md-nav__link">
+    jira
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xray_1" class="md-nav__link">
+    xray 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Cucumber
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Cucumber
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cucumber/New_Cucumber_Project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create new Cucumber Project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Deep Dive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Deep Dive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dive/Overview_Logging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    QTAF Logging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dive/Overview_Annotations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    QTAF Annotations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dive/Setup_QTAF_Locally/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup QTAF locally
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xray" class="md-nav__link">
+    xray
+  </a>
+  
+    <nav class="md-nav" aria-label="xray">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bearertoken" class="md-nav__link">
+    bearerToken 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clientid" class="md-nav__link">
+    clientId 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clientsecret" class="md-nav__link">
+    clientSecret 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jira" class="md-nav__link">
+    jira
+  </a>
+  
+    <nav class="md-nav" aria-label="jira">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#username" class="md-nav__link">
+    username 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apitoken" class="md-nav__link">
+    apiToken
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabled" class="md-nav__link">
+    enabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projectkey" class="md-nav__link">
+    projectKey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultsupload" class="md-nav__link">
+    resultsUpload
+  </a>
+  
+    <nav class="md-nav" aria-label="resultsUpload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assignee" class="md-nav__link">
+    assignee
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customstatus" class="md-nav__link">
+    customStatus
+  </a>
+  
+    <nav class="md-nav" aria-label="customStatus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step" class="md-nav__link">
+    step
+  </a>
+  
+    <nav class="md-nav" aria-label="step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failed" class="md-nav__link">
+    failed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passed" class="md-nav__link">
+    passed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pending" class="md-nav__link">
+    pending
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipped" class="md-nav__link">
+    skipped
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    test
+  </a>
+  
+    <nav class="md-nav" aria-label="test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failed_1" class="md-nav__link">
+    failed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passed_1" class="md-nav__link">
+    passed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pending_1" class="md-nav__link">
+    pending
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipped_1" class="md-nav__link">
+    skipped
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testexecutionissue" class="md-nav__link">
+    testExecutionIssue
+  </a>
+  
+    <nav class="md-nav" aria-label="testExecutionIssue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failed_2" class="md-nav__link">
+    failed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passed_2" class="md-nav__link">
+    passed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environments" class="md-nav__link">
+    environments
+  </a>
+  
+    <nav class="md-nav" aria-label="environments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#driver" class="md-nav__link">
+    driver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabled_1" class="md-nav__link">
+    enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os" class="md-nav__link">
+    os
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenarioimageevidence" class="md-nav__link">
+    scenarioImageEvidence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenarioreportevidence" class="md-nav__link">
+    scenarioReportEvidence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testplankey" class="md-nav__link">
+    testPlanKey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    tests
+  </a>
+  
+    <nav class="md-nav" aria-label="tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iterations" class="md-nav__link">
+    iterations
+  </a>
+  
+    <nav class="md-nav" aria-label="iterations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maxlength" class="md-nav__link">
+    maxLength
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    info
+  </a>
+  
+    <nav class="md-nav" aria-label="info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keepjirasummary" class="md-nav__link">
+    keepJiraSummary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    steps
+  </a>
+  
+    <nav class="md-nav" aria-label="steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    merge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    url
+  </a>
+  
+    <nav class="md-nav" aria-label="url">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jira_1" class="md-nav__link">
+    jira
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xray_1" class="md-nav__link">
+    xray 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Anchor link to this section for reference">⚓︎</a></h1>
+<p>All Xray plugin options can be specified within the <code class="highlight"><span class="err">xray</span></code> property of the configuration JSON.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following icons describe whether the individual settings apply to Xray server or Xray cloud only:</p>
+<ul>
+<li><span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span> Setting applicable to/relevant for Xray cloud only</li>
+<li><span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span> Setting applicable to/relevant for Xray server only</li>
+</ul>
+<p>All settings without such icons are applicable to both versions.</p>
+</div>
+<hr/>
+
+<h2 id="authentication"><code>authentication</code><a class="headerlink" href="#authentication" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>In order to upload results to Xray, QTAF needs to authenticate to it.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Have a look at this graph to quickly set up Xray and Jira authentication.
+<pre class="mermaid"><code>graph LR
+    A{Xray&lt;br/&gt;instance};
+    B("xray.clientId=&lt;i&gt;id&lt;/i&gt;&lt;br&gt;xray.clientSecret=&lt;i&gt;secret&lt;/i&gt;&lt;br&gt;&lt;hr&gt;jira.username=&lt;i&gt;user@company.com&lt;/i&gt;&lt;br&gt;jira.apiToken=&lt;i&gt;token&lt;/i&gt;");
+    A ----&gt;|&amp;nbsp cloud &amp;nbsp| B;
+    A ----&gt;|&amp;nbsp server &amp;nbsp| D;
+    D("xray.bearerToken=&lt;i&gt;token&lt;/i&gt;&lt;br&gt;&lt;hr&gt;jira.apiToken=&lt;i&gt;token&lt;/i&gt;");
+    classDef code-node text-align:left;
+    class B,D,E code-node;</code></pre></p>
+<p>Please note that basic authentication for Xray server and Jira server is not supported by QTAF.</p>
+</div>
+<hr/>
+
+<h3 id="xray"><code>xray</code><a class="headerlink" href="#xray" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Xray server or Xray cloud credentials can be specified here.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Consult Xray's official documentation on how to set up:</p>
+<ul>
+<li><span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span> <a href="https://docs.getxray.app/display/XRAYCLOUD/Global+Settings%3A+API+Keys">Cloud API keys</a></li>
+<li><span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span> <a href="https://confluence.atlassian.com/enterprise/using-personal-access-tokens-1026032365.html">Server tokens</a></li>
+</ul>
+</div>
+<hr/>
+
+<h4 id="bearertoken"><code>bearerToken</code> <span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span><a class="headerlink" href="#bearertoken" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>The Jira PAT of the user QTAF should use for interacting with Xray.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_AUTHENTICATION_XRAY_BEARERTOKEN</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">QTAF JSON</label><label for="__tabbed_1_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;authentication&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">      </span><span class="nt">&quot;bearerToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BigSecretToken&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nv">XRAY_AUTHENTICATION_XRAY_BEARERTOKEN</span><span class="o">=</span><span class="s2">&quot;BigSecretToken&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h4 id="clientid"><code>clientId</code> <span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span><a class="headerlink" href="#clientid" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>The ID of the user all requests will be done in behalf of.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_AUTHENTICATION_XRAY_CLIENTID</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">QTAF JSON</label><label for="__tabbed_2_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;authentication&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">      </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12345ABCDEF&quot;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nv">XRAY_AUTHENTICATION_XRAY_CLIENTID</span><span class="o">=</span><span class="s2">&quot;12345ABCDEF&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h4 id="clientsecret"><code>clientSecret</code> <span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span><a class="headerlink" href="#clientsecret" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>The secret of the user all requests will be done in behalf of.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_AUTHENTICATION_XRAY_CLIENTSECRET</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">QTAF JSON</label><label for="__tabbed_3_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;authentication&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">      </span><span class="nt">&quot;clientSecret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xyzSuperSecretxyz&quot;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nv">XRAY_AUTHENTICATION_XRAY_CLIENTSECRET</span><span class="o">=</span><span class="s2">&quot;xyzSuperSecretxyz&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h3 id="jira"><code>jira</code><a class="headerlink" href="#jira" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Additional Jira credentials might be necessary too, depending on how you configure the plugin.</p>
+<hr/>
+
+<h4 id="username"><code>username</code> <span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span><a class="headerlink" href="#username" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>The username for Jira Cloud authentication.
+It is usually the Email address of the user, as described <a href="https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/">here</a>.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_AUTHENTICATION_JIRA_USERNAME</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">QTAF JSON</label><label for="__tabbed_4_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;authentication&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;jira&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fred@example.com&quot;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nv">XRAY_AUTHENTICATION_JIRA_USERNAME</span><span class="o">=</span><span class="s2">&quot;fred@example.com&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h4 id="apitoken"><code>apiToken</code><a class="headerlink" href="#apitoken" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>The API token granting access to the API of the Jira instance.
+More information:</p>
+<ul>
+<li><span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span> <a href="https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/">Xray documentation</a></li>
+<li><span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span> <a href="https://confluence.atlassian.com/enterprise/using-personal-access-tokens-1026032365.html">Xray documentation</a></li>
+</ul>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_AUTHENTICATION_JIRA_APITOKEN</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">QTAF JSON</label><label for="__tabbed_5_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;authentication&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="nt">&quot;jira&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">      </span><span class="nt">&quot;apiToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyLittleJiraSecret&quot;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nv">XRAY_AUTHENTICATION_JIRA_APITOKEN</span><span class="o">=</span><span class="s2">&quot;MyLittleJiraSecret&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h2 id="enabled"><code>enabled</code><a class="headerlink" href="#enabled" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>Enables or disables the plugin entirely.
+If set to <code class="highlight"><span class="kc">false</span></code>, the plugin will be skipped completely and no results will be uploaded.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_ENABLED</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>boolean</code></dd>
+<dd>
+<p>Accepted strings (case-insensitive):</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s2">&quot;true&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;1&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;y&quot;</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="s2">&quot;false&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;0&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;n&quot;</span></code></p>
+</li>
+</ul>
+</dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">false</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">QTAF JSON</label><label for="__tabbed_6_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;y&quot;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nv">XRAY_ENABLED</span><span class="o">=</span><span class="s2">&quot;y&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h2 id="projectkey"><code>projectKey</code><a class="headerlink" href="#projectkey" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>The Jira key of the project to upload results to.
+It is used for identification of relevant test cases, meaning that only test cases with an <code class="highlight"><span class="nd">@XrayTest</span></code> annotation containing the project key will be tracked and eventually uploaded to Xray.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_PROJECTKEY</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">QTAF JSON</label><label for="__tabbed_7_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">  </span><span class="nt">&quot;projectKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PRJ&quot;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nv">XRAY_PROJECTKEY</span><span class="o">=</span><span class="s2">&quot;PRJ&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h2 id="resultsupload"><code>resultsUpload</code><a class="headerlink" href="#resultsupload" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>These settings determine the plugin's behaviour regarding the results upload.</p>
+<h3 id="assignee"><code>assignee</code><a class="headerlink" href="#assignee" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>The Jira user to assign created test executions to.
+The following values should be provided here:</p>
+<ul>
+<li><span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span> The account ID, usually of the form <code>61f8f589e688d6007068a792</code>.
+  You can retrieve account IDs by exporting an issue as XML where the user is visible (reporter, assignee, ...). The XML element containing the account ID will then look something like this:
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="nt">&lt;assignee</span><span class="w"> </span><span class="na">accountid=</span><span class="s">&quot;61f8f589e688d6007068a792&quot;</span><span class="nt">&gt;</span>John<span class="w"> </span>Miller<span class="nt">&lt;/assignee&gt;</span>
+</code></pre></div></td></tr></table></div></li>
+<li><span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span> The username used for login, for example <code>miller_j</code>.
+  You can retrieve usernames of other users by exporting an issue as XML where the user is visible (reporter, assignee, ...). The XML element will then look something like this:
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="nt">&lt;assignee&gt;</span>miller_j<span class="nt">&lt;/assignee&gt;</span>
+</code></pre></div></td></tr></table></div></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the configured assignee is <code class="highlight"><span class="kc">null</span></code>, the test execution issues will not be assigned to anyone.</p>
+</div>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_ASSIGNEE</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">null</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">QTAF JSON</label><label for="__tabbed_8_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">    </span><span class="nt">&quot;assignee&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;61f8f589e688d6007068a792&quot;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="nv">XRAY_RESULTSUPLOAD_ASSIGNEE</span><span class="o">=</span><span class="s2">&quot;61f8f589e688d6007068a792&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h3 id="customstatus"><code>customStatus</code><a class="headerlink" href="#customstatus" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>These status settings map QTAF test (execution) statuses to corresponding Jira issue or Xray test and step statuses.</p>
+<hr/>
+
+<h4 id="step"><code>step</code><a class="headerlink" href="#step" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>These settings allow mapping QTAF test <em>steps</em> to Xray <em>step</em> statuses.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you have custom step statuses set up in Xray, you should provide their names here.</p>
+</div>
+<hr/>
+
+<h5 id="failed"><code>failed</code><a class="headerlink" href="#failed" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>The Xray status of failed steps.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_FAILED</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span> <code class="highlight"><span class="s2">&quot;FAIL&quot;</span></code></dd>
+<dd><span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span> <code class="highlight"><span class="s2">&quot;FAILED&quot;</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">QTAF JSON</label><label for="__tabbed_9_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span>
+<span class="normal"><a href="#__codelineno-18-4">4</a></span>
+<span class="normal"><a href="#__codelineno-18-5">5</a></span>
+<span class="normal"><a href="#__codelineno-18-6">6</a></span>
+<span class="normal"><a href="#__codelineno-18-7">7</a></span>
+<span class="normal"><a href="#__codelineno-18-8">8</a></span>
+<span class="normal"><a href="#__codelineno-18-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">    </span><span class="nt">&quot;customStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">      </span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">        </span><span class="nt">&quot;failed&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ERROR&quot;</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="nv">XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_FAILED</span><span class="o">=</span><span class="s2">&quot;ERROR&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h5 id="passed"><code>passed</code><a class="headerlink" href="#passed" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>The Xray status of passed steps.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_PASSED</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span> <code class="highlight"><span class="s2">&quot;PASS&quot;</span></code></dd>
+<dd><span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span> <code class="highlight"><span class="s2">&quot;PASSED&quot;</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">QTAF JSON</label><label for="__tabbed_10_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span>
+<span class="normal"><a href="#__codelineno-20-4">4</a></span>
+<span class="normal"><a href="#__codelineno-20-5">5</a></span>
+<span class="normal"><a href="#__codelineno-20-6">6</a></span>
+<span class="normal"><a href="#__codelineno-20-7">7</a></span>
+<span class="normal"><a href="#__codelineno-20-8">8</a></span>
+<span class="normal"><a href="#__codelineno-20-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">    </span><span class="nt">&quot;customStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">      </span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="w">        </span><span class="nt">&quot;passed&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DONE&quot;</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="nv">XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_PASSED</span><span class="o">=</span><span class="s2">&quot;DONE&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h5 id="pending"><code>pending</code><a class="headerlink" href="#pending" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>The Xray status of pending steps.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_PENDING</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="s2">&quot;EXECUTING&quot;</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">QTAF JSON</label><label for="__tabbed_11_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span>
+<span class="normal"><a href="#__codelineno-22-5">5</a></span>
+<span class="normal"><a href="#__codelineno-22-6">6</a></span>
+<span class="normal"><a href="#__codelineno-22-7">7</a></span>
+<span class="normal"><a href="#__codelineno-22-8">8</a></span>
+<span class="normal"><a href="#__codelineno-22-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="w">    </span><span class="nt">&quot;customStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="w">      </span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">        </span><span class="nt">&quot;pending&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXECUTING&quot;</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="nv">XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_PENDING</span><span class="o">=</span><span class="s2">&quot;EXECUTING&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h5 id="skipped"><code>skipped</code><a class="headerlink" href="#skipped" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>The Xray status of skipped steps.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_SKIPPED</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="s2">&quot;TODO&quot;</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">QTAF JSON</label><label for="__tabbed_12_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span>
+<span class="normal"><a href="#__codelineno-24-3">3</a></span>
+<span class="normal"><a href="#__codelineno-24-4">4</a></span>
+<span class="normal"><a href="#__codelineno-24-5">5</a></span>
+<span class="normal"><a href="#__codelineno-24-6">6</a></span>
+<span class="normal"><a href="#__codelineno-24-7">7</a></span>
+<span class="normal"><a href="#__codelineno-24-8">8</a></span>
+<span class="normal"><a href="#__codelineno-24-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="w">    </span><span class="nt">&quot;customStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="w">      </span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="w">        </span><span class="nt">&quot;skipped&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TODO&quot;</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="nv">XRAY_RESULTSUPLOAD_CUSTOMSTATUS_STEP_SKIPPED</span><span class="o">=</span><span class="s2">&quot;TODO&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h4 id="test"><code>test</code><a class="headerlink" href="#test" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>These settings allow mapping QTAF <em>test</em> statuses to Xray statuses, for example when setting the status of a test inside a test test execution issue.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you have custom statuses set up in Xray, you should provide their names here.</p>
+</div>
+<hr/>
+
+<h5 id="failed_1"><code>failed</code><a class="headerlink" href="#failed_1" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>The Xray status of failed tests.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_FAILED</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span> <code class="highlight"><span class="s2">&quot;FAIL&quot;</span></code></dd>
+<dd><span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span> <code class="highlight"><span class="s2">&quot;FAILED&quot;</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">QTAF JSON</label><label for="__tabbed_13_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span>
+<span class="normal"><a href="#__codelineno-26-4">4</a></span>
+<span class="normal"><a href="#__codelineno-26-5">5</a></span>
+<span class="normal"><a href="#__codelineno-26-6">6</a></span>
+<span class="normal"><a href="#__codelineno-26-7">7</a></span>
+<span class="normal"><a href="#__codelineno-26-8">8</a></span>
+<span class="normal"><a href="#__codelineno-26-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="w">    </span><span class="nt">&quot;customStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="w">      </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="w">        </span><span class="nt">&quot;failed&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ERROR&quot;</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="nv">XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_FAILED</span><span class="o">=</span><span class="s2">&quot;ERROR&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h5 id="passed_1"><code>passed</code><a class="headerlink" href="#passed_1" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>The Xray status of passed tests.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_PASSED</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span> <code class="highlight"><span class="s2">&quot;PASS&quot;</span></code></dd>
+<dd><span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span> <code class="highlight"><span class="s2">&quot;PASSED&quot;</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">QTAF JSON</label><label for="__tabbed_14_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span>
+<span class="normal"><a href="#__codelineno-28-3">3</a></span>
+<span class="normal"><a href="#__codelineno-28-4">4</a></span>
+<span class="normal"><a href="#__codelineno-28-5">5</a></span>
+<span class="normal"><a href="#__codelineno-28-6">6</a></span>
+<span class="normal"><a href="#__codelineno-28-7">7</a></span>
+<span class="normal"><a href="#__codelineno-28-8">8</a></span>
+<span class="normal"><a href="#__codelineno-28-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="w">    </span><span class="nt">&quot;customStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="w">      </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="w">        </span><span class="nt">&quot;passed&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DONE&quot;</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="nv">XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_PASSED</span><span class="o">=</span><span class="s2">&quot;DONE&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h5 id="pending_1"><code>pending</code><a class="headerlink" href="#pending_1" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>The Xray status of pending tests.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_PENDING</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="s2">&quot;EXECUTING&quot;</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">QTAF JSON</label><label for="__tabbed_15_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
+<span class="normal"><a href="#__codelineno-30-2">2</a></span>
+<span class="normal"><a href="#__codelineno-30-3">3</a></span>
+<span class="normal"><a href="#__codelineno-30-4">4</a></span>
+<span class="normal"><a href="#__codelineno-30-5">5</a></span>
+<span class="normal"><a href="#__codelineno-30-6">6</a></span>
+<span class="normal"><a href="#__codelineno-30-7">7</a></span>
+<span class="normal"><a href="#__codelineno-30-8">8</a></span>
+<span class="normal"><a href="#__codelineno-30-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="w">    </span><span class="nt">&quot;customStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="w">      </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="w">        </span><span class="nt">&quot;pending&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXECUTING&quot;</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="nv">XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_PENDING</span><span class="o">=</span><span class="s2">&quot;EXECUTING&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h5 id="skipped_1"><code>skipped</code><a class="headerlink" href="#skipped_1" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>The Xray status of skipped tests.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_SKIPPED</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="s2">&quot;TODO&quot;</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">QTAF JSON</label><label for="__tabbed_16_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1">1</a></span>
+<span class="normal"><a href="#__codelineno-32-2">2</a></span>
+<span class="normal"><a href="#__codelineno-32-3">3</a></span>
+<span class="normal"><a href="#__codelineno-32-4">4</a></span>
+<span class="normal"><a href="#__codelineno-32-5">5</a></span>
+<span class="normal"><a href="#__codelineno-32-6">6</a></span>
+<span class="normal"><a href="#__codelineno-32-7">7</a></span>
+<span class="normal"><a href="#__codelineno-32-8">8</a></span>
+<span class="normal"><a href="#__codelineno-32-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="w">    </span><span class="nt">&quot;customStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="w">      </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5"></a><span class="w">        </span><span class="nt">&quot;skipped&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TODO&quot;</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="nv">XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TEST_SKIPPED</span><span class="o">=</span><span class="s2">&quot;TODO&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h4 id="testexecutionissue"><code>testExecutionIssue</code><a class="headerlink" href="#testexecutionissue" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>The Jira status of test execution issues created during upload.</p>
+<hr/>
+
+<h5 id="failed_2"><code>failed</code><a class="headerlink" href="#failed_2" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>The Jira status to transition test execution issues to if tests failed.
+If the status is <code class="highlight"><span class="kc">null</span></code>, the issue will have the default issue status of issues created in the project.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TESTEXECUTIONISSUE_FAILED</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">null</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">QTAF JSON</label><label for="__tabbed_17_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span>
+<span class="normal"><a href="#__codelineno-34-2">2</a></span>
+<span class="normal"><a href="#__codelineno-34-3">3</a></span>
+<span class="normal"><a href="#__codelineno-34-4">4</a></span>
+<span class="normal"><a href="#__codelineno-34-5">5</a></span>
+<span class="normal"><a href="#__codelineno-34-6">6</a></span>
+<span class="normal"><a href="#__codelineno-34-7">7</a></span>
+<span class="normal"><a href="#__codelineno-34-8">8</a></span>
+<span class="normal"><a href="#__codelineno-34-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3"></a><span class="w">    </span><span class="nt">&quot;customStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4"></a><span class="w">      </span><span class="nt">&quot;testExecutionIssue&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5"></a><span class="w">        </span><span class="nt">&quot;failed&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Review&quot;</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-34-7" name="__codelineno-34-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-34-8" name="__codelineno-34-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-34-9" name="__codelineno-34-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="nv">XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TESTEXECUTIONISSUE_FAILED</span><span class="o">=</span><span class="s2">&quot;Review&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h5 id="passed_2"><code>passed</code><a class="headerlink" href="#passed_2" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>The Jira status to transition test execution issues to if all tests passed.
+If the status is <code class="highlight"><span class="kc">null</span></code>, the issue will have the default issue status of issues created in the project.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TESTEXECUTIONISSUE_PASSED</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">null</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">QTAF JSON</label><label for="__tabbed_18_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1">1</a></span>
+<span class="normal"><a href="#__codelineno-36-2">2</a></span>
+<span class="normal"><a href="#__codelineno-36-3">3</a></span>
+<span class="normal"><a href="#__codelineno-36-4">4</a></span>
+<span class="normal"><a href="#__codelineno-36-5">5</a></span>
+<span class="normal"><a href="#__codelineno-36-6">6</a></span>
+<span class="normal"><a href="#__codelineno-36-7">7</a></span>
+<span class="normal"><a href="#__codelineno-36-8">8</a></span>
+<span class="normal"><a href="#__codelineno-36-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3"></a><span class="w">    </span><span class="nt">&quot;customStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4"></a><span class="w">      </span><span class="nt">&quot;testExecutionIssue&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5"></a><span class="w">        </span><span class="nt">&quot;passed&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Done&quot;</span>
+<a id="__codelineno-36-6" name="__codelineno-36-6"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-36-7" name="__codelineno-36-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-36-8" name="__codelineno-36-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-36-9" name="__codelineno-36-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="nv">XRAY_RESULTSUPLOAD_CUSTOMSTATUS_TESTEXECUTIONISSUE_PASSED</span><span class="o">=</span><span class="s2">&quot;Done&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h3 id="environments"><code>environments</code><a class="headerlink" href="#environments" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>QTAF can add test environments to created test execution issues.
+The following settings can be used to control the way QTAF assigns test environments.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For more information about test environments, please see:</p>
+<ul>
+<li><span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span> <a href="https://docs.getxray.app/display/XRAYCLOUD/Working+with+Test+Environments">Xray documentation</a></li>
+<li><span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span> <a href="https://docs.getxray.app/display/XRAY/Working+with+Test+Environments">Xray documentation</a></li>
+</ul>
+</div>
+<hr/>
+
+<h4 id="driver"><code>driver</code><a class="headerlink" href="#driver" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>Toggles whether QTAF should add the name of the Selenium driver used to execute the tests as test environment.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_ENVIRONMENTS_DRIVER</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>boolean</code></dd>
+<dd>
+<p>Accepted strings (case-insensitive):</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s2">&quot;true&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;1&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;y&quot;</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="s2">&quot;false&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;0&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;n&quot;</span></code></p>
+</li>
+</ul>
+</dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">true</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">QTAF JSON</label><label for="__tabbed_19_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1">1</a></span>
+<span class="normal"><a href="#__codelineno-38-2">2</a></span>
+<span class="normal"><a href="#__codelineno-38-3">3</a></span>
+<span class="normal"><a href="#__codelineno-38-4">4</a></span>
+<span class="normal"><a href="#__codelineno-38-5">5</a></span>
+<span class="normal"><a href="#__codelineno-38-6">6</a></span>
+<span class="normal"><a href="#__codelineno-38-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-38-3" name="__codelineno-38-3"></a><span class="w">    </span><span class="nt">&quot;environments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4"></a><span class="w">      </span><span class="nt">&quot;driver&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-38-5" name="__codelineno-38-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-38-6" name="__codelineno-38-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-38-7" name="__codelineno-38-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="nv">XRAY_RESULTSUPLOAD_ENVIRONMENTS_DRIVER</span><span class="o">=</span><span class="s2">&quot;false&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h4 id="enabled_1"><code>enabled</code><a class="headerlink" href="#enabled_1" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>Toggles whether QTAF should include test environments during test execution issue creation.
+Setting this option to <code>false</code> will result in no test environments being added to the test execution issue.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_ENVIRONMENTS_ENABLED</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>boolean</code></dd>
+<dd>
+<p>Accepted strings (case-insensitive):</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s2">&quot;true&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;1&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;y&quot;</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="s2">&quot;false&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;0&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;n&quot;</span></code></p>
+</li>
+</ul>
+</dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">true</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">QTAF JSON</label><label for="__tabbed_20_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1">1</a></span>
+<span class="normal"><a href="#__codelineno-40-2">2</a></span>
+<span class="normal"><a href="#__codelineno-40-3">3</a></span>
+<span class="normal"><a href="#__codelineno-40-4">4</a></span>
+<span class="normal"><a href="#__codelineno-40-5">5</a></span>
+<span class="normal"><a href="#__codelineno-40-6">6</a></span>
+<span class="normal"><a href="#__codelineno-40-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3"></a><span class="w">    </span><span class="nt">&quot;environments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-40-4" name="__codelineno-40-4"></a><span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-40-6" name="__codelineno-40-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-40-7" name="__codelineno-40-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="nv">XRAY_RESULTSUPLOAD_ENVIRONMENTS_ENABLED</span><span class="o">=</span><span class="s2">&quot;n&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h4 id="os"><code>os</code><a class="headerlink" href="#os" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>Toggles whether QTAF should add the name of the operating system the tests were executed on as test environment.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_ENVIRONMENTS_OS</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>boolean</code></dd>
+<dd>
+<p>Accepted strings (case-insensitive):</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s2">&quot;true&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;1&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;y&quot;</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="s2">&quot;false&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;0&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;n&quot;</span></code></p>
+</li>
+</ul>
+</dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">true</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">QTAF JSON</label><label for="__tabbed_21_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1">1</a></span>
+<span class="normal"><a href="#__codelineno-42-2">2</a></span>
+<span class="normal"><a href="#__codelineno-42-3">3</a></span>
+<span class="normal"><a href="#__codelineno-42-4">4</a></span>
+<span class="normal"><a href="#__codelineno-42-5">5</a></span>
+<span class="normal"><a href="#__codelineno-42-6">6</a></span>
+<span class="normal"><a href="#__codelineno-42-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3"></a><span class="w">    </span><span class="nt">&quot;environments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4"></a><span class="w">      </span><span class="nt">&quot;os&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-43-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="nv">XRAY_RESULTSUPLOAD_ENVIRONMENTS_OS</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h3 id="scenarioimageevidence"><code>scenarioImageEvidence</code><a class="headerlink" href="#scenarioimageevidence" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Toggles whether QTAF should attach screenshot evidence to the test execution issue.
+Setting this to <code>true</code> will result in QTAF adding all screenshots it takes during a test to the test case inside the test execution.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For more information about test execution evidence, please see:</p>
+<ul>
+<li><span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span> <a href="https://docs.getxray.app/display/XRAYCLOUD/Execute+Tests#ExecuteTests-Evidence">Xray documentation</a></li>
+<li><span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span> <a href="https://docs.getxray.app/display/XRAY/Execute+Tests#ExecuteTests-Evidence">Xray documentation</a></li>
+</ul>
+</div>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_SCENARIOIMAGEEVIDENCE</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>boolean</code></dd>
+<dd>
+<p>Accepted strings (case-insensitive):</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s2">&quot;true&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;1&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;y&quot;</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="s2">&quot;false&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;0&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;n&quot;</span></code></p>
+</li>
+</ul>
+</dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">false</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="__tabbed_22_1">QTAF JSON</label><label for="__tabbed_22_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-44-1">1</a></span>
+<span class="normal"><a href="#__codelineno-44-2">2</a></span>
+<span class="normal"><a href="#__codelineno-44-3">3</a></span>
+<span class="normal"><a href="#__codelineno-44-4">4</a></span>
+<span class="normal"><a href="#__codelineno-44-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-44-3" name="__codelineno-44-3"></a><span class="w">    </span><span class="nt">&quot;scenarioImageEvidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-44-4" name="__codelineno-44-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-44-5" name="__codelineno-44-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-45-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="nv">XRAY_RESULTSUPLOAD_SCENARIOIMAGEEVIDENCE</span><span class="o">=</span><span class="s2">&quot;y&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h3 id="scenarioreportevidence"><code>scenarioReportEvidence</code><a class="headerlink" href="#scenarioreportevidence" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Toggles whether QTAF should attach the HTML report it generates as evidence to the test execution issue.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For more information about test execution evidence, please see:</p>
+<ul>
+<li><span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span> <a href="https://docs.getxray.app/display/XRAYCLOUD/Execute+Tests#ExecuteTests-Evidence">Xray documentation</a></li>
+<li><span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span> <a href="https://docs.getxray.app/display/XRAY/Execute+Tests#ExecuteTests-Evidence">Xray documentation</a></li>
+</ul>
+</div>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_SCENARIOREPORTEVIDENCE</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>boolean</code></dd>
+<dd>
+<p>Accepted strings (case-insensitive):</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s2">&quot;true&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;1&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;y&quot;</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="s2">&quot;false&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;0&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;n&quot;</span></code></p>
+</li>
+</ul>
+</dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">false</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="23:2"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><input id="__tabbed_23_2" name="__tabbed_23" type="radio" /><div class="tabbed-labels"><label for="__tabbed_23_1">QTAF JSON</label><label for="__tabbed_23_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-46-1">1</a></span>
+<span class="normal"><a href="#__codelineno-46-2">2</a></span>
+<span class="normal"><a href="#__codelineno-46-3">3</a></span>
+<span class="normal"><a href="#__codelineno-46-4">4</a></span>
+<span class="normal"><a href="#__codelineno-46-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-46-3" name="__codelineno-46-3"></a><span class="w">    </span><span class="nt">&quot;scenarioReportEvidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-46-4" name="__codelineno-46-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-46-5" name="__codelineno-46-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-47-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1"></a><span class="nv">XRAY_RESULTSUPLOAD_SCENARIOREPORTEVIDENCE</span><span class="o">=</span><span class="s2">&quot;1&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h3 id="testplankey"><code>testPlanKey</code><a class="headerlink" href="#testplankey" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Test executions can automatically be assigned to an existing test plan.
+QTAF uses this setting to retrieve such configured test plans.
+When set to <code class="highlight"><span class="kc">null</span></code>, QTAF will not add created test execution issues to any test plan.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_TESTPLANKEY</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">null</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="__tabbed_24_1">QTAF JSON</label><label for="__tabbed_24_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-48-1">1</a></span>
+<span class="normal"><a href="#__codelineno-48-2">2</a></span>
+<span class="normal"><a href="#__codelineno-48-3">3</a></span>
+<span class="normal"><a href="#__codelineno-48-4">4</a></span>
+<span class="normal"><a href="#__codelineno-48-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-48-2" name="__codelineno-48-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-48-3" name="__codelineno-48-3"></a><span class="w">    </span><span class="nt">&quot;testPlanKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PRJ-123&quot;</span>
+<a id="__codelineno-48-4" name="__codelineno-48-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-48-5" name="__codelineno-48-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-49-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1"></a><span class="nv">XRAY_RESULTSUPLOAD_TESTPLANKEY</span><span class="o">=</span><span class="s2">&quot;PRJ-123&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h3 id="tests"><code>tests</code><a class="headerlink" href="#tests" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>The settings below allow configuring the way test cases themselves are updated during test results upload.</p>
+<h4 id="iterations"><code>iterations</code><a class="headerlink" href="#iterations" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>When uploading data-driven test results, QTAF will automatically use Xray's iterations in test executions.
+Settings related to these iterations are listed here.</p>
+<h5 id="parameters"><code>parameters</code><a class="headerlink" href="#parameters" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>Xray can add parameters to data-driven test iteration results, which provide information about the names and values of the concrete test case parameters.
+Parameter settings are listed here.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For more information about iteration parameters, please see:</p>
+<ul>
+<li><span class="twemoji xray-icon" title="Xray cloud"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336z"/></svg></span> <a href="https://docs.getxray.app/display/XRAYCLOUD/Execute+Tests#ExecuteTests-Iterations">Xray documentation</a></li>
+<li><span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span> <a href="https://docs.getxray.app/display/XRAY/Execute+Tests#ExecuteTests-Iterations">Xray documentation</a></li>
+</ul>
+</div>
+<h6 id="maxlength"><code>maxLength</code><a class="headerlink" href="#maxlength" title="Anchor link to this section for reference">⚓︎</a></h6>
+<p>Xray enforces a hard limit on the length of both parameter names and values, which is different for Xray cloud and Xray server and from version to version.
+It is recommended to provide reasonable values like <code class="highlight"><span class="mi">30</span></code> here for both <code class="highlight"><span class="kc">na</span><span class="err">me</span></code> and <code class="highlight"><span class="err">value</span></code> to keep things readable and to prevent Xray from rejecting test result uploads altogether.
+QTAF will automatically truncate parameter names and values of the iterations to the numbers provided here.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If set to <code class="highlight"><span class="kc">null</span></code>, QTAF will not truncate parameter names or values whatsoever, possibly resulting in failed result uploads.
+Make sure to manually identify the limit your Xray instance is enforcing through the UI!</p>
+</div>
+<dl>
+<dt><strong><em>Environment variables</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAXLENGTH_NAME</code></dd>
+<dd><code>XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAXLENGTH_VALUE</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>number</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">null</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="25:2"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><input id="__tabbed_25_2" name="__tabbed_25" type="radio" /><div class="tabbed-labels"><label for="__tabbed_25_1">QTAF JSON</label><label for="__tabbed_25_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-50-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-50-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-50-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-50-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-50-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-50-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-50-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-50-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-50-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-50-10">10</a></span>
+<span class="normal"><a href="#__codelineno-50-11">11</a></span>
+<span class="normal"><a href="#__codelineno-50-12">12</a></span>
+<span class="normal"><a href="#__codelineno-50-13">13</a></span>
+<span class="normal"><a href="#__codelineno-50-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-50-2" name="__codelineno-50-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-50-3" name="__codelineno-50-3"></a><span class="w">    </span><span class="nt">&quot;tests&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-50-4" name="__codelineno-50-4"></a><span class="w">      </span><span class="nt">&quot;iterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-50-5" name="__codelineno-50-5"></a><span class="w">        </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-50-6" name="__codelineno-50-6"></a><span class="w">          </span><span class="nt">&quot;maxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-50-7" name="__codelineno-50-7"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
+<a id="__codelineno-50-8" name="__codelineno-50-8"></a><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span>
+<a id="__codelineno-50-9" name="__codelineno-50-9"></a><span class="w">          </span><span class="p">}</span>
+<a id="__codelineno-50-10" name="__codelineno-50-10"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-50-11" name="__codelineno-50-11"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-50-12" name="__codelineno-50-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-50-13" name="__codelineno-50-13"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-50-14" name="__codelineno-50-14"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-51-1">1</a></span>
+<span class="normal"><a href="#__codelineno-51-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a><span class="nv">XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAXLENGTH_NAME</span><span class="o">=</span><span class="m">42</span>
+<a id="__codelineno-51-2" name="__codelineno-51-2"></a><span class="nv">XRAY_RESULTSUPLOAD_TESTS_ITERATIONS_PARAMETERS_MAXLENGTH_VALUE</span><span class="o">=</span><span class="m">50</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h4 id="info"><code>info</code><a class="headerlink" href="#info" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>Settings regarding general test case information.</p>
+<h5 id="keepjirasummary"><code>keepJiraSummary</code><a class="headerlink" href="#keepjirasummary" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>When uploading test results, QTAF can automatically rename existing test issues to the test case's name defined within QTAF.
+This setting toggles whether this is allowed to happen or whether the test case's existing summaries should be kept.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_TESTS_INFO_KEEPJIRASUMMARY</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>boolean</code></dd>
+<dd>
+<p>Accepted strings (case-insensitive):</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s2">&quot;true&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;1&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;y&quot;</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="s2">&quot;false&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;0&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;n&quot;</span></code></p>
+</li>
+</ul>
+</dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">false</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="26:2"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><input id="__tabbed_26_2" name="__tabbed_26" type="radio" /><div class="tabbed-labels"><label for="__tabbed_26_1">QTAF JSON</label><label for="__tabbed_26_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-52-1">1</a></span>
+<span class="normal"><a href="#__codelineno-52-2">2</a></span>
+<span class="normal"><a href="#__codelineno-52-3">3</a></span>
+<span class="normal"><a href="#__codelineno-52-4">4</a></span>
+<span class="normal"><a href="#__codelineno-52-5">5</a></span>
+<span class="normal"><a href="#__codelineno-52-6">6</a></span>
+<span class="normal"><a href="#__codelineno-52-7">7</a></span>
+<span class="normal"><a href="#__codelineno-52-8">8</a></span>
+<span class="normal"><a href="#__codelineno-52-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-52-2" name="__codelineno-52-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-52-3" name="__codelineno-52-3"></a><span class="w">    </span><span class="nt">&quot;tests&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-52-4" name="__codelineno-52-4"></a><span class="w">      </span><span class="nt">&quot;info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-52-5" name="__codelineno-52-5"></a><span class="w">        </span><span class="nt">&quot;keepJiraSummary&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-52-6" name="__codelineno-52-6"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-52-7" name="__codelineno-52-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-52-8" name="__codelineno-52-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-52-9" name="__codelineno-52-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-53-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1"></a><span class="nv">XRAY_RESULTSUPLOAD_TESTS_INFO_KEEPJIRASUMMARY</span><span class="o">=</span><span class="s2">&quot;y&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h5 id="steps"><code>steps</code><a class="headerlink" href="#steps" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>When uploading test results, QTAF can automatically update or change the steps defined within existing test issues with the steps it executed itself.
+These settings control how and whether this is allowed to happen.</p>
+<h6 id="update"><code>update</code><a class="headerlink" href="#update" title="Anchor link to this section for reference">⚓︎</a></h6>
+<p>Toggles whether QTAF is allowed to update existing test issue steps in Xray.
+Setting this to <code class="highlight"><span class="kc">true</span></code> will result in QTAF replacing <em>all</em> existing steps with the ones it executed itself.
+To not modify any existing steps, set this to <code class="highlight"><span class="kc">false</span></code>.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_TESTS_INFO_STEPS_UPDATE</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>boolean</code></dd>
+<dd>
+<p>Accepted strings (case-insensitive):</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s2">&quot;true&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;1&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;y&quot;</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="s2">&quot;false&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;0&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;n&quot;</span></code></p>
+</li>
+</ul>
+</dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">false</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="27:2"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><input id="__tabbed_27_2" name="__tabbed_27" type="radio" /><div class="tabbed-labels"><label for="__tabbed_27_1">QTAF JSON</label><label for="__tabbed_27_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-54-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-54-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-54-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-54-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-54-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-54-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-54-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-54-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-54-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-54-10">10</a></span>
+<span class="normal"><a href="#__codelineno-54-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-54-2" name="__codelineno-54-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-54-3" name="__codelineno-54-3"></a><span class="w">    </span><span class="nt">&quot;tests&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-54-4" name="__codelineno-54-4"></a><span class="w">      </span><span class="nt">&quot;info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-54-5" name="__codelineno-54-5"></a><span class="w">        </span><span class="nt">&quot;steps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-54-6" name="__codelineno-54-6"></a><span class="w">          </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-54-7" name="__codelineno-54-7"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-54-8" name="__codelineno-54-8"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-54-9" name="__codelineno-54-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-54-10" name="__codelineno-54-10"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-54-11" name="__codelineno-54-11"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-55-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1"></a><span class="nv">XRAY_RESULTSUPLOAD_TESTS_INFO_STEPS_UPDATE</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h6 id="merge"><code>merge</code><a class="headerlink" href="#merge" title="Anchor link to this section for reference">⚓︎</a></h6>
+<p>Toggles whether QTAF should merge all steps it executed into a single step before updating test case steps in Xray.
+The merged step will then contain <em>a list of steps</em>, possibly for all test case iterations if a test was executed more than once:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-56-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-56-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-56-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-56-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-56-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-56-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-56-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-56-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-56-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-56-10">10</a></span>
+<span class="normal"><a href="#__codelineno-56-11">11</a></span>
+<span class="normal"><a href="#__codelineno-56-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1"></a><span class="gh"># Step 1 (the only remaining step)</span>
+<a id="__codelineno-56-2" name="__codelineno-56-2"></a>  == ITERATION 1 username=&quot;denise&quot; password=&quot;xyz12&quot; address=&quot;main avenue&quot;
+<a id="__codelineno-56-3" name="__codelineno-56-3"></a><span class="w">    </span><span class="k">1.</span> Click register
+<a id="__codelineno-56-4" name="__codelineno-56-4"></a><span class="w">    </span><span class="k">2.</span> Enter username
+<a id="__codelineno-56-5" name="__codelineno-56-5"></a><span class="w">    </span><span class="k">3.</span> Enter password
+<a id="__codelineno-56-6" name="__codelineno-56-6"></a><span class="w">    </span><span class="k">4.</span> Enter address
+<a id="__codelineno-56-7" name="__codelineno-56-7"></a><span class="w">    </span><span class="k">5.</span> Click submit
+<a id="__codelineno-56-8" name="__codelineno-56-8"></a>  == ITERATION 2 username=&quot;george&quot; password=&quot;12345&quot; address=&quot;&quot;
+<a id="__codelineno-56-9" name="__codelineno-56-9"></a><span class="w">    </span><span class="k">1.</span> Click register
+<a id="__codelineno-56-10" name="__codelineno-56-10"></a><span class="w">    </span><span class="k">2.</span> Enter username
+<a id="__codelineno-56-11" name="__codelineno-56-11"></a><span class="w">    </span><span class="k">3.</span> Enter password
+<a id="__codelineno-56-12" name="__codelineno-56-12"></a><span class="w">    </span><span class="k">4.</span> Click submit
+</code></pre></div></td></tr></table></div>
+In situations like above where individual test runs might not <em>always</em> consist of exactly the same steps (for example when skipping empty form fields), Xray would not be able to properly display the test results inside the test execution issue without the merged steps:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Steps defined in test case issue</th>
+      <th>Steps reported in test execution (iteration 1)</th>
+      <th>Steps reported in test execution (iteration 2)</th>
+      <th>Problem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <ol>
+          <li>Click register</li>
+          <li>Enter username</li>
+          <li>Enter password</li>
+          <li>Click submit</li>
+        </ol>
+      </td>
+      <td>
+        <ol>
+          <li style="color:green">Click register</li>
+          <li style="color:green">Enter username</li>
+          <li style="color:green">Enter password</li>
+          <li style="color:green">Enter address</li>
+        </ol>
+      </td>
+      <td>
+        <ol>
+          <li style="color:green">Click register</li>
+          <li style="color:green">Enter username</li>
+          <li style="color:green">Enter password</li>
+          <li style="color:green">Click submit</li>
+        </ol>
+      </td>
+      <td>Fifth step truncated in iteration 1 by Xray.</td>
+    </tr>
+    <tr>
+      <td>
+        <ol>
+          <li>Click register</li>
+          <li>Enter username</li>
+          <li>Enter password</li>
+          <li>Enter address</li>
+          <li>Click submit</li>
+        </ol>
+      </td>
+      <td>
+        <ol>
+          <li style="color:green">Click register</li>
+          <li style="color:green">Enter username</li>
+          <li style="color:green">Enter password</li>
+          <li style="color:green">Enter address</li>
+          <li style="color:green">Click submit</li>
+        </ol>
+      </td>
+      <td>
+        <ol>
+          <li style="color:green">Click register</li>
+          <li style="color:green">Enter username</li>
+          <li style="color:green">Enter password</li>
+          <li style="color:green">Enter address</li>
+          <li style="color:gray">Click submit</li>
+        </ol>
+      </td>
+      <td>Mismatched steps in interation 2: the address was never actually entered and Xray marked the fifth step as TODO because only four steps were actually executed in iteration 2.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Merging the iterations' steps can therefore help for data-driven testing.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_RESULTSUPLOAD_TESTS_INFO_STEPS_MERGE</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>boolean</code></dd>
+<dd>
+<p>Accepted strings (case-insensitive):</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s2">&quot;true&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;1&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;y&quot;</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="s2">&quot;false&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;0&quot;</span></code>
+  <code class="highlight"><span class="s2">&quot;n&quot;</span></code></p>
+</li>
+</ul>
+</dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">false</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="28:2"><input checked="checked" id="__tabbed_28_1" name="__tabbed_28" type="radio" /><input id="__tabbed_28_2" name="__tabbed_28" type="radio" /><div class="tabbed-labels"><label for="__tabbed_28_1">QTAF JSON</label><label for="__tabbed_28_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-57-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-57-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-57-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-57-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-57-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-57-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-57-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-57-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-57-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-57-10">10</a></span>
+<span class="normal"><a href="#__codelineno-57-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-57-2" name="__codelineno-57-2"></a><span class="w">  </span><span class="nt">&quot;resultsUpload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-57-3" name="__codelineno-57-3"></a><span class="w">    </span><span class="nt">&quot;tests&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-57-4" name="__codelineno-57-4"></a><span class="w">      </span><span class="nt">&quot;info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-57-5" name="__codelineno-57-5"></a><span class="w">        </span><span class="nt">&quot;steps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-57-6" name="__codelineno-57-6"></a><span class="w">          </span><span class="nt">&quot;merge&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-57-7" name="__codelineno-57-7"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-57-8" name="__codelineno-57-8"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-57-9" name="__codelineno-57-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-57-10" name="__codelineno-57-10"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-57-11" name="__codelineno-57-11"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-58-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1"></a><span class="nv">XRAY_RESULTSUPLOAD_TESTS_INFO_STEPS_MERGE</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h2 id="service"><code>service</code><a class="headerlink" href="#service" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>Defines whether the targeted Xray instance is an Xray cloud or Xray server instance.
+QTAF requires this setting because Xray's APIs need to be addressed slightly differently.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_SERVICE</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code class="highlight"><span class="s2">&quot;cloud&quot;</span></code> or <code class="highlight"><span class="s2">&quot;server&quot;</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="29:2"><input checked="checked" id="__tabbed_29_1" name="__tabbed_29" type="radio" /><input id="__tabbed_29_2" name="__tabbed_29" type="radio" /><div class="tabbed-labels"><label for="__tabbed_29_1">QTAF JSON</label><label for="__tabbed_29_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-59-1">1</a></span>
+<span class="normal"><a href="#__codelineno-59-2">2</a></span>
+<span class="normal"><a href="#__codelineno-59-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-59-2" name="__codelineno-59-2"></a><span class="w">  </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;server&quot;</span>
+<a id="__codelineno-59-3" name="__codelineno-59-3"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-60-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1"></a><span class="nv">XRAY_SERVICE</span><span class="o">=</span><span class="s2">&quot;server&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h2 id="url"><code>url</code><a class="headerlink" href="#url" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>To properly connect to Xray, QTAF needs to know where the Xray and Jira instances can be found.</p>
+<hr/>
+
+<h3 id="jira_1"><code>jira</code><a class="headerlink" href="#jira_1" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Defines the base URL of the Jira instance.
+For Jira cloud, it is usually of the form <code>https://your-domain.atlassian.net</code> (without the <code>/jira</code> part, see <a href="https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#ad-hoc-api-calls/">here</a>).
+For Jira server, you can have a look <a href="https://confluence.atlassian.com/adminjiraserver/configuring-the-base-url-938847830.html">here</a> to determine your base URL.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_URL_JIRA</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="30:2"><input checked="checked" id="__tabbed_30_1" name="__tabbed_30" type="radio" /><input id="__tabbed_30_2" name="__tabbed_30" type="radio" /><div class="tabbed-labels"><label for="__tabbed_30_1">QTAF JSON</label><label for="__tabbed_30_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-61-1">1</a></span>
+<span class="normal"><a href="#__codelineno-61-2">2</a></span>
+<span class="normal"><a href="#__codelineno-61-3">3</a></span>
+<span class="normal"><a href="#__codelineno-61-4">4</a></span>
+<span class="normal"><a href="#__codelineno-61-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-61-2" name="__codelineno-61-2"></a><span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-61-3" name="__codelineno-61-3"></a><span class="w">    </span><span class="nt">&quot;jira&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.org/development/jira&quot;</span>
+<a id="__codelineno-61-4" name="__codelineno-61-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-61-5" name="__codelineno-61-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-62-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1"></a><span class="nv">XRAY_URL_JIRA</span><span class="o">=</span><span class="s2">&quot;https://example.org/development/jira&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h3 id="xray_1"><code>xray</code> <span class="twemoji xray-icon" title="Xray server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-64c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"/></svg></span><a class="headerlink" href="#xray_1" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Defines the base URL of the Xray instance.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_URL_XRAY</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="31:2"><input checked="checked" id="__tabbed_31_1" name="__tabbed_31" type="radio" /><input id="__tabbed_31_2" name="__tabbed_31" type="radio" /><div class="tabbed-labels"><label for="__tabbed_31_1">QTAF JSON</label><label for="__tabbed_31_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-63-1">1</a></span>
+<span class="normal"><a href="#__codelineno-63-2">2</a></span>
+<span class="normal"><a href="#__codelineno-63-3">3</a></span>
+<span class="normal"><a href="#__codelineno-63-4">4</a></span>
+<span class="normal"><a href="#__codelineno-63-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1"></a><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-63-2" name="__codelineno-63-2"></a><span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-63-3" name="__codelineno-63-3"></a><span class="w">    </span><span class="nt">&quot;xray&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://xray.jira.company.com&quot;</span>
+<a id="__codelineno-63-4" name="__codelineno-63-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-63-5" name="__codelineno-63-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-64-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1"></a><span class="nv">XRAY_URL_XRAY</span><span class="o">=</span><span class="s2">&quot;https://xray.jira.company.com&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<div style="display: flex; flex-direction: row; justify-content: space-between">
+  <a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>
+  <span>|</span>
+  <a href="https://www.qytera.de/testautomatisierung-workshop" target="_blank">Support & Service</a>
+  <span>|</span>
+  <a href="https://github.com/Qytera-Gmbh/QTAF" target="_blank">QTAF Repository</a>
+  <span>|</span>
+  <a href="https://www.qytera.de/kontakt" target="_blank">Contact</a><br>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../XRAY_Plugin/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../cucumber/New_Cucumber_Project/" class="md-footer__link md-footer__link--next" aria-label="Next: Create new Cucumber Project">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Create new Cucumber Project
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - 2024 Qytera Software Testing Solutions GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://de.linkedin.com/company/qytera" target="_blank" rel="noopener" title="Qytera Software Testing Solutions GmbH on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/Qytera-Gmbh" target="_blank" rel="noopener" title="Qytera Software Testing Solutions GmbH on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.footer", "navigation.instant", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+    
+  </body>
+</html>
