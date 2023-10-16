@@ -587,7 +587,14 @@
       
         <li class="md-nav__item">
   <a href="#boolean" class="md-nav__link">
-    Boolean
+    boolean
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    string[]
   </a>
   
 </li>
@@ -762,7 +769,14 @@
       
         <li class="md-nav__item">
   <a href="#boolean" class="md-nav__link">
-    Boolean
+    boolean
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    string[]
   </a>
   
 </li>
@@ -787,7 +801,7 @@
 
 <h1 id="option-types">Option types<a class="headerlink" href="#option-types" title="Anchor link to this section for reference">⚓︎</a></h1>
 <p>Below you will find accepted values of custom option types you can use when providing values to options through environment variables.</p>
-<h2 id="boolean">Boolean<a class="headerlink" href="#boolean" title="Anchor link to this section for reference">⚓︎</a></h2>
+<h2 id="boolean"><code>boolean</code><a class="headerlink" href="#boolean" title="Anchor link to this section for reference">⚓︎</a></h2>
 <dl>
 <dt><strong><em>Accepted values</em></strong></dt>
 <dd>
@@ -812,6 +826,26 @@
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_UPLOAD_RESULTS</span><span class="o">=</span>yes
+</code></pre></div></td></tr></table></div>
+</div>
+<h2 id="string"><code>string[]</code><a class="headerlink" href="#string" title="Anchor link to this section for reference">⚓︎</a></h2>
+<dl>
+<dt><strong><em>Accepted values</em></strong></dt>
+<dd>A JSON parseable list of strings.</dd>
+</dl>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Parsing is done by Cypress, so it's difficult to actually describe <a href="https://github.com/cypress-io/cypress/blob/fd2a27d62077f138b9bb8df5716e72b9f52be431/packages/server/lib/util/args.js">the parsing rules</a> it applies.
+The most important rules seem to be:</p>
+<ul>
+<li>add quotes if your string contains whitespace</li>
+<li>add quotes if your string contains a comma</li>
+<li>no whitespace outside quotes</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_TEST_ENVIRONMENTS</span><span class="o">=[</span>DEV,<span class="s2">&quot;Cool Test Environment&quot;</span>,2.3<span class="o">]</span>
 </code></pre></div></td></tr></table></div>
 </div>
 
