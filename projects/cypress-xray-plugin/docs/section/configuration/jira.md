@@ -102,13 +102,13 @@ By default, the plugin accesses field information using the fields' names (ignor
 - Your Jira language setting is a language other than English
 
     !!! example
-        When the plugin tries to access the summary of some issues, it will look for a field with name `Summary` by default.
-        However, if Jira is set to French for example, it will return a field called `Résumé` instead.
+        When the plugin tries to access the summary of some issues, it will look for a field with name `summary` by default.
+        However, if Jira is set to French for example, it will return a field called `résumé` instead.
 
         In these situations, the plugin will display an error message containing the fields it received and their IDs. The ID of field `Résumé` could then be copied to the [`summary` option](#summary), fixing the error in future uploads:
 
         ```hl_lines="5"
-        Failed to fetch Jira field ID for field with name: Summary
+        Failed to fetch Jira field ID for field with name: summary
         Make sure the field actually exists and that your Jira language settings did not modify the field's name
 
         Available fields:
@@ -121,13 +121,13 @@ By default, the plugin accesses field information using the fields' names (ignor
 
     !!! example
         Jira does not prohibit configuring multiple fields with the same name.
-        There might be multiple fields called `Summary` for example, the default Jira one and another one for descriptions of defects reported by customers.
+        There might be multiple fields called `summary` for example, the default Jira one and another one for descriptions of defects reported by customers.
 
         In these situations, the plugin will display an error message containing the duplicates it detected and their properties, including the field IDs.
         The ID of Jira's summary field could then again be copied to the [`summary` option](#summary), fixing the error in future uploads:
 
         ```hl_lines="5"
-        Failed to fetch Jira field ID for field with name: Summary
+        Failed to fetch Jira field ID for field with name: summary
         There are multiple fields with this name
 
         Duplicates:
@@ -142,7 +142,7 @@ By default, the plugin accesses field information using the fields' names (ignor
 <hr/>
 
 #### `description`
-The `Description` field ID of Jira issues.
+The description field ID of Jira issues.
 
 ***Environment variable***
 : `JIRA_FIELDS_DESCRIPTION`
@@ -151,7 +151,7 @@ The `Description` field ID of Jira issues.
 : `string`
 
 ***Default***
-: `#!js undefined`
+: `#!js "description"`
 
 ??? example
     === "Cypress configuration"
@@ -159,20 +159,20 @@ The `Description` field ID of Jira issues.
         await configureXrayPlugin(config, {
             jira: {
                 fields: {
-                    description: "description"
+                    description: "Beschreibung" // German
                 }
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env JIRA_FIELDS_DESCRIPTION=description
+        npx cypress run --env JIRA_FIELDS_DESCRIPTION=Beschreibung
         ```
 
 <hr/>
 
 #### `labels`
-The `Labels` field ID of Jira issues.
+The labels field ID of Jira issues.
 
 ***Environment variable***
 : `JIRA_FIELDS_LABELS`
@@ -181,7 +181,7 @@ The `Labels` field ID of Jira issues.
 : `string`
 
 ***Default***
-: `#!js undefined`
+: `#!js "labels"`
 
 ??? example
     === "Cypress configuration"
@@ -189,20 +189,20 @@ The `Labels` field ID of Jira issues.
         await configureXrayPlugin(config, {
             jira: {
                 fields: {
-                    labels: "labels"
+                    labels: "Stichworte" // German
                 }
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env JIRA_FIELDS_LABELS=labels
+        npx cypress run --env JIRA_FIELDS_LABELS=Stichworte
         ```
 
 <hr/>
 
 #### `summary`
-The `Summary` field ID of Jira issues.
+The summary field ID of Jira issues.
 
 ***Environment variable***
 : `JIRA_FIELDS_SUMMARY`
@@ -211,7 +211,7 @@ The `Summary` field ID of Jira issues.
 : `string`
 
 ***Default***
-: `#!js undefined`
+: `#!js "summary"`
 
 ??? example
     === "Cypress configuration"
@@ -219,20 +219,54 @@ The `Summary` field ID of Jira issues.
         await configureXrayPlugin(config, {
             jira: {
                 fields: {
-                    summary: "summary"
+                    summary: "Beschreibung" // German
                 }
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env JIRA_FIELDS_SUMMARY=summary
+        npx cypress run --env JIRA_FIELDS_SUMMARY=Beschreibung
+        ```
+
+<hr/>
+
+#### `testEnvironments`
+The Xray test environments field ID (i.e. the test environments associated with test execution issues).
+
+!!! note
+    This option is required for server instances only.
+    Xray cloud provides ways to retrieve test environment field information independently of Jira.
+
+***Environment variable***
+: `JIRA_FIELDS_TEST_ENVIRONMENTS`
+
+***Type***
+: `string`
+
+***Default***
+: `#!js "test environments"`
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(config, {
+            jira: {
+                fields: {
+                    testEnvironments: "customfield_12345"
+                }
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env JIRA_FIELDS_TEST_ENVIRONMENTS=customfield_12345
         ```
 
 <hr/>
 
 #### `testPlan`
-The `Test Plan` field ID of Xray test (execution) issues.
+The test plan field ID of Xray test (execution) issues.
 
 !!! note
     This option is necessary for server instances only.
@@ -245,7 +279,7 @@ The `Test Plan` field ID of Xray test (execution) issues.
 : `string`
 
 ***Default***
-: `#!js undefined`
+: `#!js "test plan"`
 
 ??? example
     === "Cypress configuration"
@@ -266,7 +300,7 @@ The `Test Plan` field ID of Xray test (execution) issues.
 <hr/>
 
 #### `testType`
-The `Test Type` field ID of Xray test issues.
+The test type field ID of Xray test issues.
 
 !!! note
     This option is necessary for server instances only.
@@ -279,7 +313,7 @@ The `Test Type` field ID of Xray test issues.
 : `string`
 
 ***Default***
-: `#!js undefined`
+: `#!js "test type"`
 
 ??? example
     === "Cypress configuration"

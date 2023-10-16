@@ -140,6 +140,49 @@ The Xray status name of a test marked as skipped by Cypress.
 
 <hr/>
 
+### `testEnvironments`
+
+The test environments for test execution issues. These will be used as follows:
+
+- if the plugin creates new test execution issues, they will be associated with the issue
+- if the plugin reuses existing test execution issues, they will either:
+    - replace existing test environments
+    - be added if the issue does not yet have any test environments associated
+
+!!! note
+    Xray's API only allows _replacing_ test environments in the plugin's scope.
+    It is not possible to completely _remove_ all existing test environments during result upload.
+    Completely removing all existing environments needs to be done manually.
+
+    This means that you will always need to specify one or more test environments to replace all existing ones, or leave them as is by omitting the option entirely.
+
+For more information about working with test environments, make sure to check out the documentation for [Xray server](https://docs.getxray.app/display/XRAY/Working+with+Test+Environments) or [Xray cloud](https://docs.getxray.app/display/XRAYCLOUD/Working+with+Test+Environments).
+
+***Environment variable***
+: `XRAY_TEST_ENVIRONMENTS`
+
+***Type***
+: [`string[]`](types.md#string[])
+
+***Default***
+: `#!js undefined`
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(config, {
+            xray: {
+                testEnvironments: ["DEV", "v3.1"]
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_TEST_ENVIRONMENTS=[DEV,v3.1]
+        ```
+
+<hr/>
+
 ### `uploadResults`
 
 Turns execution results upload on or off.
