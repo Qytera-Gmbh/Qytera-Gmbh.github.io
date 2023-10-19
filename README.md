@@ -21,7 +21,8 @@ To activate the virtual environment, run the following commands:
 - Bash:
 
 ```sh
-source venv/bin/activate
+source venv/Scripts/activate # when on a Windows machine
+source venv/bin/activate     # when on a Unix machine
 ```
 
 From then on, every python package will be installed into the `venv` directory without modifying your global python configuration.
