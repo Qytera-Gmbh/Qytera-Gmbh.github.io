@@ -12,13 +12,13 @@ python -m venv venv
 
 To activate the virtual environment, run the following commands:
 
-- Windows:
+- CMD, PowerShell:
 
 ```sh
 .\venv\Scripts\activate
 ```
 
-- Unix:
+- Bash:
 
 ```sh
 source venv/bin/activate
