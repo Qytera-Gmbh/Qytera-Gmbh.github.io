@@ -1,14 +1,43 @@
 # QTAF Annotations
 
-In this article we show you which annotations QTAF provides.
+This article shows which annotations QTAF provides. Furthermore all annotation privided by TestNG are supported.
 
-## Test cases
+---
 
+## QTAF Annotations
+
+QTAF makes it possible to quickly and easily name or describe 
+test cases and more directly in the code by using the annotations provided.
+This information allows for more detailed log files and reports.
+In addition, some QTAF plug-ins also offer further annotations.
+
+## General
+
+### @Step
+
+The annotation `@Step` is used for methods that represent a test step.
+
+This annotation has the following attributes :
+
+* `name`: Name of the step
+
+* `description` : Description of the step
+
+These attributes are used when generating log files and reports.
 
 ### @TestFeature
 
-The annotation `@TestFeature` is used to annotate classes that contain test cases. `@TestFeature` expects the attributes `name` and `description`. This annotation is used to describe the test cases defined in the class.
+The annotation `@TestFeature` is used to annotate classes that contain test cases.
 
+This annotation expects the following attributes:
+
+* `name`: Name of the test feature
+
+* `description`: Desctiption of the test feature
+
+These attributes are used when generating log files and reports. 
+
+The following annotation can be used to describe a test feature and associated test cases in a class:
 ```java
 import de.qytera.qtaf.core.config.annotations.TestFeature;
 import org.testng.annotations.Test;
@@ -25,16 +54,42 @@ public class TestFeatureOne extends TestContext {
     }
 }
 ```
+For a description of the `@Test` annotation, see also the section [TestNG Annotations](#testng-annotations).
 
-### @Test
+## Plug-ins
+QTAF can be extended with plug-ins. Some of these plug-ins offer annotation. 
+More detailed information on the corresponding plug-ins can be found in their documentation.
 
-The annotation `@Test` comes from the TestNG framework and can be used as usual to annotate methods that contain test cases. Several test cases can be defined in a class. The test cases that are defined within a class should have a similar context, otherwise the test cases should be divided among several classes.
+### @TestRail
+The annotaion `@TestRail` can be used to describe a TestRail test case.
 
-## Page Objects
+This annotation has the following the attributes:
 
-### @Step
+* `caseId`: ID of the test case
 
-The annotation `@Step` comes from the QTAF framework and is used for methods that represent a test step. This annotation has the attributes `name` and `description`, with which the test step can be given a name and a description. These attributes are used when generating log files and reports.
+* `runId`: ID of a test run. (Like a test plan ID)
+
+These attributes are used when generating log files and reports.
+
+### @XrayTest
+The annotation `@XrayTest` can be used to configure documentation fo test results in Xray.
+
+This annotation has the following the attributes:
+
+* `key`: Internal Xray test ID that can be used for uploading test execution results.
+
+* `scenarioReport`: Indicates whether an HTML report should be added as evidence to this test. (default is false)
+
+* `screenshots` : Indicates whether screenshots should be added as evidence to this test. (default is false)
+
+These attributes are used when generating log files and reports.
+
+---
+
+## TestNG Annotations
+All annotations provided by TestNG are supported by QTAF. 
+This includes `@Test`, `@Parameters`, `@BeforSuite` etc. A complete list of TestNG 
+annotations can be found in the official [TestNG documentation](https://testng.org/doc/documentation-main.html).
 
 
 <hr>
