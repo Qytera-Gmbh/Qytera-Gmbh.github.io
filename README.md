@@ -22,6 +22,7 @@ To activate the virtual environment, run the following commands:
 
 ```sh
 source venv/Scripts/activate # when on a Windows machine
+# or
 source venv/bin/activate     # when on a Unix machine
 ```
 
