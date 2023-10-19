@@ -1,6 +1,7 @@
 # QTAF Annotations
 
-This article shows which annotations QTAF provides. Furthermore all annotation privided by TestNG are supported.
+This article shows which annotations QTAF provides. 
+Furthermore, all annotations provided by TestNG are supported.
 
 ---
 
@@ -33,7 +34,7 @@ This annotation expects the following attributes:
 
 * `name`: Name of the test feature
 
-* `description`: Desctiption of the test feature
+* `description`: Description  of the test feature
 
 These attributes are used when generating log files and reports. 
 
@@ -61,7 +62,7 @@ QTAF can be extended with plug-ins. Some of these plug-ins offer annotation.
 More detailed information on the corresponding plug-ins can be found in their documentation.
 
 ### @TestRail
-The annotaion `@TestRail` can be used to describe a TestRail test case.
+The annotation `@TestRail` can be used to describe a TestRail test case.
 
 This annotation has the following the attributes:
 
@@ -72,7 +73,7 @@ This annotation has the following the attributes:
 These attributes are used when generating log files and reports.
 
 ### @XrayTest
-The annotation `@XrayTest` can be used to configure documentation fo test results in Xray.
+The annotation `@XrayTest` can be used to configure documentation to test results in Xray.
 
 This annotation has the following the attributes:
 
