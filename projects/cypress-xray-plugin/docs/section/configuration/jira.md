@@ -112,7 +112,7 @@ By default, the plugin accesses field information using the fields' names (ignor
         Make sure the field actually exists and that your Jira language settings did not modify the field's name
 
         Available fields:
-          name: Résumé, id: summary
+          name: Résumé,       id: summary
           name: Type de Test, id: customfield_42069
           ...
         ```
