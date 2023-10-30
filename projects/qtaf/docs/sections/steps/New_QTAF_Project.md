@@ -2,15 +2,15 @@
 
 This article shows how a new project can be set up using the QTAF framework. First, we will show you how to install QTAF using Maven. Then we will create our first test case using QTAF.
 
-# Set up a new project with IntelliJ
+## Set up a new project with IntelliJ
 
-## Create new Project
+### Create new Project
 
 To create a new project, we use the IntelliJ IDE from Jetbrains. Here we navigate in the menu to `File > New > Project` and then select `Maven` in the left selection menu and click on `Next`.
 
 Chose a name for the project. The name can be chosen freely, but in this example we use the name "QtafProject". It is recommended to also specify the GroupId of the project. This is an identifier for the creator of the project. It is common to choose the company's domain for this, but starting with the country- or organisation-specific ending of the domain. For a company domain "acme.org", one would choose the GroupId "org.acme" according to this standard. The GroupId can be found in the sub-item Artifact Coordinates. Then we click on Finish. The new project should now have been created in the folder `~\IdeaProjects\QtafProject`, where `~` is a placeholder for the root directory of the currently logged in user.
 
-## Customise Pom to add QTAF to the project
+### Customise Pom to add QTAF to the project
 
 After creating the project, a file called `pom.xml` should have been created 
 in the root directory of the project. 
@@ -33,7 +33,7 @@ The file should have a similar content as the example below:
 
 This file can be used to manage plug-ins and extensions of the project. 
 
-### Add the QTAF dependency
+#### Add the QTAF dependency
 
 To set up QTAF you only have to include QTAF as a dependency in the project. 
 To do this, add the following code to pom.xml:
@@ -46,13 +46,13 @@ To do this, add the following code to pom.xml:
 </dependency>
 ```
 
-### Add the current version
+#### Add the current version
 
 Replace `${qtafVersion}` by the version number with the latest version of QTAF.
 You can find the available versions in the Central Maven Repository under the following link:
 <a href="https://mvnrepository.com/artifact/de.qytera/qtaf-core" target="_blank">QTAF Central Repository</a>
 
-### Where to place your dependencies
+#### Where to place your dependencies
 
 All individual dependencies are inserted between an opening and a closing dependencies tag.
 If the `<dependencies>  <!dependencies>` tag is not yet available, you can create it manually.
@@ -84,7 +84,7 @@ it would look like this:
 </dependencies>
 ```
 
-### Refresh the project
+#### Refresh the project
 
 Every time the pom.xml file is changed, 
 the project must be reloaded manually to implement the changes.
@@ -92,7 +92,7 @@ In intellij, a button to reload the dependencies is displayed in the upper right
 if this might be necessary.
 The shortcut for Windows is `CTR + Shift + O`.
 
-### Check QTAF installation
+#### Check QTAF installation
 
 The appropriate dependencies should now have been installed 
 under External Libraries. 
@@ -100,7 +100,7 @@ This includes QTAF.
 To check this, search in External Libraries for libaries 
 that start as follows `de.qytera:qtaf...`
 
-# Create first test case and test class
+### Create first test case and test class
 
 Now the project should be initialised. We can now devote ourselves to creating the first test case.
 
@@ -131,7 +131,7 @@ public class TestOne extends QtafTestNGContext {
 }
 ```
 
-### Run tests
+## Run tests
 
 You can run the tests in two ways. In the first case, you can run the tests via the command line with the command `mvn clean test`. In our example, one test should succeed and the second test should fail. The output on the command line should end with the following text:
 
@@ -156,7 +156,7 @@ You will now see the following things: New directories and files have been creat
 
 A new directory called `logs` has also been created. In this directory, you can now observe that for each test run, a subdirectory is created that contains information about the test run.
 
-# Create a Selenium test case
+### Create a Selenium test case
 
 QTAF has been developed with a particular focus on web application testing and therefore offers special support for Selenium test cases. The Selenium library has already been installed by including QTAF as a dependency in your Maven project. To create a new Selenium test case, we proceed as in the example shown earlier. First we create a test class called `SeleniumTest` and let this class inherit from `QtafTestNGContext`. Now we again create a method within this class and provide it again with the annotation `@Test`from TestNG.
 
@@ -232,7 +232,7 @@ If we look at the code inside the method we notice two more things: The statemen
 
 A QTAF test case is thus an ordinary TestNG test case that we have merely extended with an annotation and an inherited class. Thus, every TestNG test case can also be converted into a QTAF test case.
 
-# Divide test cases into test steps and page objects
+### Divide test cases into test steps and page objects
 
 Now that we have created our first test case we can move on to restructuring our test case. In our test case we have carried out two main steps: First, we called the desired page in the browser and then we extracted the text of a web element from the page using a selector. Then we checked whether this text corresponds to the text we wanted. Some of these test steps might also be of interest in other test cases, especially calling the website using `driver.get()` might occur more often in our test cases. Therefore, it makes sense to outsource these test steps to their own methods. First, we could create three methods within the test class into which we outsource the code of the respective test steps. In the test case, only these methods are called. Especially if the test steps become more complex in the course of a test project, it makes sense to split the code into methods. In our example, these test methods could look like this:
 
@@ -280,13 +280,13 @@ Instead of defining all test steps within a single class, it makes sense to bund
 that all address a specific area of the website. Areas of the website can be, for example, 
 a login form, a navigation bar or a specific menu. This also contributes to the maintainability of the code in larger projects.
 
-### Page Objects
+#### Page Objects
 Let's now look at how to define such a page object class in QTAF. We first create the package `org.acme.page_objects`, 
 in which we will define our page object classes. The name of the package can also be chosen differently. 
 In this package we now create the class `MainSitePO` that extends `QtafTestNGContext`. Within this class we define the methods `openSite` and `checkHeadline` 
 as we had defined them before in the class `HelloSeleniumTest`. 
 
-### Step Annotations
+#### Step Annotations
 Then we have to add annotations to our new class. 
 We add the annotation `@Step` to each method that represents a test step. 
 Within this annotation we can define the attributes name and description. 
@@ -358,11 +358,11 @@ public class HelloSeleniumTest extends QtafTestNGContext {
 
 Now we have divided our project into page objects and the test steps defined in them. We can now call the main method of `TestRunner` or execute the command `mvn clean test`. This will run our test cases.
 
-# Create reports
+## Create reports
 
 QTAF offers you the possibility to automatically create reports from your test runs. In this example we show you two reporting formats integrated into the QTAF framework, one documenting the test execution by means of a JSON document and the other one creating an HTML report. The JSON document is interesting for the machine processing of the test results, the HTML report for the testers as a graphical presentation of the test results.
 
-## Add QTAF HTML Report plugin
+### Add QTAF HTML Report plugin
 First, we need to add the QTAF HTML Report plugin as a dependency to our project. To do this, add the following dependency to the pom.xml file.
 
 ```xml
@@ -375,7 +375,7 @@ First, we need to add the QTAF HTML Report plugin as a dependency to our project
 
 Since the pom.xml has been changed, you should not forget to reload the dependencies.
 
-## Activate HTML report
+### Activate HTML report
 Furthermore, we have to activate the creation of the HTML report in the `qtaf.json` file.
 The `qtaf.json` file can be found under `src/test/resources` in the project folder.
 Make sure that the value `htmlReport.enabled` in the configuration file is set to `true`:
@@ -394,7 +394,7 @@ You can find an example of an HTML report here: [QTAF HTML Report](../../assets/
 
 You can also find an example JSON report here: [QTAF JSON Report](../../assets/json_report/suite_crm/Report.json)
 
-# Run test cases on different browsers
+## Run test cases on different browsers
 
 QTAF offers you the possibility to run test cases on different browsers. You can tell QTAF in three different ways which browser it should use to run the test cases. The only requirement is that the browsers themselves have already been installed by you on your computer. QTAF will automatically download the appropriate Selenium drivers for the desired browsers. You therefore do not need to worry about setting up the appropriate drivers.
 
