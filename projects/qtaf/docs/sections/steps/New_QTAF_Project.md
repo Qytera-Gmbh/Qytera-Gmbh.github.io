@@ -4,11 +4,19 @@ This article shows how a new project can be set up using the QTAF framework. Fir
 
 # Set up a new project with IntelliJ
 
+## Create new Project
+
 To create a new project, we use the IntelliJ IDE from Jetbrains. Here we navigate in the menu to `File > New > Project` and then select `Maven` in the left selection menu and click on `Next`.
 
-We are then asked for a name for the project. This can be chosen freely, but in this example we use the name "QtafProject". It is recommended to also specify the GroupId of the project. This is an identifier for the creator of the project. It is common to choose the company's domain for this, but starting with the country- or organisation-specific ending of the domain. For a company domain "acme.org", one would choose the GroupId "org.acme" according to this standard. The GroupId can be found in the sub-item Artifact Coordinates. Then we click on Finish. The new project should now have been created in the folder `~\IdeaProjects\QtafProject`, where `~` is a placeholder for the root directory of the currently logged in user.
+Chose a name for the project. The name can be chosen freely, but in this example we use the name "QtafProject". It is recommended to also specify the GroupId of the project. This is an identifier for the creator of the project. It is common to choose the company's domain for this, but starting with the country- or organisation-specific ending of the domain. For a company domain "acme.org", one would choose the GroupId "org.acme" according to this standard. The GroupId can be found in the sub-item Artifact Coordinates. Then we click on Finish. The new project should now have been created in the folder `~\IdeaProjects\QtafProject`, where `~` is a placeholder for the root directory of the currently logged in user.
 
-In the root directory of the project we see the file `pom.xml`. This file is used to configure Maven projects, i.e. to load external libraries, to control the build process, etc. The file should look like this:
+## Customise Pom to add QTAF to the project
+
+After creating the project, a file called `pom.xml` should have been created 
+in the root directory of the project. 
+This file is used to configure Maven projects, i.e. to load external libraries,
+to control the build process, etc.
+The file should have a similar content as the example below:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -23,7 +31,12 @@ In the root directory of the project we see the file `pom.xml`. This file is use
 </project>
 ```
 
-This file can be used to manage plug-ins and extensions of the project. Now we only have to include QTAF as a dependency in the project. To do this, add the following code to pom.xml:
+This file can be used to manage plug-ins and extensions of the project. 
+
+### Add the QTAF dependency
+
+To set up QTAF you only have to include QTAF as a dependency in the project. 
+To do this, add the following code to pom.xml:
 
 ```xml
 <dependency>
@@ -33,15 +46,61 @@ This file can be used to manage plug-ins and extensions of the project. Now we o
 </dependency>
 ```
 
-Replace `${qtafVersion}` by the version number with the latest version of QTAF. You can find this in the Central Maven Repository under the following link: <a href="https://mvnrepository.com/artifact/de.qytera/qtaf-core" target="_blank">QTAF Central Repository</a>
+### Add the current version
 
-# Overview of the project structure
+Replace `${qtafVersion}` by the version number with the latest version of QTAF.
+You can find the available versions in the Central Maven Repository under the following link:
+<a href="https://mvnrepository.com/artifact/de.qytera/qtaf-core" target="_blank">QTAF Central Repository</a>
 
-After creating the project, a file called `pom.xml` should have been created in the root directory of the project with the following content.
+### Where to place your dependencies
 
-## Create test cases
+All individual dependencies are inserted between an opening and a closing dependencies tag.
+If the `<dependencies>  <!dependencies>` tag is not yet available, you can create it manually.
+The structure would look something like this
 
-### Create first test case
+```xml
+<dependencies>
+    <dependency>
+        <!--dependency 1 -->
+    </dependency>
+    <dependency>
+        <!--dependency 2 -->
+    </dependency>
+    <dependency>
+        <!--dependency 3 -->
+    </dependency>
+</dependencies>
+```
+If you have a project where you just want to add QTAF as a dependency, 
+it would look like this:
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>de.qytera</groupId>
+        <artifactId>qtaf-core</artifactId>
+        <version>${qtafVersion}</version>
+    </dependency>
+</dependencies>
+```
+
+### Refresh the project
+
+Every time the pom.xml file is changed, 
+the project must be reloaded manually to implement the changes.
+In intellij, a button to reload the dependencies is displayed in the upper right corner,
+if this might be necessary.
+The shortcut for Windows is `CTR + Shift + O`.
+
+### Check QTAF installation
+
+The appropriate dependencies should now have been installed 
+under External Libraries. 
+This includes QTAF. 
+To check this, search in External Libraries for libaries 
+that start as follows `de.qytera:qtaf...`
+
+# Create first test case and test class
 
 Now the project should be initialised. We can now devote ourselves to creating the first test case.
 
@@ -111,7 +170,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class HelloSeleniumTest {
-    By headlineSelector = By.cssSelector("h1.display-1");
+    By headlineSelector = By.cssSelector("h1.d-1");
 
     @Test(
       testName = "Open browser and visit selenium documentation",
@@ -125,7 +184,7 @@ public class HelloSeleniumTest {
         driver.get("https://selenium.dev");
 
         // Extract headline text from website
-        String headlineText = driver.findElement(headlineSelector)).getText();
+        String headlineText = driver.findElement(headlineSelector).getText();
         Assert.assertEquals(headlineText, "Selenium automates browsers. That's it!");
 
         // Close the driver
@@ -147,7 +206,7 @@ import org.testng.annotations.Test;
         description = "Our first Selenium test"
 )
 public class HelloSeleniumTest extends QtafTestNGContext {
-    By headlineSelector = By.cssSelector("h1.display-1");
+    By headlineSelector = By.cssSelector("h1.d-1");
 
     @Test(
       testName = "Open browser and visit selenium documentation",
@@ -158,7 +217,8 @@ public class HelloSeleniumTest extends QtafTestNGContext {
         driver.get("https://selenium.dev");
 
         // Extract headline text from website
-        assertEquals($(headlineSelector).text(), "Selenium automates browsers. That's it!");
+        // assertEquals($(headlineSelector).text(), "Selenium automates browsers. That's it!");
+        assertEquals(driver.findElement(headlineSelector).getText(), "Selenium automates browsers. That's it!");
     }
 }
 ```
@@ -212,9 +272,25 @@ public class HelloSeleniumTest extends QtafTestNGContext {
 }
 ```
 
-The advantages of this code example are obvious: the code becomes more readable and by outsourcing test steps to separate methods, they can also be reused in other test cases. However, QTAF goes one step further and expects methods that represent test steps to be defined in separate classes. Thus, there are classes in which the methods contain test cases and other classes in which the methods only contain test steps. Instead of defining all test steps within a single class, it makes sense to bundle only those test steps within a class that all address a specific area of the website. Areas of the website can be, for example, a login form, a navigation bar or a specific menu. This also contributes to the maintainability of the code in larger projects.
+The advantages of this code example are obvious: the code becomes more readable and by outsourcing test steps to separate methods, 
+they can also be reused in other test cases. However, QTAF goes one step further and expects methods that represent test steps to 
+be defined in separate classes. 
+Thus, there are classes in which the methods contain test cases and other classes in which the methods only contain test steps. 
+Instead of defining all test steps within a single class, it makes sense to bundle only those test steps within a class 
+that all address a specific area of the website. Areas of the website can be, for example, 
+a login form, a navigation bar or a specific menu. This also contributes to the maintainability of the code in larger projects.
 
-Let's now look at how to define such a page object class in QTAF. We first create the package `org.acme.page_objects`, in which we will define our page object classes. The name of the package can also be chosen differently. In this package we now create the class `MainSitePO`. Within this class we define the methods `openSite` and `checkHeadline` as we had defined them before in the class `HelloSeleniumTest`. Then we have to add annotations to our new class. We add the annotation `@Step` to each method that represents a test step. Within this annotation we can define the attributes name and description. The name and description of the test step will be used later in the reporting.
+### Page Objects
+Let's now look at how to define such a page object class in QTAF. We first create the package `org.acme.page_objects`, 
+in which we will define our page object classes. The name of the package can also be chosen differently. 
+In this package we now create the class `MainSitePO` that extends `QtafTestNGContext`. Within this class we define the methods `openSite` and `checkHeadline` 
+as we had defined them before in the class `HelloSeleniumTest`. 
+
+### Step Annotations
+Then we have to add annotations to our new class. 
+We add the annotation `@Step` to each method that represents a test step. 
+Within this annotation we can define the attributes name and description. 
+The name and description of the test step will be used later in the reporting.
 
 Our new page object class should look like this:
 
@@ -286,6 +362,7 @@ Now we have divided our project into page objects and the test steps defined in 
 
 QTAF offers you the possibility to automatically create reports from your test runs. In this example we show you two reporting formats integrated into the QTAF framework, one documenting the test execution by means of a JSON document and the other one creating an HTML report. The JSON document is interesting for the machine processing of the test results, the HTML report for the testers as a graphical presentation of the test results.
 
+## Add QTAF HTML Report plugin
 First, we need to add the QTAF HTML Report plugin as a dependency to our project. To do this, add the following dependency to the pom.xml file.
 
 ```xml
@@ -296,7 +373,12 @@ First, we need to add the QTAF HTML Report plugin as a dependency to our project
 </dependency>
 ```
 
-Furthermore we have to activate the creation of the HTML report in the `qtaf.json` file. Make sure that the value `htmlReport.enabled` in the configuration file is set to `true`:
+Since the pom.xml has been changed, you should not forget to reload the dependencies.
+
+## Activate HTML report
+Furthermore, we have to activate the creation of the HTML report in the `qtaf.json` file.
+The `qtaf.json` file can be found under `src/test/resources` in the project folder.
+Make sure that the value `htmlReport.enabled` in the configuration file is set to `true`:
 
 ```json
   "htmlReport":{
@@ -306,7 +388,7 @@ Furthermore we have to activate the creation of the HTML report in the `qtaf.jso
 
 Then run the test cases again by executing the main method of the `TestRunner` class. You will then find the file `Report.html` in the logs directory, which contains the HTML report. You can open and display this in any browser.
 
-Furthermore, in the same directory you will find the file `Report.json`, which contains the data of the test run as a JSON document.
+In the same directory you will find the file `Report.json`, which contains the data of the test run as a JSON document.
 
 You can find an example of an HTML report here: [QTAF HTML Report](../../assets/html_report/suite_crm/Report.html)
 
