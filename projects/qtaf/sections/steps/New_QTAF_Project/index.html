@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/qyteraIcon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.bd3936ea.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
@@ -1045,9 +1045,15 @@
 <h1 id="how-to-create-a-new-qtaf-project">How to create a new QTAF project<a class="headerlink" href="#how-to-create-a-new-qtaf-project" title="Anchor link to this section for reference">⚓︎</a></h1>
 <p>This article shows how a new project can be set up using the QTAF framework. First, we will show you how to install QTAF using Maven. Then we will create our first test case using QTAF.</p>
 <h1 id="set-up-a-new-project-with-intellij">Set up a new project with IntelliJ<a class="headerlink" href="#set-up-a-new-project-with-intellij" title="Anchor link to this section for reference">⚓︎</a></h1>
+<h2 id="create-new-project">Create new Project<a class="headerlink" href="#create-new-project" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>To create a new project, we use the IntelliJ IDE from Jetbrains. Here we navigate in the menu to <code>File &gt; New &gt; Project</code> and then select <code>Maven</code> in the left selection menu and click on <code>Next</code>.</p>
-<p>We are then asked for a name for the project. This can be chosen freely, but in this example we use the name "QtafProject". It is recommended to also specify the GroupId of the project. This is an identifier for the creator of the project. It is common to choose the company's domain for this, but starting with the country- or organisation-specific ending of the domain. For a company domain "acme.org", one would choose the GroupId "org.acme" according to this standard. The GroupId can be found in the sub-item Artifact Coordinates. Then we click on Finish. The new project should now have been created in the folder <code>~\IdeaProjects\QtafProject</code>, where <code>~</code> is a placeholder for the root directory of the currently logged in user.</p>
-<p>In the root directory of the project we see the file <code>pom.xml</code>. This file is used to configure Maven projects, i.e. to load external libraries, to control the build process, etc. The file should look like this:</p>
+<p>Chose a name for the project. The name can be chosen freely, but in this example we use the name "QtafProject". It is recommended to also specify the GroupId of the project. This is an identifier for the creator of the project. It is common to choose the company's domain for this, but starting with the country- or organisation-specific ending of the domain. For a company domain "acme.org", one would choose the GroupId "org.acme" according to this standard. The GroupId can be found in the sub-item Artifact Coordinates. Then we click on Finish. The new project should now have been created in the folder <code>~\IdeaProjects\QtafProject</code>, where <code>~</code> is a placeholder for the root directory of the currently logged in user.</p>
+<h2 id="customise-pom-to-add-qtaf-to-the-project">Customise Pom to add QTAF to the project<a class="headerlink" href="#customise-pom-to-add-qtaf-to-the-project" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>After creating the project, a file called <code>pom.xml</code> should have been created 
+in the root directory of the project. 
+This file is used to configure Maven projects, i.e. to load external libraries,
+to control the build process, etc.
+The file should have a similar content as the example below:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1068,7 +1074,10 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="nt">&lt;/project&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p>This file can be used to manage plug-ins and extensions of the project. Now we only have to include QTAF as a dependency in the project. To do this, add the following code to pom.xml:</p>
+<p>This file can be used to manage plug-ins and extensions of the project. </p>
+<h3 id="add-the-qtaf-dependency">Add the QTAF dependency<a class="headerlink" href="#add-the-qtaf-dependency" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>To set up QTAF you only have to include QTAF as a dependency in the project. 
+To do this, add the following code to pom.xml:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
@@ -1079,14 +1088,15 @@
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>${qtafVersion}<span class="nt">&lt;/version&gt;</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="nt">&lt;/dependency&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p>Replace <code>${qtafVersion}</code> by the version number with the latest version of QTAF. You can find this in the Central Maven Repository under the following link: <a href="https://mvnrepository.com/artifact/de.qytera/qtaf-core" target="_blank">QTAF Central Repository</a></p>
-<h1 id="overview-of-the-project-structure">Overview of the project structure<a class="headerlink" href="#overview-of-the-project-structure" title="Anchor link to this section for reference">⚓︎</a></h1>
-<p>After creating the project, a file called <code>pom.xml</code> should have been created in the root directory of the project with the following content.</p>
-<h2 id="create-test-cases">Create test cases<a class="headerlink" href="#create-test-cases" title="Anchor link to this section for reference">⚓︎</a></h2>
-<h3 id="create-first-test-case">Create first test case<a class="headerlink" href="#create-first-test-case" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>Now the project should be initialised. We can now devote ourselves to creating the first test case.</p>
-<p>First we create the package <code>org.acme.tests</code> in the directrory <code>src/test/java</code>, where we will store our test case classes in the future. Create a class <code>TestOne</code> in this package with the following content:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<h3 id="add-the-current-version">Add the current version<a class="headerlink" href="#add-the-current-version" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Replace <code>${qtafVersion}</code> by the version number with the latest version of QTAF.
+You can find the available versions in the Central Maven Repository under the following link:
+<a href="https://mvnrepository.com/artifact/de.qytera/qtaf-core" target="_blank">QTAF Central Repository</a></p>
+<h3 id="where-to-place-your-dependencies">Where to place your dependencies<a class="headerlink" href="#where-to-place-your-dependencies" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>All individual dependencies are inserted between an opening and a closing dependencies tag.
+If the <code>&lt;dependencies&gt;  &lt;!dependencies&gt;</code> tag is not yet available, you can create it manually.
+The structure would look something like this</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -1096,73 +1106,49 @@
 <span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span>
-<span class="normal"><a href="#__codelineno-2-21">21</a></span>
-<span class="normal"><a href="#__codelineno-2-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">org.acme.tests</span><span class="p">;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.config.annotations.TestFeature</span><span class="p">;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.testng.context.QtafTestNGContext</span><span class="p">;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="nd">@TestFeature</span><span class="p">(</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TestCase One&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;First test&quot;</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="p">)</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestOne</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="nd">@Test</span><span class="p">(</span><span class="n">testName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Success&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;This test should pass&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testSuccess</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">    </span><span class="nd">@Test</span><span class="p">(</span><span class="n">testName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Failure&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;This test should fail&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testFailure</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">&lt;dependencies&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="cm">&lt;!--dependency 1 --&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;/dependency&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">        </span><span class="cm">&lt;!--dependency 2 --&gt;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="nt">&lt;/dependency&gt;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">        </span><span class="cm">&lt;!--dependency 3 --&gt;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="nt">&lt;/dependency&gt;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="nt">&lt;/dependencies&gt;</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>You can run the tests in two ways. In the first case, you can run the tests via the command line with the command <code>mvn clean test</code>. In our example, one test should succeed and the second test should fail. The output on the command line should end with the following text:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Results :
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>Failed tests:   testFailure(org.acme.tests.TestOne): expected [3] but found [4]
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>Tests run: 2, Failures: 1, Errors: 0, Skipped: 0
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>[INFO] ------------------------------------------------------------------------
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>[INFO] BUILD FAILURE
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a>[INFO] ------------------------------------------------------------------------
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a>[INFO] Total time:  15.570 s
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>[INFO] Finished at: 2023-01-01T11:04:36+01:00
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a>[INFO] ------------------------------------------------------------------------
+If you have a project where you just want to add QTAF as a dependency, 
+it would look like this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nt">&lt;dependencies&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">        </span><span class="nt">&lt;groupId&gt;</span>de.qytera<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>qtaf-core<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">        </span><span class="nt">&lt;version&gt;</span>${qtafVersion}<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="nt">&lt;/dependency&gt;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nt">&lt;/dependencies&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p>The second option is to run tests using the IntelliJ IDE. To do this, click on the green triangles next to the test methods in the <code>TestOne</code> class to run individual tests or on the green triangle next to the <code>TestOne</code> class itself and then click on Run test in the menu that opens to run all tests.</p>
-<p>You will now see the following things: New directories and files have been created in your project. A new file named <code>qtaf.json</code> has been created in the resource directory. Within this file you can define parameters for the test execution.</p>
-<p>A new directory called <code>logs</code> has also been created. In this directory, you can now observe that for each test run, a subdirectory is created that contains information about the test run.</p>
-<h1 id="create-a-selenium-test-case">Create a Selenium test case<a class="headerlink" href="#create-a-selenium-test-case" title="Anchor link to this section for reference">⚓︎</a></h1>
-<p>QTAF has been developed with a particular focus on web application testing and therefore offers special support for Selenium test cases. The Selenium library has already been installed by including QTAF as a dependency in your Maven project. To create a new Selenium test case, we proceed as in the example shown earlier. First we create a test class called <code>SeleniumTest</code> and let this class inherit from <code>QtafTestNGContext</code>. Now we again create a method within this class and provide it again with the annotation <code>@Test</code>from TestNG.</p>
-<p>The class <code>QtafTestNGContext</code> provides us with the <code>driver</code> object, with which we can control our browser. The <code>driver</code>object is an ordinary Selenium web driver object, which we can work with as usual from other Selenium projects. The documentation of the Selenium driver for Java including a small example can be found on the following website: <a href="https://www.selenium.dev/documentation/" target="_blank">Selenium Documentation</a></p>
-<p>We would now like to look at how we would write the test case described in the Selenium documentation using QTAF. The Selenium test case without QTAF looks like this:</p>
+<h3 id="refresh-the-project">Refresh the project<a class="headerlink" href="#refresh-the-project" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Every time the pom.xml file is changed, 
+the project must be reloaded manually to implement the changes.
+In intellij, a button to reload the dependencies is displayed in the upper right corner,
+if this might be necessary.
+The shortcut for Windows is <code>CTR + Shift + O</code>.</p>
+<h3 id="check-qtaf-installation">Check QTAF installation<a class="headerlink" href="#check-qtaf-installation" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>The appropriate dependencies should now have been installed 
+under External Libraries. 
+This includes QTAF. 
+To check this, search in External Libraries for libaries 
+that start as follows <code>de.qytera:qtaf...</code></p>
+<h1 id="create-first-test-case-and-test-class">Create first test case and test class<a class="headerlink" href="#create-first-test-case-and-test-class" title="Anchor link to this section for reference">⚓︎</a></h1>
+<p>Now the project should be initialised. We can now devote ourselves to creating the first test case.</p>
+<p>First we create the package <code>org.acme.tests</code> in the directrory <code>src/test/java</code>, where we will store our test case classes in the future. Create a class <code>TestOne</code> in this package with the following content:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -1184,36 +1170,31 @@
 <span class="normal"><a href="#__codelineno-4-19">19</a></span>
 <span class="normal"><a href="#__codelineno-4-20">20</a></span>
 <span class="normal"><a href="#__codelineno-4-21">21</a></span>
-<span class="normal"><a href="#__codelineno-4-22">22</a></span>
-<span class="normal"><a href="#__codelineno-4-23">23</a></span>
-<span class="normal"><a href="#__codelineno-4-24">24</a></span>
-<span class="normal"><a href="#__codelineno-4-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.Assert</span><span class="p">;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloSeleniumTest</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="n">By</span><span class="w"> </span><span class="n">headlineSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;h1.display-1&quot;</span><span class="p">);</span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">org.acme.tests</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.config.annotations.TestFeature</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.testng.context.QtafTestNGContext</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="nd">@Test</span><span class="p">(</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">      </span><span class="n">testName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open browser and visit selenium documentation&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">      </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open the browser and go to the selenium documentation website&quot;</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="p">)</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testBrowser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">        </span><span class="c1">// Instatiate WebDriver object</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">        </span><span class="c1">// Visit Selenium documentation</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;https://selenium.dev&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="nd">@TestFeature</span><span class="p">(</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TestCase One&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;First test&quot;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestOne</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">    </span><span class="nd">@Test</span><span class="p">(</span><span class="n">testName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Success&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;This test should pass&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testSuccess</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-4-17" name="__codelineno-4-17"></a>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">        </span><span class="c1">// Extract headline text from website</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">headlineText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">headlineSelector</span><span class="p">)).</span><span class="na">getText</span><span class="p">();</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">        </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertEquals</span><span class="p">(</span><span class="n">headlineText</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Selenium automates browsers. That&#39;s it!&quot;</span><span class="p">);</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a>
-<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">        </span><span class="c1">// Close the driver</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="p">}</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">    </span><span class="nd">@Test</span><span class="p">(</span><span class="n">testName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Failure&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;This test should fail&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testFailure</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>If we now use QTAF, our test case looks like this:</p>
+<h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>You can run the tests in two ways. In the first case, you can run the tests via the command line with the command <code>mvn clean test</code>. In our example, one test should succeed and the second test should fail. The output on the command line should end with the following text:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -1225,52 +1206,26 @@
 <span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-5-10">10</a></span>
 <span class="normal"><a href="#__codelineno-5-11">11</a></span>
-<span class="normal"><a href="#__codelineno-5-12">12</a></span>
-<span class="normal"><a href="#__codelineno-5-13">13</a></span>
-<span class="normal"><a href="#__codelineno-5-14">14</a></span>
-<span class="normal"><a href="#__codelineno-5-15">15</a></span>
-<span class="normal"><a href="#__codelineno-5-16">16</a></span>
-<span class="normal"><a href="#__codelineno-5-17">17</a></span>
-<span class="normal"><a href="#__codelineno-5-18">18</a></span>
-<span class="normal"><a href="#__codelineno-5-19">19</a></span>
-<span class="normal"><a href="#__codelineno-5-20">20</a></span>
-<span class="normal"><a href="#__codelineno-5-21">21</a></span>
-<span class="normal"><a href="#__codelineno-5-22">22</a></span>
-<span class="normal"><a href="#__codelineno-5-23">23</a></span>
-<span class="normal"><a href="#__codelineno-5-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.config.annotations.TestFeature</span><span class="p">;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.testng.context.QtafTestNGContext</span><span class="p">;</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.Assert</span><span class="p">;</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="nd">@TestFeature</span><span class="p">(</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SeleniumTest&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Our first Selenium test&quot;</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="p">)</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloSeleniumTest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">    </span><span class="n">By</span><span class="w"> </span><span class="n">headlineSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;h1.display-1&quot;</span><span class="p">);</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">    </span><span class="nd">@Test</span><span class="p">(</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">      </span><span class="n">testName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open browser and visit selenium documentation&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">      </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open the browser and go to the selenium documentation website&quot;</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">    </span><span class="p">)</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testBrowser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">        </span><span class="c1">// Visit Selenium documentation</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;https://selenium.dev&quot;</span><span class="p">);</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a>
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w">        </span><span class="c1">// Extract headline text from website</span>
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">$</span><span class="p">(</span><span class="n">headlineSelector</span><span class="p">).</span><span class="na">text</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Selenium automates browsers. That&#39;s it!&quot;</span><span class="p">);</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>Results :
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>Failed tests:   testFailure(org.acme.tests.TestOne): expected [3] but found [4]
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>Tests run: 2, Failures: 1, Errors: 0, Skipped: 0
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>[INFO] ------------------------------------------------------------------------
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>[INFO] BUILD FAILURE
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>[INFO] ------------------------------------------------------------------------
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>[INFO] Total time:  15.570 s
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>[INFO] Finished at: 2023-01-01T11:04:36+01:00
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>[INFO] ------------------------------------------------------------------------
 </code></pre></div></td></tr></table></div>
-<p>We only need to do two things to convert an ordinary TestNG test case into a QTAF test case:</p>
-<ol>
-<li>The class must be annotated with the <code>TestFeature</code> annotation, which is provided by the QTAF library.</li>
-<li>Our class must inherit from <code>QtafTestNGContext</code>.</li>
-</ol>
-<p>If we look at the code inside the method we notice two more things: The statements for instantiating and closing the webdriver have been removed. QTAF takes over these tasks for us and already provides us with the initialised driver object via the class attribute <code>driver</code>.</p>
-<p>A QTAF test case is thus an ordinary TestNG test case that we have merely extended with an annotation and an inherited class. Thus, every TestNG test case can also be converted into a QTAF test case.</p>
-<h1 id="divide-test-cases-into-test-steps-and-page-objects">Divide test cases into test steps and page objects<a class="headerlink" href="#divide-test-cases-into-test-steps-and-page-objects" title="Anchor link to this section for reference">⚓︎</a></h1>
-<p>Now that we have created our first test case we can move on to restructuring our test case. In our test case we have carried out two main steps: First, we called the desired page in the browser and then we extracted the text of a web element from the page using a selector. Then we checked whether this text corresponds to the text we wanted. Some of these test steps might also be of interest in other test cases, especially calling the website using <code>driver.get()</code> might occur more often in our test cases. Therefore, it makes sense to outsource these test steps to their own methods. First, we could create three methods within the test class into which we outsource the code of the respective test steps. In the test case, only these methods are called. Especially if the test steps become more complex in the course of a test project, it makes sense to split the code into methods. In our example, these test methods could look like this:</p>
+<p>The second option is to run tests using the IntelliJ IDE. To do this, click on the green triangles next to the test methods in the <code>TestOne</code> class to run individual tests or on the green triangle next to the <code>TestOne</code> class itself and then click on Run test in the menu that opens to run all tests.</p>
+<p>You will now see the following things: New directories and files have been created in your project. A new file named <code>qtaf.json</code> has been created in the resource directory. Within this file you can define parameters for the test execution.</p>
+<p>A new directory called <code>logs</code> has also been created. In this directory, you can now observe that for each test run, a subdirectory is created that contains information about the test run.</p>
+<h1 id="create-a-selenium-test-case">Create a Selenium test case<a class="headerlink" href="#create-a-selenium-test-case" title="Anchor link to this section for reference">⚓︎</a></h1>
+<p>QTAF has been developed with a particular focus on web application testing and therefore offers special support for Selenium test cases. The Selenium library has already been installed by including QTAF as a dependency in your Maven project. To create a new Selenium test case, we proceed as in the example shown earlier. First we create a test class called <code>SeleniumTest</code> and let this class inherit from <code>QtafTestNGContext</code>. Now we again create a method within this class and provide it again with the annotation <code>@Test</code>from TestNG.</p>
+<p>The class <code>QtafTestNGContext</code> provides us with the <code>driver</code> object, with which we can control our browser. The <code>driver</code>object is an ordinary Selenium web driver object, which we can work with as usual from other Selenium projects. The documentation of the Selenium driver for Java including a small example can be found on the following website: <a href="https://www.selenium.dev/documentation/" target="_blank">Selenium Documentation</a></p>
+<p>We would now like to look at how we would write the test case described in the Selenium documentation using QTAF. The Selenium test case without QTAF looks like this:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -1295,51 +1250,33 @@
 <span class="normal"><a href="#__codelineno-6-22">22</a></span>
 <span class="normal"><a href="#__codelineno-6-23">23</a></span>
 <span class="normal"><a href="#__codelineno-6-24">24</a></span>
-<span class="normal"><a href="#__codelineno-6-25">25</a></span>
-<span class="normal"><a href="#__codelineno-6-26">26</a></span>
-<span class="normal"><a href="#__codelineno-6-27">27</a></span>
-<span class="normal"><a href="#__codelineno-6-28">28</a></span>
-<span class="normal"><a href="#__codelineno-6-29">29</a></span>
-<span class="normal"><a href="#__codelineno-6-30">30</a></span>
-<span class="normal"><a href="#__codelineno-6-31">31</a></span>
-<span class="normal"><a href="#__codelineno-6-32">32</a></span>
-<span class="normal"><a href="#__codelineno-6-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">org.acme.tests</span><span class="p">;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.config.annotations.TestFeature</span><span class="p">;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.testng.context.QtafTestNGContext</span><span class="p">;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.Assert</span><span class="p">;</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="nd">@TestFeature</span><span class="p">(</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SeleniumTest&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Our first Selenium test&quot;</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="p">)</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloSeleniumTest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="n">By</span><span class="w"> </span><span class="n">headlineSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;h1.display-1&quot;</span><span class="p">);</span>
+<span class="normal"><a href="#__codelineno-6-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.Assert</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloSeleniumTest</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="n">By</span><span class="w"> </span><span class="n">headlineSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;h1.d-1&quot;</span><span class="p">);</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="nd">@Test</span><span class="p">(</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">      </span><span class="n">testName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open browser and visit selenium documentation&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">      </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open the browser and go to the selenium documentation website&quot;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">    </span><span class="p">)</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testBrowser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">        </span><span class="c1">// Instatiate WebDriver object</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">        </span><span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span>
 <a id="__codelineno-6-14" name="__codelineno-6-14"></a>
-<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">    </span><span class="nd">@Test</span><span class="p">(</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">        </span><span class="n">testName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open browser and visit selenium documentation&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open the browser and go to the selenium documentation website&quot;</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">    </span><span class="p">)</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testBrowser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">        </span><span class="n">openSite</span><span class="p">(</span><span class="s">&quot;https://selenium.dev&quot;</span><span class="p">);</span>
-<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="w">        </span><span class="n">checkHeadline</span><span class="p">(</span><span class="s">&quot;Selenium automates browsers. That&#39;s it!&quot;</span><span class="p">);</span>
-<a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-6-23" name="__codelineno-6-23"></a>
-<a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openSite</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="w">        </span><span class="c1">// Visit Selenium documentation</span>
-<a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
-<a id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-6-28" name="__codelineno-6-28"></a>
-<a id="__codelineno-6-29" name="__codelineno-6-29"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">checkHeadline</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">expectedText</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="w">        </span><span class="c1">// Extract headline text from website</span>
-<a id="__codelineno-6-31" name="__codelineno-6-31"></a><span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">$</span><span class="p">(</span><span class="n">headlineSelector</span><span class="p">).</span><span class="na">text</span><span class="p">(),</span><span class="w"> </span><span class="n">expectedText</span><span class="p">);</span>
-<a id="__codelineno-6-32" name="__codelineno-6-32"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-6-33" name="__codelineno-6-33"></a><span class="p">}</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">        </span><span class="c1">// Visit Selenium documentation</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;https://selenium.dev&quot;</span><span class="p">);</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">        </span><span class="c1">// Extract headline text from website</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">headlineText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">headlineSelector</span><span class="p">).</span><span class="na">getText</span><span class="p">();</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">        </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertEquals</span><span class="p">(</span><span class="n">headlineText</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Selenium automates browsers. That&#39;s it!&quot;</span><span class="p">);</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a>
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">        </span><span class="c1">// Close the driver</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">quit</span><span class="p">();</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>The advantages of this code example are obvious: the code becomes more readable and by outsourcing test steps to separate methods, they can also be reused in other test cases. However, QTAF goes one step further and expects methods that represent test steps to be defined in separate classes. Thus, there are classes in which the methods contain test cases and other classes in which the methods only contain test steps. Instead of defining all test steps within a single class, it makes sense to bundle only those test steps within a class that all address a specific area of the website. Areas of the website can be, for example, a login form, a navigation bar or a specific menu. This also contributes to the maintainability of the code in larger projects.</p>
-<p>Let's now look at how to define such a page object class in QTAF. We first create the package <code>org.acme.page_objects</code>, in which we will define our page object classes. The name of the package can also be chosen differently. In this package we now create the class <code>MainSitePO</code>. Within this class we define the methods <code>openSite</code> and <code>checkHeadline</code> as we had defined them before in the class <code>HelloSeleniumTest</code>. Then we have to add annotations to our new class. We add the annotation <code>@Step</code> to each method that represents a test step. Within this annotation we can define the attributes name and description. The name and description of the test step will be used later in the reporting.</p>
-<p>Our new page object class should look like this:</p>
+<p>If we now use QTAF, our test case looks like this:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -1364,43 +1301,41 @@
 <span class="normal"><a href="#__codelineno-7-22">22</a></span>
 <span class="normal"><a href="#__codelineno-7-23">23</a></span>
 <span class="normal"><a href="#__codelineno-7-24">24</a></span>
-<span class="normal"><a href="#__codelineno-7-25">25</a></span>
-<span class="normal"><a href="#__codelineno-7-26">26</a></span>
-<span class="normal"><a href="#__codelineno-7-27">27</a></span>
-<span class="normal"><a href="#__codelineno-7-28">28</a></span>
-<span class="normal"><a href="#__codelineno-7-29">29</a></span>
-<span class="normal"><a href="#__codelineno-7-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">org.acme.page_objects</span><span class="p">;</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.guice.annotations.Step</span><span class="p">;</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.By</span><span class="p">;</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebElement</span><span class="p">;</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.inject.Singleton</span><span class="p">;</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8"></a>
-<a id="__codelineno-7-9" name="__codelineno-7-9"></a>
-<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainSitePO</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">    </span><span class="n">By</span><span class="w"> </span><span class="n">headlineSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;h1.display-1&quot;</span><span class="p">);</span>
+<span class="normal"><a href="#__codelineno-7-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.config.annotations.TestFeature</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.testng.context.QtafTestNGContext</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.Assert</span><span class="p">;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="nd">@TestFeature</span><span class="p">(</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SeleniumTest&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Our first Selenium test&quot;</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="p">)</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloSeleniumTest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">    </span><span class="n">By</span><span class="w"> </span><span class="n">headlineSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;h1.d-1&quot;</span><span class="p">);</span>
 <a id="__codelineno-7-12" name="__codelineno-7-12"></a>
-<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">    </span><span class="nd">@Step</span><span class="p">(</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open Site&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open the selenium documentation website in the browser&quot;</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">    </span><span class="nd">@Test</span><span class="p">(</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">      </span><span class="n">testName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open browser and visit selenium documentation&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">      </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open the browser and go to the selenium documentation website&quot;</span>
 <a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">    </span><span class="p">)</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openSite</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testBrowser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">        </span><span class="c1">// Visit Selenium documentation</span>
-<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
-<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-7-21" name="__codelineno-7-21"></a>
-<a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="w">    </span><span class="nd">@Step</span><span class="p">(</span>
-<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Check Headline&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Check if the headline of the site cintains a specific text&quot;</span>
-<a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="w">    </span><span class="p">)</span>
-<a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">checkHeadline</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">expectedText</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="w">        </span><span class="c1">// Extract headline text from website</span>
-<a id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">$</span><span class="p">(</span><span class="n">headlineSelector</span><span class="p">).</span><span class="na">text</span><span class="p">(),</span><span class="w"> </span><span class="n">expectedText</span><span class="p">);</span>
-<a id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-7-30" name="__codelineno-7-30"></a><span class="p">}</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;https://selenium.dev&quot;</span><span class="p">);</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">        </span><span class="c1">// Extract headline text from website</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="w">        </span><span class="c1">// assertEquals($(headlineSelector).text(), &quot;Selenium automates browsers. That&#39;s it!&quot;);</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">headlineSelector</span><span class="p">).</span><span class="na">getText</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Selenium automates browsers. That&#39;s it!&quot;</span><span class="p">);</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>Now we need to instantiate this page object class in out test case. This can be done by the function <code>load</code> that is provided by the QTAF test context. This function accepts a class reference and creates a new instance of this class. It is important to instantiate the page object by calling the <code>load</code>and not using the <code>new</code>keyword, otherwise logging will not work for this page object. Internally QTAF injects code before and after each step method so that we can trace these functions. Our test case class, which now uses our page object class, then looks like this:</p>
+<p>We only need to do two things to convert an ordinary TestNG test case into a QTAF test case:</p>
+<ol>
+<li>The class must be annotated with the <code>TestFeature</code> annotation, which is provided by the QTAF library.</li>
+<li>Our class must inherit from <code>QtafTestNGContext</code>.</li>
+</ol>
+<p>If we look at the code inside the method we notice two more things: The statements for instantiating and closing the webdriver have been removed. QTAF takes over these tasks for us and already provides us with the initialised driver object via the class attribute <code>driver</code>.</p>
+<p>A QTAF test case is thus an ordinary TestNG test case that we have merely extended with an annotation and an inherited class. Thus, every TestNG test case can also be converted into a QTAF test case.</p>
+<h1 id="divide-test-cases-into-test-steps-and-page-objects">Divide test cases into test steps and page objects<a class="headerlink" href="#divide-test-cases-into-test-steps-and-page-objects" title="Anchor link to this section for reference">⚓︎</a></h1>
+<p>Now that we have created our first test case we can move on to restructuring our test case. In our test case we have carried out two main steps: First, we called the desired page in the browser and then we extracted the text of a web element from the page using a selector. Then we checked whether this text corresponds to the text we wanted. Some of these test steps might also be of interest in other test cases, especially calling the website using <code>driver.get()</code> might occur more often in our test cases. Therefore, it makes sense to outsource these test steps to their own methods. First, we could create three methods within the test class into which we outsource the code of the respective test steps. In the test case, only these methods are called. Especially if the test steps become more complex in the course of a test project, it makes sense to split the code into methods. In our example, these test methods could look like this:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -1424,65 +1359,215 @@
 <span class="normal"><a href="#__codelineno-8-21">21</a></span>
 <span class="normal"><a href="#__codelineno-8-22">22</a></span>
 <span class="normal"><a href="#__codelineno-8-23">23</a></span>
-<span class="normal"><a href="#__codelineno-8-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">org.acme.tests</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-8-24">24</a></span>
+<span class="normal"><a href="#__codelineno-8-25">25</a></span>
+<span class="normal"><a href="#__codelineno-8-26">26</a></span>
+<span class="normal"><a href="#__codelineno-8-27">27</a></span>
+<span class="normal"><a href="#__codelineno-8-28">28</a></span>
+<span class="normal"><a href="#__codelineno-8-29">29</a></span>
+<span class="normal"><a href="#__codelineno-8-30">30</a></span>
+<span class="normal"><a href="#__codelineno-8-31">31</a></span>
+<span class="normal"><a href="#__codelineno-8-32">32</a></span>
+<span class="normal"><a href="#__codelineno-8-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">org.acme.tests</span><span class="p">;</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a>
 <a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.config.annotations.TestFeature</span><span class="p">;</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.testng.context.QtafTestNGContext</span><span class="p">;</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="nd">@TestFeature</span><span class="p">(</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SeleniumTest&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Our first Selenium test&quot;</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="p">)</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloSeleniumTest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span><span class="nd">@Test</span><span class="p">(</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">        </span><span class="n">testName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open browser and visit selenium documentation&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open the browser and go to the selenium documentation website&quot;</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">    </span><span class="p">)</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testBrowser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">        </span><span class="c1">// Instantiate page objects</span>
-<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">        </span><span class="n">MainSitePO</span><span class="w"> </span><span class="n">mainSitePO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load</span><span class="p">(</span><span class="n">MainSitePO</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-<a id="__codelineno-8-19" name="__codelineno-8-19"></a>
-<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">        </span><span class="c1">// Test case</span>
-<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="w">        </span><span class="n">mainSitePO</span><span class="p">.</span><span class="na">openSite</span><span class="p">(</span><span class="s">&quot;https://selenium.dev&quot;</span><span class="p">);</span>
-<a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="w">        </span><span class="n">mainSitePO</span><span class="p">.</span><span class="na">checkHeadline</span><span class="p">(</span><span class="s">&quot;Selenium automates browsers. That&#39;s it!&quot;</span><span class="p">);</span>
-<a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="p">}</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.Assert</span><span class="p">;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="nd">@TestFeature</span><span class="p">(</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SeleniumTest&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Our first Selenium test&quot;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="p">)</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloSeleniumTest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">    </span><span class="n">By</span><span class="w"> </span><span class="n">headlineSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;h1.display-1&quot;</span><span class="p">);</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">    </span><span class="nd">@Test</span><span class="p">(</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">        </span><span class="n">testName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open browser and visit selenium documentation&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open the browser and go to the selenium documentation website&quot;</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">    </span><span class="p">)</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testBrowser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">        </span><span class="n">openSite</span><span class="p">(</span><span class="s">&quot;https://selenium.dev&quot;</span><span class="p">);</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="w">        </span><span class="n">checkHeadline</span><span class="p">(</span><span class="s">&quot;Selenium automates browsers. That&#39;s it!&quot;</span><span class="p">);</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openSite</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25"></a><span class="w">        </span><span class="c1">// Visit Selenium documentation</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28"></a>
+<a id="__codelineno-8-29" name="__codelineno-8-29"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">checkHeadline</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">expectedText</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30"></a><span class="w">        </span><span class="c1">// Extract headline text from website</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">$</span><span class="p">(</span><span class="n">headlineSelector</span><span class="p">).</span><span class="na">text</span><span class="p">(),</span><span class="w"> </span><span class="n">expectedText</span><span class="p">);</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>The advantages of this code example are obvious: the code becomes more readable and by outsourcing test steps to separate methods, 
+they can also be reused in other test cases. However, QTAF goes one step further and expects methods that represent test steps to 
+be defined in separate classes. 
+Thus, there are classes in which the methods contain test cases and other classes in which the methods only contain test steps. 
+Instead of defining all test steps within a single class, it makes sense to bundle only those test steps within a class 
+that all address a specific area of the website. Areas of the website can be, for example, 
+a login form, a navigation bar or a specific menu. This also contributes to the maintainability of the code in larger projects.</p>
+<h3 id="page-objects">Page Objects<a class="headerlink" href="#page-objects" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Let's now look at how to define such a page object class in QTAF. We first create the package <code>org.acme.page_objects</code>, 
+in which we will define our page object classes. The name of the package can also be chosen differently. 
+In this package we now create the class <code>MainSitePO</code> that extends <code>QtafTestNGContext</code>. Within this class we define the methods <code>openSite</code> and <code>checkHeadline</code> 
+as we had defined them before in the class <code>HelloSeleniumTest</code>. </p>
+<h3 id="step-annotations">Step Annotations<a class="headerlink" href="#step-annotations" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Then we have to add annotations to our new class. 
+We add the annotation <code>@Step</code> to each method that represents a test step. 
+Within this annotation we can define the attributes name and description. 
+The name and description of the test step will be used later in the reporting.</p>
+<p>Our new page object class should look like this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span>
+<span class="normal"><a href="#__codelineno-9-17">17</a></span>
+<span class="normal"><a href="#__codelineno-9-18">18</a></span>
+<span class="normal"><a href="#__codelineno-9-19">19</a></span>
+<span class="normal"><a href="#__codelineno-9-20">20</a></span>
+<span class="normal"><a href="#__codelineno-9-21">21</a></span>
+<span class="normal"><a href="#__codelineno-9-22">22</a></span>
+<span class="normal"><a href="#__codelineno-9-23">23</a></span>
+<span class="normal"><a href="#__codelineno-9-24">24</a></span>
+<span class="normal"><a href="#__codelineno-9-25">25</a></span>
+<span class="normal"><a href="#__codelineno-9-26">26</a></span>
+<span class="normal"><a href="#__codelineno-9-27">27</a></span>
+<span class="normal"><a href="#__codelineno-9-28">28</a></span>
+<span class="normal"><a href="#__codelineno-9-29">29</a></span>
+<span class="normal"><a href="#__codelineno-9-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">org.acme.page_objects</span><span class="p">;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.guice.annotations.Step</span><span class="p">;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.By</span><span class="p">;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.WebElement</span><span class="p">;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.inject.Singleton</span><span class="p">;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainSitePO</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">    </span><span class="n">By</span><span class="w"> </span><span class="n">headlineSelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;h1.display-1&quot;</span><span class="p">);</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">    </span><span class="nd">@Step</span><span class="p">(</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open Site&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open the selenium documentation website in the browser&quot;</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">    </span><span class="p">)</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">openSite</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="w">        </span><span class="c1">// Visit Selenium documentation</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21"></a>
+<a id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="w">    </span><span class="nd">@Step</span><span class="p">(</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Check Headline&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Check if the headline of the site cintains a specific text&quot;</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="w">    </span><span class="p">)</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">checkHeadline</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">expectedText</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27"></a><span class="w">        </span><span class="c1">// Extract headline text from website</span>
+<a id="__codelineno-9-28" name="__codelineno-9-28"></a><span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">$</span><span class="p">(</span><span class="n">headlineSelector</span><span class="p">).</span><span class="na">text</span><span class="p">(),</span><span class="w"> </span><span class="n">expectedText</span><span class="p">);</span>
+<a id="__codelineno-9-29" name="__codelineno-9-29"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-30" name="__codelineno-9-30"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Now we need to instantiate this page object class in out test case. This can be done by the function <code>load</code> that is provided by the QTAF test context. This function accepts a class reference and creates a new instance of this class. It is important to instantiate the page object by calling the <code>load</code>and not using the <code>new</code>keyword, otherwise logging will not work for this page object. Internally QTAF injects code before and after each step method so that we can trace these functions. Our test case class, which now uses our page object class, then looks like this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span>
+<span class="normal"><a href="#__codelineno-10-16">16</a></span>
+<span class="normal"><a href="#__codelineno-10-17">17</a></span>
+<span class="normal"><a href="#__codelineno-10-18">18</a></span>
+<span class="normal"><a href="#__codelineno-10-19">19</a></span>
+<span class="normal"><a href="#__codelineno-10-20">20</a></span>
+<span class="normal"><a href="#__codelineno-10-21">21</a></span>
+<span class="normal"><a href="#__codelineno-10-22">22</a></span>
+<span class="normal"><a href="#__codelineno-10-23">23</a></span>
+<span class="normal"><a href="#__codelineno-10-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">org.acme.tests</span><span class="p">;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.core.config.annotations.TestFeature</span><span class="p">;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">de.qytera.qtaf.testng.context.QtafTestNGContext</span><span class="p">;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="nd">@TestFeature</span><span class="p">(</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SeleniumTest&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Our first Selenium test&quot;</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="p">)</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloSeleniumTest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">QtafTestNGContext</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">    </span><span class="nd">@Test</span><span class="p">(</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">        </span><span class="n">testName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open browser and visit selenium documentation&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Open the browser and go to the selenium documentation website&quot;</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="w">    </span><span class="p">)</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testBrowser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">        </span><span class="c1">// Instantiate page objects</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">        </span><span class="n">MainSitePO</span><span class="w"> </span><span class="n">mainSitePO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load</span><span class="p">(</span><span class="n">MainSitePO</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19"></a>
+<a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="w">        </span><span class="c1">// Test case</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="w">        </span><span class="n">mainSitePO</span><span class="p">.</span><span class="na">openSite</span><span class="p">(</span><span class="s">&quot;https://selenium.dev&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22"></a><span class="w">        </span><span class="n">mainSitePO</span><span class="p">.</span><span class="na">checkHeadline</span><span class="p">(</span><span class="s">&quot;Selenium automates browsers. That&#39;s it!&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Now we have divided our project into page objects and the test steps defined in them. We can now call the main method of <code>TestRunner</code> or execute the command <code>mvn clean test</code>. This will run our test cases.</p>
 <h1 id="create-reports">Create reports<a class="headerlink" href="#create-reports" title="Anchor link to this section for reference">⚓︎</a></h1>
 <p>QTAF offers you the possibility to automatically create reports from your test runs. In this example we show you two reporting formats integrated into the QTAF framework, one documenting the test execution by means of a JSON document and the other one creating an HTML report. The JSON document is interesting for the machine processing of the test results, the HTML report for the testers as a graphical presentation of the test results.</p>
+<h2 id="add-qtaf-html-report-plugin">Add QTAF HTML Report plugin<a class="headerlink" href="#add-qtaf-html-report-plugin" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>First, we need to add the QTAF HTML Report plugin as a dependency to our project. To do this, add the following dependency to the pom.xml file.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
-<span class="normal"><a href="#__codelineno-9-2">2</a></span>
-<span class="normal"><a href="#__codelineno-9-3">3</a></span>
-<span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">&lt;dependency&gt;</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>de.qytera<span class="nt">&lt;/groupId&gt;</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>qtaf-html-report-plugin<span class="nt">&lt;/artifactId&gt;</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>${qtafVersion}<span class="nt">&lt;/version&gt;</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="nt">&lt;/dependency&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>de.qytera<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>qtaf-html-report-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>${qtafVersion}<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="nt">&lt;/dependency&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p>Furthermore we have to activate the creation of the HTML report in the <code>qtaf.json</code> file. Make sure that the value <code>htmlReport.enabled</code> in the configuration file is set to <code>true</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span>
-<span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="w">  </span><span class="nt">&quot;htmlReport&quot;</span><span class="p">:{</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="kc">true</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">  </span><span class="p">}</span>
+<p>Since the pom.xml has been changed, you should not forget to reload the dependencies.</p>
+<h2 id="activate-html-report">Activate HTML report<a class="headerlink" href="#activate-html-report" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>Furthermore, we have to activate the creation of the HTML report in the <code>qtaf.json</code> file.
+The <code>qtaf.json</code> file can be found under <code>src/test/resources</code> in the project folder.
+Make sure that the value <code>htmlReport.enabled</code> in the configuration file is set to <code>true</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="w">  </span><span class="nt">&quot;htmlReport&quot;</span><span class="p">:{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="kc">true</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">  </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Then run the test cases again by executing the main method of the <code>TestRunner</code> class. You will then find the file <code>Report.html</code> in the logs directory, which contains the HTML report. You can open and display this in any browser.</p>
-<p>Furthermore, in the same directory you will find the file <code>Report.json</code>, which contains the data of the test run as a JSON document.</p>
+<p>In the same directory you will find the file <code>Report.json</code>, which contains the data of the test run as a JSON document.</p>
 <p>You can find an example of an HTML report here: <a href="../../../assets/html_report/suite_crm/Report.html">QTAF HTML Report</a></p>
 <p>You can also find an example JSON report here: <a href="../../../assets/json_report/suite_crm/Report.json">QTAF JSON Report</a></p>
 <h1 id="run-test-cases-on-different-browsers">Run test cases on different browsers<a class="headerlink" href="#run-test-cases-on-different-browsers" title="Anchor link to this section for reference">⚓︎</a></h1>
 <p>QTAF offers you the possibility to run test cases on different browsers. You can tell QTAF in three different ways which browser it should use to run the test cases. The only requirement is that the browsers themselves have already been installed by you on your computer. QTAF will automatically download the appropriate Selenium drivers for the desired browsers. You therefore do not need to worry about setting up the appropriate drivers.</p>
 <p><strong>Option 1: Use the configuration file</strong></p>
 <p>Change the value of the <code>driver.name</code> attribute in the <code>qtaf.json</code> file. Possible values include <code>chrome</code>, <code>firefox</code>, <code>edge</code>, <code>opera</code> and <code>ie</code>.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
-<span class="normal"><a href="#__codelineno-11-2">2</a></span>
-<span class="normal"><a href="#__codelineno-11-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="w">  </span><span class="nt">&quot;driver&quot;</span><span class="p">:{</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chrome&quot;</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">  </span><span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="w">  </span><span class="nt">&quot;driver&quot;</span><span class="p">:{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chrome&quot;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">  </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Then run your test cases as usual. For example, if you have selected <code>firefox</code> as the value, the test cases will now be executed in the Firefox browser.</p>
 <p><strong>Option 2: Use the command line</strong></p>
@@ -1610,7 +1695,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.instant", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.94c44541.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>
