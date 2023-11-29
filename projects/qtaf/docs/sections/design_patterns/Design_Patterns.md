@@ -21,7 +21,7 @@ Function that accepts no arguments and return an object of type `T` have a speci
 </p>
 <b>Implementation in QTAF</b>
 <p>
-Now lets look how we can implement the supplier pattern in QTAF. We assume that we want to model the following web page. The parent page object should model the complete page which starts at the div element with the id "root". The child page object should model the fraction of the page that is wrapped by the `<article>` tag. This would be the root web element of the child page object.
+Now lets look how we can implement the supplier pattern in QTAF. We assume that we want to model the following web page. The parent page object should model the complete page which starts at the div element with the id "root". The child page object should model the fraction of the page that is wrapped by the `article` tag. This would be the root web element of the child page object.
 </p>
 
 ```html
