@@ -917,8 +917,9 @@ The plugin parses all test case names and looks for sequences of the form <code 
 <p>To link your Cucumber feature files to existing Jira issues, you need to tag both scenario (outlines) and backgrounds.
 The tagging schemes follow the schemes Xray expects when importing feature files (see <a href="https://docs.getxray.app/display/XRAY/Testing+using+Cypress+and+Cucumber+in+JavaScript">here</a> or <a href="https://docs.getxray.app/display/XRAY/Importing+Cucumber+Tests+-+REST">here</a>).</p>
 <h3 id="test-issues">Test issues<a class="headerlink" href="#test-issues" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>In feature files, you must annotate scenarios (or scenario outlines) with a <a href="https://cucumber.io/docs/cucumber/api/?lang=java#tags">tag</a> containing the corresponding test case issue key.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Xray server</label><label for="__tabbed_1_2">Xray cloud</label></div>
+<p>In feature files, you must annotate scenarios (or scenario outlines) with a <a href="https://cucumber.io/docs/cucumber/api/?lang=java#tags">tag</a> containing the corresponding test case issue key.
+The tag's prefix must match the one configured in your Xray settings (see <a href="../../configuration/cucumber/#prefixes">here</a>).</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Feature (prefix)</label><label for="__tabbed_1_2">cypress.config.js (prefix)</label><label for="__tabbed_1_3">Feature (no prefix)</label><label for="__tabbed_1_4">cypress.config.js (no prefix)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
@@ -929,7 +930,7 @@ The tagging schemes follow the schemes Xray expects when importing feature files
 <span class="normal"><a href="#__codelineno-1-6">6</a></span>
 <span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">Feature:</span><span class="nf"> Shopping cart</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nf">@CYP-129</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nf">@MyTestPrefix:CYP-129</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="k">Scenario:</span><span class="nf"> Add socks</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="k">    Given </span><span class="nf">Bob is logged in</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="nf">    </span><span class="k">When </span><span class="nf">three socks are added from the shop</span>
@@ -943,37 +944,29 @@ The tagging schemes follow the schemes Xray expects when importing feature files
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
 <span class="normal"><a href="#__codelineno-2-5">5</a></span>
 <span class="normal"><a href="#__codelineno-2-6">6</a></span>
-<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">Feature:</span><span class="nf"> Shopping cart</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nf">@TestName:CYP-129</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="k">Scenario:</span><span class="nf"> Add socks</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="k">    Given </span><span class="nf">Bob is logged in</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nf">    </span><span class="k">When </span><span class="nf">three socks are added from the shop</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="nf">    </span><span class="k">Then </span><span class="nf">the shopping cart should contain three socks</span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nx">cucumber</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="nx">prefixes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">            </span><span class="nx">test</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MyTestPrefix:&quot;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
-</div>
-</div>
-<h3 id="precondition-issues">Precondition issues<a class="headerlink" href="#precondition-issues" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>In feature files, you must add a comment to a background's <em>very first step</em> containing the <a href="https://cucumber.io/docs/cucumber/api/?lang=java#tags">tag</a> for a corresponding precondition issue key.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can find more information about preconditions <a href="https://docs.getxray.app/display/XRAY/Pre-Condition">here</a> for Xray server and <a href="https://docs.getxray.app/display/XRAYCLOUD/Precondition">here</a> for Xray cloud.</p>
-</div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Xray server</label><label for="__tabbed_2_2">Xray cloud</label></div>
-<div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
 <span class="normal"><a href="#__codelineno-3-5">5</a></span>
-<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">Feature:</span><span class="nf"> Big feature on lovely page</span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">Feature:</span><span class="nf"> Shopping cart</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">Background:</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c">    #@CYP-332</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="k">    Given </span><span class="nf">a browser</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="nf">    </span><span class="k">Then </span><span class="nf">the lovely page should open</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="nf">@CYP-129</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">Scenario:</span><span class="nf"> Add socks</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="k">    Given </span><span class="nf">Bob is logged in</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="nf">    </span><span class="k">When </span><span class="nf">three socks are added from the shop</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nf">    </span><span class="k">Then </span><span class="nf">the shopping cart should contain three socks</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -982,12 +975,85 @@ The tagging schemes follow the schemes Xray expects when importing feature files
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
 <span class="normal"><a href="#__codelineno-4-4">4</a></span>
 <span class="normal"><a href="#__codelineno-4-5">5</a></span>
-<span class="normal"><a href="#__codelineno-4-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">Feature:</span><span class="nf"> Big feature on lovely page</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">Background:</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c">    #@Precondition:CYP-332</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="k">    Given </span><span class="nf">a browser</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="nf">    </span><span class="k">Then </span><span class="nf">the lovely page should open</span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="nx">cucumber</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="nx">prefixes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">            </span><span class="nx">test</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="c1">// or omit it entirely</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="precondition-issues">Precondition issues<a class="headerlink" href="#precondition-issues" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>In feature files, you must add a comment to a background's <em>very first step</em> containing the <a href="https://cucumber.io/docs/cucumber/api/?lang=java#tags">tag</a> for a corresponding precondition issue key.
+The tag's prefix must match the one configured in your Xray settings (see <a href="../../configuration/cucumber/#prefixes">here</a>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can find more information about preconditions <a href="https://docs.getxray.app/display/XRAY/Pre-Condition">here</a> for Xray server and <a href="https://docs.getxray.app/display/XRAYCLOUD/Precondition">here</a> for Xray cloud.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Feature (prefix)</label><label for="__tabbed_2_2">cypress.config.js (prefix)</label><label for="__tabbed_2_3">Feature (no prefix)</label><label for="__tabbed_2_4">cypress.config.js (no prefix)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">Feature:</span><span class="nf"> Big feature on lovely page</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">Background:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c">    #@MyPreconditionPrefix:CYP-332</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="k">    Given </span><span class="nf">a browser</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="nf">    </span><span class="k">Then </span><span class="nf">the lovely page should open</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="nx">cucumber</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">        </span><span class="nx">prefixes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">            </span><span class="nx">precondition</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MyPreconditionPrefix:&quot;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">Feature:</span><span class="nf"> Big feature on lovely page</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="k">Background:</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="c">    #CYP-332</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="k">    Given </span><span class="nf">a browser</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="nf">    </span><span class="k">Then </span><span class="nf">the lovely page should open</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="nx">cucumber</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">        </span><span class="nx">prefixes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">            </span><span class="nx">precondition</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="c1">// or omit it entirely</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
