@@ -31,8 +31,33 @@ The tagging schemes follow the schemes Xray expects when importing feature files
 ### Test issues
 
 In feature files, you must annotate scenarios (or scenario outlines) with a [tag](https://cucumber.io/docs/cucumber/api/?lang=java#tags) containing the corresponding test case issue key.
+The tag's prefix must match the one configured in your Xray settings (see [here](../configuration/cucumber.md#prefixes)).
 
-=== "Xray server"
+=== "Feature (prefix)"
+
+    ```gherkin
+    Feature: Shopping cart
+
+    @MyTestPrefix:CYP-129
+    Scenario: Add socks
+        Given Bob is logged in
+        When three socks are added from the shop
+        Then the shopping cart should contain three socks
+    ```
+
+=== "cypress.config.js (prefix)"
+
+    ```js
+    await configureXrayPlugin(config, {
+        cucumber: {
+            prefixes: {
+                test: "MyTestPrefix:"
+            }
+        },
+    });
+    ```
+
+=== "Feature (no prefix)"
 
     ```gherkin
     Feature: Shopping cart
@@ -44,45 +69,70 @@ In feature files, you must annotate scenarios (or scenario outlines) with a [tag
         Then the shopping cart should contain three socks
     ```
 
-=== "Xray cloud"
+=== "cypress.config.js (no prefix)"
 
-    ```gherkin
-    Feature: Shopping cart
-
-    @TestName:CYP-129
-    Scenario: Add socks
-        Given Bob is logged in
-        When three socks are added from the shop
-        Then the shopping cart should contain three socks
+    ```js
+    await configureXrayPlugin(config, {
+        cucumber: {
+            prefixes: {
+                test: undefined // or omit it entirely
+            }
+        },
+    });
     ```
 
 ### Precondition issues
 
 In feature files, you must add a comment to a background's *very first step* containing the [tag](https://cucumber.io/docs/cucumber/api/?lang=java#tags) for a corresponding precondition issue key.
+The tag's prefix must match the one configured in your Xray settings (see [here](../configuration/cucumber.md#prefixes)).
 
 !!! note
     You can find more information about preconditions [here](https://docs.getxray.app/display/XRAY/Pre-Condition) for Xray server and [here](https://docs.getxray.app/display/XRAYCLOUD/Precondition) for Xray cloud.
 
-=== "Xray server"
+=== "Feature (prefix)"
 
     ```gherkin
     Feature: Big feature on lovely page
 
     Background:
-        #@CYP-332
+        #@MyPreconditionPrefix:CYP-332
         Given a browser
         Then the lovely page should open
     ```
 
-=== "Xray cloud"
+=== "cypress.config.js (prefix)"
+
+    ```js
+    await configureXrayPlugin(config, {
+        cucumber: {
+            prefixes: {
+                precondition: "MyPreconditionPrefix:"
+            }
+        },
+    });
+    ```
+
+=== "Feature (no prefix)"
 
     ```gherkin
     Feature: Big feature on lovely page
 
     Background:
-        #@Precondition:CYP-332
+        #CYP-332
         Given a browser
         Then the lovely page should open
+    ```
+
+=== "cypress.config.js (no prefix)"
+
+    ```js
+    await configureXrayPlugin(config, {
+        cucumber: {
+            prefixes: {
+                precondition: undefined // or omit it entirely
+            }
+        },
+    });
     ```
 
 <hr/>
