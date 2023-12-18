@@ -1,4 +1,8 @@
 {
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
     "files.trimTrailingWhitespace": true,
     "[css]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -18,14 +22,18 @@
         "editor.detectIndentation": false,
         "editor.tabSize": 2
     },
+    "[python]": {
+      "diffEditor.ignoreTrimWhitespace": false,
+      "editor.defaultFormatter": "ms-python.autopep8"
+    },
     "yaml.schemas": {
         "https://squidfunk.github.io/mkdocs-material/schema.json": ["**/mkdocsRoot.yml", "**/mkdocsLocal.yml", "**/mkdocs.yml"]
     },
     "yaml.customTags": [
       "!ENV scalar",
       "!ENV sequence",
-      "tag:yaml.org,2002:python/name:materialx.emoji.to_svg",
-      "tag:yaml.org,2002:python/name:materialx.emoji.twemoji",
+      "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
+      "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
       "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
     ],
   }
