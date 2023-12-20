@@ -1,8 +1,14 @@
+# QTAF TestRail Plugin
+
+One possibility to export and document test results is *TestRail*. In this article we show you how to integrate QTAF in TestRail, how to link your test cases written in Java with the test cases defined in TestRail and how QTAF can automatically save the test results of your test runs in Xray.
+
 # Configuration
 
-TestRail's API is employed to integrate automated tests and submit the results of the implemented test cases. This API operates on an HTTP basis and can be leveraged using any framework or programming language. The TestRail Qtaf Plugin is implemented in Java.
+TestRail's API is employed to integrate automated tests and submit the results of the implemented test cases. This API operates on an HTTP basis and can be leveraged using any framework or programming language. The TestRail QTAF Plugin is implemented in Java.
 
-In this article, we'll guide you on creating test runs in TestRail, linking your test runs to the test cases specified in TestRail, and how QTAf can automatically record the test results of your runs in TestRail.
+In this article, we'll guide you on creating test runs in TestRail, linking your test runs to the test cases specified in TestRail, and how QTAF can automatically record the test results of your runs in TestRail.
+
+More Details of using the TestRail API see [TestRail API Manual](https://support.testrail.com/hc/en-us/articles/7077083596436-Introduction-to-the-TestRail-API) 
 
 ## Creating Test Runs in TestRail
 
@@ -17,7 +23,7 @@ After creating the test run, you should append the test cases to it. There are t
 
 ## QTAF and TestRail Integration
 
-This section shows how the results, attachements and report could be sent to TestRail.
+This section shows how the results, attachments and report could be sent to TestRail.
 
 This segment illustrates how to transmit results, attachments, and reports to TestRail.
 
@@ -48,7 +54,7 @@ Next, you need to store TestRail credentials within the `qtaf.json` file. Insert
   "testrail": {
     "enabled": true,
     "url": "xxxxxxxx",
-    "runId": "xxxxx",
+    "projectId": "xxxxx",
     "authentication": {
       "clientId": "xxx@xxx.xxx",
       "clientSecret": "xxxxxxxxxx"
@@ -58,9 +64,16 @@ Next, you need to store TestRail credentials within the `qtaf.json` file. Insert
 }
 ```
 
-Remember to activate the TestRail Plugin by toggling the `enabled` flag.
+Following describes the keys and values of the TestRail configuration section:
+| Key          | Description                                                                                             |
+|--------------|---------------------------------------------------------------------------------------------------------|
+| enabled      | Remember to activate the TestRail Plugin by toggling the  `enabled` flag.                               |
+| url          | The HTTP Url to the TestRail server instance.                                                           |
+| projectId    | The TestRail internal projectID, if it is necessary. You also can define it in the TestRail annotation. |
+| clientId     | The login credential of the TestRail API.                                                               |
+| clientSecret | The password credential of the TestRail API.                                                            |
 
-After setting up TestRail and saving the credentials, utilize the TestRail Annotation to mark the test case. Below is an illustrative example:
+After setting up TestRail and saving the credentials, utilize the TestRail annotation to mark the test case. Below is an illustrative example:
 
 ```java
 import de.qytera.qtaf.testrail.annotations.TestRail;
@@ -88,15 +101,15 @@ To map a test class to a test in TestRail, apply the `@TestRail` annotation to t
 
 Images are provided to guide you in locating the test case ID and test run ID.
 
-- To get the test run id, click on "TEST RUNS & RESULTS" tab, choose your test run, top in the left corner you can find the id, it is framed with black in the following image:
+- To get the test run ID, click on "TEST RUNS & RESULTS" tab, choose your test run, top in the left corner you can find the ID, it is framed with black in the following image:
 
 ![get test run id](../../../assets/images/qtaf/testrail_plugin/get_test_run_id.png "get test run id")
 
-- To get the test case id, click on "TEST SUITES & CASES" tab, choose your test suite, then you test case, top in the left corner you can find the id, it is framed with black in the following image:
+- To get the test case ID, click on "TEST SUITES & CASES" tab, choose your test suite, then you test case, top in the left corner you can find the ID, it is framed with black in the following image:
 
 ![get test case id](../../../assets/images/qtaf/testrail_plugin/get_test_case_id.png "get test case id")
 
-In order to also document the test steps, methods must be called in the test that are provided with the annotation `@Step` of the Qtaf framework. In this example, we assume that there are two methods that are defined in a separate class called `GoogleFunctionsPage`.
+In order to also document the test steps, methods must be called in the test that are provided with the annotation `@Step` of the QTAF framework. In this example, we assume that there are two methods that are defined in a separate class called `GoogleFunctionsPage`.
 
 ```java
 public class GoogleFunctions extends TestContext
@@ -146,7 +159,7 @@ public class DoGoogleSearch extends TestContext
 }
 ```
 
-Qtaf registers the call of these methods and logs the call in the background. Here, no IDs need to be defined for the test steps. Qtaf assigns the called methods in the order of the steps defined in TestRail.
+QTAF registers the call of these methods and logs the call in the background. Here, no IDs need to be defined for the test steps. QTAF assigns the called methods in the order of the steps defined in TestRail.
 
 Now execute your test cases as usual. After the execution of your test cases is finished, QTAF will show you the following statement in the console:
 
