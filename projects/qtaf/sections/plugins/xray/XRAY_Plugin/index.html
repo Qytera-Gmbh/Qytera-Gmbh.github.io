@@ -1144,7 +1144,7 @@
 
 
 <h1 id="qtaf-xray-plugin">QTAF Xray Plugin<a class="headerlink" href="#qtaf-xray-plugin" title="Anchor link to this section for reference">⚓︎</a></h1>
-<p>One possibility to export and document test results is <em>Xray for Jira</em>. In this article we show you how to create test cases in Xray, how to link your test cases written in Java with the test cases defined in Xray and how QTAf can automatically save the test results of your test runs in Xray.</p>
+<p>One possibility to export and document test results is <em>Xray for Jira</em>. In this article we show you how to create test cases in Xray, how to link your test cases written in Java with the test cases defined in Xray and how QTAF can automatically save the test results of your test runs in Xray.</p>
 <h2 id="create-test-cases-in-xray">Create test cases in Xray<a class="headerlink" href="#create-test-cases-in-xray" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>The first step is to create the definitions of our test cases in Xray. In our example, we will create three test case definitions called <code>QTAF-1</code>, <code>QTAF-2</code> and <code>QTAF-3</code>.</p>
 <p>First you have to click on "Testing Board" in the left menu of Jira to get to the user interface of Xray. The following screenshot shows the testing board of our example project. Create the three test case definitions for our test cases here.</p>
@@ -1324,7 +1324,7 @@
 <a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>Qtaf registers the call of these methods and logs the call in the background. Here, no IDs need to be defined for the test steps. Qtaf assigns the called methods in the order of the steps defined in Xray.</p>
+<p>QTAF registers the call of these methods and logs the call in the background. Here, no IDs need to be defined for the test steps. QTAF assigns the called methods in the order of the steps defined in Xray.</p>
 <p>Now execute your test cases as usual. After the execution of your test cases is finished, QTAF will show you the following statement in the console:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>15:22:25.717 [main] INFO  de.qytera.qtaf.core - Uploading Xray results ...
