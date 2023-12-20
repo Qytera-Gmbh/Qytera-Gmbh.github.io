@@ -2,6 +2,41 @@
 
 Everything here is based on [mkdocs](https://www.mkdocs.org).
 
+- [Quick Start](#quick-start)
+- [Setup](#setup)
+  - [Existing Project](#existing-project)
+  - [New Project](#new-project)
+- [Usage](#usage)
+- [Deployment](#deployment)
+
+## Quick Start
+
+Run the following commands to quickly start editing QTAF's documentation (assuming you're on a Windows machine):
+
+### CMD/PowerShell
+
+```ps
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+python docs.py update-project projects\qtaf
+cd projects\qtaf
+mkdocs serve
+# open browser on http://127.0.0.1:8000/
+```
+
+### Bash
+
+```ps
+python -m venv venv
+source venv/Scripts/activate
+pip install -r requirements.txt
+python docs.py update-project projects/qtaf
+cd projects/qtaf
+mkdocs serve
+# open browser on http://127.0.0.1:8000/
+```
+
 ## Setup
 
 It is highly recommended to use virtual Python environments instead of global ones:
@@ -38,13 +73,6 @@ pip install -r requirements.txt
 
 If you want to work with videos, you should probably install [`ffmpeg`](https://ffmpeg.org/) as well.
 In the `scripts` directory, there is a useful script for generating video thumbnails.
-
-#### VS Code
-
-The following plugins are recommended when using VS Code:
-
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [YAML Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
 ### Existing Project
 
