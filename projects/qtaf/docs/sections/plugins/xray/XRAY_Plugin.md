@@ -1,6 +1,6 @@
 # QTAF Xray Plugin
 
-One possibility to export and document test results is *Xray for Jira*. In this article we show you how to create test cases in Xray, how to link your test cases written in Java with the test cases defined in Xray and how QTAf can automatically save the test results of your test runs in Xray.
+One possibility to export and document test results is *Xray for Jira*. In this article we show you how to create test cases in Xray, how to link your test cases written in Java with the test cases defined in Xray and how QTAF can automatically save the test results of your test runs in Xray.
 
 ## Create test cases in Xray
 
@@ -126,7 +126,7 @@ public class DoGoogleSearch extends TestContext
 }
 ```
 
-Qtaf registers the call of these methods and logs the call in the background. Here, no IDs need to be defined for the test steps. Qtaf assigns the called methods in the order of the steps defined in Xray.
+QTAF registers the call of these methods and logs the call in the background. Here, no IDs need to be defined for the test steps. QTAF assigns the called methods in the order of the steps defined in Xray.
 
 Now execute your test cases as usual. After the execution of your test cases is finished, QTAF will show you the following statement in the console:
 
