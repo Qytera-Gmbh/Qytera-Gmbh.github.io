@@ -1,14 +1,13 @@
 # QTAF Annotations
 
-This article shows which annotations QTAF provides. 
+This article shows which annotations QTAF provides.
 Furthermore, all annotations provided by TestNG are supported.
 
 ---
 
 ## QTAF Annotations
 
-QTAF makes it possible to quickly and easily name or describe 
-test cases and more directly in the code by using the annotations provided.
+QTAF makes it possible to quickly and easily name or describe test cases and more directly in the code by using the annotations provided.
 This information allows for more detailed log files and reports.
 In addition, some QTAF plug-ins also offer further annotations.
 
@@ -36,7 +35,7 @@ This annotation expects the following attributes:
 
 * `description`: Description  of the test feature
 
-These attributes are used when generating log files and reports. 
+These attributes are used when generating log files and reports.
 
 The following annotation can be used to describe a test feature and associated test cases in a class:
 ```java
@@ -58,7 +57,8 @@ public class TestFeatureOne extends TestContext {
 For a description of the `@Test` annotation, see also the section [TestNG Annotations](#testng-annotations).
 
 ## Plug-ins
-QTAF can be extended with plug-ins. Some of these plug-ins offer annotation. 
+QTAF can be extended with plug-ins.
+Some of these plug-ins offer annotation.
 More detailed information on the corresponding plug-ins can be found in their documentation.
 
 ### @TestRail
@@ -88,9 +88,8 @@ These attributes are used when generating log files and reports.
 ---
 
 ## TestNG Annotations
-All annotations provided by TestNG are supported by QTAF. 
-This includes `@Test`, `@Parameters`, `@BeforSuite` etc. A complete list of TestNG 
-annotations can be found in the official [TestNG documentation](https://testng.org/doc/documentation-main.html).
+All annotations provided by TestNG are supported by QTAF.
+This includes `@Test`, `@Parameters`, `@BeforeSuite` etc.A complete list of TestNG annotations can be found in the official [TestNG documentation](https://testng.org).
 
 
 <hr>
