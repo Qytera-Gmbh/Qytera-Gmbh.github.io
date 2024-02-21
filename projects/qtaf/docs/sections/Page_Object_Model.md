@@ -8,7 +8,7 @@ There are two basic ways to select elements of a graphical user interface: First
 
 The following HTML code is an example of a page object for a website. The page object shown consists of four basic elements: An image, a headline, a text and a button.
 
-<img src="../../../assets/images/qtaf/page_objects/ui_page_object.jpg" />
+<img src="../../assets/images/qtaf/page_objects/ui_page_object.jpg" />
 
 This is the corresponding HTML source code of the shown UI element:
 
@@ -66,7 +66,7 @@ with its own page object class. Instead, it makes more sense to create a common 
 page objects and to pass parameters to this class that can be used to react to deviations between
 the individual page objects.
 
-<img src="../../../assets/images/qtaf/page_objects/ui_page_objects.jpg" />
+<img src="../../assets/images/qtaf/page_objects/ui_page_objects.jpg" />
 
 <hr>
 <div style="display: flex; flex-direction: row; justify-content: space-between">
