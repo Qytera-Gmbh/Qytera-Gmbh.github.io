@@ -89,7 +89,8 @@ These attributes are used when generating log files and reports.
 
 ## TestNG Annotations
 All annotations provided by TestNG are supported by QTAF.
-This includes `@Test`, `@Parameters`, `@BeforeSuite` etc.A complete list of TestNG annotations can be found in the official [TestNG documentation](https://testng.org).
+This includes `@Test`, `@Parameters`, `@BeforeSuite` etc.
+A complete list of TestNG annotations can be found in the official [TestNG documentation](https://testng.org).
 
 
 <hr>
