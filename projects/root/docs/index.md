@@ -33,4 +33,11 @@ hide:
             <h5>Manage Cypress Tests</h5>
         </div>
     </div>
+    <div class="tile" onclick="window.location='projects/jmeter-har-importer-plugin'">
+        <img class="logo" src="assets/images/logo-har-importer.png" alt="jmeter har importer plugin logo">
+        <div class="name">
+            <h1>JMeter HAR Importer Plugin</h1>
+            <h5>Record JMeter test plans from within your browser</h5>
+        </div>
+    </div>
 </div>

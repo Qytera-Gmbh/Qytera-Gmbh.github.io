@@ -1,0 +1,22 @@
+# ============================================ #
+# PROJECT CONFIGURATION, FEEL FREE TO MODIFY   #
+# Then update mkdocs.yml using:                #
+# python docs.py update-project <project-dir>  #
+# ============================================ #
+
+site_name: JMeter HAR Importer Plugin
+
+repo_name: JMeter HAR Importer Plugin
+repo_url: https://github.com/Qytera-Gmbh/JMeterHARImporterPlugin
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+
+nav:
+  - index.md
+
