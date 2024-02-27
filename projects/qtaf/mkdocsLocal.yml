@@ -30,6 +30,7 @@ nav:
           - Qtaf and Groovy: sections/steps/QTAF_Groovy.md
     - Plugins:
           - Allure Plugin: sections/plugins/Allure_Plugin.md
+          - TestRail Plugin: sections/plugins/testRail/TestRail_Plugin.md
     - Xray Plugin:
       - Introduction: sections/plugins/xray/XRAY_Plugin.md
       - Configuration: sections/plugins/xray/Configuration.md

@@ -25,6 +25,7 @@ On the following pages you can find instructions for the product QTAF.
 
 #### QTAF Plugins
 - [Xray Plugin](sections/plugins/xray/XRAY_Plugin.md)
+- [TestRail Plugin](sections/plugins/testRail/TestRail_Plugin.md)
 - [Allure Plugin](sections/plugins/Allure_Plugin.md)
 
 #### QTAF and Cucumber
