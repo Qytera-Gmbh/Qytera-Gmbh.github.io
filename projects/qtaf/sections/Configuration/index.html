@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../steps/Drivers/">
       
       
-        <link rel="next" href="../setup/IntelliJ_Project_Setup/">
+        <link rel="next" href="../design_patterns/Design_Patterns/">
       
       
       <link rel="icon" href="../../assets/images/qyteraIcon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Page Object Model - QTAF - Qytera Test Automation Framework</title>
+        <title>Configuration - QTAF - Qytera Test Automation Framework</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#page-object-model" class="md-skip">
+        <a href="#configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Page Object Model
+              Configuration
             
           </span>
         </div>
@@ -272,8 +272,6 @@
       
   
   
-    
-  
   
   
     
@@ -285,11 +283,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -303,7 +301,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Basics
@@ -314,30 +312,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Page Object Model
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Page_Object_Model/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -346,35 +324,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#example-of-page-objects" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example of page objects
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -564,10 +513,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Configuration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -576,6 +545,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      driver
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="driver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      capabilities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1140,11 +1162,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example-of-page-objects" class="md-nav__link">
+  <a href="#driver" class="md-nav__link">
     <span class="md-ellipsis">
-      Example of page objects
+      driver
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="driver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      capabilities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1166,98 +1212,90 @@
   
 
 
-<h1 id="page-object-model">Page Object Model<a class="headerlink" href="#page-object-model" title="Anchor link to this section for reference">⚓︎</a></h1>
-<p>The Page Object Model is a software design pattern that describes interfaces for software-controlled manipulation of an element of a graphical user interface. The basic idea of the Page Object Model is to describe and control elements of a GUI through a parameterisable code base. The page object model is often used in the software-based automation of software applications with a graphical user interface.</p>
-<p>There are two basic ways to select elements of a graphical user interface: First, each element can be assigned a unique ID. On the other hand, there is the possibility to select elements by means of a query language. A page object consists of a set of selectors that identify one or more elements of a GUI by means of an ID or a query language. In the context of web applications, GUI elements are mainly identified by unique IDs, CSS or HTML attributes. Furthermore, methods are defined in a page object that can perform a manipulation on one or more elements of the web application or read their attributes. The attributes of a GUI element are, for example, information about the graphic representation of the element (height, width, colours, etc.), its position on the display device and its relationship to other elements of the GUI.</p>
-<h2 id="example-of-page-objects">Example of page objects<a class="headerlink" href="#example-of-page-objects" title="Anchor link to this section for reference">⚓︎</a></h2>
-<p>The following HTML code is an example of a page object for a website. The page object shown consists of four basic elements: An image, a headline, a text and a button.</p>
-<p><img src="../../assets/images/qtaf/page_objects/ui_page_object.jpg" /></p>
-<p>This is the corresponding HTML source code of the shown UI element:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">7</a></span>
-<span class="normal"><a href="#__codelineno-0-8">8</a></span>
-<span class="normal"><a href="#__codelineno-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="p">&lt;</span><span class="nt">img</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.qytera.de/sites/default/files/startseite-2020/qytera-testmanagement-300-169.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;startseite-saeulen-logo&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Continuous Testing<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Wir verhelfen Ihnen zu kontinuierlichen und schnellen Softwarelieferungen in hoher Qualität.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://www.qytera.de/testing-solutions/continuous-testing&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;button-red consulting-blog-verlinkung-button&quot;</span><span class="p">&gt;</span>Mehr erfahren<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Anchor link to this section for reference">⚓︎</a></h1>
+<p>Here you can find descriptions, examples and use cases for all global QTAF settings.</p>
+<h2 id="driver"><code>driver</code><a class="headerlink" href="#driver" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>The driver settings are essential for the web driver to properly interact with your application.</p>
+<h3 id="options"><code>options</code><a class="headerlink" href="#options" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>A list of <a href="https://www.selenium.dev/documentation/webdriver/drivers/options/">browser options</a> to pass to the web driver on instantiation.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>DRIVER_OPTIONS</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string[]</code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">QTAF JSON</label><label for="__tabbed_1_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">&quot;driver&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="s2">&quot;--headless&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="s2">&quot;--disable-gpu&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="s2">&quot;--ignore-certificate-errors&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="s2">&quot;--disable-extensions&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="s2">&quot;--no-sandbox&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="s2">&quot;--disable-dev-shm-usage&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>In test automation, a class is now created in which methods for interacting with the elements of the page object are defined. Useful methods for interacting with the page object shown could be reading the headline and the text as well as clicking the button.</p>
-<p>The following is an example of the definition of a page object using the Java programming language. The root node of the page object is passed to the class in the constructor. Subsequently, references to the UI elements (image, heading, text and button) are stored in the class attributes. Furthermore, methods for interacting with the page object are defined in the class, such as reading out the texts of the elements or other attributes such as the URL of the image.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span>
-<span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span>
-<span class="normal"><a href="#__codelineno-1-21">21</a></span>
-<span class="normal"><a href="#__codelineno-1-22">22</a></span>
-<span class="normal"><a href="#__codelineno-1-23">23</a></span>
-<span class="normal"><a href="#__codelineno-1-24">24</a></span>
-<span class="normal"><a href="#__codelineno-1-25">25</a></span>
-<span class="normal"><a href="#__codelineno-1-26">26</a></span>
-<span class="normal"><a href="#__codelineno-1-27">27</a></span>
-<span class="normal"><a href="#__codelineno-1-28">28</a></span>
-<span class="normal"><a href="#__codelineno-1-29">29</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CardPageObject</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">HTMLImageElement</span><span class="w"> </span><span class="n">image</span><span class="p">;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">HTMLElement</span><span class="w"> </span><span class="n">headline</span><span class="p">;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="n">HTMLParagraphElement</span><span class="w"> </span><span class="n">paragraph</span><span class="p">;</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="n">HTMLButtonElement</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="n">CardPageObject</span><span class="p">(</span><span class="n">WebElement</span><span class="w"> </span><span class="n">rootElement</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">HTMLImageElement</span><span class="p">)</span><span class="w"> </span><span class="n">rootElement</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;img.startseite-saeulen-logo&quot;</span><span class="p">));</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">        </span><span class="n">headline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">HTMLElement</span><span class="p">)</span><span class="w"> </span><span class="n">rootElement</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;h3&quot;</span><span class="p">));</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="n">paragraph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">HTMLParagraphElement</span><span class="p">)</span><span class="w"> </span><span class="n">rootElement</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;p&quot;</span><span class="p">));</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">HTMLButtonElement</span><span class="p">)</span><span class="w"> </span><span class="n">rootElement</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;button.button-red&quot;</span><span class="p">));</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">getImageSource</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">image</span><span class="p">.</span><span class="na">getAttribute</span><span class="p">(</span><span class="s">&quot;src&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">getHeadlineText</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">headline</span><span class="p">.</span><span class="na">getAttribute</span><span class="p">(</span><span class="s">&quot;innerText&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a>
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">getParagraphText</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">paragraph</span><span class="p">.</span><span class="na">getAttribute</span><span class="p">(</span><span class="s">&quot;innerText&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25"></a>
-<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">clickButton</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">        </span><span class="p">((</span><span class="n">WebElement</span><span class="p">)</span><span class="w"> </span><span class="n">button</span><span class="p">).</span><span class="na">click</span><span class="p">();</span>
-<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="p">}</span>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nv">DRIVER_OPTIONS</span><span class="o">=</span><span class="s2">&quot;[--headless, --disable-gpu, --ignore-certificate-errors, --disable-extensions, --no-sandbox, --disable-dev-shm-usage]&quot;</span>
 </code></pre></div></td></tr></table></div>
-<p>On the website examined, UI elements with a similar structure to the one shown can be found.
-From the point of view of test automation, it makes no sense to abstract each of these objects
-with its own page object class. Instead, it makes more sense to create a common class for these
-page objects and to pass parameters to this class that can be used to react to deviations between
-the individual page objects.</p>
-<p><img src="../../assets/images/qtaf/page_objects/ui_page_objects.jpg" /></p>
-<hr>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h3 id="capabilities"><code>capabilities</code><a class="headerlink" href="#capabilities" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>A <a href="https://w3c.github.io/webdriver/#capabilities">capabilities</a> object to pass to the web driver on instantiation.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>DRIVER_CAPABILITIES</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>JSON object</code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">QTAF JSON</label><label for="__tabbed_2_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">&quot;driver&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;capabilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;acceptInsecureCerts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;elementScrollBehavior&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;customCapability&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;yes&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">]</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nv">DRIVER_CAPABILITIES</span><span class="o">=</span><span class="s2">&quot;{acceptInsecureCerts: true, elementScrollBehavior: 1, customCapability: [42, yes, false]}&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
 <div style="display: flex; flex-direction: row; justify-content: space-between">
   <a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>
   <span>|</span>
@@ -1302,7 +1340,7 @@ the individual page objects.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+          <a href="../steps/Drivers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Browser Drivers">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1312,20 +1350,20 @@ the individual page objects.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Home
+                Browser Drivers
               </div>
             </div>
           </a>
         
         
           
-          <a href="../setup/IntelliJ_Project_Setup/" class="md-footer__link md-footer__link--next" aria-label="Next: Create new IntelliJ Project">
+          <a href="../design_patterns/Design_Patterns/" class="md-footer__link md-footer__link--next" aria-label="Next: Design Patterns">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Create new IntelliJ Project
+                Design Patterns
               </div>
             </div>
             <div class="md-footer__button md-icon">
