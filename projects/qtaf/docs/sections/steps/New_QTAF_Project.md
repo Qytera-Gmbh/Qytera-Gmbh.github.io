@@ -326,7 +326,7 @@ public class MainSitePO extends QtafTestNGContext {
     }
 }
 ```
-
+###load()
 Now we need to instantiate this page object class in out test case. This can be done by the function `load` that is provided by the QTAF test context. This function accepts a class reference and creates a new instance of this class. It is important to instantiate the page object by calling the `load`and not using the `new`keyword, otherwise logging will not work for this page object. Internally QTAF injects code before and after each step method so that we can trace these functions. Our test case class, which now uses our page object class, then looks like this:
 
 ```java
