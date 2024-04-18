@@ -589,6 +589,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      preferences
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1189,6 +1198,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      preferences
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1289,6 +1307,49 @@
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nv">DRIVER_CAPABILITIES</span><span class="o">=</span><span class="s2">&quot;{acceptInsecureCerts: true, elementScrollBehavior: 1, customCapability: [42, yes, false]}&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h3 id="preferences"><code>preferences</code><a class="headerlink" href="#preferences" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Additional browser preferences to pass to the web driver options on instantiation.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>These preferences will be passed to the driver options as follows:</p>
+<ul>
+<li>Chromium: as <a href="https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/chromium/ChromiumOptions.html#setExperimentalOption(java.lang.String,java.lang.Object)">experimental options</a></li>
+<li>Firefox: as a <a href="https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/firefox/FirefoxProfile.html">firefox profile</a></li>
+</ul>
+</div>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>DRIVER_PREFERENCES</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>JSON object</code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">QTAF JSON</label><label for="__tabbed_3_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">&quot;driver&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;preferences&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;download.default_directory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/me/downloads&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;profile.default_content_settings.popups&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nv">DRIVER_PREFERENCES</span><span class="o">=</span><span class="s2">&quot;{download.default_directory: /home/me/downloads, profile.default_content_settings.popups: 0}&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
