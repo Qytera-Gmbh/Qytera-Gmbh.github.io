@@ -69,6 +69,41 @@ A [capabilities](https://w3c.github.io/webdriver/#capabilities) object to pass t
 
 <hr/>
 
+### `preferences`
+
+Additional browser preferences to pass to the web driver options on instantiation.
+
+!!! info
+    These preferences will be passed to the driver options as follows:
+
+    - Chromium: as [experimental options](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/chromium/ChromiumOptions.html#setExperimentalOption(java.lang.String,java.lang.Object))
+    - Firefox: as a [firefox profile](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/firefox/FirefoxProfile.html)
+
+***Environment variable***
+: `DRIVER_PREFERENCES`
+
+***Type***
+: `JSON object`
+
+??? example
+    === "QTAF JSON"
+
+        ```json
+        "driver": {
+          "preferences": {
+            "download.default_directory": "/home/me/downloads",
+            "profile.default_content_settings.popups": 0
+          }
+        }
+        ```
+
+    === "Environment variable"
+        ```sh
+        DRIVER_PREFERENCES="{download.default_directory: /home/me/downloads, profile.default_content_settings.popups: 0}"
+        ```
+
+<hr/>
+
 <div style="display: flex; flex-direction: row; justify-content: space-between">
   <a href="https://www.qytera.de" target="_blank">Developed with love by Qytera, Germany</a>
   <span>|</span>
