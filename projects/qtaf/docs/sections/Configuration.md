@@ -88,18 +88,21 @@ Additional browser preferences to pass to the web driver options on instantiatio
 ??? example
     === "QTAF JSON"
 
+        The following will set the download directory in [Chromium-based browsers](https://chromedriver.chromium.org/capabilities) to `/home/me/downloads`.
+  
         ```json
         "driver": {
           "preferences": {
-            "download.default_directory": "/home/me/downloads",
-            "profile.default_content_settings.popups": 0
+            "prefs": {
+              "download.default_directory": "/home/me/downloads"
+            }
           }
         }
         ```
 
     === "Environment variable"
         ```sh
-        DRIVER_PREFERENCES="{download.default_directory: /home/me/downloads, profile.default_content_settings.popups: 0}"
+        DRIVER_PREFERENCES="{prefs: {download.default_directory: /home/me/downloads}}"
         ```
 
 <hr/>
