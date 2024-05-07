@@ -14,6 +14,9 @@ Test steps must still be defined for each of the three tests. In the Xray user i
 
 <img src="../../../../assets/images/qtaf/xray_plugin/xray_test_steps.png" />
 
+If you're using Qtaf with Xray, the test environment may be missing on Xray. In such cases, you need to configure the required test environment. Refer to [this link](https://docs.getxray.app/display/XRAYCLOUD/Project+Settings%3A+Test+Environments) for more details.
+
+
 ## QTAF and Xray
 
 This section shows how the recorded information about the executed test cases and test steps can be automatically sent to Xray.
