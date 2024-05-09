@@ -35,7 +35,7 @@ nav:
       - Upload test results: section/guides/uploadTestResults.md
       - Targeting existing issues: section/guides/targetingExistingIssues.md
       - Feature file synchronization: section/guides/featureFileSynchronization.md
-      - OpenSSL: section/guides/openSSL.md
+      - HTTP FAQ: section/guides/httpFaq.md
 
 extra_css:
   - stylesheets/styles.css
