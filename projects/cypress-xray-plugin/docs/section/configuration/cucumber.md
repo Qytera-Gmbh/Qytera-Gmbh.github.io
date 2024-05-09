@@ -19,7 +19,7 @@ Such tags are needed to identify to which test issue a feature file belongs (see
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             cucumber: {
                 featureFileExtension: ".feature"
             },
@@ -53,7 +53,7 @@ Set it to true to automatically download feature files from Xray for Cypress to 
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             cucumber: {
                 downloadFeatures: true
             },
@@ -132,7 +132,7 @@ If left undefined, the plugin will assume that your Xray instance is able to pro
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             cucumber: {
                 prefixes: {
                     precondition: "Precondition:"
@@ -165,7 +165,7 @@ If left undefined, the plugin will assume that your Xray instance is able to pro
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             cucumber: {
                 prefixes: {
                     test: "TestName:"
@@ -198,7 +198,7 @@ Set it to true to automatically create or update existing Xray issues (steps, la
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             cucumber: {
                 uploadFeatures: true
             },

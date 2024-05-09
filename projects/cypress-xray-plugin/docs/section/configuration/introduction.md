@@ -4,7 +4,7 @@ Apart from authentication, all configuration takes place using the `#!js configu
 
 ```js
 async setupNodeEvents(on, config) {
-    await configureXrayPlugin(config, {
+    await configureXrayPlugin(on, config, {
         jira: {
             // ...
         },
@@ -17,7 +17,7 @@ async setupNodeEvents(on, config) {
         cucumber: {
             // ...
         },
-        openSSL: {
+        http: {
             // ...
         },
     });

@@ -28,7 +28,7 @@ The Xray status name of a test marked as failed by Cypress.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 status: {
                     failed: "FAILURE"
@@ -60,7 +60,7 @@ The Xray status name of a test marked as passed by Cypress.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 status: {
                     passed: "SUCCESS"
@@ -91,7 +91,7 @@ The Xray status name of a test marked as pending by Cypress.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 status: {
                     pending: "AWAITING EXECUTION"
@@ -125,7 +125,7 @@ The Xray status name of a test marked as skipped by Cypress.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 status: {
                     skipped: "IGNORED"
@@ -170,7 +170,7 @@ For more information about working with test environments, make sure to check ou
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 testEnvironments: ["DEV", "v3.1"]
             },
@@ -200,7 +200,7 @@ Useful when switching upload on or off from the command line (via environment va
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 uploadResults: false
             },
@@ -232,7 +232,7 @@ Turns on or off the upload of screenshots Cypress takes during test execution.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 uploadScreenshots: false
             },

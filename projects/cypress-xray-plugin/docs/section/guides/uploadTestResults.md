@@ -13,18 +13,15 @@
 To upload your test results to Xray, make sure you have enabled the results upload in your configuration file:
 
 ```js
-import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin";
+import { configureXrayPlugin } from "cypress-xray-plugin";
 
-// ...
-    async setupNodeEvents(on, config) {
-        await configureXrayPlugin(config, {
-            xray: {
-                uploadResults: true
-            }
-        });
-        await addXrayResultUpload(on);
-    }
-// ...
+async setupNodeEvents(on, config) {
+    await configureXrayPlugin(on, config, {
+        xray: {
+            uploadResults: true
+        }
+    });
+}
 ```
 
 Afterwards, simply run Cypress:
@@ -88,20 +85,17 @@ The plugin will also create a new test execution issue, unless you tell it to [r
     === "cypress.config.js"
 
         ```js
-        import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin";
+        import { configureXrayPlugin } from "cypress-xray-plugin";
 
-        // ...
-            async setupNodeEvents(on, config) {
-                await configureXrayPlugin(config, {
-                    jira: {
-                        projectKey: "CYP",
-                        url: "https://atlassian.com"
-                    },
-                    xray: {
-                        uploadResults: true
-                    }
-                });
-                await addXrayResultUpload(on);
-            }
-        // ...
+        async setupNodeEvents(on, config) {
+            await configureXrayPlugin(on, config, {
+                jira: {
+                    projectKey: "CYP",
+                    url: "https://atlassian.com"
+                },
+                xray: {
+                    uploadResults: true
+                }
+            });
+        }
         ```

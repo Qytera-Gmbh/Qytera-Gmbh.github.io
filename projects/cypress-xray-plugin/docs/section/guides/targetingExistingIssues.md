@@ -48,7 +48,7 @@ The tag's prefix must match the one configured in your Xray settings (see [here]
 === "cypress.config.js (prefix)"
 
     ```js
-    await configureXrayPlugin(config, {
+    await configureXrayPlugin(on, config, {
         cucumber: {
             prefixes: {
                 test: "MyTestPrefix:"
@@ -72,7 +72,7 @@ The tag's prefix must match the one configured in your Xray settings (see [here]
 === "cypress.config.js (no prefix)"
 
     ```js
-    await configureXrayPlugin(config, {
+    await configureXrayPlugin(on, config, {
         cucumber: {
             prefixes: {
                 test: undefined // or omit it entirely
@@ -103,7 +103,7 @@ The tag's prefix must match the one configured in your Xray settings (see [here]
 === "cypress.config.js (prefix)"
 
     ```js
-    await configureXrayPlugin(config, {
+    await configureXrayPlugin(on, config, {
         cucumber: {
             prefixes: {
                 precondition: "MyPreconditionPrefix:"
@@ -126,7 +126,7 @@ The tag's prefix must match the one configured in your Xray settings (see [here]
 === "cypress.config.js (no prefix)"
 
     ```js
-    await configureXrayPlugin(config, {
+    await configureXrayPlugin(on, config, {
         cucumber: {
             prefixes: {
                 precondition: undefined // or omit it entirely

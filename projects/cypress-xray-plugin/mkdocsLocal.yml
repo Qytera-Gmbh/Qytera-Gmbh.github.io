@@ -29,7 +29,7 @@ nav:
       - "Options: Xray": section/configuration/xray.md
       - "Options: Cucumber": section/configuration/cucumber.md
       - "Options: Plugin": section/configuration/plugin.md
-      - "Options: OpenSSL": section/configuration/openSSL.md
+      - "Options: HTTP": section/configuration/http.md
       - Option types: section/configuration/types.md
   - Guides:
       - Upload test results: section/guides/uploadTestResults.md

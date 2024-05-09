@@ -20,7 +20,7 @@ Turns on or off extensive debugging output.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             plugin: {
                 debug: true
             },
@@ -50,7 +50,7 @@ Setting this option to `false` disables all plugin functions, including authenti
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             plugin: {
                 enabled: false
             },
@@ -79,7 +79,7 @@ The directory which all error and debug log files will be written to.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             plugin: {
                 logDirectory: "/home/logs"
             },
@@ -109,7 +109,7 @@ With this option enabled, the plugin only keeps characters `a-zA-Z0-9.` in scree
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin({
+        await configureXrayPlugin(on, config, {
             plugin: {
                 normalizeScreenshotNames: true
             },

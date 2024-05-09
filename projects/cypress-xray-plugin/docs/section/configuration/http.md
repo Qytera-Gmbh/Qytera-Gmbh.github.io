@@ -1,4 +1,4 @@
-# OpenSSL
+# HTTP
 
 !!! tip
     Make sure to check out the [examples](../guides/openSSL.md) to see in which scenarios changing OpenSSL configuration might make sense.
@@ -25,7 +25,7 @@ This will then be used during authentication & communication with the Xray insta
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             openSSL: {
                 rootCAPath: "/home/cert.pem"
             },
@@ -139,7 +139,7 @@ A [crypto constant](https://nodejs.org/api/crypto.html#crypto-constants) (see li
         ```js
         import { constants } from "crypto";
 
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             openSSL: {
                 secureOptions: constants.SSL_OP_LEGACY_SERVER_CONNECT | constants.SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION; // 262148
             },

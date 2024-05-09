@@ -19,12 +19,16 @@ Error messages requiring you to provide custom SSL certificates might look like 
 
 !!! success "Solution"
     Download the SSL certificate of your CA and make sure it is in `.pem` format.
-    Then, tell the plugin to trust that CA by providing the certificate's path in [the options](../configuration/openSSL.md#rootcapath):
+    Then, tell the plugin to trust that CA by providing the certificate's path in [the HTTP options](../configuration/http.md):
 
     ```js
-    await configureXrayPlugin(config, {
-        openSSL: {
-            rootCAPath: "/home/cert.pem"
+    import { Agent } from "node:https";
+
+    await configureXrayPlugin(on, config, {
+        http: {
+            httpsAgent: new Agent({
+                ca: "/home/cert.pem",
+            }),
         },
     });
     ```
@@ -45,11 +49,14 @@ Error messages requiring you to provide security options might look like any of 
     [Allow legacy insecure renegotiation between OpenSSL and unpatched clients or servers](https://www.openssl.org/docs/man1.1.1/man3/SSL_clear_options.html):
 
     ```js
-    import { constants } from "crypto";
+    import { constants } from "node:crypto";
+    import { Agent } from "node:https";
 
-    await configureXrayPlugin(config, {
-        openSSL: {
-            secureOptions: constants.SSL_OP_LEGACY_SERVER_CONNECT,
+    await configureXrayPlugin(on, config, {
+        http: {
+            httpsAgent: new Agent({
+                secureOptions: constants.SSL_OP_LEGACY_SERVER_CONNECT,
+            }),
         },
     });
     ```

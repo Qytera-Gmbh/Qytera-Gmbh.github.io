@@ -66,17 +66,18 @@ You can enable the upload using the [`uploadFeatures`](../configuration/cucumber
 
     === "cypress.config.js"
 
-        ```js hl_lines="17-20"
+        ```js hl_lines="18-21"
         import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
         import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
         import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
-        import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin";
+        import { configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin";
         import fix from "cypress-on-fix";
 
         // ...
         async setupNodeEvents(on, config) {
             const fixedOn = fix(on);
             await configureXrayPlugin(
+                on,
                 config,
                 {
                     jira: {
@@ -90,7 +91,6 @@ You can enable the upload using the [`uploadFeatures`](../configuration/cucumber
                 }
             );
             await addCucumberPreprocessorPlugin(fixedOn, config);
-            await addXrayResultUpload(fixedOn);
             fixedOn("file:preprocessor", async (file) => {
                 await syncFeatureFile(file);
                 const cucumberPlugin = createBundler({
