@@ -162,7 +162,7 @@ For more information about working with test environments, make sure to check ou
 : `XRAY_TEST_ENVIRONMENTS`
 
 ***Type***
-: [`string[]`](types.md#string[])
+: [`string[]`](types.md)
 
 ***Default***
 : `#!js undefined`
