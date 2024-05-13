@@ -830,6 +830,7 @@
 
 <h1 id="upload-request-data">Upload request data<a class="headerlink" href="#upload-request-data" title="Anchor link to this section for reference">⚓︎</a></h1>
 <p>The plugin is able to record web requests executed by <a href="https://docs.cypress.io/api/commands/request"><code>cy.request</code></a> which can then be added as execution evidence to the test execution issue during the results upload.</p>
+<p><img alt="request evidence in Xray" src="../../../assets/images/jsonEvidence.png" /></p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>To upload your web requests and responses to Xray, you need to allow the plugin to overwrite the existing <code>cy.request</code> command in your <a href="https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests#Support-file">support file</a> and enable the upload in its configuration:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">commands.js</label><label for="__tabbed_1_2">cypress.config.js</label></div>
