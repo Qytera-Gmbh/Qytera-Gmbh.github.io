@@ -20,6 +20,7 @@ hide:
 
 - Upload test results to Xray
 - Attach screenshots as test execution evidence
+- Attach web requests as test execution evidence
 - Attach videos to test execution issues
 - Reuse existing test execution and test plan issues
 - CI/CD ready

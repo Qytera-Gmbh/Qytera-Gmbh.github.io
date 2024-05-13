@@ -183,6 +183,41 @@ For more information about working with test environments, make sure to check ou
 
 <hr/>
 
+### `uploadRequests`
+
+Enables or disables the upload of manually executed requests using `cy.request`.
+If `true`, requests and responses will be attached to the corresponding test as evidence.
+If `false` or left `undefined`, neither requests nor responses are attached.
+
+!!! note
+    For this option to work properly, you need to [overwrite the `cy.request` command](../guides/uploadRequestData.md).
+
+
+***Environment variable***
+: `XRAY_UPLOAD_REQUESTS`
+
+***Type***
+: [`boolean`](types.md#boolean)
+
+***Default***
+: `#!js true`
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            xray: {
+                uploadRequests: false
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_UPLOAD_REQUESTS=false
+        ```
+
+<hr/>
+
 ### `uploadResults`
 
 Turns execution results upload on or off.
