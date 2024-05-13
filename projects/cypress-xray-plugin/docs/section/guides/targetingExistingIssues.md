@@ -36,19 +36,19 @@ The tag's prefix must match the one configured in your Xray settings (see [here]
 === "Feature (prefix)"
 
     ```gherkin
-    Feature: Shopping cart
+    Feature: Example page redirection
 
     @MyTestPrefix:CYP-129
-    Scenario: Add socks
-        Given Bob is logged in
-        When three socks are added from the shop
-        Then the shopping cart should contain three socks
+    Scenario: Redirect by clicking
+        Given the example page
+        When the link is clicked
+        Then a redirect should occur
     ```
 
 === "cypress.config.js (prefix)"
 
     ```js
-    await configureXrayPlugin(config, {
+    await configureXrayPlugin(on, config, {
         cucumber: {
             prefixes: {
                 test: "MyTestPrefix:"
@@ -60,19 +60,19 @@ The tag's prefix must match the one configured in your Xray settings (see [here]
 === "Feature (no prefix)"
 
     ```gherkin
-    Feature: Shopping cart
+    Feature: Example page redirection
 
     @CYP-129
-    Scenario: Add socks
-        Given Bob is logged in
-        When three socks are added from the shop
-        Then the shopping cart should contain three socks
+    Scenario: Redirect by clicking
+        Given the example page
+        When the link is clicked
+        Then a redirect should occur
     ```
 
 === "cypress.config.js (no prefix)"
 
     ```js
-    await configureXrayPlugin(config, {
+    await configureXrayPlugin(on, config, {
         cucumber: {
             prefixes: {
                 test: undefined // or omit it entirely
@@ -103,7 +103,7 @@ The tag's prefix must match the one configured in your Xray settings (see [here]
 === "cypress.config.js (prefix)"
 
     ```js
-    await configureXrayPlugin(config, {
+    await configureXrayPlugin(on, config, {
         cucumber: {
             prefixes: {
                 precondition: "MyPreconditionPrefix:"
@@ -126,7 +126,7 @@ The tag's prefix must match the one configured in your Xray settings (see [here]
 === "cypress.config.js (no prefix)"
 
     ```js
-    await configureXrayPlugin(config, {
+    await configureXrayPlugin(on, config, {
         cucumber: {
             prefixes: {
                 precondition: undefined // or omit it entirely

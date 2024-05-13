@@ -13,14 +13,14 @@ The plugin allows you to keep your local feature files in sync with the step def
 </figure>
 
 Uploading feature files is useful if the source of truth for test cases are local feature files in Cypress and Xray is only used for tracking execution results.
-You can enable the upload using the [`uploadFeatures`](../configuration/cucumber.md#uploadfeatures) setting and by making sure that [feature file synchronization](../setup/installation.md#cucumber-support) is enabled.
+You can enable the upload using the [`uploadFeatures`](../configuration/cucumber.md#uploadfeatures) setting and by making sure that [feature file synchronization](../setup/installation.md#cucumber-tests) is enabled.
 !!! tip
-    Don't forget to [add tags](targetingExistingIssues.md#reuse-cucumber-test-issues) to your backgrounds, scenarios and scenario outlines.
+    Don't forget to [add tags](targetingExistingIssues.md#reuse-cucumber-issues) to your backgrounds, scenarios and scenario outlines.
     Uploads of untagged feature files will always be skipped as a precautionary measure.
 
 ???+ example
 
-    In the following scenario, the [existing example](targetingExistingIssues.md#reuse-cucumber-test-issues) will be extended by an additional step.
+    In the following scenario, the [existing example](targetingExistingIssues.md#reuse-cucumber-issues) will be extended by an additional step.
 
     === "demo.spec.feature"
 
@@ -66,17 +66,18 @@ You can enable the upload using the [`uploadFeatures`](../configuration/cucumber
 
     === "cypress.config.js"
 
-        ```js hl_lines="17-20"
+        ```js hl_lines="18-21"
         import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
         import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
         import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
-        import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin";
+        import { configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin";
         import fix from "cypress-on-fix";
 
         // ...
         async setupNodeEvents(on, config) {
             const fixedOn = fix(on);
             await configureXrayPlugin(
+                on,
                 config,
                 {
                     jira: {
@@ -90,7 +91,6 @@ You can enable the upload using the [`uploadFeatures`](../configuration/cucumber
                 }
             );
             await addCucumberPreprocessorPlugin(fixedOn, config);
-            await addXrayResultUpload(fixedOn);
             fixedOn("file:preprocessor", async (file) => {
                 await syncFeatureFile(file);
                 const cucumberPlugin = createBundler({

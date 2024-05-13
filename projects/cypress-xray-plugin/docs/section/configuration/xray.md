@@ -28,7 +28,7 @@ The Xray status name of a test marked as failed by Cypress.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 status: {
                     failed: "FAILURE"
@@ -60,7 +60,7 @@ The Xray status name of a test marked as passed by Cypress.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 status: {
                     passed: "SUCCESS"
@@ -91,7 +91,7 @@ The Xray status name of a test marked as pending by Cypress.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 status: {
                     pending: "AWAITING EXECUTION"
@@ -125,7 +125,7 @@ The Xray status name of a test marked as skipped by Cypress.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 status: {
                     skipped: "IGNORED"
@@ -162,7 +162,7 @@ For more information about working with test environments, make sure to check ou
 : `XRAY_TEST_ENVIRONMENTS`
 
 ***Type***
-: [`string[]`](types.md#string[])
+: [`string[]`](types.md)
 
 ***Default***
 : `#!js undefined`
@@ -170,7 +170,7 @@ For more information about working with test environments, make sure to check ou
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 testEnvironments: ["DEV", "v3.1"]
             },
@@ -179,6 +179,41 @@ For more information about working with test environments, make sure to check ou
     === "Environment variable"
         ```sh
         npx cypress run --env XRAY_TEST_ENVIRONMENTS=[DEV,v3.1]
+        ```
+
+<hr/>
+
+### `uploadRequests`
+
+Enables or disables the upload of manually executed requests using `cy.request`.
+If `true`, requests and responses will be attached to the corresponding test as evidence.
+If `false` or left `undefined`, neither requests nor responses are attached.
+
+!!! note
+    For this option to work properly, you need to [overwrite the `cy.request` command](../guides/uploadRequestData.md).
+
+
+***Environment variable***
+: `XRAY_UPLOAD_REQUESTS`
+
+***Type***
+: [`boolean`](types.md#boolean)
+
+***Default***
+: `#!js true`
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            xray: {
+                uploadRequests: false
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_UPLOAD_REQUESTS=false
         ```
 
 <hr/>
@@ -200,7 +235,7 @@ Useful when switching upload on or off from the command line (via environment va
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 uploadResults: false
             },
@@ -232,7 +267,7 @@ Turns on or off the upload of screenshots Cypress takes during test execution.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             xray: {
                 uploadScreenshots: false
             },

@@ -29,13 +29,14 @@ nav:
       - "Options: Xray": section/configuration/xray.md
       - "Options: Cucumber": section/configuration/cucumber.md
       - "Options: Plugin": section/configuration/plugin.md
-      - "Options: OpenSSL": section/configuration/openSSL.md
+      - "Options: HTTP": section/configuration/http.md
       - Option types: section/configuration/types.md
   - Guides:
       - Upload test results: section/guides/uploadTestResults.md
+      - Upload request data: section/guides/uploadRequestData.md
       - Targeting existing issues: section/guides/targetingExistingIssues.md
       - Feature file synchronization: section/guides/featureFileSynchronization.md
-      - OpenSSL: section/guides/openSSL.md
+      - HTTP FAQ: section/guides/httpFaq.md
 
 extra_css:
   - stylesheets/styles.css

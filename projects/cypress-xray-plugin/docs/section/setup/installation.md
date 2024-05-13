@@ -20,11 +20,12 @@ Below you will find the two ways to setup the plugin's basics, one for Cypress t
 Modify the `#!js setupNodeEvents()` function in your Cypress configuration file as follows:
 
 ```js
-import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin";
+import { configureXrayPlugin } from "cypress-xray-plugin";
 
 // ...
     async setupNodeEvents(on, config) {
         await configureXrayPlugin(
+            on,
             config,
             {
                 jira: {
@@ -33,7 +34,6 @@ import { addXrayResultUpload, configureXrayPlugin } from "cypress-xray-plugin";
                 }
             }
         );
-        await addXrayResultUpload(on);
     }
 // ...
 ```
@@ -63,17 +63,18 @@ npm install --save-dev cypress-on-fix
 
 To enable the plugin, modify the `#!js setupNodeEvents()` function in your Cypress configuration file as follows:
 
-```js hl_lines="10-21 23 25"
+```js hl_lines="10-22 25"
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
 import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
 import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
-import { addXrayResultUpload, configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin";
+import { configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin";
 import fix from "cypress-on-fix";
 
 // ...
     async setupNodeEvents(on, config) {
         const fixedOn = fix(on);
         await configureXrayPlugin(
+            on,
             config,
             {
                 jira: {
@@ -86,7 +87,6 @@ import fix from "cypress-on-fix";
             }
         );
         await addCucumberPreprocessorPlugin(fixedOn, config);
-        await addXrayResultUpload(fixedOn);
         fixedOn("file:preprocessor", async (file) => {
             await syncFeatureFile(file);
             const cucumberPlugin = createBundler({
@@ -101,13 +101,10 @@ import fix from "cypress-on-fix";
 
 The highlighted lines are the ones addressing Xray support.
 
-??? info "Lines 10-21"
+??? info "Lines 10-22"
     Here you should configure the Xray plugin the way you want it to work with your Xray instance.
     Read [this](../configuration/introduction.md) for more information.
 
-??? info "Line 23"
-    This line enables the upload of test results to your Xray instance when Cypress is done running your tests.
-
 ??? info "Line 25"
-    This line enables upstream and downstream synchronization of your feature files with your Xray instance.
+    This line enables upstream synchronization of your feature files with your Xray instance.
     See [here](../guides/featureFileSynchronization.md) for more information.

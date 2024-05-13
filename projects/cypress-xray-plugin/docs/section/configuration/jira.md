@@ -19,7 +19,7 @@ It is used in many places throughout the plugin, for example for [mapping Cypres
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 projectKey: "PRJ"
             },
@@ -49,7 +49,7 @@ For Jira server, you can have a look [here](https://confluence.atlassian.com/adm
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 url: "https://example.org/development/jira"
             },
@@ -156,7 +156,7 @@ The description field ID of Jira issues.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 fields: {
                     description: "Beschreibung" // German
@@ -186,7 +186,7 @@ The labels field ID of Jira issues.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 fields: {
                     labels: "Stichworte" // German
@@ -216,7 +216,7 @@ The summary field ID of Jira issues.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 fields: {
                     summary: "Beschreibung" // German
@@ -250,7 +250,7 @@ The Xray test environments field ID (i.e. the test environments associated with 
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 fields: {
                     testEnvironments: "customfield_12345"
@@ -284,7 +284,7 @@ The test plan field ID of Xray test (execution) issues.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 fields: {
                     testPlan: "customfield_12345"
@@ -318,7 +318,7 @@ The test type field ID of Xray test issues.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 fields: {
                     testPlan: "customfield_42069"
@@ -350,7 +350,7 @@ If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 testExecutionIssueDescription: "This test run was approved by Mr Anderson."
             },
@@ -381,7 +381,7 @@ If omitted, Jira will always create a new test execution issue with each upload.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 testExecutionIssueKey: "PRJ-123"
             },
@@ -411,7 +411,7 @@ If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 testExecutionIssueSummary: "Monday morning regression test"
             },
@@ -441,7 +441,7 @@ Use this option to specify the type of the test executions the plugin should cre
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 testExecutionIssueType: "Test Run"
             },
@@ -472,7 +472,7 @@ A test plan issue key to attach the execution to.
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 testPlanIssueKey: "PRJ-456"
             },
@@ -512,7 +512,7 @@ The issue type name of test plans. By default, Xray calls them `Test Plan`, but 
 ??? example
     === "Cypress configuration"
         ```js
-        await configureXrayPlugin(config, {
+        await configureXrayPlugin(on, config, {
             jira: {
                 testPlanIssueType: "Plan de test" // 🇫🇷
             },
