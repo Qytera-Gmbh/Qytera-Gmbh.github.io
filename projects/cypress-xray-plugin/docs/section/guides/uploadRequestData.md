@@ -2,6 +2,8 @@
 
 The plugin is able to record web requests executed by [`cy.request`](https://docs.cypress.io/api/commands/request) which can then be added as execution evidence to the test execution issue during the results upload.
 
+![request evidence in Xray](../../assets/images/jsonEvidence.png)
+
 ## Setup
 
 To upload your web requests and responses to Xray, you need to allow the plugin to overwrite the existing `cy.request` command in your [support file](https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests#Support-file) and enable the upload in its configuration:
