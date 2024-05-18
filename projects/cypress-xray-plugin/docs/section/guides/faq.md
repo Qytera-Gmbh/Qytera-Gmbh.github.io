@@ -1,9 +1,6 @@
-# HTTP FAQ
+# FAQ
 
-It is not unlikely that you are behind a proxy or that your Xray instance is only accessible via a VPN.
-In such scenarios, standard HTTP requests may fail due to security concerns.
-
-Here is a list of common HTTP concerns or security issues and how to deal with them.
+Here is a list of common concerns or issues and how to deal with them.
 
 <hr/>
 

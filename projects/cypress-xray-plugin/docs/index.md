@@ -16,7 +16,7 @@ hide:
   <figcaption>Two passing tests and one failing test for <a href="https://example.org">https://example.org</a>.</figcaption>
 </figure>
 
-<h2 style="color:var(--md-default-fg-color--light)"><i>A plugin for coupling together Cypress and Xray.</i></h2>
+<h2 style="color:var(--md-default-fg-color--light)"><i>A Cypress plugin for Xray integration. Supports Xray Server/DC and Xray Cloud.</i></h2>
 
 - Upload test results to Xray
 - Attach screenshots as test execution evidence

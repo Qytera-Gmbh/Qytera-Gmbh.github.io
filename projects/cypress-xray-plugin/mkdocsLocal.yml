@@ -36,7 +36,7 @@ nav:
       - Upload request data: section/guides/uploadRequestData.md
       - Targeting existing issues: section/guides/targetingExistingIssues.md
       - Feature file synchronization: section/guides/featureFileSynchronization.md
-      - HTTP FAQ: section/guides/httpFaq.md
+      - FAQ: section/guides/faq.md
 
 extra_css:
   - stylesheets/styles.css
