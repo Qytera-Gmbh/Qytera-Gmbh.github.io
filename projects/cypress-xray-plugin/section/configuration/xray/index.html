@@ -1251,7 +1251,7 @@ If <code>false</code> or left <code>undefined</code>, neither requests nor respo
 <dt><strong><em>Type</em></strong></dt>
 <dd><a href="../types/#boolean"><code>boolean</code></a></dd>
 <dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="kc">true</span></code></dd>
+<dd><code class="highlight"><span class="kc">false</span></code></dd>
 </dl>
 <details class="example">
 <summary>Example</summary>
@@ -1264,13 +1264,13 @@ If <code>false</code> or left <code>undefined</code>, neither requests nor respo
 <span class="normal"><a href="#__codelineno-10-4">4</a></span>
 <span class="normal"><a href="#__codelineno-10-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">        </span><span class="nx">uploadRequests</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">        </span><span class="nx">uploadRequests</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_UPLOAD_REQUESTS</span><span class="o">=</span><span class="nb">false</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_UPLOAD_REQUESTS</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
