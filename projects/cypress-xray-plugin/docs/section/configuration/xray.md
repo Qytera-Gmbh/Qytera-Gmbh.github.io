@@ -200,20 +200,20 @@ If `false` or left `undefined`, neither requests nor responses are attached.
 : [`boolean`](types.md#boolean)
 
 ***Default***
-: `#!js true`
+: `#!js false`
 
 ??? example
     === "Cypress configuration"
         ```js
         await configureXrayPlugin(on, config, {
             xray: {
-                uploadRequests: false
+                uploadRequests: true
             },
         });
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env XRAY_UPLOAD_REQUESTS=false
+        npx cypress run --env XRAY_UPLOAD_REQUESTS=true
         ```
 
 <hr/>
