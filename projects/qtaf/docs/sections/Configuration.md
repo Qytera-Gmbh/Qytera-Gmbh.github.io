@@ -105,20 +105,20 @@ Additional browser preferences to pass to the web driver options on instantiatio
         DRIVER_PREFERENCES="{prefs: {download.default_directory: /home/me/downloads}}"
         ```
 
-### Download Diretory
+### Download Directory
 
 #### Chromium-based drivers
 
 You can set the download directory for Chrome and Edge in the following way:
 
 ```json
-    "preferences": {
-      "download": {
-        "default_directory": "C:\\Users\\your_username",
-        "prompt_for_download": false,
-        "directory_upgrade": true
-      }
-    }
+"preferences": {
+  "download": {
+    "default_directory": "C:\\Users\\your_username",
+    "prompt_for_download": false,
+    "directory_upgrade": true
+  }
+}
 ```
 
 #### Firefox
@@ -126,11 +126,11 @@ You can set the download directory for Chrome and Edge in the following way:
 When using the firefox webdriver you can change the download directory in the following way:
 
 ```json
-    "preferences": {
-      "browser.download.folderList": 2,
-      "browser.download.manager.showWhenStarting": false,
-      "browser.download.dir": "C:\\Users\\your_username",
-    }
+"preferences": {
+  "browser.download.folderList": 2,
+  "browser.download.manager.showWhenStarting": false,
+  "browser.download.dir": "C:\\Users\\your_username",
+}
 ```
 
 #### Using variables
@@ -140,10 +140,10 @@ You can also use the expressions `$USER_DIR` and `$USER_HOME` in your download p
 For example you can save the downloads (for Chromium based drivers) in the `resources` directory of your project with the following configuration:
 
 ```json
-    "preferences": {
-      "download": {
-        "default_directory": "$USER_DIR/src/test/resources",
-    }
+"preferences": {
+  "download": {
+    "default_directory": "$USER_DIR/src/test/resources",
+}
 ```
 
 
