@@ -89,7 +89,7 @@ Additional browser preferences to pass to the web driver options on instantiatio
     === "QTAF JSON"
 
         The following will set the download directory in [Chromium-based browsers](https://chromedriver.chromium.org/capabilities) to `/home/me/downloads`.
-  
+
         ```json
         "driver": {
           "preferences": {
@@ -104,6 +104,49 @@ Additional browser preferences to pass to the web driver options on instantiatio
         ```sh
         DRIVER_PREFERENCES="{prefs: {download.default_directory: /home/me/downloads}}"
         ```
+
+### Download Diretory
+
+#### Chromium-based drivers
+
+You can set the download directory for Chrome and Edge in the following way:
+
+```json
+    "preferences": {
+      "download": {
+        "default_directory": "C:\\Users\\your_username",
+        "prompt_for_download": false,
+        "directory_upgrade": true
+      }
+    }
+```
+
+#### Firefox
+
+When using the firefox webdriver you can change the download directory in the following way:
+
+```json
+    "preferences": {
+      "browser.download.folderList": 2,
+      "browser.download.manager.showWhenStarting": false,
+      "browser.download.dir": "C:\\Users\\your_username",
+    }
+```
+
+#### Using variables
+
+You can also use the expressions `$USER_DIR` and `$USER_HOME` in your download path. `$USER_HOME` will be replaced by the home directory of the currently logged in user and `$USER_DIR` by the directory where the QTAF project is stored in.
+
+For example you can save the downloads (for Chromium based drivers) in the `resources` directory of your project with the following configuration:
+
+```json
+    "preferences": {
+      "download": {
+        "default_directory": "$USER_DIR/src/test/resources",
+    }
+```
+
+
 
 <hr/>
 
