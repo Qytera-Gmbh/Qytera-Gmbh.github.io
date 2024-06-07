@@ -66,7 +66,7 @@ To enable the plugin, modify the `#!js setupNodeEvents()` function in your Cypre
 ```js hl_lines="11-23 25"
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
 import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
-import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
+import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import { configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin";
 import fix from "cypress-on-fix";
 

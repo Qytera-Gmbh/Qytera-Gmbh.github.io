@@ -66,10 +66,10 @@ You can enable the upload using the [`uploadFeatures`](../configuration/cucumber
 
     === "cypress.config.js"
 
-        ```js hl_lines="18-21"
+        ```js hl_lines="19-22"
         import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
         import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
-        import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
+        import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
         import { configureXrayPlugin, syncFeatureFile } from "cypress-xray-plugin";
         import fix from "cypress-on-fix";
 
