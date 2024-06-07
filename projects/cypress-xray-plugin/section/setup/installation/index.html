@@ -955,21 +955,21 @@ You can also shoot a glance at the <a href="../../guides/uploadTestResults/#how-
 <a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1">// ...</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">setupNodeEvents</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">fixedOn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fix</span><span class="p">(</span><span class="nx">on</span><span class="p">);</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="hll"><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span>
-</span><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="hll"><span class="w">            </span><span class="nx">on</span><span class="p">,</span>
-</span><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="hll"><span class="w">            </span><span class="nx">config</span><span class="p">,</span>
-</span><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="hll"><span class="w">            </span><span class="p">{</span>
-</span><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="hll"><span class="w">                </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="hll"><span class="w">                    </span><span class="nx">projectKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ&quot;</span><span class="p">,</span>
-</span><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="hll"><span class="w">                    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://example.org&quot;</span>
-</span><a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="hll"><span class="w">                </span><span class="p">}</span>
-</span><a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="hll"><span class="w">                </span><span class="nx">cucumber</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="hll"><span class="w">                    </span><span class="nx">featureFileExtension</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;.feature&quot;</span>
-</span><a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="hll"><span class="w">                </span><span class="p">}</span>
-</span><a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="hll"><span class="w">            </span><span class="p">}</span>
-</span><a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="hll"><span class="w">        </span><span class="p">);</span>
-</span><a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">addCucumberPreprocessorPlugin</span><span class="p">(</span><span class="nx">fixedOn</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">);</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">        </span><span class="nx">fixedOn</span><span class="p">(</span><span class="s2">&quot;file:preprocessor&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">file</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">addCucumberPreprocessorPlugin</span><span class="p">(</span><span class="nx">fixedOn</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="hll"><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span>
+</span><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="hll"><span class="w">            </span><span class="nx">fixedOn</span><span class="p">,</span>
+</span><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="hll"><span class="w">            </span><span class="nx">config</span><span class="p">,</span>
+</span><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="hll"><span class="w">            </span><span class="p">{</span>
+</span><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="hll"><span class="w">                </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="hll"><span class="w">                    </span><span class="nx">projectKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ&quot;</span><span class="p">,</span>
+</span><a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="hll"><span class="w">                    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://example.org&quot;</span>
+</span><a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="hll"><span class="w">                </span><span class="p">}</span>
+</span><a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="hll"><span class="w">                </span><span class="nx">cucumber</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="hll"><span class="w">                    </span><span class="nx">featureFileExtension</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;.feature&quot;</span>
+</span><a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="hll"><span class="w">                </span><span class="p">}</span>
+</span><a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="hll"><span class="w">            </span><span class="p">}</span>
+</span><a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="hll"><span class="w">        </span><span class="p">);</span>
+</span><a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">        </span><span class="nx">fixedOn</span><span class="p">(</span><span class="s2">&quot;file:preprocessor&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">file</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="hll"><span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="nx">syncFeatureFile</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
 </span><a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">cucumberPlugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createBundler</span><span class="p">({</span>
 <a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="w">                </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">createEsbuildPlugin</span><span class="p">(</span><span class="nx">config</span><span class="p">)],</span>
@@ -980,9 +980,18 @@ You can also shoot a glance at the <a href="../../guides/uploadTestResults/#how-
 <a id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="c1">// ...</span>
 </code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Order matters here!</p>
+<p>The Cucumber plugin <em>must</em> be added first so that its event listeners will run before those of the Xray plugin.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">addCucumberPreprocessorPlugin</span><span class="p">(</span><span class="nx">fixedOn</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">);</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">fixedOn</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="cm">/* ... */</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>Otherwise, the Xray plugin won't be able to find the result report generated by the Cucumber plugin, because it won't exist yet.</p>
+</div>
 <p>The highlighted lines are the ones addressing Xray support.</p>
 <details class="info">
-<summary>Lines 10-22</summary>
+<summary>Lines 11-23</summary>
 <p>Here you should configure the Xray plugin the way you want it to work with your Xray instance.
 Read <a href="../../configuration/introduction/">this</a> for more information.</p>
 </details>
