@@ -76,8 +76,9 @@ You can enable the upload using the [`uploadFeatures`](../configuration/cucumber
         // ...
         async setupNodeEvents(on, config) {
             const fixedOn = fix(on);
+            await addCucumberPreprocessorPlugin(fixedOn, config);
             await configureXrayPlugin(
-                on,
+                fixedOn,
                 config,
                 {
                     jira: {
@@ -90,7 +91,6 @@ You can enable the upload using the [`uploadFeatures`](../configuration/cucumber
                     }
                 }
             );
-            await addCucumberPreprocessorPlugin(fixedOn, config);
             fixedOn("file:preprocessor", async (file) => {
                 await syncFeatureFile(file);
                 const cucumberPlugin = createBundler({
