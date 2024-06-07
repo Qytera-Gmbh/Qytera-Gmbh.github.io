@@ -70,7 +70,7 @@ Set it to true to automatically download feature files from Xray for Cypress to 
 
 Whenever Cucumber test results or entire feature files are imported, Xray tries to link existing test and precondition Jira issues with the executed/present Cucumber scenarios and backgrounds.
 The default matching is quite involved (see documentation for [Xray server](https://docs.getxray.app/display/XRAY/Importing+Cucumber+Tests+-+REST) or [Xray cloud](https://docs.getxray.app/display/XRAYCLOUD/Importing+Cucumber+Tests+-+REST)), but luckily Xray also supports and uses [feature file tags](https://cucumber.io/docs/cucumber/api/?lang=java#tags).
-The tags are of the form `#!gherkin @CYP-123` or `#!gherkin @Prefix:CYP-123`, containing an optional prefix and the issue key.
+The tags are of the form `#!gherkin @[prefix]CYP-123`, containing an optional prefix and the issue key.
 The concrete prefix and whether a prefix is at all necessary depends on your configured prefix scheme in Xray.
 
 The scheme itself can be viewed and configured in Xray:
