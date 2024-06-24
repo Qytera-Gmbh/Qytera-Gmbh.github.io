@@ -6,8 +6,19 @@ You can provide a bunch of Xray settings which might become necessary depending 
 
 ### `status`
 
-These status options represent mapping of Cypress statuses to corresponding Xray statuses.
-If you have custom statuses setup in Xray, you should provide their names here.
+These status options represent the mapping of Cypress statuses to corresponding Xray _test_ statuses.
+If you have custom _test_ statuses set up in Xray, you should specify their names here.
+
+=== "Xray server"
+    ![Xray server test status dropdown](../../assets/images/xrayTestStatusDropdownServer.png)
+=== "Xray cloud"
+    ![Xray cloud test status dropdown](../../assets/images/xrayTestStatusDropdownCloud.png)
+
+!!! info
+    For more information on test statuses, please refer to the official documentation:
+
+    - Xray server: [https://docs.getxray.app/display/XRAY/Manage+Test+Statuses](https://docs.getxray.app/display/XRAY/Manage+Test+Statuses)
+    - Xray cloud: [https://docs.getxray.app/display/XRAYCLOUD/Global+Settings%3A+Test+Statuses](https://docs.getxray.app/display/XRAYCLOUD/Global+Settings%3A+Test+Statuses)
 
 <hr/>
 
@@ -86,7 +97,8 @@ The Xray status name of a test marked as pending by Cypress.
 : `string`
 
 ***Default***
-: `#!js "TODO"`
+: `#!js "TODO"` (when providing Xray server credentials)
+: `#!js "TO DO"` (when providing Xray cloud credentials)
 
 ??? example
     === "Cypress configuration"
@@ -136,6 +148,158 @@ The Xray status name of a test marked as skipped by Cypress.
     === "Environment variable"
         ```sh
         npx cypress run --env XRAY_STATUS_SKIPPED="IGNORED"
+        ```
+
+#### `step`
+
+These status options represent the mapping of _step_ statuses to corresponding Xray _step_ statuses.
+If you have custom statuses set up in Xray, you should specify their names here.
+
+=== "Xray server"
+    ![Xray server test step status dropdown](../../assets/images/xrayTestStepStatusSelectionServer.png)
+=== "Xray cloud"
+    ![Xray cloud test step status dropdown](../../assets/images/xrayTestStepStatusSelectionCloud.png)
+
+!!! info
+    For more information on test step statuses, please refer to the official documentation:
+
+    - Xray server: [https://docs.getxray.app/display/XRAY/Manage+Test+Step+Statuses](https://docs.getxray.app/display/XRAY/Manage+Test+Step+Statuses)
+    - Xray cloud: [https://docs.getxray.app/display/XRAYCLOUD/Global+Settings%3A+Test+Step+Statuses](https://docs.getxray.app/display/XRAYCLOUD/Global+Settings%3A+Test+Step+Statuses)
+
+!!! note
+    These are currently only accessed in Cucumber report conversion.
+    If you're not using Cucumber in your project, you can safely ignore them.
+
+<hr/>
+
+##### `failed`
+
+The Xray status name of a step marked as failed.
+
+***Environment variable***
+: `XRAY_STATUS_STEP_FAILED`
+
+***Type***
+: `string`
+
+***Default***
+: `#!js undefined`
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            xray: {
+                status: {
+                    step: {
+                        failed: "FAILURE"
+                    }
+                }
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_STATUS_STEP_FAILED=FAILURE
+        ```
+
+<hr/>
+
+##### `passed`
+
+The Xray status name of a step marked as passed.
+
+***Environment variable***
+: `XRAY_STATUS_STEP_PASSED`
+
+***Type***
+: `string`
+
+***Default***
+: `#!js undefined`
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            xray: {
+                status: {
+                    step {
+                        passed: "SUCCESS"
+                    }
+                }
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_STATUS_STEP_PASSED=SUCCESS
+        ```
+
+<hr/>
+
+##### `pending`
+
+The Xray status name of a step marked as pending.
+
+***Environment variable***
+: `XRAY_STATUS_STEP_PENDING`
+
+***Type***
+: `string`
+
+***Default***
+: `#!js undefined`
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            xray: {
+                status: {
+                    step: {
+                        pending: "AWAITING EXECUTION"
+                    }
+                }
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_STATUS_STEP_PENDING="AWAITING EXECUTION"
+        ```
+
+<hr/>
+
+##### `skipped`
+
+The Xray status name of a step marked as skipped.
+
+***Environment variable***
+: `XRAY_STATUS_STEP_SKIPPED`
+
+***Type***
+: `string`
+
+***Default***
+: `#!js undefined`
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            xray: {
+                status: {
+                    step: {
+                        skipped: "IGNORED"
+                    }
+                }
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_STATUS_STEP_SKIPPED=IGNORED
         ```
 
 <hr/>
