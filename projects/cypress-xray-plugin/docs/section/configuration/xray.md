@@ -129,7 +129,8 @@ The Xray status name of a test marked as skipped by Cypress.
 : `string`
 
 ***Default***
-: `#!js "FAILED"`
+: `#!js "FAIL"` (when providing Xray server credentials)
+: `#!js "FAILED"` (when providing Xray cloud credentials)
 
     !!! note
         Defaults to `#!js "FAILED"` because Cypress only skips test cases if errors occur, as described [here](https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests#Skipped).
