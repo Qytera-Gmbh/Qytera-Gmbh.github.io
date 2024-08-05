@@ -32,6 +32,7 @@ nav:
     - Plugins:
           - Allure Plugin: sections/plugins/Allure_Plugin.md
           - TestRail Plugin: sections/plugins/testRail/TestRail_Plugin.md
+          - Create Plugin: sections/plugins/Create_Plugin.md
     - Xray Plugin:
       - Introduction: sections/plugins/xray/XRAY_Plugin.md
       - Configuration: sections/plugins/xray/Configuration.md
