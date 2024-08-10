@@ -357,17 +357,49 @@ The test type field ID of Xray test issues.
 ### `testExecutionIssue`
 
 This option can be used to configure the test execution issue that the plugin will either create or modify with the run results.
-The value must match the format of Jira's issue create/update payloads, which are defined [here](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-post) for Jira Cloud and [here](https://developer.atlassian.com/server/jira/platform/rest/v10000/api-group-issue/#api-api-2-issue-post) for Jira Server.
+The value must match the format of Jira's issue create/update payloads:
+
+- [Jira Cloud](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-post)
+- [Jira Server](https://developer.atlassian.com/server/jira/platform/rest/v10000/api-group-issue/#api-api-2-issue-post)
 
 !!! note
-    Because the data here has to go through Xray first, it is possible that some fields that Jira is happy to accept will be rejected by Xray.
-    For example, the assignee may need to be set using the `name` property instead of account IDs.
+    Because the data here has to go through Xray first, it is possible that some fields that Jira normally is happy to accept will be rejected by Xray.
+    For example, the assignee may need to be set using the `name` property instead of account IDs (see [FAQ](../guides/faq.md#assigning-issues)).
+
+You can do cool things here, including:
+
+- [setting assignees](../guides/faq.md#assigning-issues)
+- [setting custom fields](https://confluence.atlassian.com/jirakb/how-to-find-id-for-custom-field-s-744522503.html) (any fields actually)
+- performing issue transitions
+- ...
+
+Almost everything you can do when you create Jira issues using the Jira API, you can also do here.
+Make sure to check out the Jira API documentation for more information.
+
+!!! warning "Warning (affected versions: `7.2.0` &leq; version &lt; `8.0.0`)"
+    While conflicting options such as [`testExecutionIssueDescription`](#testexecutionissuedescription) or [`testExecutionIssueSummary`](#testexecutionissuesummary) are still available, the fields and values defined in `testExecutionIssue` will take precedence over all options marked as deprecated.
+    The following code configuration will create test executions with `Blue summary` and `Blue description` fields:
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        jira: {
+            testExecutionIssue: {
+                fields: {
+                    summary: "Blue summary",
+                    description: "Blue description"
+                }
+            },
+            testExecutionIssueSummary: "Red summary", // ignored
+            testExecutionIssueDescription: "Red description", // ignored
+        },
+    });
+    ```
 
 ***Environment variable***
 : `JIRA_TEST_EXECUTION_ISSUE`
 
 ***Type***
-: `object`
+: [`object](./types.md#object)
 
 ***Default***
 : `#!js undefined`
@@ -393,7 +425,7 @@ The value must match the format of Jira's issue create/update payloads, which ar
         ```
     === "Environment variable"
         ```sh
-        npx cypress run --env JIRA_TEST_EXECUTION_ISSUE_DESCRIPTION="This test run was approved by Mr Anderson."
+        npx cypress run --env JIRA_TEST_EXECUTION_ISSUE='{"key":"PRJ-16","fields":{"summary":"My execution issue summary","description":"My execution issue description","assignee":{"name":"cool.turtle@company.com"},"customfield_12345":"Sprint 17"}}'
         ```
 
 <hr/>
