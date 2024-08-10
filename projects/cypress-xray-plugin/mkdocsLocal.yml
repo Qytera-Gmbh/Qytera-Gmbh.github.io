@@ -16,6 +16,9 @@ markdown_extensions:
       options:
         custom_icons:
           - overrides/.icons
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
 
 nav:
   - index.md

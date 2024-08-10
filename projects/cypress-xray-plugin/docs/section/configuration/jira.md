@@ -141,7 +141,7 @@ By default, the plugin accesses field information using the fields' names (ignor
 
 <hr/>
 
-#### 🚮 `description`
+#### ~~`description`~~
 
 !!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
@@ -177,7 +177,7 @@ The description field ID of Jira issues.
 
 <hr/>
 
-#### 🚮 `labels`
+#### ~~`labels`~~
 
 !!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
@@ -213,7 +213,7 @@ The labels field ID of Jira issues.
 
 <hr/>
 
-#### 🚮 `summary`
+#### ~~`summary`~~
 
 !!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
@@ -430,7 +430,7 @@ Make sure to check out the Jira API documentation for more information.
 
 <hr/>
 
-### 🚮 `testExecutionIssueDescription`
+### ~~`testExecutionIssueDescription`~~
 
 !!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
@@ -477,7 +477,7 @@ If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `
 
 <hr/>
 
-### 🚮 testExecutionIssueKey
+### ~~testExecutionIssueKey~~
 
 !!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
@@ -523,7 +523,7 @@ If omitted, Jira will always create a new test execution issue with each upload.
 
 <hr/>
 
-### 🚮 `testExecutionIssueSummary`
+### ~~`testExecutionIssueSummary`~~
 
 !!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
@@ -570,7 +570,7 @@ If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `
 
 <hr/>
 
-### 🚮 `testExecutionIssueType`
+### ~~`testExecutionIssueType`~~
 
 !!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
