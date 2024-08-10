@@ -477,7 +477,7 @@ If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `
 
 <hr/>
 
-### ~~testExecutionIssueKey~~
+### ~~`testExecutionIssueKey`~~
 
 !!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
