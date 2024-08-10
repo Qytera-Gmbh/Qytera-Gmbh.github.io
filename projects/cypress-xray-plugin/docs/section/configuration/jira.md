@@ -102,18 +102,18 @@ By default, the plugin accesses field information using the fields' names (ignor
 - Your Jira language setting is a language other than English
 
     !!! example
-        When the plugin tries to access the summary of some issues, it will look for a field with name `summary` by default.
-        However, if Jira is set to French for example, it will return a field called `résumé` instead.
+        When the plugin tries to access the test environments of issues, it will look for a field with name `Test Environments` by default.
+        However, if Jira is set to French for example, it will return a field called `Environnements de Test` instead.
 
-        In these situations, the plugin will display an error message containing the fields it received and their IDs. The ID of field `Résumé` could then be copied to the [`summary` option](#summary), fixing the error in future uploads:
+        In these situations, the plugin will display an error message containing the fields it received and their IDs. The ID of field `Environnements de Test` could then be copied to the [`testEnvironments` option](#testenvironments), fixing the error in future uploads:
 
         ```hl_lines="5"
-        Failed to fetch Jira field ID for field with name: summary
+        Failed to fetch Jira field ID for field with name: Test Environments
         Make sure the field actually exists and that your Jira language settings did not modify the field's name
 
         Available fields:
-          name: Résumé,       id: summary
-          name: Type de Test, id: customfield_42069
+          name: Environnements de Test, id: customfield_11805
+          name: Type de Test,           id: customfield_42069
           ...
         ```
 
@@ -121,18 +121,18 @@ By default, the plugin accesses field information using the fields' names (ignor
 
     !!! example
         Jira does not prohibit configuring multiple fields with the same name.
-        There might be multiple fields called `summary` for example, the default Jira one and another one for descriptions of defects reported by customers.
+        There might be multiple fields called `Test Environments` for example, the default Xray one and another one for descriptions of defects reported by customers in user acceptance tests.
 
         In these situations, the plugin will display an error message containing the duplicates it detected and their properties, including the field IDs.
-        The ID of Jira's summary field could then again be copied to the [`summary` option](#summary), fixing the error in future uploads:
+        The ID of Jira's test environments field could then again be copied to the [`testEnvironments` option](#testenvironments), fixing the error in future uploads:
 
         ```hl_lines="5"
-        Failed to fetch Jira field ID for field with name: summary
+        Failed to fetch Jira field ID for field with name: Test Environments
         There are multiple fields with this name
 
         Duplicates:
-          id: summary,           name: summary, clauseNames: summary
-          id: customfield_12345, name: Summary, clauseNames: summary (defect)
+          id: customfield_11805, name: Test Environments, clauseNames: Test Environments
+          id: customfield_12345, name: Test Environments, clauseNames: Test Environments (user acceptance)
           ...
         ```
 
@@ -141,7 +141,13 @@ By default, the plugin accesses field information using the fields' names (ignor
 
 <hr/>
 
-#### `description`
+#### 🚮 `description`
+
+!!! warning "Deprecated"
+    Will be removed in version `8.0.0`.
+    Field `description` is a system field and will always have the ID `description`.
+    It is no longer necessary to specify this field ID.
+
 The description field ID of Jira issues.
 
 ***Environment variable***
@@ -171,7 +177,13 @@ The description field ID of Jira issues.
 
 <hr/>
 
-#### `labels`
+#### 🚮 `labels`
+
+!!! warning "Deprecated"
+    Will be removed in version `8.0.0`.
+    Field `labels` is a system field and will always have the ID `labels`.
+    It is no longer necessary to specify this field ID.
+
 The labels field ID of Jira issues.
 
 ***Environment variable***
@@ -201,7 +213,13 @@ The labels field ID of Jira issues.
 
 <hr/>
 
-#### `summary`
+#### 🚮 `summary`
+
+!!! warning "Deprecated"
+    Will be removed in version `8.0.0`.
+    Field `summary` is a system field and will always have the ID `summary`.
+    It is no longer necessary to specify this field ID.
+
 The summary field ID of Jira issues.
 
 ***Environment variable***
@@ -232,6 +250,7 @@ The summary field ID of Jira issues.
 <hr/>
 
 #### `testEnvironments`
+
 The Xray test environments field ID (i.e. the test environments associated with test execution issues).
 
 !!! note
@@ -266,6 +285,7 @@ The Xray test environments field ID (i.e. the test environments associated with 
 <hr/>
 
 #### `testPlan`
+
 The test plan field ID of Xray test (execution) issues.
 
 !!! note
@@ -300,6 +320,7 @@ The test plan field ID of Xray test (execution) issues.
 <hr/>
 
 #### `testType`
+
 The test type field ID of Xray test issues.
 
 !!! note
@@ -333,7 +354,24 @@ The test type field ID of Xray test issues.
 
 <hr/>
 
-### `testExecutionIssueDescription`
+### 🚮 `testExecutionIssueDescription`
+
+!!! warning "Deprecated"
+    Will be removed in version `8.0.0`.
+    To define a description, please use [`testExecutionIssue`](#testexecutionissue) instead:
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        jira: {
+            testExecutionIssue: {
+                fields: {
+                    description: "my description"
+                }
+            }
+        },
+    });
+    ```
+
 The description of test execution issues, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through [`testExecutionIssueKey`](#testexecutionissuekey)).
 
 If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `testExecutionIssueDescription` is omitted, the existing test execution issue's description will not be modified.
@@ -363,7 +401,22 @@ If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `
 
 <hr/>
 
-### `testExecutionIssueKey`
+### 🚮 testExecutionIssueKey
+
+!!! warning "Deprecated"
+    Will be removed in version `8.0.0`.
+    To reuse a test execution issue, please use [`testExecutionIssue`](#testexecutionissue) instead:
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        jira: {
+            testExecutionIssue: {
+                key: "PRJ-123"
+            }
+        },
+    });
+    ```
+
 The key of the test execution issue to attach the run results to.
 If omitted, Jira will always create a new test execution issue with each upload.
 !!! note
@@ -394,7 +447,24 @@ If omitted, Jira will always create a new test execution issue with each upload.
 
 <hr/>
 
-### `testExecutionIssueSummary`
+### 🚮 `testExecutionIssueSummary`
+
+!!! warning "Deprecated"
+    Will be removed in version `8.0.0`.
+    To define a summary, please use [`testExecutionIssue`](#testexecutionissue) instead:
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        jira: {
+            testExecutionIssue: {
+                fields: {
+                    summary: "my summary"
+                }
+            }
+        },
+    });
+    ```
+
 The summary of test execution issues, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through [`testExecutionIssueKey`](#testexecutionissuekey)).
 
 If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `testExecutionIssueSummary` is omitted, the existing test execution issue's summary will not be modified.
@@ -424,8 +494,30 @@ If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `
 
 <hr/>
 
-### `testExecutionIssueType`
-The issue type name of test executions. By default, Xray calls them `Test Execution`, but it's possible that they have been renamed or translated in your Jira instance.
+### 🚮 `testExecutionIssueType`
+
+!!! warning "Deprecated"
+    Will be removed in version `8.0.0`.
+    To define a test execution issue type, please use [`testExecutionIssue`](#testexecutionissue) instead:
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        jira: {
+            testExecutionIssue: {
+                fields: {
+                    issuetype: {
+                        // whatever is necessary to uniquely identify the issue type, e.g:
+                        name: "Xray Test Execution",
+                        id: "12345"
+                    }
+                }
+            }
+        },
+    });
+    ```
+
+The issue type name of test executions.
+By default, Xray calls them `Test Execution`, but it's possible that they have been renamed or translated in your Jira instance.
 
 Use this option to specify the type of the test executions the plugin should create for each run (if needed, see [here](#testexecutionissuekey)).
 
