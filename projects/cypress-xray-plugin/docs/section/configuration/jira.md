@@ -143,7 +143,7 @@ By default, the plugin accesses field information using the fields' names (ignor
 
 #### 🚮 `description`
 
-!!! warning "Deprecated"
+!!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
     Field `description` is a system field and will always have the ID `description`.
     It is no longer necessary to specify this field ID.
@@ -179,7 +179,7 @@ The description field ID of Jira issues.
 
 #### 🚮 `labels`
 
-!!! warning "Deprecated"
+!!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
     Field `labels` is a system field and will always have the ID `labels`.
     It is no longer necessary to specify this field ID.
@@ -215,7 +215,7 @@ The labels field ID of Jira issues.
 
 #### 🚮 `summary`
 
-!!! warning "Deprecated"
+!!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
     Field `summary` is a system field and will always have the ID `summary`.
     It is no longer necessary to specify this field ID.
@@ -356,7 +356,7 @@ The test type field ID of Xray test issues.
 
 ### 🚮 `testExecutionIssueDescription`
 
-!!! warning "Deprecated"
+!!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
     To define a description, please use [`testExecutionIssue`](#testexecutionissue) instead:
 
@@ -403,7 +403,7 @@ If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `
 
 ### 🚮 testExecutionIssueKey
 
-!!! warning "Deprecated"
+!!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
     To reuse a test execution issue, please use [`testExecutionIssue`](#testexecutionissue) instead:
 
@@ -449,7 +449,7 @@ If omitted, Jira will always create a new test execution issue with each upload.
 
 ### 🚮 `testExecutionIssueSummary`
 
-!!! warning "Deprecated"
+!!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
     To define a summary, please use [`testExecutionIssue`](#testexecutionissue) instead:
 
@@ -496,7 +496,7 @@ If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `
 
 ### 🚮 `testExecutionIssueType`
 
-!!! warning "Deprecated"
+!!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
     To define a test execution issue type, please use [`testExecutionIssue`](#testexecutionissue) instead:
 
