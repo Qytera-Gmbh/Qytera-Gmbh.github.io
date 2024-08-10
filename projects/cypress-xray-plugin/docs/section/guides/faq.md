@@ -132,3 +132,79 @@ Error messages that require you to configure proxies may look like any of the fo
         },
     });
     ```
+
+## Assigning issues
+
+The way issues can be assigned may vary depending on your Jira version.
+Typically, Jira Cloud requires the assignee's _account ID_, whereas Jira Server requires the _username_ (used to log in) instead.
+
+The easiest way to retrieve this information is to find an existing issue where the desired assignee already appears _somewhere_ in the fields (reporter, assignee) and then to export the issue to XML.
+You can then search the XML document for the desired person, which will usually appear in an HTML element.
+
+!!! example "Jira Server"
+
+    Assuming that the XML export contains the following line...
+
+    ```xml
+    <reporter username="jane.doe">Jane Doe</reporter>
+    ```
+
+    ... you may need to assign your test execution issues as follows:
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        jira: {
+            testExecutionIssue: {
+                fields: {
+                    assignee: {
+                        name: 'jane.doe'
+                    }
+                }
+            }
+        },
+    });
+    ```
+!!! example "Jira Cloud"
+
+    Assuming that the XML export contains the following line...
+
+    ```xml
+    <reporter accountid="12345:4762614f-a4ea-42ad-ae93-e094702190d6">Jane Doe</reporter>
+    ```
+
+    ... you may need to assign your test execution issues as follows:
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        jira: {
+            testExecutionIssue: {
+                fields: {
+                    assignee: {
+                        accountId: '12345:4762614f-a4ea-42ad-ae93-e094702190d6'
+                    }
+                }
+            }
+        },
+    });
+    ```
+
+
+!!! failure "**Error assembling issue data: expected Object containing a `name` property**"
+
+!!! success "Solution"
+
+    Instead of assigning issues using the assignee's Jira ID or email address, you'll need to use their username instead (which they e.g. use to log in):
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        jira: {
+            testExecutionIssue: {
+                fields: {
+                    assignee: {
+                        name: 'username'
+                    }
+                }
+            }
+        },
+    });
+    ```

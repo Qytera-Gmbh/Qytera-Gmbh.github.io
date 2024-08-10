@@ -354,6 +354,50 @@ The test type field ID of Xray test issues.
 
 <hr/>
 
+### `testExecutionIssue`
+
+This option can be used to configure the test execution issue that the plugin will either create or modify with the run results.
+The value must match the format of Jira's issue create/update payloads, which are defined [here](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-post) for Jira Cloud and [here](https://developer.atlassian.com/server/jira/platform/rest/v10000/api-group-issue/#api-api-2-issue-post) for Jira Server.
+
+!!! note
+    Because the data here has to go through Xray first, it is possible that some fields that Jira is happy to accept will be rejected by Xray.
+    For example, the assignee may need to be set using the `name` property instead of account IDs.
+
+***Environment variable***
+: `JIRA_TEST_EXECUTION_ISSUE`
+
+***Type***
+: `object`
+
+***Default***
+: `#!js undefined`
+
+!!! example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            jira: {
+                testExecutionIssue: {
+                    key: "PRJ-16",
+                    fields: {
+                        summary: "My execution issue summary",
+                        description: "My execution issue description",
+                        assignee: {
+                            name: "cool.turtle@company.com"
+                        },
+                        customfield_12345: "Sprint 17"
+                    }
+                }
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env JIRA_TEST_EXECUTION_ISSUE_DESCRIPTION="This test run was approved by Mr Anderson."
+        ```
+
+<hr/>
+
 ### 🚮 `testExecutionIssueDescription`
 
 !!! warning "Deprecated since `7.2.0`"
