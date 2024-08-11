@@ -208,3 +208,49 @@ You can then search the XML document for the desired person, which will usually 
         },
     });
     ```
+
+## Rate limiting
+
+[Jira Cloud](https://developer.atlassian.com/cloud/jira/platform/rate-limiting/) and [Xray Cloud](https://docs.getxray.app/display/ProductKB/%5BXray+Cloud%5D+Rest+API+Limit) use rate limiting in their APIs.
+If you're using Jira/Xray Server, your local server instance may also be rate limiting network requests.
+This can be a problem for larger projects, as the plugin processes as much concurrently as possible.
+For example, Cucumber feature files are all imported at the same time, as their imports do not affect each other.
+
+!!! failure "**Request failed with status code 429**"
+
+!!! success
+
+    An easy way to avoid hitting API rate limits is to set a maximum number of requests per second.
+
+    The following configuration ensures that _all_ requests (regardless of which API they are targeting) are sent every 200ms.
+
+    ```js
+
+    await configureXrayPlugin(on, config, {
+        http: {
+            rateLimiting: {
+                requestsPerSecond: 5
+            }
+        },
+    });
+    ```
+
+    The following configuration ensures that Jira requests are sent every 200ms, while Xray requests are sent once per second.
+
+    ```js
+
+    await configureXrayPlugin(on, config, {
+        http: {
+            jira: {
+                rateLimiting: {
+                    requestsPerSecond: 5
+                }
+            },
+            xray: {
+                rateLimiting: {
+                    requestsPerSecond: 1
+                }
+            }
+        },
+    });
+    ```
