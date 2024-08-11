@@ -132,3 +132,125 @@ Error messages that require you to configure proxies may look like any of the fo
         },
     });
     ```
+
+## Assigning issues
+
+The way issues can be assigned may vary depending on your Jira version.
+Typically, Jira Cloud requires the assignee's _account ID_, whereas Jira Server requires the _username_ (used to log in) instead.
+
+The easiest way to retrieve this information is to find an existing issue where the desired assignee already appears _somewhere_ in the fields (reporter, assignee) and then to export the issue to XML.
+You can then search the XML document for the desired person, which will usually appear in an HTML element.
+
+!!! example "Jira Server"
+
+    Assuming that the XML export contains the following line...
+
+    ```xml
+    <reporter username="jane.doe">Jane Doe</reporter>
+    ```
+
+    ... you may need to assign your test execution issues as follows:
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        jira: {
+            testExecutionIssue: {
+                fields: {
+                    assignee: {
+                        name: 'jane.doe'
+                    }
+                }
+            }
+        },
+    });
+    ```
+!!! example "Jira Cloud"
+
+    Assuming that the XML export contains the following line...
+
+    ```xml
+    <reporter accountid="12345:4762614f-a4ea-42ad-ae93-e094702190d6">Jane Doe</reporter>
+    ```
+
+    ... you may need to assign your test execution issues as follows:
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        jira: {
+            testExecutionIssue: {
+                fields: {
+                    assignee: {
+                        accountId: '12345:4762614f-a4ea-42ad-ae93-e094702190d6'
+                    }
+                }
+            }
+        },
+    });
+    ```
+
+
+!!! failure "**Error assembling issue data: expected Object containing a `name` property**"
+
+!!! success "Solution"
+
+    Instead of assigning issues using the assignee's Jira ID or email address, you'll need to use their username instead (which they e.g. use to log in):
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        jira: {
+            testExecutionIssue: {
+                fields: {
+                    assignee: {
+                        name: 'username'
+                    }
+                }
+            }
+        },
+    });
+    ```
+
+## Rate limiting
+
+[Jira Cloud](https://developer.atlassian.com/cloud/jira/platform/rate-limiting/) and [Xray Cloud](https://docs.getxray.app/display/ProductKB/%5BXray+Cloud%5D+Rest+API+Limit) use rate limiting in their APIs.
+If you're using Jira/Xray Server, your local server instance may also be rate limiting network requests.
+This can be a problem for larger projects, as the plugin processes as much concurrently as possible.
+For example, Cucumber feature files are all imported at the same time, as their imports do not affect each other.
+
+!!! failure "**Request failed with status code 429**"
+
+!!! success
+
+    An easy way to avoid hitting API rate limits is to set a maximum number of requests per second.
+
+    The following configuration ensures that _all_ requests (regardless of which API they are targeting) are sent every 200ms.
+
+    ```js
+
+    await configureXrayPlugin(on, config, {
+        http: {
+            rateLimiting: {
+                requestsPerSecond: 5
+            }
+        },
+    });
+    ```
+
+    The following configuration ensures that Jira requests are sent every 200ms, while Xray requests are sent once per second.
+
+    ```js
+
+    await configureXrayPlugin(on, config, {
+        http: {
+            jira: {
+                rateLimiting: {
+                    requestsPerSecond: 5
+                }
+            },
+            xray: {
+                rateLimiting: {
+                    requestsPerSecond: 1
+                }
+            }
+        },
+    });
+    ```

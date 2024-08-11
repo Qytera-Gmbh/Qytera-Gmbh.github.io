@@ -135,4 +135,4 @@ If you want to use [different languages](https://cucumber.io/docs/gherkin/langua
 ## Feature file download
 
 !!! development
-    Synchronization of local feature files based on the step definitions as managed in Xray is currently still being worked on (i.e. download of Xray step definitions to local feature files and then running them).
+    Synchronization of local feature files based on the step definitions as managed in Xray is planned as a future feature (i.e. download of Xray step definitions to local feature files and then running them).
