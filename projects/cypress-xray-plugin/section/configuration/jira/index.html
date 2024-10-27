@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/qyteraIcon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.30">
     
     
       
@@ -600,15 +600,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#testtype" class="md-nav__link">
-    <span class="md-ellipsis">
-      testType
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -620,6 +611,63 @@
       testExecutionIssue
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="testExecutionIssue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fields_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      fields
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issuetype" class="md-nav__link">
+    <span class="md-ellipsis">
+      issuetype
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key" class="md-nav__link">
+    <span class="md-ellipsis">
+      key
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1088,15 +1136,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#testtype" class="md-nav__link">
-    <span class="md-ellipsis">
-      testType
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1108,6 +1147,63 @@
       testExecutionIssue
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="testExecutionIssue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fields_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      fields
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issuetype" class="md-nav__link">
+    <span class="md-ellipsis">
+      issuetype
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key" class="md-nav__link">
+    <span class="md-ellipsis">
+      key
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1538,7 +1634,7 @@ Xray cloud provides ways to retrieve test environment field information independ
 <hr/>
 
 <h4 id="testplan"><code>testPlan</code><a class="headerlink" href="#testplan" title="Anchor link to this section for reference">⚓︎</a></h4>
-<p>The test plan field ID of Xray test (execution) issues.</p>
+<p>The Jira field ID of test plans in Xray test (execution) issues.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This option is necessary for server instances only.
@@ -1581,50 +1677,6 @@ Xray cloud provides ways to retrieve test plan field information independently o
 </details>
 <hr/>
 
-<h4 id="testtype"><code>testType</code><a class="headerlink" href="#testtype" title="Anchor link to this section for reference">⚓︎</a></h4>
-<p>The test type field ID of Xray test issues.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This option is necessary for server instances only.
-Xray cloud provides ways to retrieve test type field information independently of Jira.</p>
-</div>
-<dl>
-<dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>JIRA_FIELDS_TEST_TYPE</code></dd>
-<dt><strong><em>Type</em></strong></dt>
-<dd><code>string</code></dd>
-<dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="s2">&quot;test type&quot;</span></code></dd>
-</dl>
-<details class="example">
-<summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Cypress configuration</label><label for="__tabbed_9_2">Environment variable</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
-<span class="normal"><a href="#__codelineno-18-2">2</a></span>
-<span class="normal"><a href="#__codelineno-18-3">3</a></span>
-<span class="normal"><a href="#__codelineno-18-4">4</a></span>
-<span class="normal"><a href="#__codelineno-18-5">5</a></span>
-<span class="normal"><a href="#__codelineno-18-6">6</a></span>
-<span class="normal"><a href="#__codelineno-18-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">        </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">            </span><span class="nx">testPlan</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;customfield_42069&quot;</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="p">});</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_FIELDS_TEST_TYPE</span><span class="o">=</span>customfield_42069
-</code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-</details>
-<hr/>
-
 <h3 id="testexecutionissue"><code>testExecutionIssue</code><a class="headerlink" href="#testexecutionissue" title="Anchor link to this section for reference">⚓︎</a></h3>
 <p>This option can be used to configure the test execution issue that the plugin will either create or modify with the run results.
 The value must match the format of Jira's issue create/update payloads:</p>
@@ -1646,10 +1698,88 @@ For example, the assignee may need to be set using the <code>name</code> propert
 </ul>
 <p>Almost everything you can do when you create Jira issues using the Jira API, you can also do here.
 Make sure to check out the Jira API documentation for more information.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The plugin also accepts a function that allows you to specify dynamic values based on the Cypress results.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span>
+<span class="normal"><a href="#__codelineno-18-13">13</a></span>
+<span class="normal"><a href="#__codelineno-18-14">14</a></span>
+<span class="normal"><a href="#__codelineno-18-15">15</a></span>
+<span class="normal"><a href="#__codelineno-18-16">16</a></span>
+<span class="normal"><a href="#__codelineno-18-17">17</a></span>
+<span class="normal"><a href="#__codelineno-18-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">totalFailed</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="w">                    </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="w">                        </span><span class="nx">summary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Failed test execution&quot;</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="w">                    </span><span class="p">}</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="w">                </span><span class="p">};</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="w">                </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="w">                    </span><span class="nx">summary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Perfect test execution&quot;</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14"></a><span class="w">                </span><span class="p">}</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15"></a><span class="w">            </span><span class="p">};</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning (affected versions: <code>7.2.0</code> &leq; version &lt; <code>8.0.0</code>)</p>
 <p>While conflicting options such as <a href="#testexecutionissuedescription"><code>testExecutionIssueDescription</code></a> or <a href="#testexecutionissuesummary"><code>testExecutionIssueSummary</code></a> are still available, the fields and values defined in <code>testExecutionIssue</code> will take precedence over all options marked as deprecated.
 The following code configuration will create test executions with <code>Blue summary</code> and <code>Blue description</code> fields:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-19-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-19-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-19-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-19-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-19-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-19-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-19-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-19-10">10</a></span>
+<span class="normal"><a href="#__codelineno-19-11">11</a></span>
+<span class="normal"><a href="#__codelineno-19-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">            </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="w">                </span><span class="nx">summary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Blue summary&quot;</span><span class="p">,</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="w">                </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Blue description&quot;</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="w">        </span><span class="p">},</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="w">        </span><span class="nx">testExecutionIssueSummary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Red summary&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// ignored</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="w">        </span><span class="nx">testExecutionIssueDescription</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Red description&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// ignored</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>JIRA_TEST_EXECUTION_ISSUE</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><a href="../types/#object"><code>object</code></a></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">undefined</span></code></dd>
+</dl>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Cypress configuration</label><label for="__tabbed_9_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
@@ -1661,66 +1791,28 @@ The following code configuration will create test executions with <code>Blue sum
 <span class="normal"><a href="#__codelineno-20-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-20-10">10</a></span>
 <span class="normal"><a href="#__codelineno-20-11">11</a></span>
-<span class="normal"><a href="#__codelineno-20-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="normal"><a href="#__codelineno-20-12">12</a></span>
+<span class="normal"><a href="#__codelineno-20-13">13</a></span>
+<span class="normal"><a href="#__codelineno-20-14">14</a></span>
+<span class="normal"><a href="#__codelineno-20-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">            </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="w">                </span><span class="nx">summary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Blue summary&quot;</span><span class="p">,</span>
-<a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="w">                </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Blue description&quot;</span>
-<a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="w">        </span><span class="p">},</span>
-<a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="w">        </span><span class="nx">testExecutionIssueSummary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Red summary&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// ignored</span>
-<a id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="w">        </span><span class="nx">testExecutionIssueDescription</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Red description&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// ignored</span>
-<a id="__codelineno-20-11" name="__codelineno-20-11"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-20-12" name="__codelineno-20-12"></a><span class="p">});</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<dl>
-<dt><strong><em>Environment variable</em></strong></dt>
-<dd><code>JIRA_TEST_EXECUTION_ISSUE</code></dd>
-<dt><strong><em>Type</em></strong></dt>
-<dd><a href="../types/#object">`object</a></dd>
-<dt><strong><em>Default</em></strong></dt>
-<dd><code class="highlight"><span class="kc">undefined</span></code></dd>
-</dl>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Cypress configuration</label><label for="__tabbed_10_2">Environment variable</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-21-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-21-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-21-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-21-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-21-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-21-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-21-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-21-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-21-10">10</a></span>
-<span class="normal"><a href="#__codelineno-21-11">11</a></span>
-<span class="normal"><a href="#__codelineno-21-12">12</a></span>
-<span class="normal"><a href="#__codelineno-21-13">13</a></span>
-<span class="normal"><a href="#__codelineno-21-14">14</a></span>
-<span class="normal"><a href="#__codelineno-21-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">            </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ-16&quot;</span><span class="p">,</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="w">            </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="w">                </span><span class="nx">summary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;My execution issue summary&quot;</span><span class="p">,</span>
-<a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="w">                </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;My execution issue description&quot;</span><span class="p">,</span>
-<a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="w">                </span><span class="nx">assignee</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-21-9" name="__codelineno-21-9"></a><span class="w">                    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cool.turtle@company.com&quot;</span>
-<a id="__codelineno-21-10" name="__codelineno-21-10"></a><span class="w">                </span><span class="p">},</span>
-<a id="__codelineno-21-11" name="__codelineno-21-11"></a><span class="w">                </span><span class="nx">customfield_12345</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Sprint 17&quot;</span>
-<a id="__codelineno-21-12" name="__codelineno-21-12"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-21-13" name="__codelineno-21-13"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-21-14" name="__codelineno-21-14"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-21-15" name="__codelineno-21-15"></a><span class="p">});</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">            </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ-16&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="w">            </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="w">                </span><span class="nx">summary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;My execution issue summary&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="w">                </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;My execution issue description&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="w">                </span><span class="nx">assignee</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="w">                    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cool.turtle@company.com&quot;</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="w">                </span><span class="p">},</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11"></a><span class="w">                </span><span class="nx">customfield_12345</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Sprint 17&quot;</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE</span><span class="o">=</span><span class="s1">&#39;{&quot;key&quot;:&quot;PRJ-16&quot;,&quot;fields&quot;:{&quot;summary&quot;:&quot;My execution issue summary&quot;,&quot;description&quot;:&quot;My execution issue description&quot;,&quot;assignee&quot;:{&quot;name&quot;:&quot;cool.turtle@company.com&quot;},&quot;customfield_12345&quot;:&quot;Sprint 17&quot;}}&#39;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE</span><span class="o">=</span><span class="s1">&#39;{&quot;key&quot;:&quot;PRJ-16&quot;,&quot;fields&quot;:{&quot;summary&quot;:&quot;My execution issue summary&quot;,&quot;description&quot;:&quot;My execution issue description&quot;,&quot;assignee&quot;:{&quot;name&quot;:&quot;cool.turtle@company.com&quot;},&quot;customfield_12345&quot;:&quot;Sprint 17&quot;}}&#39;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1728,28 +1820,211 @@ The following code configuration will create test executions with <code>Blue sum
 </div>
 <hr/>
 
+<h4 id="fields_1"><code>fields</code><a class="headerlink" href="#fields_1" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>These options modify the fields of the test execution issue that is either created or modified by each test run.</p>
+<h5 id="description_1"><code>description</code><a class="headerlink" href="#description_1" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>The description of test execution issues, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through <a href="#key"><code>key</code></a>).</p>
+<p>If the <a href="#key"><code>key</code></a> is configured but <code>description</code> is omitted, the existing test execution issue's description will not be modified.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><a href="#testexecutionissue"><code>JIRA_TEST_EXECUTION_ISSUE</code></a></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="sb">`Cypress version: </span><span class="si">${</span><span class="nx">version</span><span class="si">}</span><span class="sb"> Browser: </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"> (</span><span class="si">${</span><span class="nx">version</span><span class="si">}</span><span class="sb">)`</span></code> with values depending on Cypress and the chosen browser</dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Cypress configuration</label><label for="__tabbed_10_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span>
+<span class="normal"><a href="#__codelineno-22-5">5</a></span>
+<span class="normal"><a href="#__codelineno-22-6">6</a></span>
+<span class="normal"><a href="#__codelineno-22-7">7</a></span>
+<span class="normal"><a href="#__codelineno-22-8">8</a></span>
+<span class="normal"><a href="#__codelineno-22-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="w">            </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">                </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Release Test Results for v42.0&quot;</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE</span><span class="o">=</span><span class="s1">&#39;{&quot;fields&quot;:{&quot;description&quot;:&quot;Release Test Results for v42.0&quot;}}&#39;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h5 id="issuetype"><code>issuetype</code><a class="headerlink" href="#issuetype" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>The issue type of test executions.
+By default, Xray calls them <code>Test Execution</code>, but it's possible that they have been renamed or translated in your Jira instance.</p>
+<p>Use this option to specify the type of the test executions the plugin should create for each run.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><a href="#testexecutionissue"><code>JIRA_TEST_EXECUTION_ISSUE</code></a></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="s1">&#39;Test Execution&#39;</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Cypress configuration</label><label for="__tabbed_11_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-24-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-24-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-24-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-24-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-24-10">10</a></span>
+<span class="normal"><a href="#__codelineno-24-11">11</a></span>
+<span class="normal"><a href="#__codelineno-24-12">12</a></span>
+<span class="normal"><a href="#__codelineno-24-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="w">            </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="w">                </span><span class="nx">issuetype</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="w">                    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;12345&quot;</span><span class="p">,</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="w">                    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Xray Test Execution&quot;</span><span class="p">,</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="w">                    </span><span class="c1">// ... more properties to uniquely identify the issue type</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="w">                </span><span class="p">}</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE</span><span class="o">=</span><span class="s1">&#39;{&quot;fields&quot;:{&quot;issuetype&quot;:{&quot;id&quot;:&quot;12345&quot;,&quot;name&quot;:&quot;Xray Test Execution&quot;}}}&#39;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h5 id="summary_1"><code>summary</code><a class="headerlink" href="#summary_1" title="Anchor link to this section for reference">⚓︎</a></h5>
+<p>The summary of test execution issues, which will be used both for new test execution issues as well as for updating existing issues provided through <a href="#key"><code>key</code></a>.</p>
+<p>If the <a href="#key"><code>key</code></a> is configured but the <code>summary</code> is omitted, the existing test execution issue's summary will not be modified.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><a href="#testexecutionissue"><code>JIRA_TEST_EXECUTION_ISSUE</code></a></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="sb">`Execution Results [</span><span class="si">${</span><span class="nx">t</span><span class="si">}</span><span class="sb">]`</span></code> with <code>t</code> being a Unix timestamp when Cypress started testing</dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Cypress configuration</label><label for="__tabbed_12_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span>
+<span class="normal"><a href="#__codelineno-26-4">4</a></span>
+<span class="normal"><a href="#__codelineno-26-5">5</a></span>
+<span class="normal"><a href="#__codelineno-26-6">6</a></span>
+<span class="normal"><a href="#__codelineno-26-7">7</a></span>
+<span class="normal"><a href="#__codelineno-26-8">8</a></span>
+<span class="normal"><a href="#__codelineno-26-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="w">            </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="w">                </span><span class="nx">summary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;my summary&quot;</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE</span><span class="o">=</span><span class="s1">&#39;{&quot;fields&quot;:{&quot;summary&quot;:&quot;my summary&quot;}}&#39;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h4 id="key"><code>key</code><a class="headerlink" href="#key" title="Anchor link to this section for reference">⚓︎</a></h4>
+<p>The key of the test execution issue to attach the run results to.
+If omitted, Jira will always create a new test execution issue with each upload.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><a href="#testexecutionissue"><code>JIRA_TEST_EXECUTION_ISSUE</code></a></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>string</code></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">undefined</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Cypress configuration</label><label for="__tabbed_13_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span>
+<span class="normal"><a href="#__codelineno-28-3">3</a></span>
+<span class="normal"><a href="#__codelineno-28-4">4</a></span>
+<span class="normal"><a href="#__codelineno-28-5">5</a></span>
+<span class="normal"><a href="#__codelineno-28-6">6</a></span>
+<span class="normal"><a href="#__codelineno-28-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="w">            </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ-123&quot;</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE</span><span class="o">=</span><span class="s1">&#39;{&quot;key&quot;:&quot;PRJ-123&quot;}&#39;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
 <h3 id="testexecutionissuedescription"><del><code>testExecutionIssueDescription</code></del><a class="headerlink" href="#testexecutionissuedescription" title="Anchor link to this section for reference">⚓︎</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated since <code>7.2.0</code></p>
 <p>Will be removed in version <code>8.0.0</code>.
-To define a description, please use <a href="#testexecutionissue"><code>testExecutionIssue</code></a> instead:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
-<span class="normal"><a href="#__codelineno-23-2">2</a></span>
-<span class="normal"><a href="#__codelineno-23-3">3</a></span>
-<span class="normal"><a href="#__codelineno-23-4">4</a></span>
-<span class="normal"><a href="#__codelineno-23-5">5</a></span>
-<span class="normal"><a href="#__codelineno-23-6">6</a></span>
-<span class="normal"><a href="#__codelineno-23-7">7</a></span>
-<span class="normal"><a href="#__codelineno-23-8">8</a></span>
-<span class="normal"><a href="#__codelineno-23-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="w">            </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="w">                </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;my description&quot;</span>
-<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="p">});</span>
+To define a description, please use <a href="#description_1"><code>description</code></a> instead:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
+<span class="normal"><a href="#__codelineno-30-2">2</a></span>
+<span class="normal"><a href="#__codelineno-30-3">3</a></span>
+<span class="normal"><a href="#__codelineno-30-4">4</a></span>
+<span class="normal"><a href="#__codelineno-30-5">5</a></span>
+<span class="normal"><a href="#__codelineno-30-6">6</a></span>
+<span class="normal"><a href="#__codelineno-30-7">7</a></span>
+<span class="normal"><a href="#__codelineno-30-8">8</a></span>
+<span class="normal"><a href="#__codelineno-30-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="w">            </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="w">                </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;my description&quot;</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <p>The description of test execution issues, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through <a href="#testexecutionissuekey"><code>testExecutionIssueKey</code></a>).</p>
@@ -1764,22 +2039,22 @@ To define a description, please use <a href="#testexecutionissue"><code>testExec
 </dl>
 <details class="example">
 <summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Cypress configuration</label><label for="__tabbed_11_2">Environment variable</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Cypress configuration</label><label for="__tabbed_14_2">Environment variable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
-<span class="normal"><a href="#__codelineno-24-2">2</a></span>
-<span class="normal"><a href="#__codelineno-24-3">3</a></span>
-<span class="normal"><a href="#__codelineno-24-4">4</a></span>
-<span class="normal"><a href="#__codelineno-24-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="w">        </span><span class="nx">testExecutionIssueDescription</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;This test run was approved by Mr Anderson.&quot;</span>
-<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="p">});</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span>
+<span class="normal"><a href="#__codelineno-31-2">2</a></span>
+<span class="normal"><a href="#__codelineno-31-3">3</a></span>
+<span class="normal"><a href="#__codelineno-31-4">4</a></span>
+<span class="normal"><a href="#__codelineno-31-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="w">        </span><span class="nx">testExecutionIssueDescription</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;This test run was approved by Mr Anderson.&quot;</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_DESCRIPTION</span><span class="o">=</span><span class="s2">&quot;This test run was approved by Mr Anderson.&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_DESCRIPTION</span><span class="o">=</span><span class="s2">&quot;This test run was approved by Mr Anderson.&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1791,20 +2066,20 @@ To define a description, please use <a href="#testexecutionissue"><code>testExec
 <div class="admonition warning">
 <p class="admonition-title">Deprecated since <code>7.2.0</code></p>
 <p>Will be removed in version <code>8.0.0</code>.
-To reuse a test execution issue, please use <a href="#testexecutionissue"><code>testExecutionIssue</code></a> instead:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
-<span class="normal"><a href="#__codelineno-26-2">2</a></span>
-<span class="normal"><a href="#__codelineno-26-3">3</a></span>
-<span class="normal"><a href="#__codelineno-26-4">4</a></span>
-<span class="normal"><a href="#__codelineno-26-5">5</a></span>
-<span class="normal"><a href="#__codelineno-26-6">6</a></span>
-<span class="normal"><a href="#__codelineno-26-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="w">            </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ-123&quot;</span>
-<a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="p">});</span>
+To reuse a test execution issue, please use <a href="#key"><code>key</code></a> instead:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1">1</a></span>
+<span class="normal"><a href="#__codelineno-33-2">2</a></span>
+<span class="normal"><a href="#__codelineno-33-3">3</a></span>
+<span class="normal"><a href="#__codelineno-33-4">4</a></span>
+<span class="normal"><a href="#__codelineno-33-5">5</a></span>
+<span class="normal"><a href="#__codelineno-33-6">6</a></span>
+<span class="normal"><a href="#__codelineno-33-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4"></a><span class="w">            </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ-123&quot;</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <p>The key of the test execution issue to attach the run results to.
@@ -1823,22 +2098,22 @@ If omitted, Jira will always create a new test execution issue with each upload.
 </dl>
 <details class="example">
 <summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Cypress configuration</label><label for="__tabbed_12_2">Environment variable</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Cypress configuration</label><label for="__tabbed_15_2">Environment variable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span>
-<span class="normal"><a href="#__codelineno-27-2">2</a></span>
-<span class="normal"><a href="#__codelineno-27-3">3</a></span>
-<span class="normal"><a href="#__codelineno-27-4">4</a></span>
-<span class="normal"><a href="#__codelineno-27-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="w">        </span><span class="nx">testExecutionIssueKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ-123&quot;</span>
-<a id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="p">});</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span>
+<span class="normal"><a href="#__codelineno-34-2">2</a></span>
+<span class="normal"><a href="#__codelineno-34-3">3</a></span>
+<span class="normal"><a href="#__codelineno-34-4">4</a></span>
+<span class="normal"><a href="#__codelineno-34-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3"></a><span class="w">        </span><span class="nx">testExecutionIssueKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ-123&quot;</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_KEY</span><span class="o">=</span><span class="s2">&quot;PRJ-123&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_KEY</span><span class="o">=</span><span class="s2">&quot;PRJ-123&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1850,24 +2125,24 @@ If omitted, Jira will always create a new test execution issue with each upload.
 <div class="admonition warning">
 <p class="admonition-title">Deprecated since <code>7.2.0</code></p>
 <p>Will be removed in version <code>8.0.0</code>.
-To define a summary, please use <a href="#testexecutionissue"><code>testExecutionIssue</code></a> instead:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
-<span class="normal"><a href="#__codelineno-29-2">2</a></span>
-<span class="normal"><a href="#__codelineno-29-3">3</a></span>
-<span class="normal"><a href="#__codelineno-29-4">4</a></span>
-<span class="normal"><a href="#__codelineno-29-5">5</a></span>
-<span class="normal"><a href="#__codelineno-29-6">6</a></span>
-<span class="normal"><a href="#__codelineno-29-7">7</a></span>
-<span class="normal"><a href="#__codelineno-29-8">8</a></span>
-<span class="normal"><a href="#__codelineno-29-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="w">            </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="w">                </span><span class="nx">summary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;my summary&quot;</span>
-<a id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-29-7" name="__codelineno-29-7"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-29-9" name="__codelineno-29-9"></a><span class="p">});</span>
+To define a summary, please use <a href="#summary_1"><code>summary</code></a> instead:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1">1</a></span>
+<span class="normal"><a href="#__codelineno-36-2">2</a></span>
+<span class="normal"><a href="#__codelineno-36-3">3</a></span>
+<span class="normal"><a href="#__codelineno-36-4">4</a></span>
+<span class="normal"><a href="#__codelineno-36-5">5</a></span>
+<span class="normal"><a href="#__codelineno-36-6">6</a></span>
+<span class="normal"><a href="#__codelineno-36-7">7</a></span>
+<span class="normal"><a href="#__codelineno-36-8">8</a></span>
+<span class="normal"><a href="#__codelineno-36-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4"></a><span class="w">            </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5"></a><span class="w">                </span><span class="nx">summary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;my summary&quot;</span>
+<a id="__codelineno-36-6" name="__codelineno-36-6"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-36-7" name="__codelineno-36-7"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-36-8" name="__codelineno-36-8"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-36-9" name="__codelineno-36-9"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <p>The summary of test execution issues, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through <a href="#testexecutionissuekey"><code>testExecutionIssueKey</code></a>).</p>
@@ -1882,22 +2157,22 @@ To define a summary, please use <a href="#testexecutionissue"><code>testExecutio
 </dl>
 <details class="example">
 <summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Cypress configuration</label><label for="__tabbed_13_2">Environment variable</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Cypress configuration</label><label for="__tabbed_16_2">Environment variable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
-<span class="normal"><a href="#__codelineno-30-2">2</a></span>
-<span class="normal"><a href="#__codelineno-30-3">3</a></span>
-<span class="normal"><a href="#__codelineno-30-4">4</a></span>
-<span class="normal"><a href="#__codelineno-30-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="w">        </span><span class="nx">testExecutionIssueSummary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Monday morning regression test&quot;</span>
-<a id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="p">});</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1">1</a></span>
+<span class="normal"><a href="#__codelineno-37-2">2</a></span>
+<span class="normal"><a href="#__codelineno-37-3">3</a></span>
+<span class="normal"><a href="#__codelineno-37-4">4</a></span>
+<span class="normal"><a href="#__codelineno-37-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3"></a><span class="w">        </span><span class="nx">testExecutionIssueSummary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Monday morning regression test&quot;</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_SUMMARY</span><span class="o">=</span><span class="s2">&quot;Monday morning regression test&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_SUMMARY</span><span class="o">=</span><span class="s2">&quot;Monday morning regression test&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1909,32 +2184,32 @@ To define a summary, please use <a href="#testexecutionissue"><code>testExecutio
 <div class="admonition warning">
 <p class="admonition-title">Deprecated since <code>7.2.0</code></p>
 <p>Will be removed in version <code>8.0.0</code>.
-To define a test execution issue type, please use <a href="#testexecutionissue"><code>testExecutionIssue</code></a> instead:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-32-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-32-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-32-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-32-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-32-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-32-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-32-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-32-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-32-10">10</a></span>
-<span class="normal"><a href="#__codelineno-32-11">11</a></span>
-<span class="normal"><a href="#__codelineno-32-12">12</a></span>
-<span class="normal"><a href="#__codelineno-32-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="w">            </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-32-5" name="__codelineno-32-5"></a><span class="w">                </span><span class="nx">issuetype</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="w">                    </span><span class="c1">// whatever is necessary to uniquely identify the issue type, e.g:</span>
-<a id="__codelineno-32-7" name="__codelineno-32-7"></a><span class="w">                    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Xray Test Execution&quot;</span><span class="p">,</span>
-<a id="__codelineno-32-8" name="__codelineno-32-8"></a><span class="w">                    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;12345&quot;</span>
-<a id="__codelineno-32-9" name="__codelineno-32-9"></a><span class="w">                </span><span class="p">}</span>
-<a id="__codelineno-32-10" name="__codelineno-32-10"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-32-11" name="__codelineno-32-11"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-32-12" name="__codelineno-32-12"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-32-13" name="__codelineno-32-13"></a><span class="p">});</span>
+To define a test execution issue type, please use <a href="#issuetype"><code>issuetype</code></a> instead:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-39-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-39-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-39-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-39-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-39-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-39-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-39-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-39-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-39-10">10</a></span>
+<span class="normal"><a href="#__codelineno-39-11">11</a></span>
+<span class="normal"><a href="#__codelineno-39-12">12</a></span>
+<span class="normal"><a href="#__codelineno-39-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3"></a><span class="w">        </span><span class="nx">testExecutionIssue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-4" name="__codelineno-39-4"></a><span class="w">            </span><span class="nx">fields</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-5" name="__codelineno-39-5"></a><span class="w">                </span><span class="nx">issuetype</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-39-6" name="__codelineno-39-6"></a><span class="w">                    </span><span class="c1">// whatever is necessary to uniquely identify the issue type, e.g:</span>
+<a id="__codelineno-39-7" name="__codelineno-39-7"></a><span class="w">                    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Xray Test Execution&quot;</span><span class="p">,</span>
+<a id="__codelineno-39-8" name="__codelineno-39-8"></a><span class="w">                    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;12345&quot;</span>
+<a id="__codelineno-39-9" name="__codelineno-39-9"></a><span class="w">                </span><span class="p">}</span>
+<a id="__codelineno-39-10" name="__codelineno-39-10"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-39-11" name="__codelineno-39-11"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-39-12" name="__codelineno-39-12"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-39-13" name="__codelineno-39-13"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <p>The issue type name of test executions.
@@ -1950,22 +2225,22 @@ By default, Xray calls them <code>Test Execution</code>, but it's possible that 
 </dl>
 <details class="example">
 <summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Cypress configuration</label><label for="__tabbed_14_2">Environment variable</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Cypress configuration</label><label for="__tabbed_17_2">Environment variable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1">1</a></span>
-<span class="normal"><a href="#__codelineno-33-2">2</a></span>
-<span class="normal"><a href="#__codelineno-33-3">3</a></span>
-<span class="normal"><a href="#__codelineno-33-4">4</a></span>
-<span class="normal"><a href="#__codelineno-33-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="w">        </span><span class="nx">testExecutionIssueType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Test Run&quot;</span>
-<a id="__codelineno-33-4" name="__codelineno-33-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-33-5" name="__codelineno-33-5"></a><span class="p">});</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1">1</a></span>
+<span class="normal"><a href="#__codelineno-40-2">2</a></span>
+<span class="normal"><a href="#__codelineno-40-3">3</a></span>
+<span class="normal"><a href="#__codelineno-40-4">4</a></span>
+<span class="normal"><a href="#__codelineno-40-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3"></a><span class="w">        </span><span class="nx">testExecutionIssueType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Test Run&quot;</span>
+<a id="__codelineno-40-4" name="__codelineno-40-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_TYPE</span><span class="o">=</span><span class="s2">&quot;Test Run&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_EXECUTION_ISSUE_TYPE</span><span class="o">=</span><span class="s2">&quot;Test Run&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1974,11 +2249,7 @@ By default, Xray calls them <code>Test Execution</code>, but it's possible that 
 <hr/>
 
 <h3 id="testplanissuekey"><code>testPlanIssueKey</code><a class="headerlink" href="#testplanissuekey" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>A test plan issue key to attach the execution to.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Must be prefixed with the <a href="#projectkey">project key</a>.</p>
-</div>
+<p>A test plan issue to attach the execution to.</p>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>JIRA_TEST_PLAN_ISSUE_KEY</code></dd>
@@ -1989,22 +2260,22 @@ By default, Xray calls them <code>Test Execution</code>, but it's possible that 
 </dl>
 <details class="example">
 <summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Cypress configuration</label><label for="__tabbed_15_2">Environment variable</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Cypress configuration</label><label for="__tabbed_18_2">Environment variable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span>
-<span class="normal"><a href="#__codelineno-35-2">2</a></span>
-<span class="normal"><a href="#__codelineno-35-3">3</a></span>
-<span class="normal"><a href="#__codelineno-35-4">4</a></span>
-<span class="normal"><a href="#__codelineno-35-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-35-2" name="__codelineno-35-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-35-3" name="__codelineno-35-3"></a><span class="w">        </span><span class="nx">testPlanIssueKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ-456&quot;</span>
-<a id="__codelineno-35-4" name="__codelineno-35-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-35-5" name="__codelineno-35-5"></a><span class="p">});</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1">1</a></span>
+<span class="normal"><a href="#__codelineno-42-2">2</a></span>
+<span class="normal"><a href="#__codelineno-42-3">3</a></span>
+<span class="normal"><a href="#__codelineno-42-4">4</a></span>
+<span class="normal"><a href="#__codelineno-42-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3"></a><span class="w">        </span><span class="nx">testPlanIssueKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PRJ-456&quot;</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_PLAN_ISSUE_KEY</span><span class="o">=</span><span class="s2">&quot;PRJ-456&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-43-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_PLAN_ISSUE_KEY</span><span class="o">=</span><span class="s2">&quot;PRJ-456&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -2013,6 +2284,11 @@ By default, Xray calls them <code>Test Execution</code>, but it's possible that 
 <hr/>
 
 <h3 id="testplanissuetype"><code>testPlanIssueType</code><a class="headerlink" href="#testplanissuetype" title="Anchor link to this section for reference">⚓︎</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Deprecated since <code>7.4.0</code></p>
+<p>Will be removed in version <code>8.0.0</code>.
+Unused.</p>
+</div>
 <p>The issue type name of test plans. By default, Xray calls them <code>Test Plan</code>, but it's possible that they have been renamed or translated in your Jira instance.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2038,22 +2314,22 @@ By default, Xray calls them <code>Test Execution</code>, but it's possible that 
 </dl>
 <details class="example">
 <summary>Example</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Cypress configuration</label><label for="__tabbed_16_2">Environment variable</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">Cypress configuration</label><label for="__tabbed_19_2">Environment variable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1">1</a></span>
-<span class="normal"><a href="#__codelineno-37-2">2</a></span>
-<span class="normal"><a href="#__codelineno-37-3">3</a></span>
-<span class="normal"><a href="#__codelineno-37-4">4</a></span>
-<span class="normal"><a href="#__codelineno-37-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-37-2" name="__codelineno-37-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-37-3" name="__codelineno-37-3"></a><span class="w">        </span><span class="nx">testPlanIssueType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Plan de test&quot;</span><span class="w"> </span><span class="c1">// 🇫🇷</span>
-<a id="__codelineno-37-4" name="__codelineno-37-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-37-5" name="__codelineno-37-5"></a><span class="p">});</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-44-1">1</a></span>
+<span class="normal"><a href="#__codelineno-44-2">2</a></span>
+<span class="normal"><a href="#__codelineno-44-3">3</a></span>
+<span class="normal"><a href="#__codelineno-44-4">4</a></span>
+<span class="normal"><a href="#__codelineno-44-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2"></a><span class="w">    </span><span class="nx">jira</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-44-3" name="__codelineno-44-3"></a><span class="w">        </span><span class="nx">testPlanIssueType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Plan de test&quot;</span><span class="w"> </span><span class="c1">// 🇫🇷</span>
+<a id="__codelineno-44-4" name="__codelineno-44-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-44-5" name="__codelineno-44-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_PLAN_ISSUE_TYPE</span><span class="o">=</span><span class="s2">&quot;Plan de test&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-45-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">JIRA_TEST_PLAN_ISSUE_TYPE</span><span class="o">=</span><span class="s2">&quot;Plan de test&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
