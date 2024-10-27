@@ -38,6 +38,7 @@ Below you will find accepted values of custom option types you can use when prov
 !!! example
     ```sh
     npx cypress run --env XRAY_TEST_ENVIRONMENTS=[DEV,"Cool Test Environment",2.3]
+    ```
 
 ## `object`
 

@@ -286,7 +286,7 @@ The Xray test environments field ID (i.e. the test environments associated with 
 
 #### `testPlan`
 
-The test plan field ID of Xray test (execution) issues.
+The Jira field ID of test plans in Xray test (execution) issues.
 
 !!! note
     This option is necessary for server instances only.
@@ -319,41 +319,6 @@ The test plan field ID of Xray test (execution) issues.
 
 <hr/>
 
-#### `testType`
-
-The test type field ID of Xray test issues.
-
-!!! note
-    This option is necessary for server instances only.
-    Xray cloud provides ways to retrieve test type field information independently of Jira.
-
-***Environment variable***
-: `JIRA_FIELDS_TEST_TYPE`
-
-***Type***
-: `string`
-
-***Default***
-: `#!js "test type"`
-
-??? example
-    === "Cypress configuration"
-        ```js
-        await configureXrayPlugin(on, config, {
-            jira: {
-                fields: {
-                    testPlan: "customfield_42069"
-                }
-            },
-        });
-        ```
-    === "Environment variable"
-        ```sh
-        npx cypress run --env JIRA_FIELDS_TEST_TYPE=customfield_42069
-        ```
-
-<hr/>
-
 ### `testExecutionIssue`
 
 This option can be used to configure the test execution issue that the plugin will either create or modify with the run results.
@@ -375,6 +340,31 @@ You can do cool things here, including:
 
 Almost everything you can do when you create Jira issues using the Jira API, you can also do here.
 Make sure to check out the Jira API documentation for more information.
+
+!!! tip
+
+    The plugin also accepts a function that allows you to specify dynamic values based on the Cypress results.
+
+    ```ts
+    await configureXrayPlugin(on, config, {
+        jira: {
+            testExecutionIssue: ({ results }) => {
+                if (results.totalFailed > 0) {
+                    return {
+                        fields: {
+                            summary: "Failed test execution"
+                        }
+                    };
+                }
+                return {
+                    fields: {
+                        summary: "Perfect test execution"
+                    }
+                };
+            }
+        }
+    });
+    ```
 
 !!! warning "Warning (affected versions: `7.2.0` &leq; version &lt; `8.0.0`)"
     While conflicting options such as [`testExecutionIssueDescription`](#testexecutionissuedescription) or [`testExecutionIssueSummary`](#testexecutionissuesummary) are still available, the fields and values defined in `testExecutionIssue` will take precedence over all options marked as deprecated.
@@ -399,7 +389,7 @@ Make sure to check out the Jira API documentation for more information.
 : `JIRA_TEST_EXECUTION_ISSUE`
 
 ***Type***
-: [`object](./types.md#object)
+: [`object`](./types.md#object)
 
 ***Default***
 : `#!js undefined`
@@ -430,11 +420,153 @@ Make sure to check out the Jira API documentation for more information.
 
 <hr/>
 
+#### `fields`
+
+These options modify the fields of the test execution issue that is either created or modified by each test run.
+
+##### `description`
+
+The description of test execution issues, which will be used both for new test execution issues as well as for updating existing issues (if one was provided through [`key`](#key)).
+
+If the [`key`](#key) is configured but `description` is omitted, the existing test execution issue's description will not be modified.
+
+***Environment variable***
+: [`JIRA_TEST_EXECUTION_ISSUE`](#testexecutionissue)
+
+***Type***
+: `string`
+
+***Default***
+: ``#!js `Cypress version: ${version} Browser: ${name} (${version})` `` with values depending on Cypress and the chosen browser
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            jira: {
+                testExecutionIssue: {
+                    fields: {
+                        description: "Release Test Results for v42.0"
+                    }
+                }
+            }
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env JIRA_TEST_EXECUTION_ISSUE='{"fields":{"description":"Release Test Results for v42.0"}}'
+        ```
+<hr/>
+
+##### `issuetype`
+
+The issue type of test executions.
+By default, Xray calls them `Test Execution`, but it's possible that they have been renamed or translated in your Jira instance.
+
+Use this option to specify the type of the test executions the plugin should create for each run.
+
+***Environment variable***
+: [`JIRA_TEST_EXECUTION_ISSUE`](#testexecutionissue)
+
+***Type***
+: `string`
+
+***Default***
+: `#!js 'Test Execution'`
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            jira: {
+                testExecutionIssue: {
+                    fields: {
+                        issuetype: {
+                            id: "12345",
+                            name: "Xray Test Execution",
+                            // ... more properties to uniquely identify the issue type
+                        }
+                    }
+                }
+            }
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env JIRA_TEST_EXECUTION_ISSUE='{"fields":{"issuetype":{"id":"12345","name":"Xray Test Execution"}}}'
+        ```
+<hr/>
+
+##### `summary`
+
+The summary of test execution issues, which will be used both for new test execution issues as well as for updating existing issues provided through [`key`](#key).
+
+If the [`key`](#key) is configured but the `summary` is omitted, the existing test execution issue's summary will not be modified.
+
+***Environment variable***
+: [`JIRA_TEST_EXECUTION_ISSUE`](#testexecutionissue)
+
+***Type***
+: `string`
+
+***Default***
+: ``#!js `Execution Results [${t}]` `` with `t` being a Unix timestamp when Cypress started testing
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            jira: {
+                testExecutionIssue: {
+                    fields: {
+                        summary: "my summary"
+                    }
+                }
+            }
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env JIRA_TEST_EXECUTION_ISSUE='{"fields":{"summary":"my summary"}}'
+        ```
+<hr/>
+
+#### `key`
+
+The key of the test execution issue to attach the run results to.
+If omitted, Jira will always create a new test execution issue with each upload.
+
+***Environment variable***
+: [`JIRA_TEST_EXECUTION_ISSUE`](#testexecutionissue)
+
+***Type***
+: `string`
+
+***Default***
+: `#!js undefined`
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            jira: {
+                testExecutionIssue: {
+                    key: "PRJ-123"
+                }
+            }
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env JIRA_TEST_EXECUTION_ISSUE='{"key":"PRJ-123"}'
+        ```
+<hr/>
+
 ### ~~`testExecutionIssueDescription`~~
 
 !!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
-    To define a description, please use [`testExecutionIssue`](#testexecutionissue) instead:
+    To define a description, please use [`description`](#description_1) instead:
 
     ```js
     await configureXrayPlugin(on, config, {
@@ -481,7 +613,7 @@ If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `
 
 !!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
-    To reuse a test execution issue, please use [`testExecutionIssue`](#testexecutionissue) instead:
+    To reuse a test execution issue, please use [`key`](#key) instead:
 
     ```js
     await configureXrayPlugin(on, config, {
@@ -527,7 +659,7 @@ If omitted, Jira will always create a new test execution issue with each upload.
 
 !!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
-    To define a summary, please use [`testExecutionIssue`](#testexecutionissue) instead:
+    To define a summary, please use [`summary`](#summary_1) instead:
 
     ```js
     await configureXrayPlugin(on, config, {
@@ -574,7 +706,7 @@ If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `
 
 !!! warning "Deprecated since `7.2.0`"
     Will be removed in version `8.0.0`.
-    To define a test execution issue type, please use [`testExecutionIssue`](#testexecutionissue) instead:
+    To define a test execution issue type, please use [`issuetype`](#issuetype) instead:
 
     ```js
     await configureXrayPlugin(on, config, {
@@ -623,10 +755,7 @@ Use this option to specify the type of the test executions the plugin should cre
 <hr/>
 
 ### `testPlanIssueKey`
-A test plan issue key to attach the execution to.
-
-!!! note
-    Must be prefixed with the [project key](#projectkey).
+A test plan issue to attach the execution to.
 
 ***Environment variable***
 : `JIRA_TEST_PLAN_ISSUE_KEY`
@@ -654,6 +783,11 @@ A test plan issue key to attach the execution to.
 <hr/>
 
 ### `testPlanIssueType`
+
+!!! warning "Deprecated since `7.4.0`"
+    Will be removed in version `8.0.0`.
+    Unused.
+
 The issue type name of test plans. By default, Xray calls them `Test Plan`, but it's possible that they have been renamed or translated in your Jira instance.
 
 !!! note
