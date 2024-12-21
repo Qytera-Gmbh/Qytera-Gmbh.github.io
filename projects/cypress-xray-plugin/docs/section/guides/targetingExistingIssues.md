@@ -7,13 +7,19 @@ This section teaches you everything you need to know to target such existing iss
 
 ## Reuse Cypress issues
 
-To link Cypress tests to Jira issues, simply add the test case issue's key *anywhere* in the name of the *innermost* `#!js it()` function (or corresponding alternatives like `#!js specify()`):
+To link Cypress tests to Jira issues, simply add the test case issue's key *anywhere* in their `#!js describe()` &ndash; `#!js it()` title chain (or corresponding alternatives like `#!js specify()`):
 
 ```js
 describe("a suite", () => {
     it("PRJ-123 has a test case", () => {
         // ...
     });
+});
+
+describe("PRJ-456 data-driven suite", () => {
+    it("alice", () => { /* ... */ });
+    it("bob", () => { /* ... */ });
+    it("charlie who will also be reported as PRJ-789", () => { /* ... */ });
 });
 ```
 
@@ -31,7 +37,7 @@ The tagging schemes follow the schemes Xray expects when importing feature files
 ### Test issues
 
 In feature files, you must annotate scenarios (or scenario outlines) with a [tag](https://cucumber.io/docs/cucumber/api/?lang=java#tags) containing the corresponding test case issue key.
-The tag's prefix must match the one configured in your Xray settings (see [here](../configuration/cucumber.md#prefixes)).
+The tag's prefix must match the one configured in your Xray settings (see [here](../configuration/cucumber.md#prefixes)) and contain the [project key](../configuration/jira.md#projectkey).
 
 === "Feature (prefix)"
 
@@ -84,7 +90,7 @@ The tag's prefix must match the one configured in your Xray settings (see [here]
 ### Precondition issues
 
 In feature files, you must add a comment to a background's *very first step* containing the [tag](https://cucumber.io/docs/cucumber/api/?lang=java#tags) for a corresponding precondition issue key.
-The tag's prefix must match the one configured in your Xray settings (see [here](../configuration/cucumber.md#prefixes)).
+The tag's prefix must match the one configured in your Xray settings (see [here](../configuration/cucumber.md#prefixes)) and contain the [project key](../configuration/jira.md#projectkey).
 
 !!! note
     You can find more information about preconditions [here](https://docs.getxray.app/display/XRAY/Pre-Condition) for Xray server and [here](https://docs.getxray.app/display/XRAYCLOUD/Precondition) for Xray cloud.

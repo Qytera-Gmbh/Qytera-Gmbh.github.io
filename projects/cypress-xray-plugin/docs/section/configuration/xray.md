@@ -22,6 +22,60 @@ If you have custom _test_ statuses set up in Xray, you should specify their name
 
 <hr/>
 
+#### `aggregate`
+
+A function that returns a single Xray status for a given combination of Cypress statuses.
+It is used to determine the final status of retried and data-driven tests and is never called for tests that have only been run once.
+
+!!! info
+    Tests are grouped by the issue keys present in their `#!js describe()` and `#!js it()` titles as described [here](../guides/targetingExistingIssues.md#reuse-cypress-issues).
+
+***Type***
+: `function`
+
+***Default***
+```js
+({ failed, passed, pending, skipped }) => {
+    if (passed > 0 && failed === 0 && skipped === 0) {
+        // return Xray status for passed Cypress status
+    }
+    if (passed === 0 && failed === 0 && skipped === 0 && pending > 0) {
+        // return Xray status for pending Cypress status
+    }
+    if (skipped > 0) {
+        // return Xray status for skipped Cypress status
+    }
+    // return Xray status for failed Cypress status
+}
+```
+
+??? example
+
+    The following example defines custom `FLAKY` and `ABORTED` statuses for iterated tests:
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        xray: {
+            status: {
+                aggregate: ({ failed, passed, pending, skipped }) => {
+                    if (passed > 0 && failed === 0 && skipped === 0) {
+                        return "PASSED";
+                    }
+                    if (passed === 0 && failed === 0 && skipped === 0 && pending > 0) {
+                        return "FLAKY";
+                    }
+                    if (skipped > 0) {
+                        return "ABORTED";
+                    }
+                    return "FAILED";
+                },
+            },
+        },
+    });
+    ```
+
+<hr/>
+
 #### `failed`
 
 The Xray status name of a test marked as failed by Cypress.
