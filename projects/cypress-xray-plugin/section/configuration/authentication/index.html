@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/qyteraIcon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -1002,7 +1002,13 @@ You <em>must</em> do this by setting up specific environment variables, e.g. a c
 Note that Xray server does <strong><em>not</em></strong> require dedicated credentials in addition to the Jira credentials, effectively setting up both at the same time.
 <pre class="mermaid"><code>graph TD
     A{Xray&lt;br/&gt;instance};
-    B("XRAY_CLIENT_ID=&lt;i&gt;id&lt;/i&gt;&lt;br&gt;XRAY_CLIENT_SECRET=&lt;i&gt;secret&lt;/i&gt;&lt;br&gt;&lt;hr&gt;JIRA_USERNAME=&lt;i&gt;user@company.com&lt;/i&gt;&lt;br&gt;JIRA_API_TOKEN=&lt;i&gt;token&lt;/i&gt;");
+    B("`
+      XRAY_CLIENT_ID=&lt;i&gt;id&lt;/i&gt;
+      XRAY_CLIENT_SECRET=&lt;i&gt;secret&lt;/i&gt;
+      %% Prevent mermaid from parsing the mail address as a buggy link with word join characters
+      JIRA_USERNAME=&lt;i&gt;user#8288;@#8288;company.com&lt;/i&gt;
+      JIRA_API_TOKEN=&lt;i&gt;token&lt;/i&gt;
+    `");
     C{Jira&lt;br/&gt;auth};
     A ---&gt;|Cloud| B;
     A ---&gt;|Server| C;
@@ -1226,7 +1232,7 @@ You should stick to it, as PATs are a safer alternative to using usernames and p
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.instant", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>
