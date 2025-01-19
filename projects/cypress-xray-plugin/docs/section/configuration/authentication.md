@@ -15,7 +15,13 @@ npx cypress run --env XRAY_CLIENT_ID="ABCDEF",XRAY_CLIENT_SECRET="XYZ"
     ```mermaid
     graph TD
         A{Xray<br/>instance};
-        B("XRAY_CLIENT_ID=<i>id</i><br>XRAY_CLIENT_SECRET=<i>secret</i><br><hr>JIRA_USERNAME=<i>user@company.com</i><br>JIRA_API_TOKEN=<i>token</i>");
+        B("`
+          XRAY_CLIENT_ID=<i>id</i>
+          XRAY_CLIENT_SECRET=<i>secret</i>
+          %% Prevent mermaid from parsing the mail address as a buggy link with word join characters
+          JIRA_USERNAME=<i>user#8288;@#8288;company.com</i>
+          JIRA_API_TOKEN=<i>token</i>
+        `");
         C{Jira<br/>auth};
         A --->|Cloud| B;
         A --->|Server| C;
