@@ -8,6 +8,7 @@ The plugin fully supports the following [Cypress](https://www.cypress.io/) versi
 - [x] &ge; 11.0.0
 - [x] &ge; 12.0.0
 - [x] &ge; 13.0.0
+- [x] &ge; 14.0.0
 
 !!! info
     Type `#!sh npx cypress --version` in a terminal in your project to check if v10 or above is installed already.
