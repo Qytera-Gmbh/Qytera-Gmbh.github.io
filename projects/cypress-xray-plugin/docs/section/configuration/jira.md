@@ -144,7 +144,7 @@ By default, the plugin accesses field information using the fields' names (ignor
 #### ~~`description`~~
 
 !!! warning "Deprecated since `7.2.0`"
-    Will be removed in version `8.0.0`.
+    Will be removed in version `9.0.0`.
     Field `description` is a system field and will always have the ID `description`.
     It is no longer necessary to specify this field ID.
 
@@ -180,7 +180,7 @@ The description field ID of Jira issues.
 #### ~~`labels`~~
 
 !!! warning "Deprecated since `7.2.0`"
-    Will be removed in version `8.0.0`.
+    Will be removed in version `9.0.0`.
     Field `labels` is a system field and will always have the ID `labels`.
     It is no longer necessary to specify this field ID.
 
@@ -216,7 +216,7 @@ The labels field ID of Jira issues.
 #### ~~`summary`~~
 
 !!! warning "Deprecated since `7.2.0`"
-    Will be removed in version `8.0.0`.
+    Will be removed in version `9.0.0`.
     Field `summary` is a system field and will always have the ID `summary`.
     It is no longer necessary to specify this field ID.
 
@@ -366,7 +366,7 @@ Make sure to check out the Jira API documentation for more information.
     });
     ```
 
-!!! warning "Warning (affected versions: `7.2.0` &leq; version &lt; `8.0.0`)"
+!!! warning "Warning (affected versions: `7.2.0` &leq; version &lt; `9.0.0`)"
     While conflicting options such as [`testExecutionIssueDescription`](#testexecutionissuedescription) or [`testExecutionIssueSummary`](#testexecutionissuesummary) are still available, the fields and values defined in `testExecutionIssue` will take precedence over all options marked as deprecated.
     The following code configuration will create test executions with `Blue summary` and `Blue description` fields:
 
@@ -565,7 +565,7 @@ If omitted, Jira will always create a new test execution issue with each upload.
 ### ~~`testExecutionIssueDescription`~~
 
 !!! warning "Deprecated since `7.2.0`"
-    Will be removed in version `8.0.0`.
+    Will be removed in version `9.0.0`.
     To define a description, please use [`description`](#description_1) instead:
 
     ```js
@@ -612,7 +612,7 @@ If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `
 ### ~~`testExecutionIssueKey`~~
 
 !!! warning "Deprecated since `7.2.0`"
-    Will be removed in version `8.0.0`.
+    Will be removed in version `9.0.0`.
     To reuse a test execution issue, please use [`key`](#key) instead:
 
     ```js
@@ -658,7 +658,7 @@ If omitted, Jira will always create a new test execution issue with each upload.
 ### ~~`testExecutionIssueSummary`~~
 
 !!! warning "Deprecated since `7.2.0`"
-    Will be removed in version `8.0.0`.
+    Will be removed in version `9.0.0`.
     To define a summary, please use [`summary`](#summary_1) instead:
 
     ```js
@@ -705,7 +705,7 @@ If the [`testExecutionIssueKey`](#testexecutionissuekey) is configured but the `
 ### ~~`testExecutionIssueType`~~
 
 !!! warning "Deprecated since `7.2.0`"
-    Will be removed in version `8.0.0`.
+    Will be removed in version `9.0.0`.
     To define a test execution issue type, please use [`issuetype`](#issuetype) instead:
 
     ```js
@@ -785,7 +785,7 @@ A test plan issue to attach the execution to.
 ### `testPlanIssueType`
 
 !!! warning "Deprecated since `7.4.0`"
-    Will be removed in version `8.0.0`.
+    Will be removed in version `9.0.0`.
     Unused.
 
 The issue type name of test plans. By default, Xray calls them `Test Plan`, but it's possible that they have been renamed or translated in your Jira instance.
