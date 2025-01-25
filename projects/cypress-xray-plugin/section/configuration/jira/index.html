@@ -1457,7 +1457,7 @@ The ID of Jira's test environments field could then again be copied to the <a hr
 <h4 id="description"><del><code>description</code></del><a class="headerlink" href="#description" title="Anchor link to this section for reference">⚓︎</a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated since <code>7.2.0</code></p>
-<p>Will be removed in version <code>8.0.0</code>.
+<p>Will be removed in version <code>9.0.0</code>.
 Field <code>description</code> is a system field and will always have the ID <code>description</code>.
 It is no longer necessary to specify this field ID.</p>
 </div>
@@ -1502,7 +1502,7 @@ It is no longer necessary to specify this field ID.</p>
 <h4 id="labels"><del><code>labels</code></del><a class="headerlink" href="#labels" title="Anchor link to this section for reference">⚓︎</a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated since <code>7.2.0</code></p>
-<p>Will be removed in version <code>8.0.0</code>.
+<p>Will be removed in version <code>9.0.0</code>.
 Field <code>labels</code> is a system field and will always have the ID <code>labels</code>.
 It is no longer necessary to specify this field ID.</p>
 </div>
@@ -1547,7 +1547,7 @@ It is no longer necessary to specify this field ID.</p>
 <h4 id="summary"><del><code>summary</code></del><a class="headerlink" href="#summary" title="Anchor link to this section for reference">⚓︎</a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated since <code>7.2.0</code></p>
-<p>Will be removed in version <code>8.0.0</code>.
+<p>Will be removed in version <code>9.0.0</code>.
 Field <code>summary</code> is a system field and will always have the ID <code>summary</code>.
 It is no longer necessary to specify this field ID.</p>
 </div>
@@ -1739,7 +1739,7 @@ Make sure to check out the Jira API documentation for more information.</p>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Warning (affected versions: <code>7.2.0</code> &leq; version &lt; <code>8.0.0</code>)</p>
+<p class="admonition-title">Warning (affected versions: <code>7.2.0</code> &leq; version &lt; <code>9.0.0</code>)</p>
 <p>While conflicting options such as <a href="#testexecutionissuedescription"><code>testExecutionIssueDescription</code></a> or <a href="#testexecutionissuesummary"><code>testExecutionIssueSummary</code></a> are still available, the fields and values defined in <code>testExecutionIssue</code> will take precedence over all options marked as deprecated.
 The following code configuration will create test executions with <code>Blue summary</code> and <code>Blue description</code> fields:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
@@ -2006,7 +2006,7 @@ If omitted, Jira will always create a new test execution issue with each upload.
 <h3 id="testexecutionissuedescription"><del><code>testExecutionIssueDescription</code></del><a class="headerlink" href="#testexecutionissuedescription" title="Anchor link to this section for reference">⚓︎</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated since <code>7.2.0</code></p>
-<p>Will be removed in version <code>8.0.0</code>.
+<p>Will be removed in version <code>9.0.0</code>.
 To define a description, please use <a href="#description_1"><code>description</code></a> instead:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
 <span class="normal"><a href="#__codelineno-30-2">2</a></span>
@@ -2065,7 +2065,7 @@ To define a description, please use <a href="#description_1"><code>description</
 <h3 id="testexecutionissuekey"><del><code>testExecutionIssueKey</code></del><a class="headerlink" href="#testexecutionissuekey" title="Anchor link to this section for reference">⚓︎</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated since <code>7.2.0</code></p>
-<p>Will be removed in version <code>8.0.0</code>.
+<p>Will be removed in version <code>9.0.0</code>.
 To reuse a test execution issue, please use <a href="#key"><code>key</code></a> instead:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1">1</a></span>
 <span class="normal"><a href="#__codelineno-33-2">2</a></span>
@@ -2124,7 +2124,7 @@ If omitted, Jira will always create a new test execution issue with each upload.
 <h3 id="testexecutionissuesummary"><del><code>testExecutionIssueSummary</code></del><a class="headerlink" href="#testexecutionissuesummary" title="Anchor link to this section for reference">⚓︎</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated since <code>7.2.0</code></p>
-<p>Will be removed in version <code>8.0.0</code>.
+<p>Will be removed in version <code>9.0.0</code>.
 To define a summary, please use <a href="#summary_1"><code>summary</code></a> instead:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1">1</a></span>
 <span class="normal"><a href="#__codelineno-36-2">2</a></span>
@@ -2183,7 +2183,7 @@ To define a summary, please use <a href="#summary_1"><code>summary</code></a> in
 <h3 id="testexecutionissuetype"><del><code>testExecutionIssueType</code></del><a class="headerlink" href="#testexecutionissuetype" title="Anchor link to this section for reference">⚓︎</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated since <code>7.2.0</code></p>
-<p>Will be removed in version <code>8.0.0</code>.
+<p>Will be removed in version <code>9.0.0</code>.
 To define a test execution issue type, please use <a href="#issuetype"><code>issuetype</code></a> instead:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-39-2"> 2</a></span>
@@ -2286,7 +2286,7 @@ By default, Xray calls them <code>Test Execution</code>, but it's possible that 
 <h3 id="testplanissuetype"><code>testPlanIssueType</code><a class="headerlink" href="#testplanissuetype" title="Anchor link to this section for reference">⚓︎</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated since <code>7.4.0</code></p>
-<p>Will be removed in version <code>8.0.0</code>.
+<p>Will be removed in version <code>9.0.0</code>.
 Unused.</p>
 </div>
 <p>The issue type name of test plans. By default, Xray calls them <code>Test Plan</code>, but it's possible that they have been renamed or translated in your Jira instance.</p>
