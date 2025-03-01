@@ -99,6 +99,57 @@ A corresponding video can be seen [here](../../index.md).
     }
     ```
 
+### Data-driven results
+
+The plugin fully supports data-driven test execution in the following form:
+
+```js
+describe("the login page", () => {
+    for (const name of ["Jane", "John", "Mary"]) {
+        it(`CYP-123 logs in ${name}`, async () => {
+            // ...
+        })
+    }
+});
+```
+
+If an issue key is detected in more than one test result, all corresponding test results are mapped to parameterised test results in Xray.
+
+By default, the plugin simply adds a single parameter containing the iteration index:
+
+![xray default iteration](../../assets/images/xrayIterationsDefault.png)
+
+To actually define concrete iteration parameters, a Cypress task can be used:
+
+```js
+
+import { enqueueTask, PluginTask } from "cypress-xray-plugin/commands/tasks";
+
+describe("the login page", () => {
+    for (const name of ["Jane", "John", "Mary"]) {
+        it(`CYP-123 logs in ${name}`, async () => {
+            // These three are equivalent:
+            cy.task(
+             "cypress-xray-plugin:task:iteration:definition",
+              { parameters: { user: name }, test: Cypress.currentTest.titlePath.join(" ") }
+            );
+            enqueueTask("cypress-xray-plugin:task:iteration:definition", { user: name });
+            enqueueTask(PluginTask.ITERATION_DEFINITION, { user: name });
+            // ...
+        });
+    }
+});
+```
+
+Using `enqueueTask` (with or without `PluginTask`) allows for type safe task calls.
+
+![xray defined iterations](../../assets/images/xrayIterationsTask.png)
+
+??? abstract "Xray Documentation"
+    You can find more information on parameterised test executions [here](https://docs.getxray.app/display/XRAY/Parameterized+Tests#ParameterizedTests-Execution) for Xray server and [here](https://docs.getxray.app/display/XRAYCLOUD/Parameterized+Tests) for Xray cloud.
+
+
+
 ## Uploading Cucumber test results
 
 The following example consists of three scenarios for [https://example.org](https://example.org), wrapping the tests described [above](#uploading-cypress-test-results).
