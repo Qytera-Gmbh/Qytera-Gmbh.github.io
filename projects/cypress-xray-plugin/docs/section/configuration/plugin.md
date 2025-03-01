@@ -201,3 +201,33 @@ This approach helps to avoid server-side request size limitations and can also b
         ```sh
         npx cypress run --env PLUGIN_SPLIT_UPLOAD=true
         ```
+
+<hr/>
+
+### `uploadLastAttempt`
+
+If set to `true` and [test retries](https://docs.cypress.io/app/guides/test-retries) are enabled in Cypress, failed test attempts and their associated screenshots will be omitted from the upload to Xray, i.e. only the _last_ attempt of each test will be included.
+
+***Environment variable***
+: `PLUGIN_UPLOAD_LAST_ATTEMPT`
+
+***Type***
+: [`boolean`](types.md#boolean)
+
+***Default***
+: `#!js false`
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            plugin: {
+                uploadLastAttempt: true
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env PLUGIN_UPLOAD_LAST_ATTEMPT=true
+        ```
+
