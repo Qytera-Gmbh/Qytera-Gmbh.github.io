@@ -169,3 +169,35 @@ With this option enabled, the plugin only keeps characters `a-zA-Z0-9.` in scree
         ```sh
         npx cypress run --env PLUGIN_NORMALIZE_SCREENSHOT_NAMES=true
         ```
+
+<hr/>
+
+### `splitUpload`
+
+Enables split upload mode for evidence files.
+When set to `true`, evidence such as screenshots and videos are uploaded in multiple smaller requests rather than in a single large request.
+
+This approach helps to avoid server-side request size limitations and can also be useful for avoiding `JSON.stringify` token length errors.
+
+***Environment variable***
+: `PLUGIN_SPLIT_UPLOAD`
+
+***Type***
+: [`boolean`](types.md#boolean)
+
+***Default***
+: `#!js false`
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            plugin: {
+                splitUpload: true
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env PLUGIN_SPLIT_UPLOAD=true
+        ```
