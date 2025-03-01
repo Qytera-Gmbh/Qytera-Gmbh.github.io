@@ -594,9 +594,36 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      logger
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#normalizescreenshotnames" class="md-nav__link">
     <span class="md-ellipsis">
       normalizeScreenshotNames
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splitupload" class="md-nav__link">
+    <span class="md-ellipsis">
+      splitUpload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploadlastattempt" class="md-nav__link">
+    <span class="md-ellipsis">
+      uploadLastAttempt
     </span>
   </a>
   
@@ -881,9 +908,36 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      logger
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#normalizescreenshotnames" class="md-nav__link">
     <span class="md-ellipsis">
       normalizeScreenshotNames
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splitupload" class="md-nav__link">
+    <span class="md-ellipsis">
+      splitUpload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploadlastattempt" class="md-nav__link">
+    <span class="md-ellipsis">
+      uploadLastAttempt
     </span>
   </a>
   
@@ -1021,6 +1075,81 @@ Setting this option to <code>false</code> disables all plugin functions, includi
 </details>
 <hr/>
 
+<h3 id="logger"><code>logger</code><a class="headerlink" href="#logger" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>A custom logger function that replaces the default ANSI-based logger for the plugin.
+If specified, this logger will completely replace the default plugin logger.</p>
+<p>Messages passed to this function:</p>
+<ul>
+<li>
+<p>will not contain the prefix <code>│ Cypress Xray Plugin │</code></p>
+</li>
+<li>
+<p>will not contain ANSI escape characters</p>
+</li>
+<li>
+<p>may contain line break characters</p>
+</li>
+</ul>
+<dl>
+<dt><strong><em>Type</em></strong></dt>
+<dd><code>function</code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<p>The following example produces log messages with custom prefixes and debug messages that are only output if a corresponding environment variable is defined.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span>
+<span class="normal"><a href="#__codelineno-6-22">22</a></span>
+<span class="normal"><a href="#__codelineno-6-23">23</a></span>
+<span class="normal"><a href="#__codelineno-6-24">24</a></span>
+<span class="normal"><a href="#__codelineno-6-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">        </span><span class="nx">logger</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">level</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">text</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">            </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">level</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;debug&quot;</span><span class="o">:</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DEBUG</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">                      </span><span class="nx">console</span><span class="p">.</span><span class="nx">debug</span><span class="p">(...</span><span class="nx">text</span><span class="p">);</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">                    </span><span class="p">}</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="o">:</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">                    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;oh no&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">text</span><span class="p">);</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;info&quot;</span><span class="o">:</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">                    </span><span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;fyi&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">text</span><span class="p">);</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;notice&quot;</span><span class="o">:</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">                    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;please beware&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">text</span><span class="p">);</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;warning&quot;</span><span class="o">:</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">                    </span><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s2">&quot;danger&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">text</span><span class="p">);</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<hr/>
+
 <h3 id="normalizescreenshotnames"><code>normalizeScreenshotNames</code><a class="headerlink" href="#normalizescreenshotnames" title="Anchor link to this section for reference">⚓︎</a></h3>
 <p>Some Xray setups might struggle with uploaded evidence if the filenames contain non-ASCII characters.
 With this option enabled, the plugin only keeps characters <code>a-zA-Z0-9.</code> in screenshot names and replaces all other sequences with <code>_</code>.</p>
@@ -1037,19 +1166,91 @@ With this option enabled, the plugin only keeps characters <code>a-zA-Z0-9.</cod
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Cypress configuration</label><label for="__tabbed_4_2">Environment variable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span>
-<span class="normal"><a href="#__codelineno-6-3">3</a></span>
-<span class="normal"><a href="#__codelineno-6-4">4</a></span>
-<span class="normal"><a href="#__codelineno-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">        </span><span class="nx">normalizeScreenshotNames</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="p">});</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">        </span><span class="nx">normalizeScreenshotNames</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">PLUGIN_NORMALIZE_SCREENSHOT_NAMES</span><span class="o">=</span><span class="nb">true</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">PLUGIN_NORMALIZE_SCREENSHOT_NAMES</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h3 id="splitupload"><code>splitUpload</code><a class="headerlink" href="#splitupload" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Enables split upload mode for evidence files.
+When set to <code>true</code>, evidence such as screenshots and videos are uploaded in multiple smaller requests rather than in a single large request.</p>
+<p>This approach helps to avoid server-side request size limitations and can also be useful for avoiding <code>JSON.stringify</code> token length errors.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>PLUGIN_SPLIT_UPLOAD</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">false</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Cypress configuration</label><label for="__tabbed_5_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">    </span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">        </span><span class="nx">splitUpload</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">PLUGIN_SPLIT_UPLOAD</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h3 id="uploadlastattempt"><code>uploadLastAttempt</code><a class="headerlink" href="#uploadlastattempt" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>If set to <code>true</code> and <a href="https://docs.cypress.io/app/guides/test-retries">test retries</a> are enabled in Cypress, failed test attempts and their associated screenshots will be omitted from the upload to Xray, i.e. only the <em>last</em> attempt of each test will be included.</p>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>PLUGIN_UPLOAD_LAST_ATTEMPT</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><code class="highlight"><span class="kc">false</span></code></dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Cypress configuration</label><label for="__tabbed_6_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">    </span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">        </span><span class="nx">uploadLastAttempt</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">PLUGIN_UPLOAD_LAST_ATTEMPT</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>

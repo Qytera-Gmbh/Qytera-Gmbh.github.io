@@ -793,6 +793,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#handling-large-uploads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling large uploads
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -875,6 +884,15 @@
   <a href="#rate-limiting" class="md-nav__link">
     <span class="md-ellipsis">
       Rate limiting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-large-uploads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling large uploads
     </span>
   </a>
   
@@ -1226,6 +1244,34 @@ For example, Cucumber feature files are all imported at the same time, as their 
 <a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">        </span><span class="p">}</span>
 <a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<h2 id="handling-large-uploads">Handling large uploads<a class="headerlink" href="#handling-large-uploads" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>Large test suites can cause problems when trying to upload their results to Xray, especially if screenshots are included as evidence.</p>
+<div class="admonition failure">
+<p class="admonition-title"><strong>RangeError: Invalid string length</strong></p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>The plugin is able to split result uploads into multiple requests using the <a href="../../configuration/plugin/#splitupload"><code>splitUploads</code></a> setting.</p>
+<p>If enabled, this will cause the plugin to dispatch several upload requests requests instead of a single, large one:</p>
+<ul>
+<li>
+<p>the initial status upload (pass/fail/...)</p>
+</li>
+<li>
+<p>one request per test evidence (screenshot, ...)</p>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">    </span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">        </span><span class="nx">splitUpload</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 </div>
 
