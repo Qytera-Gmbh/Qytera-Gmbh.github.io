@@ -130,7 +130,7 @@ describe("the login page", () => {
         it(`CYP-123 logs in ${name}`, async () => {
             // These three are equivalent:
             cy.task(
-             "cypress-xray-plugin:task:iteration:definition",
+              "cypress-xray-plugin:task:iteration:definition",
               { parameters: { user: name }, test: Cypress.currentTest.titlePath.join(" ") }
             );
             enqueueTask("cypress-xray-plugin:task:iteration:definition", { user: name });
