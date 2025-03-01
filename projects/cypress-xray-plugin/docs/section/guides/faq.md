@@ -254,3 +254,28 @@ For example, Cucumber feature files are all imported at the same time, as their 
         },
     });
     ```
+
+## Handling large uploads
+
+Large test suites can cause problems when trying to upload their results to Xray, especially if screenshots are included as evidence.
+
+!!! failure "**RangeError: Invalid string length**"
+
+!!! success
+
+    The plugin is able to split result uploads into multiple requests using the [`splitUploads`](../configuration/plugin.md#splitupload) setting.
+
+    If enabled, this will cause the plugin to dispatch several upload requests requests instead of a single, large one:
+
+    - the initial status upload (pass/fail/...)
+
+    - one request per test evidence (screenshot, ...)
+
+    ```js
+
+    await configureXrayPlugin(on, config, {
+        plugin: {
+            splitUpload: true
+        },
+    });
+    ```
