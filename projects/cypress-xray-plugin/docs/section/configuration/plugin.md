@@ -92,6 +92,56 @@ The directory which all error and debug log files will be written to.
 
 <hr/>
 
+### `logger`
+
+A custom logger function that replaces the default ANSI-based logger for the plugin.
+If specified, this logger will completely replace the default plugin logger.
+
+Messages passed to this function:
+
+- will not contain the prefix `│ Cypress Xray Plugin │`
+
+- will not contain ANSI escape characters
+
+- may contain line break characters
+
+***Type***
+: `function`
+
+??? example
+
+    The following example produces log messages with custom prefixes and debug messages that are only output if a corresponding environment variable is defined.
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        plugin: {
+            logger: (level, ...text) => {
+                switch (level) {
+                    case "debug":
+                        if (process.env.DEBUG) {
+                          console.debug(...text);
+                        }
+                        break;
+                    case "error":
+                        console.error("oh no", ...text);
+                        break;
+                    case "info":
+                        console.info("fyi", ...text);
+                        break;
+                    case "notice":
+                        console.log("please beware", ...text);
+                        break;
+                    case "warning":
+                        console.warn("danger", ...text);
+                        break;
+                }
+            }
+        },
+    });
+    ```
+
+<hr/>
+
 ### `normalizeScreenshotNames`
 
 Some Xray setups might struggle with uploaded evidence if the filenames contain non-ASCII characters.
