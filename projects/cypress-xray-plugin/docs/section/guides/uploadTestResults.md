@@ -148,6 +148,12 @@ Using `enqueueTask` (with or without `PluginTask`) allows for type safe task cal
 ??? abstract "Xray Documentation"
     You can find more information on parameterised test executions [here](https://docs.getxray.app/display/XRAY/Parameterized+Tests#ParameterizedTests-Execution) for Xray server and [here](https://docs.getxray.app/display/XRAYCLOUD/Parameterized+Tests) for Xray cloud.
 
+!!! note
+    The parameter values have a maximum allowed length.
+    
+    On Xray server, the length can be configured by your Xray admins to be anywhere between 64 and 255 (see section [Datasets](https://docs.getxray.app/display/XRAY/Miscellaneous#Miscellaneous-Maximumsizeforparametervalues)).
+    
+    On Xray cloud, the maximum allowed length is simply 255.
 
 
 ## Uploading Cucumber test results
