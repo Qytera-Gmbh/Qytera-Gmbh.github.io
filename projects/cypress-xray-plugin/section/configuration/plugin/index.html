@@ -1208,14 +1208,16 @@ With this option enabled, the plugin only keeps characters <code>a-zA-Z0-9.</cod
 <hr/>
 
 <h3 id="splitupload"><code>splitUpload</code><a class="headerlink" href="#splitupload" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>Enables split upload mode for evidence files.
-When set to <code>true</code>, evidence such as screenshots and videos are uploaded in multiple smaller requests rather than in a single large request.</p>
-<p>This approach helps to avoid server-side request size limitations and can also be useful for avoiding <code>JSON.stringify</code> token length errors.</p>
+<p>Enables split upload mode for evidence files such as screenshots and videos, which are then uploaded in multiple smaller requests rather than in a single large request.
+This approach helps to avoid server-side request size limitations, and can also be useful for avoiding <code>JSON.stringify</code> token length errors.</p>
+<p>If set to <code>true</code>, evidence uploads will be sent concurrently for each test issue.
+This may cause them to appear out of order in Xray.
+If the order is important, but split uploads are still desired, the <code>sequential</code> setting can be used.</p>
 <dl>
 <dt><strong><em>Environment variable</em></strong></dt>
 <dd><code>PLUGIN_SPLIT_UPLOAD</code></dd>
 <dt><strong><em>Type</em></strong></dt>
-<dd><a href="../types/#boolean"><code>boolean</code></a></dd>
+<dd><a href="../types/#boolean"><code>boolean</code></a> or <code class="highlight"><span class="s2">&quot;sequential&quot;</span></code></dd>
 <dt><strong><em>Default</em></strong></dt>
 <dd><code class="highlight"><span class="kc">false</span></code></dd>
 </dl>
