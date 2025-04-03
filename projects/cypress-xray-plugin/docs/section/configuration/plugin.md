@@ -70,18 +70,18 @@ A listener function for handling plugin events.
 ***Type***
 : `function`
 
-***Default***
-: `#!js undefined`
-
 ??? example
 
     ```js
     await configureXrayPlugin(on, config, {
         plugin: {
             listener: ({ on }) => {
+                // Will be invoked as soon as the results have been uploaded:
                 on("upload:cypress", (data) => {
                     console.log(data.testExecutionIssueKey);
                 });
+
+                // Supports async callbacks, too:
                 on("upload:cucumber", async (data) => {
                     await writeFile("data.json", JSON.stringify(data));
                 });
