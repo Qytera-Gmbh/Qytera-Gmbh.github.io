@@ -63,6 +63,35 @@ Setting this option to `false` disables all plugin functions, including authenti
 
 <hr/>
 
+### `listener`
+
+A listener function for handling plugin events.
+
+***Type***
+: `function`
+
+***Default***
+: `#!js undefined`
+
+??? example
+
+    ```js
+    await configureXrayPlugin(on, config, {
+        plugin: {
+            listener: ({ on }) => {
+                on("upload:cypress", (data) => {
+                    console.log(data.testExecutionIssueKey);
+                });
+                on("upload:cucumber", async (data) => {
+                    await writeFile("data.json", JSON.stringify(data));
+                });
+            }
+        }
+    });
+    ```
+
+<hr/>
+
 ### `logDirectory`
 
 The directory which all error and debug log files will be written to.
