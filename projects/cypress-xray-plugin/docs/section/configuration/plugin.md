@@ -65,7 +65,7 @@ Setting this option to `false` disables all plugin functions, including authenti
 
 ### `listener`
 
-A listener function for handling plugin events.
+A listener function for handling plugin events, similar to the Cypress's `setupNodeEvents` function.
 
 ***Type***
 : `function`
