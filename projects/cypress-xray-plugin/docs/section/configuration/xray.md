@@ -496,3 +496,37 @@ Turns on or off the upload of screenshots Cypress takes during test execution.
         ```sh
         npx cypress run --env XRAY_UPLOAD_SCREENSHOTS_=false
         ```
+
+<hr/>
+
+### `url`
+
+The Xray base URL to use.
+For more information please refer to the official documentation:
+
+    - [Xray server](https://docs.getxray.app/display/XRAY/REST+API)
+    - [Xray cloud](https://docs.getxray.app/display/XRAYCLOUD/REST+API)
+
+***Environment variable***
+: `XRAY_URL`
+
+***Type***
+: [`string`](types.md#string)
+
+***Default***
+: [`jira.url`](./jira.md#url) for Xray server and `https://xray.cloud.getxray.app` for Xray cloud`
+
+??? example
+    === "Cypress configuration"
+        ```js
+        await configureXrayPlugin(on, config, {
+            xray: {
+                url: "https://eu.xray.cloud.getxray.app"
+            },
+        });
+        ```
+    === "Environment variable"
+        ```sh
+        npx cypress run --env XRAY_URL=https://eu.xray.cloud.getxray.app
+        ```
+
