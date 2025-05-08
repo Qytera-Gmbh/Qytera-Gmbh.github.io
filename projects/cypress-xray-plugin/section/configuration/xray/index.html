@@ -681,6 +681,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      url
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1126,6 +1135,15 @@
   <a href="#uploadscreenshots" class="md-nav__link">
     <span class="md-ellipsis">
       uploadScreenshots
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      url
     </span>
   </a>
   
@@ -1784,6 +1802,46 @@ It is not possible to upload screenshots without uploading results.</p>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_UPLOAD_SCREENSHOTS_</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<hr/>
+
+<h3 id="url"><code>url</code><a class="headerlink" href="#url" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>The Xray base URL to use.
+For more information please refer to the official documentation:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>- [Xray server](https://docs.getxray.app/display/XRAY/REST+API)
+- [Xray cloud](https://docs.getxray.app/display/XRAYCLOUD/REST+API)
+</code></pre></div></td></tr></table></div>
+<dl>
+<dt><strong><em>Environment variable</em></strong></dt>
+<dd><code>XRAY_URL</code></dd>
+<dt><strong><em>Type</em></strong></dt>
+<dd><a href="../types/#string"><code>string</code></a></dd>
+<dt><strong><em>Default</em></strong></dt>
+<dd><a href="../jira/#url"><code>jira.url</code></a> for Xray server and <code>https://xray.cloud.getxray.app</code> for Xray cloud`</dd>
+</dl>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Cypress configuration</label><label for="__tabbed_15_2">Environment variable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span>
+<span class="normal"><a href="#__codelineno-26-4">4</a></span>
+<span class="normal"><a href="#__codelineno-26-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">configureXrayPlugin</span><span class="p">(</span><span class="nx">on</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="w">    </span><span class="nx">xray</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://eu.xray.cloud.getxray.app&quot;</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--env<span class="w"> </span><span class="nv">XRAY_URL</span><span class="o">=</span>https://eu.xray.cloud.getxray.app
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
